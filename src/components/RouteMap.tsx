@@ -40,7 +40,20 @@ export default function RouteMap({ from, to, legs, ghostLegs, badge, outages, pl
   const pickRef = useRef(onPick); pickRef.current = onPick;
   const [styleKey, setStyleKey] = useState<keyof typeof STYLES>("light");
 
+  /** Direction chevron drawn locally: the tile server has no glyph for arrow characters. */
+  const addArrowImage = (m: MlMap) => {
+    if (m.hasImage("dir-arrow")) return;
+    const s = 24, c = document.createElement("canvas"); c.width = c.height = s;
+    const ctx = c.getContext("2d"); if (!ctx) return;
+    ctx.beginPath(); ctx.moveTo(7, 4); ctx.lineTo(18, 12); ctx.lineTo(7, 20);
+    ctx.lineWidth = 3.5; ctx.lineJoin = "round"; ctx.lineCap = "round";
+    ctx.strokeStyle = "rgba(0,0,0,0.35)"; ctx.stroke();
+    ctx.lineWidth = 2.2; ctx.strokeStyle = "#ffffff"; ctx.stroke();
+    m.addImage("dir-arrow", ctx.getImageData(0, 0, s, s), { pixelRatio: 2 });
+  };
+
   const addLayers = (m: MlMap) => {
+    addArrowImage(m);
     if (m.getSource("route")) return;
     m.addSource("ghost", { type: "geojson", data: legsToGeoJSON(null) });
     m.addLayer({ id: "ghost", type: "line", source: "ghost", paint: { "line-color": "#94a3b8", "line-width": 5, "line-dasharray": [1.4, 1.4], "line-opacity": 0.7 }, layout: { "line-cap": "round", "line-join": "round" } });
@@ -50,7 +63,7 @@ export default function RouteMap({ from, to, legs, ghostLegs, badge, outages, pl
       "line-width": 7, "line-color": ["case", ["==", ["get", "shelter"], 2], "#2563eb", ["==", ["get", "shelter"], 1], "#0ea5e9", ["<", ["get", "sun"], 0.35], "#16a34a", "#f97316"] } });
     m.addLayer({ id: "route-transit", type: "line", source: "route", filter: ["has", "transit"], layout: { "line-cap": "round", "line-join": "round" }, paint: { "line-width": 8, "line-color": ["match", ["get", "transit"], "1", "#f2c31c", "2", "#00923f", "4", "#a21a68", "#64748b"] } });
     m.addLayer({ id: "route-steps", type: "line", source: "route", filter: ["==", ["get", "steps"], true], paint: { "line-color": "#dc2626", "line-width": 3.5, "line-dasharray": [0.5, 1.1] } });
-    m.addLayer({ id: "route-arrows", type: "symbol", source: "route", layout: { "symbol-placement": "line", "symbol-spacing": 90, "text-field": "▸", "text-size": 15, "text-allow-overlap": true, "text-keep-upright": false, "text-rotation-alignment": "map" }, paint: { "text-color": "#ffffff", "text-halo-color": "#00000055", "text-halo-width": 0.6 } });
+    m.addLayer({ id: "route-arrows", type: "symbol", source: "route", layout: { "symbol-placement": "line", "symbol-spacing": 88, "icon-image": "dir-arrow", "icon-size": 0.75, "icon-allow-overlap": true, "icon-rotation-alignment": "map" } });
     m.addSource("places", { type: "geojson", data: placesToGeoJSON([]) });
     m.addLayer({ id: "places", type: "circle", source: "places", paint: { "circle-radius": 5.5, "circle-color": ["match", ["get", "kind"], "cool", "#0891b2", "warm", "#ea580c", "#64748b"], "circle-stroke-color": "#fff", "circle-stroke-width": 1.5, "circle-opacity": 0.9 } });
     m.on("click", "places", (e) => { const f = e.features?.[0]; if (!f) return; const p = f.properties as Record<string, string>; new Popup({ offset: 10, closeButton: false }).setLngLat(e.lngLat).setHTML(`<div style="font:13px/1.45 system-ui"><strong>${p.name}</strong><br><span style="color:#64748b">${p.type}</span><br>${p.address}${p.hours ? `<br><span style="color:#64748b;font-size:11px">${p.hours}</span>` : ""}</div>`).addTo(m); });
