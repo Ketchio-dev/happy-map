@@ -1,7 +1,25 @@
 {
- "t": "2026-09-01T23:16:46.475Z",
- "feedUpdated": "2026-09-01T18:55:07.027Z",
+ "t": "2026-09-01T23:20:19.706Z",
+ "feedUpdated": "2026-09-01T19:18:54.55Z",
  "accessibility": [
+  {
+   "id": "75201",
+   "type": "Escalator",
+   "code": "9S5E",
+   "planned": "Planned",
+   "stops": [
+    "11860"
+   ],
+   "header": "Sheppard West: Escalator 9S5E out of service from bus platform to concourse while we perform maintenance.",
+   "effect": "Out of service",
+   "severity": "Critical",
+   "cause": "MAINTENANCE",
+   "causeDesc": "Maintenance",
+   "start": "2026-09-01T19:18:54.55Z",
+   "end": "0001-01-01T00:00:00Z",
+   "targetRemoval": null,
+   "updated": "2026-09-01T19:18:54.55Z"
+  },
   {
    "id": "75199",
    "type": "Elevator",
