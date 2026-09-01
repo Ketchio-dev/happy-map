@@ -22,6 +22,9 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: 24
+          # the logger has no dependencies; skip the pnpm lookup that setup-node
+          # does by default when package.json declares a packageManager
+          package-manager-cache: false
       - name: Fetch and record
         run: node tools/log-once.mjs
       - name: Commit when the outage set changed
