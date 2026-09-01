@@ -1,4 +1,6 @@
-# Exposure-aware routing · downtown Toronto
+# happy-map — exposure-aware routing for downtown Toronto
+
+**Live: https://happy-map-ashy.vercel.app**
 
 Walking + subway routes that avoid what actually stops vulnerable people: **cold**, **direct sun**, **stairs**, and **out-of-service TTC elevators** — computed from live and open data, for downtown Toronto.
 
@@ -35,6 +37,10 @@ Every result is shown next to the plain fastest route, so the trade-off is expli
 pnpm install
 pnpm dev            # http://localhost:3000
 ```
+
+The scheduled workflow in `.github/workflows/log-ttc-alerts.yml` records the TTC
+accessibility feed every 5 minutes, so the outage history keeps growing whether
+or not a laptop is awake.
 
 Data files (`data/graph.json`, `data/subway.json`, `public/data/places.json`) are committed. To rebuild from sources:
 
