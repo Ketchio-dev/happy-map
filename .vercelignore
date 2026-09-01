@@ -1,0 +1,7 @@
+# Source datasets used only by the tools/ pipeline; the built graph in data/ is what ships.
+data/raw
+data/ttc-alerts
+data/*.log
+# Design references and rendered screenshots are documentation, not runtime files.
+research/refs
+research/screens
