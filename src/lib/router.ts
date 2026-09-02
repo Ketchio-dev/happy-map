@@ -2,10 +2,12 @@ import type { Edge, Graph } from "./graph";
 import { haversine, nearestNode, stationNodesFor } from "./graph";
 
 export interface Mode { cold?: boolean; heat?: boolean; mobility?: boolean; /** never ride the subway */ walkOnly?: boolean }
+/** how much a segment with no mapped sidewalk is penalised; higher in winter, when snowbanks narrow the road */
+const ROADWAY_PENALTY = 1.35;
 export interface RouteRequest { from: [number, number]; to: [number, number]; mode: Mode; hourBucket?: string; blockedNodes?: number[]; /** TTC station names with elevator outages; blocked only in step-free mode */ blockedStations?: string[] }
 
-export interface Leg { coords: [number, number][]; len: number; shelter: 0 | 1 | 2; steps: boolean; elev: boolean; name: string | null; hw: string; sun: number; transit?: string; station?: string; time_s: number }
-export interface Stats { distance_m: number; time_s: number; indoor_m: number; covered_m: number; outdoor_m: number; sun_m: number; steps_edges: number; exposure_s: number; transit_s: number; walk_m: number }
+export interface Leg { coords: [number, number][]; len: number; shelter: 0 | 1 | 2; steps: boolean; elev: boolean; name: string | null; hw: string; sun: number; roadway: boolean; transit?: string; station?: string; time_s: number }
+export interface Stats { distance_m: number; time_s: number; indoor_m: number; covered_m: number; outdoor_m: number; sun_m: number; steps_edges: number; exposure_s: number; transit_s: number; walk_m: number; /** metres walked on a road with no mapped sidewalk */ roadway_m: number; /** metres on loose or steep ground */ rough_m: number }
 export interface RouteResult { legs: Leg[]; stats: Stats; nodePath: number[] }
 
 const WALK_MPS = 1.3;
@@ -53,31 +55,47 @@ export function edgeCost(g: Graph, ei: number, from: number, mode: Mode, hourBuc
     const sun = sunFraction(e, hourBucket);
     t *= 1 + 1.8 * sun; // full sun 2.8x, shade 1x
   }
-  // gentle preference for lit + named pedestrian ways over service alleys
-  if (e.hw === "service") t *= 1.15;
+  // no mapped sidewalk means walking in or beside the traffic lane
+  if (e.roadway) t *= mode.mobility ? ROADWAY_PENALTY + 0.35 : ROADWAY_PENALTY;
+  // loose ground and steep grades: slower for everyone, a real barrier on wheels
+  if (e.loose) t *= mode.mobility ? 1.8 : 1.15;
+  if (e.incline) t *= mode.mobility ? 1 + 0.45 * e.incline : 1 + 0.12 * e.incline;
+  if (e.hw === "service") t *= 1.1;
   return t;
 }
 
-export function dijkstra(g: Graph, src: number, dst: number, mode: Mode, hourBucket?: string, blocked?: Set<number>): number[] | null {
+/** Fastest anything can move, used only to keep the A* heuristic admissible.
+ *  Walking-only searches get a much tighter bound and so explore far less of the city. */
+const TOP_SPEED_TRANSIT = 22, TOP_SPEED_WALK = 1.35;
+
+export function search(g: Graph, src: number, dst: number, mode: Mode, hourBucket?: string, blocked?: Set<number>): number[] | null {
   const n = g.nodes.length;
   const dist = new Float64Array(n).fill(Infinity);
   const prev = new Int32Array(n).fill(-1);
   const prevEdge = new Int32Array(n).fill(-1);
+  const done = new Uint8Array(n);
   const heap = new MinHeap();
-  dist[src] = 0; heap.push(0, src);
+  const goal = g.nodes[dst];
+  const top = mode.walkOnly ? TOP_SPEED_WALK : TOP_SPEED_TRANSIT;
+  // straight-line time to the goal: never overestimates, so the first pop of dst is optimal
+  const h = (i: number) => haversine(g.nodes[i], goal) / top;
+
+  dist[src] = 0; heap.push(h(src), src);
   while (heap.size) {
-    const [d, u] = heap.pop();
-    if (d > dist[u]) continue;
+    const [, u] = heap.pop();
+    if (done[u]) continue;
+    done[u] = 1;
     if (u === dst) break;
+    const d = dist[u];
     const adj = g.adj[u];
     for (let k = 0; k < adj.length; k++) {
       const ei = adj[k]; const e = g.edges[ei];
       const v = e.a === u ? e.b : e.a;
-      if (blocked?.has(v)) continue;
+      if (done[v] || blocked?.has(v)) continue;
       const c = edgeCost(g, ei, u, mode, hourBucket);
       if (!isFinite(c)) continue;
       const nd = d + c;
-      if (nd < dist[v]) { dist[v] = nd; prev[v] = u; prevEdge[v] = ei; heap.push(nd, v); }
+      if (nd < dist[v]) { dist[v] = nd; prev[v] = u; prevEdge[v] = ei; heap.push(nd + h(v), v); }
     }
   }
   if (!isFinite(dist[dst])) return null;
@@ -88,7 +106,7 @@ export function dijkstra(g: Graph, src: number, dst: number, mode: Mode, hourBuc
 
 export function assemble(g: Graph, src: number, edgePath: number[], mode: Mode, hourBucket?: string): RouteResult {
   const legs: Leg[] = []; const nodePath = [src];
-  const stats: Stats = { distance_m: 0, time_s: 0, indoor_m: 0, covered_m: 0, outdoor_m: 0, sun_m: 0, steps_edges: 0, exposure_s: 0, transit_s: 0, walk_m: 0 };
+  const stats: Stats = { distance_m: 0, time_s: 0, indoor_m: 0, covered_m: 0, outdoor_m: 0, sun_m: 0, steps_edges: 0, exposure_s: 0, transit_s: 0, walk_m: 0, roadway_m: 0, rough_m: 0 };
   const speed = mode.mobility ? MOBILITY_MPS : WALK_MPS;
   let cur = src;
   for (const ei of edgePath) {
@@ -98,11 +116,13 @@ export function assemble(g: Graph, src: number, edgePath: number[], mode: Mode, 
     cur = forward ? e.b : e.a; nodePath.push(cur);
     const sun = sunFraction(e, hourBucket);
     const t = e.time_s ?? e.len / speed * (e.steps ? 1.6 : 1) + (e.elev ? 45 : 0);
-    legs.push({ coords, len: e.len, shelter: e.shelter, steps: !!e.steps, elev: !!e.elev, name: e.name, hw: e.hw, sun, transit: e.transit, station: e.station, time_s: Math.round(t) });
+    legs.push({ coords, len: e.len, shelter: e.shelter, steps: !!e.steps, elev: !!e.elev, name: e.name, hw: e.hw, sun, roadway: !!e.roadway, transit: e.transit, station: e.station, time_s: Math.round(t) });
     stats.distance_m += e.len;
     stats.time_s += t;
     if (e.transit) { stats.transit_s += t; continue; }
     if (e.hw !== "station_link") stats.walk_m += e.len;
+    if (e.roadway) stats.roadway_m += e.len;
+    if (e.loose || e.incline) stats.rough_m += e.len;
     if (e.shelter === 2) stats.indoor_m += e.len; else if (e.shelter === 1) stats.covered_m += e.len; else { stats.outdoor_m += e.len; stats.exposure_s += t; }
     stats.sun_m += e.len * sun;
     if (e.steps) stats.steps_edges++;
@@ -122,9 +142,9 @@ export function plan(g: Graph, req: RouteRequest): PlanResult | PlanError {
   if (req.mode.mobility) for (const name of req.blockedStations ?? []) for (const n of stationNodesFor(g, name)) blocked.add(n);
   const blockedSet = blocked.size ? blocked : undefined;
   const baseMode: Mode = { mobility: req.mode.mobility, walkOnly: req.mode.walkOnly }; // fastest feasible route, no exposure weighting
-  const basePath = dijkstra(g, src, dst, baseMode, req.hourBucket, blockedSet);
+  const basePath = search(g, src, dst, baseMode, req.hourBucket, blockedSet);
   if (!basePath) return { ok: false, error: req.mode.mobility ? "no step-free route found between these points" : "no route found" };
-  const path = (req.mode.cold || req.mode.heat) ? dijkstra(g, src, dst, req.mode, req.hourBucket, blockedSet) ?? basePath : basePath;
+  const path = (req.mode.cold || req.mode.heat) ? search(g, src, dst, req.mode, req.hourBucket, blockedSet) ?? basePath : basePath;
   return { ok: true, route: assemble(g, src, path, req.mode, req.hourBucket), baseline: assemble(g, src, basePath, baseMode, req.hourBucket), snapped: { from: g.nodes[src], to: g.nodes[dst] }, blockedStations: req.mode.mobility ? (req.blockedStations ?? []) : [] };
 }
 

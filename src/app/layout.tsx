@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Exposure-aware routing · downtown Toronto",
-  description: "Walking and transit routes that avoid cold, sun, stairs, and out-of-service TTC elevators.",
+  title: "happy map — exposure-aware routing in Toronto",
+  description: "Walking and subway routes across Toronto costed by exposure: time outdoors, direct sun, stairs, blocks with no sidewalk, and TTC elevators that are out right now.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

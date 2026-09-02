@@ -1,8 +1,8 @@
-# happy-map — exposure-aware routing for downtown Toronto
+# happy map — exposure-aware routing across Toronto
 
 **Live: https://happy-map-ashy.vercel.app**
 
-Walking + subway routes that avoid what actually stops vulnerable people: **cold**, **direct sun**, **stairs**, and **out-of-service TTC elevators** — computed from live and open data, for downtown Toronto.
+Walking and subway routes across Toronto costed by what you are exposed to rather than time alone: minutes outdoors, metres in direct sun, stairs, blocks with no sidewalk, and TTC stations whose elevator is out at this moment.
 
 Built solo for [GatewayHacks 2026](https://gatewayhacks-2026.devpost.com/) (Accessibility & Health track).
 
@@ -12,24 +12,26 @@ One router, three cost layers, switched automatically by Environment Canada warn
 
 | Mode | What it optimizes | Data |
 |---|---|---|
-| ❄️ Cold | minimize time outdoors; prefers PATH, tunnels, covered walkways, the subway | OpenStreetMap `tunnel` / `indoor` / `covered` / `corridor` tags (38.8 km indoor/underground downtown) |
-| ☀️ Heat | minimize time in direct sun at the chosen hour; shows Heat Relief Network cool spaces | Toronto 3D Massing (building heights) + NOAA solar position → per-segment sun fraction for 12 day/hour buckets |
-| ♿ Step-free | no stairs, no raised kerbs, no stations whose elevator is out **right now** | OSM `highway=steps`, `wheelchair`, `barrier=kerb`; TTC live alerts feed (polled every 60 s) |
+| Indoor first | minimise time outdoors; prefers PATH, tunnels, covered walkways, the subway | OpenStreetMap `tunnel` / `indoor` / `covered` / `corridor` tags, 95 km of sheltered walking |
+| Shade first | minimise time in direct sun at the chosen hour; shows Heat Relief Network cool spaces | Toronto 3D Massing (building heights) + NOAA solar position → per-segment sun fraction for 12 day/hour buckets |
+| Step-free | no stairs, no raised kerbs, no station whose elevator is out **right now** | OSM `highway=steps`, `wheelchair`, `barrier=kerb`; TTC live alerts feed |
 
-Every result is shown next to the plain fastest route, so the trade-off is explicit: *"outdoors −27 %, time +4 %"*.
+Every route is also charged for walking on a road with no mapped sidewalk (47 % of the network), for loose or unpaved ground, and for steep grades — the conditions that turn dangerous once there is snow on them.
+
+Every result is shown next to the plain fastest route, so the trade-off is explicit: *"16 m outdoors, 98 % less than fastest, one minute longer"*.
 
 ## Evidence (no human testers; all numbers are computed)
 
-`tools/evaluate.mjs` routes 120 random downtown trips (0.5–2.5 km) in each mode and compares against the fastest route. 2026-09-01 run (`research/eval-2026-09-01.json`):
+`tools/evaluate.mjs` routes 150 random trips in each mode and compares against the fastest route. It is run twice: once inside the PATH-dense financial district, once across the whole covered area (`research/eval-core.json`, `research/eval-wide.json`):
 
-| Mode | Median change vs fastest route | Trips improved | Median extra time |
+| Run | Median change vs fastest route | Trips improved | Median extra time |
 |---|---|---|---|
-| Cold | outdoor distance −27 % (948 m → 638 m) | 69 % | +4.4 % |
-| Heat, July 15 14:00 | direct-sun distance −50 % | 47 % | +4.6 % |
-| Heat, Sept 15 12:00 | direct-sun distance −55 % | 34 % | +5.1 % |
-| Step-free | 5 of 120 trips have **no** step-free route at all | — | — |
+| Indoor first, downtown core | outdoor distance −33 % (1,241 m → 831 m) | 77 % | +6.2 % |
+| Shade first, July 15 14:00 | direct-sun distance −48 % | 46 % | +6.0 % |
+| Indoor first, city-wide | no measurable gain | 33 % | — |
+| Step-free | 8 of 150 trips have **no** step-free route at all | — | — |
 
-`tools/poll-ttc-alerts.mjs` has been logging every TTC elevator/escalator alert since 2026-09-01; `tools/analyze-outages.mjs` summarizes outage counts, durations and stations (`research/outages-summary.json`).
+A scheduled GitHub Actions workflow and a local poller have been logging every TTC elevator and escalator alert since 2026-09-01; `tools/analyze-outages.mjs` summarizes outage counts, durations and stations (`research/outages-summary.json`).
 
 ## Run it
 
@@ -71,4 +73,4 @@ node tools/evaluate.mjs         # needs the dev server running
 
 ## Limits
 
-Downtown only (roughly Bathurst–Parliament, Lake–Bloor). Shade is geometric (buildings only, no trees) for representative hours, not live cloud cover. Sidewalk snow clearing is not modelled yet. Elevator outages are matched to stations by name from the TTC feed; Line 5 stations are not in the routing graph.
+Covers the City of Toronto plus margins into Mississauga, Vaughan and Markham: 346k nodes, 492k edges, 24,225 km of walkable network. Shade is geometric (buildings only, no trees) for twelve representative day/hour buckets, not live cloud cover. Snow clearing is not modelled: PlowTO is a seasonal map with no public API, and Toronto's open data has no plowing dataset, so the winter signal here is structural — where sidewalks are missing, loose, or steep — rather than live. Elevator outages are matched to stations by name from the TTC feed; Line 5 stations are not in the routing graph.

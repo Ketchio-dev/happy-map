@@ -8,7 +8,7 @@ import * as shp from "shapefile";
 import Flatbush from "flatbush";
 import { sunPosition } from "./solar.mjs";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const [S, W, N, E] = "43.630,-79.420,43.680,-79.355".split(",").map(Number);
+const [S, W, N, E] = (process.env.BBOX ?? "43.575,-79.640,43.860,-79.115").split(",").map(Number);
 const PAD_LAT = 0.006, PAD_LON = 0.008;
 const CENTER = { lat: (S + N) / 2, lon: (W + E) / 2 };
 // reference days (local Toronto time, EDT = UTC-4 in July/Sept): summer design day + a September day for judging-time demos
@@ -20,11 +20,14 @@ const t0 = Date.now();
 const src = await shp.open(path.join(ROOT, "data/raw/massing/3DMassingShapefile_2025_WGS84.shp"), path.join(ROOT, "data/raw/massing/3DMassingShapefile_2025_WGS84.dbf"));
 const bld = []; let n = 0;
 for (;;) { const r = await src.read(); if (r.done) break; n++; const f = r.value; const p = f.properties; if (p.LATITUDE < S - PAD_LAT || p.LATITUDE > N + PAD_LAT || p.LONGITUDE < W - PAD_LON || p.LONGITUDE > E + PAD_LON) continue; let h = p.AVG_HEIGHT > 0 ? p.AVG_HEIGHT : (p.HEIGHT_MSL - p.SURF_ELEV); if (!(h >= 2)) continue; const rings = f.geometry.type === "Polygon" ? [f.geometry.coordinates[0]] : f.geometry.coordinates.map(c => c[0]); for (const ring of rings) { const ll = ring.map(merc2ll); let minX = 1e9, minY = 1e9, maxX = -1e9, maxY = -1e9; for (const [x, y] of ll) { if (x < minX) minX = x; if (x > maxX) maxX = x; if (y < minY) minY = y; if (y > maxY) maxY = y; } bld.push({ ring: ll, h, minX, minY, maxX, maxY }); } }
-console.log(`buildings: ${n} read, ${bld.length} polygons in padded bbox, max height ${Math.max(...bld.map(b => b.h)).toFixed(0)} m (${((Date.now() - t0) / 1000).toFixed(0)}s)`);
+console.log(`buildings: ${n} read, ${bld.length} polygons in padded bbox, max height ${bld.reduce((m, b) => (b.h > m ? b.h : m), 0).toFixed(0)} m (${((Date.now() - t0) / 1000).toFixed(0)}s)`);
 const index = new Flatbush(bld.length); for (const b of bld) index.add(b.minX, b.minY, b.maxX, b.maxY); index.finish();
 const pip = (x, y, ring) => { let inside = false; for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) { const xi = ring[i][0], yi = ring[i][1], xj = ring[j][0], yj = ring[j][1]; if (((yi > y) !== (yj > y)) && (x < (xj - xi) * (y - yi) / (yj - yi) + xi)) inside = !inside; } return inside; };
 
 const g = JSON.parse(await readFile(path.join(ROOT, "data/graph.json"), "utf8"));
+if (g.meta.format !== 2) throw new Error("expected graph format 2 from tools/build-graph.mjs");
+// rebuild each edge's full geometry: the file stores only interior points
+const geomOf = (e) => [g.nodes[e[0]], ...(e[7] || []), g.nodes[e[1]]];
 const mPerDegLat = 111_320, mPerDegLon = 111_320 * Math.cos(CENTER.lat * Math.PI / 180);
 const hav = (a, b) => Math.hypot((b[0] - a[0]) * mPerDegLon, (b[1] - a[1]) * mPerDegLat);
 const suns = [];
@@ -46,14 +49,25 @@ function shadedAt(p, sun) {
 }
 function samples(geom) { const pts = []; let total = 0; for (let i = 1; i < geom.length; i++) total += hav(geom[i - 1], geom[i]); const nS = Math.max(2, Math.min(6, Math.round(total / 12))); for (let k = 0; k < nS; k++) { const target = total * (k + 0.5) / nS; let acc = 0; for (let i = 1; i < geom.length; i++) { const seg = hav(geom[i - 1], geom[i]); if (acc + seg >= target || i === geom.length - 1) { const f = seg ? Math.min(1, (target - acc) / seg) : 0; pts.push([geom[i - 1][0] + (geom[i][0] - geom[i - 1][0]) * f, geom[i - 1][1] + (geom[i][1] - geom[i - 1][1]) * f]); break; } acc += seg; } } return pts; }
 
-let done = 0; const outdoor = g.edges.filter(e => e.shelter === 0);
-for (const e of outdoor) {
-  const pts = samples(e.geom); const sun = {};
-  for (const s of suns) { let sh = 0; for (const p of pts) if (shadedAt(p, s)) sh++; sun[s.key] = Math.round((1 - sh / pts.length) * 100) / 100; }
-  e.sun = sun; done++;
-  if (done % 5000 === 0) console.log(`  ${done}/${outdoor.length} edges (${((Date.now() - t0) / 1000).toFixed(0)}s)`);
+// One byte per bucket per edge, packed into a single base64 blob. Storing this as JSON
+// arrays cost several times more and has to be parsed twice on every cold start.
+const NB = suns.length;
+const bytes = new Uint8Array(g.edges.length * NB);
+const outdoorFlag = new Uint8Array(g.edges.length);
+let done = 0, outdoorCount = 0;
+for (let i = 0; i < g.edges.length; i++) {
+  const e = g.edges[i];
+  if (e[4] !== 0) continue;
+  outdoorCount++;
+  const pts = samples(geomOf(e));
+  outdoorFlag[i] = 1;
+  suns.forEach((s, j) => { let sh = 0; for (const p of pts) if (shadedAt(p, s)) sh++; bytes[i * NB + j] = Math.round((1 - sh / pts.length) * 255); });
+  if (++done % 20000 === 0) console.log(`  ${done} edges (${((Date.now() - t0) / 1000).toFixed(0)}s)`);
 }
-g.meta.shade = { computed: new Date().toISOString(), keys: suns.map(s => s.key), source: "Toronto 3D Massing 2025 + NOAA solar position" };
+g.sunKeys = suns.map((s) => s.key);
+g.sunBytes = Buffer.from(bytes).toString("base64");
+g.meta.shade = { computed: new Date().toISOString(), source: "Toronto 3D Massing 2025 + NOAA solar position" };
 await writeFile(path.join(ROOT, "data/graph.json"), JSON.stringify(g));
-const avg = (k) => (outdoor.reduce((a, e) => a + e.sun[k], 0) / outdoor.length).toFixed(2);
-console.log(`done in ${((Date.now() - t0) / 1000).toFixed(0)}s. mean sun fraction by bucket:`, suns.map(s => `${s.key}=${avg(s.key)}`).join(" "));
+const avg = (j) => { let t = 0; for (let i = 0; i < g.edges.length; i++) if (outdoorFlag[i]) t += bytes[i * NB + j]; return (t / outdoorCount / 255).toFixed(2); };
+console.log(`done in ${((Date.now() - t0) / 1000).toFixed(0)}s over ${outdoorCount} outdoor edges. mean sun fraction:`, suns.map((s, j) => `${s.key}=${avg(j)}`).join(" "));
+console.log(`file ${(JSON.stringify(g).length / 1e6).toFixed(1)} MB`);

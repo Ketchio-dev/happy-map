@@ -6,9 +6,14 @@ import Flatbush from "flatbush";
 export type Wc = "yes" | "no" | "limited" | "unk";
 export interface Edge {
   a: number; b: number; len: number; hw: string;
-  shelter: 0 | 1 | 2; steps: 0 | 1; elev: 0 | 1; wc: Wc; lit: 0 | 1;
-  level: string | null; name: string | null; sidewalk: string | null;
-  geom: [number, number][]; wid: number;
+  shelter: 0 | 1 | 2; steps: 0 | 1; elev: 0 | 1; wc: Wc;
+  name: string | null; geom: [number, number][];
+  /** walking on a road with no mapped sidewalk — beside traffic, and where snowbanks push you into the lane */
+  roadway?: 0 | 1;
+  /** loose or unpaved surface: worse under snow, impassable for small wheels */
+  loose?: 0 | 1;
+  /** 0 flat, 1 moderate (4-8%), 2 steep (>=8%) — the segments that ice over */
+  incline?: 0 | 1 | 2;
   /** sun-exposure fraction (0 = fully shaded, 1 = full sun) keyed by day/hour bucket, added by tools/compute-shade.mjs */
   sun?: Record<string, number>;
   /** transit edges: fixed travel time and line id; station links: fixed access time */
@@ -16,13 +21,30 @@ export interface Edge {
 }
 export interface NodeAttr { elev?: 1; barrier?: string; wc?: Wc; kerb?: string | null }
 export interface Poi { id: number; lon: number; lat: number; kind: string; name: string | null; wc: Wc; level: string | null; ref: string | null; station: string | null; graphNode: number | null }
+/** On-disk shape: positional arrays, see tools/build-graph.mjs. Expanded to Edge[] on load. */
+interface RawGraph {
+  meta: Record<string, unknown>;
+  hwTable: string[]; wcTable: Wc[];
+  nodes: [number, number][];
+  /** [a, b, len, hwIdx, shelter, flags, name|0, interiorGeom|0] — flags: 1 steps, 2 elevator, wheelchair << 2 */
+  edges: [number, number, number, number, 0 | 1 | 2, number, string | 0, [number, number][] | 0][];
+  nodeAttr: Record<string, NodeAttr>;
+  pois: { lon: number; lat: number; kind: string; name: string | null; wc: Wc; graphNode: number | null }[];
+  /** per-edge sun exposure from tools/compute-shade.mjs: one byte per bucket, edge-major,
+   *  base64-encoded. sunKeys names the buckets in order. */
+  sunKeys?: string[];
+  sunBytes?: string;
+}
 export interface GraphFile { meta: Record<string, unknown>; nodes: [number, number][]; edges: Edge[]; nodeAttr: Record<string, NodeAttr>; pois: Poi[] }
+
 export interface Station { key: string; name: string; lat: number; lon: number; wheelchair_boarding: string; stopIds: string[]; lines: string[]; node: number }
-export interface SubwayFile { lines: { id: string; name: string; color: string }[]; stations: Omit<Station, "node">[]; edges: { a: string; b: string; line: string; time_s: number }[] }
+export interface SubwayFile { lines: { id: string; name: string; color: string }[]; stations: Omit<Station, "node">[]; edges: { a: string; b: string; line: string; time_s: number; geom?: [number, number][] | null }[] }
 
 export interface Graph extends GraphFile {
   adj: Int32Array[];      // node -> edge indices
   index: Flatbush;        // spatial index over pedestrian nodes (stations excluded)
+  /** size of the connected component each node belongs to; snapping ignores tiny islands */
+  compSize: Int32Array;
   stations: Station[];
   stationByName: Map<string, Station[]>;
   lines: SubwayFile["lines"];
@@ -44,8 +66,9 @@ export function haversine(a: [number, number], b: [number, number]): number {
 export function loadGraph(): Graph {
   if (cached) return cached;
   const dir = path.join(process.cwd(), "data");
-  const g = JSON.parse(readFileSync(path.join(dir, "graph.json"), "utf8")) as GraphFile;
+  const raw = JSON.parse(readFileSync(path.join(dir, "graph.json"), "utf8")) as RawGraph;
   const sub = JSON.parse(readFileSync(path.join(dir, "subway.json"), "utf8")) as SubwayFile;
+  const g = expand(raw);
 
   const pedCount = g.nodes.length;
   const index = new Flatbush(pedCount);
@@ -55,7 +78,8 @@ export function loadGraph(): Graph {
   // --- append subway stations as nodes, linked to nearby subway entrances (or nearest pedestrian node) ---
   const stations: Station[] = [];
   const stationByName = new Map<string, Station[]>();
-  const [S, W, N, E] = [43.630 - 0.01, -79.420 - 0.01, 43.680 + 0.01, -79.355 + 0.01];
+  // stations outside the walking graph's own bbox can be ridden through but not entered
+  const [S, W, N, E] = String(g.meta.bbox ?? "43.575,-79.640,43.860,-79.115").split(",").map(Number);
   const entrances = g.pois.filter((p) => p.kind === "subway_entrance" && p.graphNode !== null);
   for (const s of sub.stations) {
     const node = g.nodes.length; g.nodes.push([s.lon, s.lat]);
@@ -68,7 +92,7 @@ export function loadGraph(): Graph {
     for (const l of links) {
       // entrance explicitly not wheelchair-accessible → link unusable in step-free mode even if the station is
       const linkWc: Wc = wc === "no" ? "no" : l.wc === "no" ? "no" : wc;
-      g.edges.push({ a: node, b: l.node, len: Math.round(l.d), hw: "station_link", shelter: 2, steps: 0, elev: 0, wc: linkWc, lit: 1, level: null, name: `${s.name} Station`, sidewalk: null, geom: [[s.lon, s.lat], g.nodes[l.node]], wid: -1, time_s: Math.round(l.d / 1.0) + 120, station: s.name });
+      g.edges.push({ a: node, b: l.node, len: Math.round(l.d), hw: "station_link", shelter: 2, steps: 0, elev: 0, wc: linkWc, name: `${s.name} Station`, geom: [[s.lon, s.lat], g.nodes[l.node]], time_s: Math.round(l.d) + 120, station: s.name });
     }
   }
   const byKey = new Map(stations.map((s) => [s.key, s]));
@@ -76,18 +100,59 @@ export function loadGraph(): Graph {
   const byName = (n: string) => stations.find((s) => normName(s.name) === normName(n));
   for (const [a, b] of [["Bloor", "Yonge"]]) {
     const A = byName(a), B = byName(b); if (!A || !B) continue;
-    g.edges.push({ a: A.node, b: B.node, len: Math.round(haversine([A.lon, A.lat], [B.lon, B.lat])), hw: "transfer", shelter: 2, steps: 0, elev: 0, wc: "yes", lit: 1, level: null, name: `${a}-${b} transfer`, sidewalk: null, geom: [[A.lon, A.lat], [B.lon, B.lat]], wid: -1, time_s: 180, station: `${a}-${b}` });
+    g.edges.push({ a: A.node, b: B.node, len: Math.round(haversine([A.lon, A.lat], [B.lon, B.lat])), hw: "transfer", shelter: 2, steps: 0, elev: 0, wc: "yes", name: `${a}-${b} transfer`, geom: [[A.lon, A.lat], [B.lon, B.lat]], time_s: 180, station: `${a}-${b}` });
   }
   for (const e of sub.edges) {
     const A = byKey.get(e.a), B = byKey.get(e.b); if (!A || !B) continue;
-    g.edges.push({ a: A.node, b: B.node, len: Math.round(haversine([A.lon, A.lat], [B.lon, B.lat])), hw: "subway", shelter: 2, steps: 0, elev: 0, wc: "yes", lit: 1, level: null, name: sub.lines.find((l) => l.id === e.line)?.name ?? `Line ${e.line}`, sidewalk: null, geom: [[A.lon, A.lat], [B.lon, B.lat]], wid: -1, time_s: e.time_s, transit: e.line });
+    g.edges.push({ a: A.node, b: B.node, len: Math.round(haversine([A.lon, A.lat], [B.lon, B.lat])), hw: "subway", shelter: 2, steps: 0, elev: 0, wc: "yes", name: sub.lines.find((l) => l.id === e.line)?.name ?? `Line ${e.line}`, geom: shapeFor(e, A, B), time_s: e.time_s, transit: e.line });
   }
 
   const lists: number[][] = Array.from({ length: g.nodes.length }, () => []);
   g.edges.forEach((e, i) => { lists[e.a].push(i); lists[e.b].push(i); });
   const adj = lists.map((l) => Int32Array.from(l));
-  cached = { ...g, adj, index, stations, stationByName, lines: sub.lines };
+  cached = { ...g, adj, index, compSize: componentSizes(g, adj), stations, stationByName, lines: sub.lines };
   return cached;
+}
+
+/** OSM contains small islands of private or indoor paths that connect to nothing;
+ *  snapping a trip endpoint onto one makes the whole route unroutable. */
+function componentSizes(g: GraphFile, adj: Int32Array[]): Int32Array {
+  const n = g.nodes.length, comp = new Int32Array(n).fill(-1), size = new Int32Array(n);
+  let c = 0;
+  for (let s = 0; s < n; s++) {
+    if (comp[s] >= 0) continue;
+    const members: number[] = [s]; comp[s] = c;
+    for (let k = 0; k < members.length; k++) {
+      const u = members[k];
+      for (const ei of adj[u]) { const e = g.edges[ei]; const v = e.a === u ? e.b : e.a; if (comp[v] < 0) { comp[v] = c; members.push(v); } }
+    }
+    for (const m of members) size[m] = members.length;
+    c++;
+  }
+  return size;
+}
+
+/** rebuild the runtime Edge objects from the positional on-disk form */
+function expand(raw: RawGraph): GraphFile {
+  const keys = raw.sunKeys;
+  const nb = keys?.length ?? 0;
+  const sunBytes = raw.sunBytes ? Buffer.from(raw.sunBytes, "base64") : null;
+  const edges: Edge[] = raw.edges.map((e, i) => {
+    const [a, b, len, hw, shelter, flags, name, interior] = e;
+    const geom: [number, number][] = [raw.nodes[a], ...(interior || []), raw.nodes[b]];
+    const edge: Edge = { a, b, len, hw: raw.hwTable[hw], shelter, steps: (flags & 1) as 0 | 1, elev: ((flags >> 1) & 1) as 0 | 1, wc: raw.wcTable[(flags >> 2) & 3] ?? "unk", name: name || null, geom, roadway: ((flags >> 4) & 1) as 0 | 1, loose: ((flags >> 5) & 1) as 0 | 1, incline: ((flags >> 6) & 3) as 0 | 1 | 2 };
+    if (sunBytes && keys && shelter === 0) { const sun: Record<string, number> = {}; for (let j = 0; j < nb; j++) sun[keys[j]] = sunBytes[i * nb + j] / 255; edge.sun = sun; }
+    return edge;
+  });
+  return { meta: raw.meta, nodes: raw.nodes, edges, nodeAttr: raw.nodeAttr, pois: raw.pois.map((p, i) => ({ id: i, ...p, level: null, ref: null, station: null })) };
+}
+
+/** the recorded track, oriented from A to B; falls back to a straight hop if GTFS has no shape */
+function shapeFor(e: SubwayFile["edges"][number], A: Station, B: Station): [number, number][] {
+  const g = e.geom;
+  if (!g || g.length < 2) return [[A.lon, A.lat], [B.lon, B.lat]];
+  const d2 = (p: [number, number], s: Station) => (p[0] - s.lon) ** 2 + (p[1] - s.lat) ** 2;
+  return d2(g[0], A) <= d2(g[g.length - 1], A) ? g : [...g].reverse();
 }
 
 function nearestPed(g: GraphFile, index: Flatbush, p: [number, number], maxM: number): number {
@@ -109,11 +174,14 @@ export function nearestNode(g: Graph, p: [number, number], maxM = 400, opts?: { 
   const [lon, lat] = p;
   const dLat = maxM / 111_320, dLon = maxM / (111_320 * Math.cos((lat * Math.PI) / 180));
   const cand = g.index.search(lon - dLon, lat - dLat, lon + dLon, lat + dLat);
-  let best = -1, bestD = Infinity;
+  const MIN_COMPONENT = 200;
+  let best = -1, bestD = Infinity, fallback = -1, fallbackD = Infinity;
   for (const i of cand) {
     if (opts?.skipSteps && g.adj[i].length > 0 && Array.from(g.adj[i]).every((ei) => g.edges[ei].steps)) continue;
     const d = haversine(p, g.nodes[i]);
-    if (d < bestD) { bestD = d; best = i; }
+    if (d < fallbackD) { fallbackD = d; fallback = i; }
+    if (g.compSize[i] >= MIN_COMPONENT && d < bestD) { bestD = d; best = i; }
   }
-  return bestD <= maxM ? best : -1;
+  if (best >= 0 && bestD <= maxM) return best;
+  return fallbackD <= maxM ? fallback : -1;
 }

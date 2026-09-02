@@ -9,11 +9,13 @@ const API = process.env.API ?? "http://localhost:3123/api/route";
 const N = Number(process.env.N ?? 200);
 const g = JSON.parse(await readFile(path.join(ROOT, "data/graph.json"), "utf8"));
 // candidate points: ends of named footways/sidewalks in the PATH-dense core + wider downtown
-const core = [43.640, -79.395, 43.668, -79.370];
-const pts = g.edges.filter(e => e.hw === "footway" && e.shelter === 0).map(e => e.geom[0]).filter(([lon, lat]) => lat > core[0] && lat < core[2] && lon > core[1] && lon < core[3]);
+// sample across the whole covered area, not just the PATH core
+const core = (process.env.CORE ?? "43.600,-79.560,43.800,-79.200").split(",").map(Number);
+const fw = g.hwTable.indexOf("footway");
+const pts = g.edges.filter(e => e[3] === fw && e[4] === 0).map(e => g.nodes[e[0]]).filter(([lon, lat]) => lat > core[0] && lat < core[2] && lon > core[1] && lon < core[3]);
 let seed = 42; const rnd = () => (seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648;
 const dist = (a, b) => Math.hypot((b[0] - a[0]) * 80_500, (b[1] - a[1]) * 111_320);
-const pairs = []; while (pairs.length < N) { const a = pts[Math.floor(rnd() * pts.length)], b = pts[Math.floor(rnd() * pts.length)]; const d = dist(a, b); if (d > 500 && d < 2500) pairs.push([a, b]); }
+const pairs = []; while (pairs.length < N) { const a = pts[Math.floor(rnd() * pts.length)], b = pts[Math.floor(rnd() * pts.length)]; const d = dist(a, b); if (d > 600 && d < 4000) pairs.push([a, b]); }
 const scenarios = [
   { name: "cold", mode: { cold: true } },
   { name: "heat_jul15_14h", mode: { heat: true }, hourBucket: "d0715_h14" },
@@ -45,6 +47,7 @@ for (const sc of scenarios) {
     median_stairs_baseline: med(ok.map(x => x.baseline.steps_edges)), median_stairs_route: med(ok.map(x => x.route.steps_edges)) };
 }
 await mkdir(path.join(ROOT, "research"), { recursive: true });
-const out = path.join(ROOT, "research", `eval-${new Date().toISOString().slice(0, 10)}.json`);
-await writeFile(out, JSON.stringify({ meta: { n: N, core, generated: new Date().toISOString() }, summary, results }, null, 1));
+const label = process.env.LABEL ?? "core";
+const out = path.join(ROOT, "research", `eval-${label}.json`);
+await writeFile(out, JSON.stringify({ meta: { n: N, area: label, bbox: core, generated: new Date().toISOString() }, summary, results }, null, 1));
 console.log(JSON.stringify(summary, null, 1)); console.log("saved", out);

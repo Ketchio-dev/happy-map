@@ -1,0 +1,43 @@
+graph: 435449 nodes, 626193 edges, 27634.5 km
+  indoor/underground 96.8 km | covered 36.2 km | open 27501.4 km
+  steps 3899 | elevator 39 | wheelchair=no 119
+  no mapped sidewalk 14850.8 km | loose surface 492 km | steep 58 segments
+  pois 7565 (elevators 315, entrances 279)
+  file 46.2 MB
+buildings: 428184 read, 426513 polygons in padded bbox, max height 443 m (6s)
+sun positions: d0715_h08: alt 21° brg 80° | d0715_h10: alt 43° brg 101° | d0715_h12: alt 62° brg 135° | d0715_h14: alt 66° brg 202° | d0715_h16: alt 51° brg 248° | d0715_h18: alt 29° brg 272° | d0915_h08: alt 11° brg 96° | d0915_h10: alt 31° brg 120° | d0915_h12: alt 46° brg 153° | d0915_h14: alt 48° brg 198° | d0915_h16: alt 35° brg 234° | d0915_h18: alt 15° brg 259°
+  20000 edges (9s)
+  40000 edges (18s)
+  60000 edges (27s)
+  80000 edges (38s)
+  100000 edges (51s)
+  120000 edges (63s)
+  140000 edges (75s)
+  160000 edges (85s)
+  180000 edges (93s)
+  200000 edges (104s)
+  220000 edges (116s)
+  240000 edges (128s)
+  260000 edges (140s)
+  280000 edges (153s)
+  300000 edges (166s)
+  320000 edges (180s)
+  340000 edges (193s)
+  360000 edges (204s)
+  380000 edges (214s)
+  400000 edges (226s)
+  420000 edges (238s)
+  440000 edges (250s)
+  460000 edges (263s)
+  480000 edges (276s)
+  500000 edges (288s)
+  520000 edges (292s)
+  540000 edges (294s)
+  560000 edges (297s)
+  580000 edges (302s)
+  600000 edges (310s)
+done in 318s over 619132 outdoor edges. mean sun fraction: d0715_h08=0.88 d0715_h10=0.95 d0715_h12=0.98 d0715_h14=0.98 d0715_h16=0.97 d0715_h18=0.91 d0915_h08=0.72 d0915_h10=0.91 d0915_h12=0.96 d0915_h14=0.96 d0915_h16=0.93 d0915_h18=0.83
+file 56.3 MB
+subway routes: 1:Line 1 (Yonge-University) | 2:Line 2 (Bloor - Danforth) | 4:Line 4 (Sheppard)
+stations 71, edges 71
+Sheppard West(1,wc=1), Downsview Park(1,wc=1), Finch West(1,wc=1), York University(1,wc=1), Pioneer Village(1,wc=1), Highway 407(1,wc=1), Vaughan Metropolitan Centre(1,wc=1), Finch(1,wc=1), North York Centre(1,wc=1), Sheppard-Yonge(1/4,wc=1), York Mills(1,wc=1), Lawrence(1,wc=1), Eglinton(1,wc=1), Davisville(1,wc=1), St Clair(1,wc=1), Summerhill(1,wc=1), Rosedale(1,wc=1), Bloor(1,wc=1), Wellesley(1,wc=1), College(1,wc=2), TMU(1,wc=1), Queen(1,wc=1), King(1,wc=2), Union(1,wc=1), St Andrew(1,wc=1), Osgoode(1,wc=1), St Patrick(1,wc=1), Queen's Park(1,wc=1), Museum(1,wc=2), St George(1/2,wc=1), Spadina(1/2,wc=2), Dupont(1,wc=1), St Clair West(1,wc=1), Cedarvale(1,wc=1), Glencairn(1,wc=1), Lawrence West(1,wc=1), Yorkdale(1,wc=2), Wilson(1,wc=1), Greenwood(2,wc=2), Coxwell(2,wc=1), Woodbine(2,wc=1), Main Street(2,wc=1), Victoria Park(2,wc=1), Warden(2,wc=1), Kennedy(2,wc=1), Kipling(2,wc=1), Islington(2,wc=2), Royal York(2,wc=1), Old Mill(2,wc=2), Jane(2,wc=1), Runnymede(2,wc=2), High Park(2,wc=1), Keele(2,wc=1), Dundas West(2,wc=1), Lansdowne(2,wc=1), Dufferin(2,wc=1), Ossington(2,wc=1), Christie(2,wc=1), Bathurst(2,wc=1), Bay(2,wc=1), Yonge(2,wc=1), Sherbourne(2,wc=1), Castle Frank(2,wc=1), Broadview(2,wc=1), Chester(2,wc=1), Pape(2,wc=1), Donlands(2,wc=1), Bayview(4,wc=1), Bessarion(4,wc=1), Leslie(4,wc=1), Don Mills(4,wc=1)

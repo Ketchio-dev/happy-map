@@ -1,0 +1,77 @@
+fetching 35 tiles over 43.575,-79.640,43.860,-79.115
+  r0c0: 12480 elements
+  12480 unique elements after 1/35 tiles
+  r0c1: 10197 elements
+  22607 unique elements after 2/35 tiles
+  r0c2: 1582 elements
+  24137 unique elements after 3/35 tiles
+  r0c3: 690 elements
+  24813 unique elements after 4/35 tiles
+  r0c4: 100 elements
+  24910 unique elements after 5/35 tiles
+  r0c5: 0 elements
+  24910 unique elements after 6/35 tiles
+  r0c6: 0 elements
+  24910 unique elements after 7/35 tiles
+  r1c0: 9281 elements
+  34080 unique elements after 8/35 tiles
+  r1c1: 11997 elements
+  45860 unique elements after 9/35 tiles
+  r1c2: 23169 elements
+  68830 unique elements after 10/35 tiles
+  r1c3: 30289 elements
+  98891 unique elements after 11/35 tiles
+  r1c4: 8712 elements
+  107444 unique elements after 12/35 tiles
+  r1c5: 5 elements
+  107444 unique elements after 13/35 tiles
+  r1c6: 0 elements
+  107444 unique elements after 14/35 tiles
+  r2c0: attempt 1 failed (HTTP 429); waiting 5s
+  r2c0: attempt 2 failed (HTTP 500); waiting 10s
+  r2c0: 10631 elements
+  117957 unique elements after 15/35 tiles
+  r2c1: 9973 elements
+  127713 unique elements after 16/35 tiles
+  r2c2: 13454 elements
+  140921 unique elements after 17/35 tiles
+  r2c3: 15348 elements
+  155988 unique elements after 18/35 tiles
+  r2c4: 15191 elements
+  170901 unique elements after 19/35 tiles
+  r2c5: 7070 elements
+  177853 unique elements after 20/35 tiles
+  r2c6: 1 elements
+  177853 unique elements after 21/35 tiles
+  r3c0: 6812 elements
+  184578 unique elements after 22/35 tiles
+  r3c1: 11944 elements
+  196322 unique elements after 23/35 tiles
+  r3c2: 9835 elements
+  205975 unique elements after 24/35 tiles
+  r3c3: 13228 elements
+  218961 unique elements after 25/35 tiles
+  r3c4: 13732 elements
+  232511 unique elements after 26/35 tiles
+  r3c5: 12626 elements
+  244916 unique elements after 27/35 tiles
+  r3c6: 5779 elements
+  250599 unique elements after 28/35 tiles
+  r4c0: 5728 elements
+  256278 unique elements after 29/35 tiles
+  r4c1: 9500 elements
+  265584 unique elements after 30/35 tiles
+  r4c2: attempt 1 failed (HTTP 429); waiting 5s
+  r4c2: attempt 2 failed (HTTP 500); waiting 10s
+  r4c2: 9349 elements
+  274761 unique elements after 31/35 tiles
+  r4c3: 9860 elements
+  284443 unique elements after 32/35 tiles
+  r4c4: 11591 elements
+  295800 unique elements after 33/35 tiles
+  r4c5: 6548 elements
+  302132 unique elements after 34/35 tiles
+  r4c6: 3511 elements
+  305538 unique elements after 35/35 tiles
+saved /Users/user/Desktop/Hackerthon/GatewayHacks/data/raw/osm-downtown.json: 305538 elements (279605 ways, 25933 nodes)
+ways by highway: footway=127864 service=81303 residential=26531 secondary=13275 path=7803 tertiary=7603 primary=4073 steps=3826 cycleway=3682 unclassified=2251 pedestrian=756 corridor=542 living_street=75 elevator=21
