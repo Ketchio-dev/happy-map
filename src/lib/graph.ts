@@ -7,15 +7,18 @@ export type Wc = "yes" | "no" | "limited" | "unk";
 export interface Edge {
   a: number; b: number; len: number; hw: string;
   shelter: 0 | 1 | 2; steps: 0 | 1; elev: 0 | 1; wc: Wc;
-  name: string | null; geom: [number, number][];
+  name: string | null;
+  /** set only on edges added at runtime (station links, subway legs); packed edges resolve
+   *  their geometry from the shared point pool via geomOf() */
+  geom?: [number, number][];
   /** walking on a road with no mapped sidewalk — beside traffic, and where snowbanks push you into the lane */
   roadway?: 0 | 1;
   /** loose or unpaved surface: worse under snow, impassable for small wheels */
   loose?: 0 | 1;
   /** 0 flat, 1 moderate (4-8%), 2 steep (>=8%) — the segments that ice over */
   incline?: 0 | 1 | 2;
-  /** sun-exposure fraction (0 = fully shaded, 1 = full sun) keyed by day/hour bucket, added by tools/compute-shade.mjs */
-  sun?: Record<string, number>;
+  /** index into the packed sun table, or -1 for edges with no shade data */
+  sunRow: number;
   /** transit edges: fixed travel time and line id; station links: fixed access time */
   time_s?: number; transit?: string; station?: string;
 }
@@ -33,6 +36,28 @@ export interface Graph extends GraphFile {
   stations: Station[];
   stationByName: Map<string, Station[]>;
   lines: SubwayFile["lines"];
+  /** shared geometry pool: interior points of packed edges */
+  gOff: Uint32Array; gPts: Int32Array;
+  /** one byte per bucket per edge, edge-major */
+  sunArr: Uint8Array; sunKeys: string[]; sunBucket: Map<string, number>;
+}
+
+/** Full geometry for an edge, built on demand. Materialising all of it up front cost
+ *  more than a second of cold start for geometry almost none of which is ever read. */
+export function geomOf(g: Graph, ei: number): [number, number][] {
+  const e = g.edges[ei];
+  if (e.geom) return e.geom;
+  const out: [number, number][] = [g.nodes[e.a]];
+  for (let p = g.gOff[ei]; p < g.gOff[ei + 1]; p++) out.push([g.gPts[p * 2] / 1e6, g.gPts[p * 2 + 1] / 1e6]);
+  out.push(g.nodes[e.b]);
+  return out;
+}
+
+/** Sun exposure for an edge in one day/hour bucket, 0 shaded to 1 full sun. */
+export function sunAt(g: Graph, ei: number, bucket: number): number {
+  const row = g.edges[ei].sunRow;
+  if (row < 0 || bucket < 0 || !g.sunArr.length) return 1;
+  return g.sunArr[row * g.sunKeys.length + bucket] / 255;
 }
 
 /** TTC alert station names → GTFS station names */
@@ -76,7 +101,7 @@ export function loadGraph(): Graph {
     for (const l of links) {
       // entrance explicitly not wheelchair-accessible → link unusable in step-free mode even if the station is
       const linkWc: Wc = wc === "no" ? "no" : l.wc === "no" ? "no" : wc;
-      g.edges.push({ a: node, b: l.node, len: Math.round(l.d), hw: "station_link", shelter: 2, steps: 0, elev: 0, wc: linkWc, name: `${s.name} Station`, geom: [[s.lon, s.lat], g.nodes[l.node]], time_s: Math.round(l.d) + 120, station: s.name });
+      g.edges.push({ a: node, b: l.node, len: Math.round(l.d), hw: "station_link", shelter: 2, steps: 0, elev: 0, wc: linkWc, name: `${s.name} Station`, geom: [[s.lon, s.lat], g.nodes[l.node]], sunRow: -1, time_s: Math.round(l.d) + 120, station: s.name });
     }
   }
   const byKey = new Map(stations.map((s) => [s.key, s]));
@@ -84,17 +109,17 @@ export function loadGraph(): Graph {
   const byName = (n: string) => stations.find((s) => normName(s.name) === normName(n));
   for (const [a, b] of [["Bloor", "Yonge"]]) {
     const A = byName(a), B = byName(b); if (!A || !B) continue;
-    g.edges.push({ a: A.node, b: B.node, len: Math.round(haversine([A.lon, A.lat], [B.lon, B.lat])), hw: "transfer", shelter: 2, steps: 0, elev: 0, wc: "yes", name: `${a}-${b} transfer`, geom: [[A.lon, A.lat], [B.lon, B.lat]], time_s: 180, station: `${a}-${b}` });
+    g.edges.push({ a: A.node, b: B.node, len: Math.round(haversine([A.lon, A.lat], [B.lon, B.lat])), hw: "transfer", shelter: 2, steps: 0, elev: 0, wc: "yes", name: `${a}-${b} transfer`, geom: [[A.lon, A.lat], [B.lon, B.lat]], sunRow: -1, time_s: 180, station: `${a}-${b}` });
   }
   for (const e of sub.edges) {
     const A = byKey.get(e.a), B = byKey.get(e.b); if (!A || !B) continue;
-    g.edges.push({ a: A.node, b: B.node, len: Math.round(haversine([A.lon, A.lat], [B.lon, B.lat])), hw: "subway", shelter: 2, steps: 0, elev: 0, wc: "yes", name: sub.lines.find((l) => l.id === e.line)?.name ?? `Line ${e.line}`, geom: shapeFor(e, A, B), time_s: e.time_s, transit: e.line });
+    g.edges.push({ a: A.node, b: B.node, len: Math.round(haversine([A.lon, A.lat], [B.lon, B.lat])), hw: "subway", shelter: 2, steps: 0, elev: 0, wc: "yes", name: sub.lines.find((l) => l.id === e.line)?.name ?? `Line ${e.line}`, geom: shapeFor(e, A, B), sunRow: -1, time_s: e.time_s, transit: e.line });
   }
 
   const lists: number[][] = Array.from({ length: g.nodes.length }, () => []);
   g.edges.forEach((e, i) => { lists[e.a].push(i); lists[e.b].push(i); });
   const adj = lists.map((l) => Int32Array.from(l));
-  cached = { ...g, adj, index, compSize: componentSizes(g, adj), stations, stationByName, lines: sub.lines };
+  cached = { ...g, adj, index, compSize: componentSizes(g, adj), stations, stationByName, lines: sub.lines, sunBucket: new Map(g.sunKeys.map((k, i) => [k, i])) };
   return cached;
 }
 
@@ -126,7 +151,9 @@ interface PackHeader {
 
 /** Reads data/graph.bin: a small JSON header followed by typed-array sections.
  *  Nothing here parses coordinates — the arrays are views over the file buffer. */
-function readPacked(buf: Buffer): GraphFile {
+interface Packed extends GraphFile { gOff: Uint32Array; gPts: Int32Array; sunArr: Uint8Array; sunKeys: string[] }
+
+function readPacked(buf: Buffer): Packed {
   const headerLen = buf.readUInt32LE(0);
   // the header is padded with NULs so the sections land on 8-byte boundaries
   const h = JSON.parse(buf.toString("utf8", 4, 4 + headerLen).replace(/\0+$/, "")) as PackHeader;
@@ -150,24 +177,16 @@ function readPacked(buf: Buffer): GraphFile {
 
   const edges: Edge[] = new Array(E);
   for (let i = 0; i < E; i++) {
-    const a = ea[i], b = eb[i], flags = eflags[i], shelter = eshelter[i] as 0 | 1 | 2;
-    const geom: [number, number][] = [nodes[a]];
-    for (let p = gOff[i]; p < gOff[i + 1]; p++) geom.push([gPts[p * 2] / 1e6, gPts[p * 2 + 1] / 1e6]);
-    geom.push(nodes[b]);
-    const edge: Edge = {
-      a, b, len: elen[i], hw: h.hwTable[ehw[i]], shelter,
+    const flags = eflags[i], shelter = eshelter[i] as 0 | 1 | 2;
+    edges[i] = {
+      a: ea[i], b: eb[i], len: elen[i], hw: h.hwTable[ehw[i]], shelter,
       steps: (flags & 1) as 0 | 1, elev: ((flags >> 1) & 1) as 0 | 1, wc: h.wcTable[(flags >> 2) & 3] ?? "unk",
       name: nOff[i + 1] > nOff[i] ? dec.decode(names.subarray(nOff[i], nOff[i + 1])) : null,
-      geom, roadway: ((flags >> 4) & 1) as 0 | 1, loose: ((flags >> 5) & 1) as 0 | 1, incline: ((flags >> 6) & 3) as 0 | 1 | 2,
+      roadway: ((flags >> 4) & 1) as 0 | 1, loose: ((flags >> 5) & 1) as 0 | 1, incline: ((flags >> 6) & 3) as 0 | 1 | 2,
+      sunRow: NB && shelter === 0 && sun.length ? i : -1,
     };
-    if (NB && shelter === 0 && sun.length) {
-      const s: Record<string, number> = {};
-      for (let j = 0; j < NB; j++) s[h.sunKeys[j]] = sun[i * NB + j] / 255;
-      edge.sun = s;
-    }
-    edges[i] = edge;
   }
-  return { meta: h.meta, nodes, edges, nodeAttr: h.nodeAttr, pois: h.pois.map((p, i) => ({ id: i, ...p, level: null, ref: null, station: null })) };
+  return { meta: h.meta, nodes, edges, nodeAttr: h.nodeAttr, pois: h.pois.map((p, i) => ({ id: i, ...p, level: null, ref: null, station: null })), gOff, gPts, sunArr: sun, sunKeys: h.sunKeys };
 }
 
 /** the recorded track, oriented from A to B; falls back to a straight hop if GTFS has no shape */

@@ -1,5 +1,5 @@
 import type { Edge, Graph } from "./graph";
-import { haversine, nearestNode, stationNodesFor } from "./graph";
+import { haversine, nearestNode, stationNodesFor, geomOf, sunAt } from "./graph";
 
 export interface Mode { cold?: boolean; heat?: boolean; mobility?: boolean; /** never ride the subway */ walkOnly?: boolean }
 /** how much a segment with no mapped sidewalk is penalised; higher in winter, when snowbanks narrow the road */
@@ -22,14 +22,12 @@ class MinHeap {
 }
 
 /** sun-exposure fraction for an edge: 0 indoors/covered, otherwise from precomputed shade or 1 (worst case) */
-export function sunFraction(e: Edge, hourBucket?: string): number {
-  if (e.shelter > 0) return 0;
-  if (e.sun && hourBucket && e.sun[hourBucket] !== undefined) return e.sun[hourBucket];
-  return 1;
+export function sunFraction(g: Graph, ei: number, bucket: number): number {
+  return g.edges[ei].shelter > 0 ? 0 : sunAt(g, ei, bucket);
 }
 
 /** generalized cost in seconds; Infinity = impassable under this mode */
-export function edgeCost(g: Graph, ei: number, from: number, mode: Mode, hourBucket?: string): number {
+export function edgeCost(g: Graph, ei: number, from: number, mode: Mode, bucket: number): number {
   const e = g.edges[ei];
   const to = e.a === from ? e.b : e.a;
   const speed = mode.mobility ? MOBILITY_MPS : WALK_MPS;
@@ -52,8 +50,7 @@ export function edgeCost(g: Graph, ei: number, from: number, mode: Mode, hourBuc
     if (e.shelter === 0) t *= 2.5; else if (e.shelter === 1) t *= 1.3;
   }
   if (mode.heat) {
-    const sun = sunFraction(e, hourBucket);
-    t *= 1 + 1.8 * sun; // full sun 2.8x, shade 1x
+    t *= 1 + 1.8 * sunFraction(g, ei, bucket); // full sun 2.8x, shade 1x
   }
   // no mapped sidewalk means walking in or beside the traffic lane
   if (e.roadway) t *= mode.mobility ? ROADWAY_PENALTY + 0.35 : ROADWAY_PENALTY;
@@ -68,7 +65,7 @@ export function edgeCost(g: Graph, ei: number, from: number, mode: Mode, hourBuc
  *  Walking-only searches get a much tighter bound and so explore far less of the city. */
 const TOP_SPEED_TRANSIT = 22, TOP_SPEED_WALK = 1.35;
 
-export function search(g: Graph, src: number, dst: number, mode: Mode, hourBucket?: string, blocked?: Set<number>): number[] | null {
+export function search(g: Graph, src: number, dst: number, mode: Mode, bucket: number, blocked?: Set<number>): number[] | null {
   const n = g.nodes.length;
   const dist = new Float64Array(n).fill(Infinity);
   const prev = new Int32Array(n).fill(-1);
@@ -92,7 +89,7 @@ export function search(g: Graph, src: number, dst: number, mode: Mode, hourBucke
       const ei = adj[k]; const e = g.edges[ei];
       const v = e.a === u ? e.b : e.a;
       if (done[v] || blocked?.has(v)) continue;
-      const c = edgeCost(g, ei, u, mode, hourBucket);
+      const c = edgeCost(g, ei, u, mode, bucket);
       if (!isFinite(c)) continue;
       const nd = d + c;
       if (nd < dist[v]) { dist[v] = nd; prev[v] = u; prevEdge[v] = ei; heap.push(nd + h(v), v); }
@@ -104,7 +101,7 @@ export function search(g: Graph, src: number, dst: number, mode: Mode, hourBucke
   return path.reverse();
 }
 
-export function assemble(g: Graph, src: number, edgePath: number[], mode: Mode, hourBucket?: string): RouteResult {
+export function assemble(g: Graph, src: number, edgePath: number[], mode: Mode, bucket: number): RouteResult {
   const legs: Leg[] = []; const nodePath = [src];
   const stats: Stats = { distance_m: 0, time_s: 0, indoor_m: 0, covered_m: 0, outdoor_m: 0, sun_m: 0, steps_edges: 0, exposure_s: 0, transit_s: 0, walk_m: 0, roadway_m: 0, rough_m: 0 };
   const speed = mode.mobility ? MOBILITY_MPS : WALK_MPS;
@@ -112,9 +109,10 @@ export function assemble(g: Graph, src: number, edgePath: number[], mode: Mode, 
   for (const ei of edgePath) {
     const e = g.edges[ei];
     const forward = e.a === cur;
-    const coords = forward ? e.geom : [...e.geom].reverse();
+    const g0 = geomOf(g, ei);
+    const coords = forward ? g0 : [...g0].reverse();
     cur = forward ? e.b : e.a; nodePath.push(cur);
-    const sun = sunFraction(e, hourBucket);
+    const sun = sunFraction(g, ei, bucket);
     const t = e.time_s ?? e.len / speed * (e.steps ? 1.6 : 1) + (e.elev ? 45 : 0);
     legs.push({ coords, len: e.len, shelter: e.shelter, steps: !!e.steps, elev: !!e.elev, name: e.name, hw: e.hw, sun, roadway: !!e.roadway, transit: e.transit, station: e.station, time_s: Math.round(t) });
     stats.distance_m += e.len;
@@ -142,10 +140,11 @@ export function plan(g: Graph, req: RouteRequest): PlanResult | PlanError {
   if (req.mode.mobility) for (const name of req.blockedStations ?? []) for (const n of stationNodesFor(g, name)) blocked.add(n);
   const blockedSet = blocked.size ? blocked : undefined;
   const baseMode: Mode = { mobility: req.mode.mobility, walkOnly: req.mode.walkOnly }; // fastest feasible route, no exposure weighting
-  const basePath = search(g, src, dst, baseMode, req.hourBucket, blockedSet);
+  const bucket = req.hourBucket ? (g.sunBucket.get(req.hourBucket) ?? -1) : -1;
+  const basePath = search(g, src, dst, baseMode, bucket, blockedSet);
   if (!basePath) return { ok: false, error: req.mode.mobility ? "no step-free route found between these points" : "no route found" };
-  const path = (req.mode.cold || req.mode.heat) ? search(g, src, dst, req.mode, req.hourBucket, blockedSet) ?? basePath : basePath;
-  return { ok: true, route: assemble(g, src, path, req.mode, req.hourBucket), baseline: assemble(g, src, basePath, baseMode, req.hourBucket), snapped: { from: g.nodes[src], to: g.nodes[dst] }, blockedStations: req.mode.mobility ? (req.blockedStations ?? []) : [] };
+  const path = (req.mode.cold || req.mode.heat) ? search(g, src, dst, req.mode, bucket, blockedSet) ?? basePath : basePath;
+  return { ok: true, route: assemble(g, src, path, req.mode, bucket), baseline: assemble(g, src, basePath, baseMode, bucket), snapped: { from: g.nodes[src], to: g.nodes[dst] }, blockedStations: req.mode.mobility ? (req.blockedStations ?? []) : [] };
 }
 
 export { haversine };
