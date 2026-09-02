@@ -52,6 +52,7 @@ node tools/build-graph.mjs      # → data/graph.json
 node tools/compute-shade.mjs    # needs data/raw/massing/ (Toronto 3D Massing 2025 shapefile) → adds edge.sun
 node tools/build-subway.mjs     # needs data/raw/gtfs/ (TTC GTFS) → data/subway.json
 node tools/build-places.mjs     # needs data/raw/cool-spaces.geojson → public/data/places.json
+node tools/pack-graph.mjs       # data/graph.json → data/graph.bin, what the app actually loads
 node tools/poll-ttc-alerts.mjs  # keep running: logs to data/ttc-alerts/
 node tools/evaluate.mjs         # needs the dev server running
 ```

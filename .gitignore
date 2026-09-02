@@ -50,3 +50,4 @@ data/playwright-install.log
 research/refs/
 data/ttc-alerts/latest.json
 data/ttc-alerts/local/
+data/graph.json

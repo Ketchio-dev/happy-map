@@ -5,8 +5,8 @@ Next.js 16 (App Router) + TypeScript + Tailwind 4 + MapLibre 5. pnpm. Dev: `pnpm
 ## Layout
 - `src/app/page.tsx` — map UI: icon rail, route panel with strategy cards, live tab, about tab.
 - `src/app/evidence/page.tsx` — evidence dashboard, reads `research/*.json` at request time.
-- `src/lib/graph.ts` — loads `data/graph.json` + `data/subway.json`, builds adjacency + spatial index, appends subway nodes/edges.
-- `src/lib/router.ts` — exposure-weighted Dijkstra. `edgeCost()` holds the cost model.
+- `src/lib/graph.ts` — loads `data/graph.bin` + `data/subway.json`, builds adjacency + spatial index + connected-component sizes, appends subway nodes/edges.
+- `src/lib/router.ts` — exposure-weighted A*. `edgeCost()` holds the cost model; the heuristic assumes no penalties, so it stays admissible as long as every multiplier is >= 1.
 - `src/app/api/routes` — all four strategies in one call (used by the UI). `api/route` — single strategy (used by `tools/evaluate.mjs`).
 - `tools/*.mjs` — data pipeline and evaluation, see README.
 
@@ -15,7 +15,9 @@ Next.js 16 (App Router) + TypeScript + Tailwind 4 + MapLibre 5. pnpm. Dev: `pnpm
 - MapLibre `["has", "x"]` is true for null-valued properties. Omit the key instead of setting null.
 - `suncalc` npm package is broken (no default export, wrong values). Use `tools/solar.mjs`.
 - Keep the `/api/route` request/response shape stable or `tools/evaluate.mjs` breaks.
-- Rerun `node tools/evaluate.mjs` after any change to `edgeCost()`, and update the numbers in README and the about tab.
+- `data/graph.json` is an intermediate; the app reads `data/graph.bin`. Always run `node tools/pack-graph.mjs` after rebuilding the graph or the shade data, or the app keeps serving the old graph.
+- Sections in `graph.bin` are 8-byte aligned. If you add one, keep the padding or the typed-array views throw.
+- Rerun `node tools/evaluate.mjs` (twice, LABEL=core and LABEL=wide) after any change to `edgeCost()`, and update the numbers in README, the About tab and the evidence page.
 - Screenshots: `CHROME_BIN=<cached playwright chromium binary> node tools/screenshot.mjs` with the dev server running.
 
 <!-- BEGIN:nextjs-agent-rules -->

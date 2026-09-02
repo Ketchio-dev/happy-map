@@ -21,22 +21,7 @@ export interface Edge {
 }
 export interface NodeAttr { elev?: 1; barrier?: string; wc?: Wc; kerb?: string | null }
 export interface Poi { id: number; lon: number; lat: number; kind: string; name: string | null; wc: Wc; level: string | null; ref: string | null; station: string | null; graphNode: number | null }
-/** On-disk shape: positional arrays, see tools/build-graph.mjs. Expanded to Edge[] on load. */
-interface RawGraph {
-  meta: Record<string, unknown>;
-  hwTable: string[]; wcTable: Wc[];
-  nodes: [number, number][];
-  /** [a, b, len, hwIdx, shelter, flags, name|0, interiorGeom|0] — flags: 1 steps, 2 elevator, wheelchair << 2 */
-  edges: [number, number, number, number, 0 | 1 | 2, number, string | 0, [number, number][] | 0][];
-  nodeAttr: Record<string, NodeAttr>;
-  pois: { lon: number; lat: number; kind: string; name: string | null; wc: Wc; graphNode: number | null }[];
-  /** per-edge sun exposure from tools/compute-shade.mjs: one byte per bucket, edge-major,
-   *  base64-encoded. sunKeys names the buckets in order. */
-  sunKeys?: string[];
-  sunBytes?: string;
-}
 export interface GraphFile { meta: Record<string, unknown>; nodes: [number, number][]; edges: Edge[]; nodeAttr: Record<string, NodeAttr>; pois: Poi[] }
-
 export interface Station { key: string; name: string; lat: number; lon: number; wheelchair_boarding: string; stopIds: string[]; lines: string[]; node: number }
 export interface SubwayFile { lines: { id: string; name: string; color: string }[]; stations: Omit<Station, "node">[]; edges: { a: string; b: string; line: string; time_s: number; geom?: [number, number][] | null }[] }
 
@@ -66,9 +51,8 @@ export function haversine(a: [number, number], b: [number, number]): number {
 export function loadGraph(): Graph {
   if (cached) return cached;
   const dir = path.join(process.cwd(), "data");
-  const raw = JSON.parse(readFileSync(path.join(dir, "graph.json"), "utf8")) as RawGraph;
   const sub = JSON.parse(readFileSync(path.join(dir, "subway.json"), "utf8")) as SubwayFile;
-  const g = expand(raw);
+  const g = readPacked(readFileSync(path.join(dir, "graph.bin")));
 
   const pedCount = g.nodes.length;
   const index = new Flatbush(pedCount);
@@ -132,19 +116,58 @@ function componentSizes(g: GraphFile, adj: Int32Array[]): Int32Array {
   return size;
 }
 
-/** rebuild the runtime Edge objects from the positional on-disk form */
-function expand(raw: RawGraph): GraphFile {
-  const keys = raw.sunKeys;
-  const nb = keys?.length ?? 0;
-  const sunBytes = raw.sunBytes ? Buffer.from(raw.sunBytes, "base64") : null;
-  const edges: Edge[] = raw.edges.map((e, i) => {
-    const [a, b, len, hw, shelter, flags, name, interior] = e;
-    const geom: [number, number][] = [raw.nodes[a], ...(interior || []), raw.nodes[b]];
-    const edge: Edge = { a, b, len, hw: raw.hwTable[hw], shelter, steps: (flags & 1) as 0 | 1, elev: ((flags >> 1) & 1) as 0 | 1, wc: raw.wcTable[(flags >> 2) & 3] ?? "unk", name: name || null, geom, roadway: ((flags >> 4) & 1) as 0 | 1, loose: ((flags >> 5) & 1) as 0 | 1, incline: ((flags >> 6) & 3) as 0 | 1 | 2 };
-    if (sunBytes && keys && shelter === 0) { const sun: Record<string, number> = {}; for (let j = 0; j < nb; j++) sun[keys[j]] = sunBytes[i * nb + j] / 255; edge.sun = sun; }
-    return edge;
-  });
-  return { meta: raw.meta, nodes: raw.nodes, edges, nodeAttr: raw.nodeAttr, pois: raw.pois.map((p, i) => ({ id: i, ...p, level: null, ref: null, station: null })) };
+interface PackHeader {
+  meta: Record<string, unknown>; hwTable: string[]; wcTable: Wc[]; sunKeys: string[];
+  counts: { N: number; E: number; NB: number; pts: number };
+  nodeAttr: Record<string, NodeAttr>;
+  pois: { lon: number; lat: number; kind: string; name: string | null; wc: Wc; graphNode: number | null }[];
+  sections: Record<string, { off: number; len: number }>;
+}
+
+/** Reads data/graph.bin: a small JSON header followed by typed-array sections.
+ *  Nothing here parses coordinates — the arrays are views over the file buffer. */
+function readPacked(buf: Buffer): GraphFile {
+  const headerLen = buf.readUInt32LE(0);
+  // the header is padded with NULs so the sections land on 8-byte boundaries
+  const h = JSON.parse(buf.toString("utf8", 4, 4 + headerLen).replace(/\0+$/, "")) as PackHeader;
+  const base = 4 + headerLen;
+  const ab = buf.buffer as ArrayBuffer;
+  const view = <T>(name: string, Ctor: new (b: ArrayBuffer, off: number, len: number) => T, bytesPer: number): T => {
+    const s = h.sections[name];
+    return new Ctor(ab, buf.byteOffset + base + s.off, s.len / bytesPer);
+  };
+  const { N, E, NB } = h.counts;
+  const nodesRaw = view("nodes", Int32Array, 4);
+  const ea = view("ea", Int32Array, 4), eb = view("eb", Int32Array, 4), elen = view("elen", Uint32Array, 4);
+  const ehw = view("ehw", Uint8Array, 1), eshelter = view("eshelter", Uint8Array, 1), eflags = view("eflags", Uint16Array, 2);
+  const gOff = view("gOff", Uint32Array, 4), gPts = view("gPts", Int32Array, 4);
+  const nOff = view("nOff", Uint32Array, 4), names = view("names", Uint8Array, 1);
+  const sun = view("sun", Uint8Array, 1);
+  const dec = new TextDecoder();
+
+  const nodes: [number, number][] = new Array(N);
+  for (let i = 0; i < N; i++) nodes[i] = [nodesRaw[i * 2] / 1e6, nodesRaw[i * 2 + 1] / 1e6];
+
+  const edges: Edge[] = new Array(E);
+  for (let i = 0; i < E; i++) {
+    const a = ea[i], b = eb[i], flags = eflags[i], shelter = eshelter[i] as 0 | 1 | 2;
+    const geom: [number, number][] = [nodes[a]];
+    for (let p = gOff[i]; p < gOff[i + 1]; p++) geom.push([gPts[p * 2] / 1e6, gPts[p * 2 + 1] / 1e6]);
+    geom.push(nodes[b]);
+    const edge: Edge = {
+      a, b, len: elen[i], hw: h.hwTable[ehw[i]], shelter,
+      steps: (flags & 1) as 0 | 1, elev: ((flags >> 1) & 1) as 0 | 1, wc: h.wcTable[(flags >> 2) & 3] ?? "unk",
+      name: nOff[i + 1] > nOff[i] ? dec.decode(names.subarray(nOff[i], nOff[i + 1])) : null,
+      geom, roadway: ((flags >> 4) & 1) as 0 | 1, loose: ((flags >> 5) & 1) as 0 | 1, incline: ((flags >> 6) & 3) as 0 | 1 | 2,
+    };
+    if (NB && shelter === 0 && sun.length) {
+      const s: Record<string, number> = {};
+      for (let j = 0; j < NB; j++) s[h.sunKeys[j]] = sun[i * NB + j] / 255;
+      edge.sun = s;
+    }
+    edges[i] = edge;
+  }
+  return { meta: h.meta, nodes, edges, nodeAttr: h.nodeAttr, pois: h.pois.map((p, i) => ({ id: i, ...p, level: null, ref: null, station: null })) };
 }
 
 /** the recorded track, oriented from A to B; falls back to a straight hop if GTFS has no shape */
