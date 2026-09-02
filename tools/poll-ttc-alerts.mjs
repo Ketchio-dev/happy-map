@@ -8,7 +8,9 @@ import { fileURLToPath } from "node:url";
 const URL_ALERTS = "https://alerts.ttc.ca/api/alerts/live-alerts";
 const INTERVAL_MS = Number(process.env.POLL_INTERVAL_MS ?? 60_000);
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const OUT_DIR = path.join(ROOT, "data", "ttc-alerts");
+// Writes beside the scheduled workflow's log rather than into it: two writers on one
+// append-only file only ever produced merge conflicts.
+const OUT_DIR = path.join(ROOT, "data", "ttc-alerts", "local");
 
 const pick = (a) => ({
   id: a.id,
