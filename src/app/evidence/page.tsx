@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 
 interface ScenarioSummary { pairs: number; failed: number; median_outdoor_reduction: number | null; mean_outdoor_reduction: number; median_sun_reduction: number | null; median_time_increase: number | null; share_with_any_outdoor_reduction: number; median_baseline_outdoor_m: number | null; median_route_outdoor_m: number | null; median_stairs_baseline: number | null; median_stairs_route: number | null }
 interface Eval { meta: { n: number; area: string; bbox: number[]; generated: string }; summary: Record<string, ScenarioSummary> }
-interface Outages { summary: { logging: { first: string; last: string; hoursCovered: number; snapshotsWithChange: number }; distinctAlerts: number; elevatorAlerts: number; escalatorAlerts: number; elevatorUnplanned: number; elevatorOngoingNow: number; stationsWithElevatorOutage: number; byStation: Record<string, number>; medianElevatorOutageAgeHours: number | null }; alerts: { id: string; station: string; type: string; code: string | null; planned: string; causeDesc: string | null; observedHours: number; sinceFeedStartHours: number | null; ongoing: boolean; header: string }[] }
+interface Outages { summary: { logging: { first: string; last: string; hoursCovered: number; snapshotsWithChange: number }; distinctAlerts: number; elevatorAlerts: number; escalatorAlerts: number; elevatorUnplanned: number; elevatorOngoingNow: number; stationsWithElevatorOutage: number; byStation: Record<string, number>; medianElevatorOutageAgeHours: number | null }; alerts: { id: string; station: string; type: string; code: string | null; planned: string; unplanned: boolean; causeDesc: string | null; observedHours: number; sinceFeedStartHours: number | null; ongoing: boolean; header: string }[] }
 
 function load<T>(file: string): T | null { try { return JSON.parse(readFileSync(path.join(process.cwd(), "research", file), "utf8")) as T; } catch { return null; } }
 const pct = (x: number | null | undefined, sign = true) => x === null || x === undefined ? "—" : `${sign && x > 0 ? "+" : ""}${Math.round(x * 100)}%`;
@@ -55,16 +55,16 @@ export default function Evidence() {
         <h2 className="text-lg font-medium">2. TTC elevator outages, as logged</h2>
         {out ? (
           <>
-            <p className="mt-1 text-ink-soft">The TTC alerts feed is polled every 60 s since {out.summary.logging.first.slice(0, 16).replace("T", " ")} UTC ({out.summary.logging.hoursCovered} h so far). Each distinct alert is tracked from first sight to last sight.</p>
+            <p className="mt-1 text-ink-soft">The TTC alerts feed is polled every 5 minutes since {out.summary.logging.first.slice(0, 16).replace("T", " ")} UTC ({out.summary.logging.hoursCovered} h so far). Each alert runs from the start time the feed reports until the first poll that no longer lists it.</p>
             <dl className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-4">
               {([["Distinct elevator alerts", out.summary.elevatorAlerts], ["Unplanned", out.summary.elevatorUnplanned], ["Stations affected", out.summary.stationsWithElevatorOutage], ["Out of service right now", out.summary.elevatorOngoingNow], ["Escalator alerts", out.summary.escalatorAlerts], ["Median outage age (h)", out.summary.medianElevatorOutageAgeHours ?? "—"]] as const).map(([k, v]) => (
                 <div key={k} className="rounded-lg border border-line bg-surface p-3"><div className="tnum text-2xl font-semibold text-ink">{v}</div><div className="text-xs text-muted">{k}</div></div>
               ))}
             </dl>
             <table className="mt-4 w-full text-xs">
-              <thead><tr className="border-b border-line text-left text-muted"><th className="py-1 font-normal">Station</th><th className="font-normal">Unit</th><th className="font-normal">Planned?</th><th className="font-normal">Cause</th><th className="font-normal">Age since feed start (h)</th><th className="font-normal">Status</th></tr></thead>
+              <thead><tr className="border-b border-line text-left text-muted"><th className="py-1 font-normal">Station</th><th className="font-normal">Unit</th><th className="font-normal">Kind</th><th className="font-normal">Cause</th><th className="font-normal">Duration (h)</th><th className="font-normal">Status</th></tr></thead>
               <tbody>{out.alerts.filter((a) => a.type === "Elevator").sort((a, b) => (b.sinceFeedStartHours ?? 0) - (a.sinceFeedStartHours ?? 0)).map((a) => (
-                <tr key={a.id} className="border-b border-line"><td className="py-1">{a.station}</td><td>{a.code}</td><td>{a.planned}</td><td>{a.causeDesc ?? "—"}</td><td>{a.sinceFeedStartHours ?? "—"}</td><td>{a.ongoing ? <span className="text-alert">out now</span> : "restored"}</td></tr>
+                <tr key={a.id} className="border-b border-line"><td className="py-1">{a.station}</td><td>{a.code}</td><td>{a.unplanned ? "breakdown" : "planned"}</td><td>{a.causeDesc ?? "—"}</td><td>{a.sinceFeedStartHours ?? "—"}</td><td>{a.ongoing ? <span className="text-alert">out now</span> : "restored"}</td></tr>
               ))}</tbody>
             </table>
           </>

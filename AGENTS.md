@@ -9,6 +9,7 @@ Next.js 16 (App Router) + TypeScript + Tailwind 4 + MapLibre 5. pnpm. Dev: `pnpm
 - `src/lib/router.ts` — exposure-weighted A*. `edgeCost()` holds the cost model; the heuristic assumes no penalties, so it stays admissible as long as every multiplier is >= 1.
 - `src/app/api/routes` — all four strategies in one call (used by the UI). `api/route` — single strategy (used by `tools/evaluate.mjs`).
 - `tools/*.mjs` — data pipeline and evaluation, see README.
+- `tools/vps/` — the outage logger as deployed: a systemd timer on the user's OCI VPS (`ubuntu@oci-ubuntu-129-153-49-224` over Tailscale SSH, repo at `~/apps/happy-map`) runs `log-once.mjs` every 5 min and pushes with a deploy key. It is the only writer of `data/ttc-alerts/*.jsonl`; do not re-enable the Actions schedule.
 
 ## Rules
 - **maplibre-gl must stay on 5.x.** 6.x never fires `load` under Next/Turbopack.

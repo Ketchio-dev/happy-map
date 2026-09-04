@@ -1,0 +1,11 @@
+[Unit]
+Description=happy map: record TTC accessibility alerts
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=ubuntu
+WorkingDirectory=/home/ubuntu/apps/happy-map
+ExecStart=/home/ubuntu/apps/happy-map/tools/vps/ttc-logger.sh
+TimeoutStartSec=180

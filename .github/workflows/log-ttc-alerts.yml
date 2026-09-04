@@ -1,10 +1,10 @@
 name: Log TTC accessibility alerts
 
-# Records elevator and escalator outages so the evidence page can report how often,
-# where, and for how long step-free access is unavailable.
+# Manual fallback for the outage logger. The five-minute timer on the VPS
+# (tools/vps/) is the writer of record; GitHub delayed this schedule to roughly
+# once every two hours, and two writers on one append-only log only ever
+# produced rebase conflicts, so this runs on demand only.
 on:
-  schedule:
-    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 permissions:

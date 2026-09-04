@@ -31,7 +31,7 @@ Every result is shown next to the plain fastest route, so the trade-off is expli
 | Indoor first, city-wide | no measurable gain | 33 % | — |
 | Step-free | 8 of 150 trips have **no** step-free route at all | — | — |
 
-A scheduled GitHub Actions workflow and a local poller have been logging every TTC elevator and escalator alert since 2026-09-01; `tools/analyze-outages.mjs` summarizes outage counts, durations and stations (`research/outages-summary.json`).
+A five-minute timer on a small VPS has been logging every TTC elevator and escalator alert since 2026-09-01 (GitHub Actions and a laptop poller before 2026-09-05); `tools/analyze-outages.mjs` summarizes outage counts, durations and stations (`research/outages-summary.json`).
 
 ## Run it
 
@@ -40,9 +40,10 @@ pnpm install
 pnpm dev            # http://localhost:3000
 ```
 
-The scheduled workflow in `.github/workflows/log-ttc-alerts.yml` records the TTC
-accessibility feed every 5 minutes, so the outage history keeps growing whether
-or not a laptop is awake.
+`tools/vps/` holds the systemd timer that records the TTC accessibility feed every
+5 minutes and commits each change, so the outage history keeps growing whether or
+not a laptop is awake. `tools/vps/install.sh` sets it up on an Ubuntu host with a
+write-enabled deploy key; `.github/workflows/log-ttc-alerts.yml` is a manual fallback.
 
 Data files (`data/graph.json`, `data/subway.json`, `public/data/places.json`) are committed. To rebuild from sources:
 
@@ -53,7 +54,7 @@ node tools/compute-shade.mjs    # needs data/raw/massing/ (Toronto 3D Massing 20
 node tools/build-subway.mjs     # needs data/raw/gtfs/ (TTC GTFS) → data/subway.json
 node tools/build-places.mjs     # needs data/raw/cool-spaces.geojson → public/data/places.json
 node tools/pack-graph.mjs       # data/graph.json → data/graph.bin, what the app actually loads
-node tools/poll-ttc-alerts.mjs  # keep running: logs to data/ttc-alerts/
+node tools/log-once.mjs         # one snapshot of the TTC feed → data/ttc-alerts/ (the VPS timer runs this)
 node tools/evaluate.mjs         # needs the dev server running
 ```
 
