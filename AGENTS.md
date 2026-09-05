@@ -6,9 +6,12 @@ Next.js 16 (App Router) + TypeScript + Tailwind 4 + MapLibre 5. pnpm. Dev: `pnpm
 - `src/app/page.tsx` — map UI: icon rail, route panel with strategy cards, live tab, about tab.
 - `src/app/evidence/page.tsx` — evidence dashboard, reads `research/*.json` at request time.
 - `src/lib/graph.ts` — loads `data/graph.bin` + `data/subway.json`, builds adjacency + spatial index + connected-component sizes, appends subway nodes/edges.
-- `src/lib/router.ts` — exposure-weighted A*. `edgeCost()` holds the cost model; the heuristic assumes no penalties, so it stays admissible as long as every multiplier is >= 1.
+- `src/lib/router.ts` — exposure-weighted A*. `edgeCost()` holds the cost model; the heuristic assumes no penalties, so it stays admissible as long as every multiplier is >= 1 and the walking heuristic speed is at least `paceOf(mode)`. Crossing nodes add seconds (signals 8; unmarked 60 step-free / 30 winter).
+- `src/lib/reach.ts` — budgeted Dijkstra for the Reach tab: labels are (node, outdoor minutes), dominance-pruned; `best` must stay Float64 (a Float32 round-off once made every label look stale). `api/reach` returns 90 m grid cells.
+- `src/lib/itinerary.ts` — legs → step list (client side).
+- `tools/a11y-audit.mjs` — axe-core over every view plus a keyboard walk; keep it at 0 violations. `--color-muted` is #736d60 for AA contrast.
 - `src/app/api/routes` — all four strategies in one call (used by the UI). `api/route` — single strategy (used by `tools/evaluate.mjs`).
-- `tools/*.mjs` — data pipeline and evaluation, see README. Order: fetch-osm → build-graph → compute-shade → **apply-pednet** (City sidewalk inventory corrects the roadway flag; needs data/raw/pednet/) → build-subway → build-places → pack-graph → evaluate (LABEL=core and LABEL=wide) → outage-impact.
+- `tools/*.mjs` — data pipeline and evaluation, see README. Order: fetch-osm → build-graph → compute-shade (buildings + street-tree canopies when data/raw/trees/ exists; ~4 min, run with `--max-old-space-size=12288`) → **apply-pednet** (City sidewalk inventory corrects the roadway flag; needs data/raw/pednet/) → fetch-crossings + apply-crossings (nodeAttr.crossing by coordinate match) → build-subway → build-places → pack-graph → export-no-sidewalk → evaluate (LABEL=core and LABEL=wide) → outage-impact. Post-processors (pednet, crossings) only touch flags/nodeAttr, so they survive a compute-shade rerun; a build-graph rerun resets everything.
 - `tools/vps/` — the outage logger as deployed: a systemd timer on the user's OCI VPS (`ubuntu@oci-ubuntu-129-153-49-224` over Tailscale SSH, repo at `~/apps/happy-map`) runs `log-once.mjs` every 5 min and pushes with a deploy key. It is the only writer of `data/ttc-alerts/*.jsonl`; do not re-enable the Actions schedule.
 
 ## Rules
@@ -16,7 +19,7 @@ Next.js 16 (App Router) + TypeScript + Tailwind 4 + MapLibre 5. pnpm. Dev: `pnpm
 - MapLibre `["has", "x"]` is true for null-valued properties. Omit the key instead of setting null.
 - `suncalc` npm package is broken (no default export, wrong values). Use `tools/solar.mjs`.
 - Keep the `/api/route` request/response shape stable or `tools/evaluate.mjs` breaks.
-- `data/graph.json` is an intermediate; the app reads `data/graph.bin`. Always run `node tools/pack-graph.mjs` after rebuilding the graph or the shade data, or the app keeps serving the old graph.
+- `data/graph.json` is an intermediate (untracked, 48 MB); the app reads `data/graph.bin`. If it is missing, rebuild it (build-graph → compute-shade → apply-pednet → apply-crossings) before packing. Always run `node tools/pack-graph.mjs` after rebuilding the graph or the shade data, or the app keeps serving the old graph.
 - Sections in `graph.bin` are 8-byte aligned. If you add one, keep the padding or the typed-array views throw.
 - Rerun `node tools/evaluate.mjs` (twice: `LABEL=core CORE=43.64,-79.395,43.668,-79.37` and `LABEL=wide CORE=43.6,-79.56,43.8,-79.2`, N=150) after any change to `edgeCost()` or the graph, then `node tools/outage-impact.mjs`, and update the numbers in README, the About tab and the evidence page. Edge flag bit 8 means the City inventory was consulted for that edge.
 - `/evidence` fetches `research/outages-summary.json` from GitHub raw (10-min revalidate) because the VPS logger recommits it on every feed change; the other research files are read from the deploy.

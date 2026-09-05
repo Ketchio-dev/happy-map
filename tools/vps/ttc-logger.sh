@@ -8,6 +8,12 @@ cd "$(dirname "$(readlink -f "$0")")/../.."
 git pull -q --rebase --autostash origin main
 LOGGER_SOURCE=oci node tools/log-once.mjs
 
+# Keep the routing function warm: its cold start is a 30 MB graph load, and a request every
+# five minutes is enough to hold a Fluid Compute instance. Failures here must not stop the log.
+curl -s -m 25 -o /dev/null -X POST -H 'content-type: application/json' \
+  -d '{"from":[-79.3791,43.6435],"to":[-79.3806,43.6544],"walkOnly":true}' \
+  "${HM_URL:-https://happy-map-ashy.vercel.app}/api/routes" || true
+
 if [ -z "$(git status --porcelain -- 'data/ttc-alerts/*.jsonl')" ]; then
   exit 0
 fi

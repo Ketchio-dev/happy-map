@@ -16,7 +16,7 @@ export const STRATEGIES = [
 export type StrategyId = (typeof STRATEGIES)[number]["id"];
 
 export async function POST(req: Request) {
-  let body: { from?: [number, number]; to?: [number, number]; hourBucket?: string; blockedStations?: string[]; walkOnly?: boolean };
+  let body: { from?: [number, number]; to?: [number, number]; hourBucket?: string; blockedStations?: string[]; walkOnly?: boolean; speed?: number };
   try { body = await req.json(); } catch { return NextResponse.json({ ok: false, error: "invalid JSON" }, { status: 400 }); }
   const ok = (p: unknown): p is [number, number] => Array.isArray(p) && p.length === 2 && p.every((x) => typeof x === "number" && isFinite(x));
   if (!ok(body.from) || !ok(body.to)) return NextResponse.json({ ok: false, error: "from/to must be [lon, lat]" }, { status: 400 });
@@ -24,7 +24,7 @@ export async function POST(req: Request) {
   const t0 = performance.now();
   const g = loadGraph();
   const results = STRATEGIES.map((s) => {
-    const mode: Mode = { ...s.mode, walkOnly: body.walkOnly };
+    const mode: Mode = { ...s.mode, walkOnly: body.walkOnly, speed: typeof body.speed === "number" && isFinite(body.speed) ? body.speed : undefined };
     const r = plan(g, { from: body.from!, to: body.to!, mode, hourBucket: body.hourBucket, blockedStations: body.blockedStations });
     if (!r.ok) return { id: s.id, label: s.label, hint: s.hint, ok: false as const, error: r.error };
     return { id: s.id, label: s.label, hint: s.hint, ok: true as const, legs: r.route.legs, stats: r.route.stats, blockedStations: r.blockedStations };

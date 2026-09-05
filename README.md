@@ -13,12 +13,16 @@ One router, three cost layers, switched automatically by Environment Canada warn
 | Mode | What it optimizes | Data |
 |---|---|---|
 | Indoor first | minimise time outdoors; prefers PATH, tunnels, covered walkways, the subway | OpenStreetMap `tunnel` / `indoor` / `covered` / `corridor` tags, 95 km of sheltered walking |
-| Shade first | minimise time in direct sun at the chosen hour; shows Heat Relief Network cool spaces | Toronto 3D Massing (building heights) + NOAA solar position → per-segment sun fraction for 12 day/hour buckets |
-| Step-free | no stairs, no raised kerbs, no station whose elevator is out **right now** | OSM `highway=steps`, `wheelchair`, `barrier=kerb`; TTC live alerts feed |
+| Shade first | minimise time in direct sun at the chosen hour; shows Heat Relief Network cool spaces | Toronto 3D Massing (building heights) and Street Tree Data (685k canopies sized from trunk diameter) + NOAA solar position → per-segment sun fraction for 12 day/hour buckets |
+| Step-free | no stairs, no raised kerbs, no station whose elevator is out **right now**; prices unprotected road crossings as long waits | OSM `highway=steps`, `wheelchair`, `barrier=kerb`, `crossing=*`; TTC live alerts feed |
 
 Every route is also charged for walking on a road with no sidewalk, for loose or unpaved ground, and for steep grades — the conditions that turn dangerous once there is snow on them. Sidewalk presence comes from OpenStreetMap corrected by the City of Toronto's Pedestrian Network: of 11,441 km the map had flagged as sidewalk-less, 4,553 km has a sidewalk after all and 1,165 km is confirmed to have none (`tools/apply-pednet.mjs`, `research/sidewalks-summary.json`).
 
-Every result is shown next to the plain fastest route, so the trade-off is explicit: *"16 m outdoors, 98 % less than fastest, one minute longer"*.
+Every result is shown next to the plain fastest route, so the trade-off is explicit: *"16 m outdoors, 98 % less than fastest, one minute longer"*. Under the cards, the route is spelled out as steps a person can follow or hear: *walk along Front St W indoors · enter Union Station · ride Line 1 to Bloor-Yonge · take the elevator*.
+
+**Reach** turns the question around: from here, with this much time and at most this many minutes outdoors, where can I get to? The map shades every 90 m cell that is reachable and, in the alert colour, every cell that the outdoor cap or today's elevator outages took away. From Union with 30 minutes, step-free, five stations' elevators out: 10.2 km² reachable, 2.5 km² lost.
+
+Also in the interface: a walking-pace setting (slow, average, brisk) that changes every time and exposure figure; escalator outages alongside elevator outages in the Live tab; a map layer of the 1,165 km of road the City confirms has no sidewalk; shareable links that restore the whole question; a locate control; and an interface that passes axe-core's WCAG 2.1 AA rules on every view (`tools/a11y-audit.mjs`), with a live region and a text itinerary so a screen-reader user gets the route, not a picture of it.
 
 ## Evidence (no human testers; all numbers are computed)
 
@@ -26,9 +30,10 @@ Every result is shown next to the plain fastest route, so the trade-off is expli
 
 | Run | Median change vs fastest route | Trips improved | Median extra time |
 |---|---|---|---|
-| Indoor first, downtown core | outdoor distance −33 % (1,241 m → 831 m) | 77 % | +6.2 % |
-| Shade first, July 15 14:00 | direct-sun distance −47 % | 47 % | +6.1 % |
-| Indoor first, city-wide | no measurable gain | 33 % | — |
+| Indoor first, downtown core | outdoor distance −32 % (898 m → 608 m) | 74 % | +7.6 % |
+| Shade first, July 15 14:00 | direct-sun distance −47 % | 49 % | +6.0 % |
+| Indoor first, city-wide | no measurable gain | 31 % | — |
+| Shade first, city-wide, July 15 14:00 | direct-sun distance −10 % (was −5 % before street trees were counted) | 24 % | +1.7 % |
 | Step-free | 8 of 150 downtown trips have **no** step-free route at all | — | — |
 
 `tools/outage-impact.mjs` asks what one broken elevator costs: 150 random step-free trips of 3–12 km, walk plus subway, routed again with each logged station's elevator out (`research/outage-impact.json`):
@@ -62,11 +67,14 @@ Data files (`data/graph.json`, `data/subway.json`, `public/data/places.json`) ar
 ```bash
 node tools/fetch-osm.mjs        # OpenStreetMap via Overpass → data/raw/osm-downtown.json
 node tools/build-graph.mjs      # → data/graph.json
-node tools/compute-shade.mjs    # needs data/raw/massing/ (Toronto 3D Massing 2025 shapefile) → adds edge.sun
+node tools/compute-shade.mjs    # needs data/raw/massing/ (Toronto 3D Massing 2025 shapefile); uses data/raw/trees/ (Street Tree Data) when present → adds edge.sun; ~4 min
+node tools/fetch-crossings.mjs  # OSM crossing nodes via Overpass → data/raw/osm-crossings.json
+node tools/apply-crossings.mjs  # marks crossing nodes as signals / marked / unmarked
 node tools/apply-pednet.mjs     # needs data/raw/pednet/pednet-4326.geojson (City Pedestrian Network) → corrects the sidewalk flag
 node tools/build-subway.mjs     # needs data/raw/gtfs/ (TTC GTFS) → data/subway.json
 node tools/build-places.mjs     # needs data/raw/cool-spaces.geojson → public/data/places.json
 node tools/pack-graph.mjs       # data/graph.json → data/graph.bin, what the app actually loads
+node tools/export-no-sidewalk.mjs # → public/data/no-sidewalk.geojson, the map layer
 node tools/log-once.mjs         # one snapshot of the TTC feed → data/ttc-alerts/ (the VPS timer runs this)
 node tools/evaluate.mjs         # needs the dev server running
 node tools/outage-impact.mjs    # needs the dev server running and research/outages-summary.json
@@ -80,12 +88,14 @@ node tools/outage-impact.mjs    # needs the dev server running and research/outa
 
 `POST /api/route` `{ from: [lon, lat], to: [lon, lat], mode: { cold?, heat?, mobility? }, hourBucket?: "d0715_h14", blockedStations?: ["Bloor-Yonge"] }` → chosen route + fastest baseline, each with legs and stats (`outdoor_m`, `sun_m`, `steps_edges`, `transit_s`, …).
 
-`GET /api/alerts` — TTC elevator/escalator outages with station coordinates. `GET /api/weather` — Environment Canada current conditions + warnings + suggested mode.
+`POST /api/reach` `{ from: [lon, lat], maxMin: 15, maxOutdoorMin: 5 | null, mobility?, walkOnly?, speed?, hourBucket?, blockedStations? }` → reachable 90 m cells `[lon, lat, s, outdoor_s]`, the cells lost to the cap and to closed stations, and areas in km².
+
+`GET /api/alerts` — TTC elevator/escalator outages with station coordinates. `GET /api/weather` — Environment Canada current conditions + warnings + suggested mode. Route requests accept `speed` (m/s) for walking pace.
 
 ## Data sources
 
 - OpenStreetMap contributors (ODbL) via Overpass API — pedestrian network, PATH, entrances, elevators
-- City of Toronto Open Data: 3D Massing (2025), Pedestrian Network (sidewalk inventory), Air Conditioned and Cool Spaces (Heat Relief Network), TTC Routes and Schedules (GTFS)
+- City of Toronto Open Data: 3D Massing (2025), Street Tree Data (2026), Pedestrian Network (sidewalk inventory), Air Conditioned and Cool Spaces (Heat Relief Network), TTC Routes and Schedules (GTFS)
 - TTC live service alerts (alerts.ttc.ca)
 - Environment and Climate Change Canada GeoMet OGC API (city page weather, warnings)
 - City of Toronto Warming Centres page (addresses; geocoded with OSM Nominatim)
@@ -108,4 +118,4 @@ Where a layer is missing the router still runs; that cost simply stays neutral. 
 
 ## Limits
 
-Covers the City of Toronto plus margins into Mississauga, Vaughan and Markham: 346k nodes, 492k edges, 24,225 km of walkable network. Shade is geometric (buildings only, no trees) for twelve representative day/hour buckets, not live cloud cover. Snow clearing is not modelled: PlowTO is a seasonal map with no public API, and Toronto's open data has no plowing dataset, so the winter signal here is structural — where sidewalks are missing, loose, or steep — rather than live. Elevator outages are matched to stations by name from the TTC feed; Line 5 stations are not in the routing graph.
+Covers the City of Toronto plus margins into Mississauga, Vaughan and Markham: 346k nodes, 492k edges, 24,225 km of walkable network. Shade is geometric for twelve representative day/hour buckets, not live cloud cover: buildings from 3D Massing plus City-owned street trees as canopies sized from trunk diameter; private trees and parks are not in the inventory. Snow clearing is not modelled: PlowTO is a seasonal map with no public API, and Toronto's open data has no plowing dataset, so the winter signal here is structural — where sidewalks are missing, loose, or steep — rather than live. Elevator outages are matched to stations by name from the TTC feed; Line 5 stations are not in the routing graph.

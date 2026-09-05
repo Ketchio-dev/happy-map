@@ -75,7 +75,7 @@ export default async function Evidence() {
             <p className="mt-1 text-ink-soft">The TTC alerts feed is polled every 5 minutes since {out.summary.logging.first.slice(0, 16).replace("T", " ")} UTC ({out.summary.logging.hoursCovered} h so far). Each alert runs from the start time the feed reports until the first poll that no longer lists it.</p>
             <dl className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-4">
               {([["Distinct elevator alerts", out.summary.elevatorAlerts], ["Unplanned", out.summary.elevatorUnplanned], ["Stations affected", out.summary.stationsWithElevatorOutage], ["Out of service right now", out.summary.elevatorOngoingNow], ["Escalator alerts", out.summary.escalatorAlerts], ["Median outage age (h)", out.summary.medianElevatorOutageAgeHours ?? "—"]] as const).map(([k, v]) => (
-                <div key={k} className="rounded-lg border border-line bg-surface p-3"><div className="tnum text-2xl font-semibold text-ink">{v}</div><div className="text-xs text-muted">{k}</div></div>
+                <div key={k} className="flex flex-col-reverse rounded-lg border border-line bg-surface p-3"><dt className="text-xs text-muted">{k}</dt><dd className="tnum text-2xl font-semibold text-ink">{v}</dd></div>
               ))}
             </dl>
             <table className="mt-4 w-full text-xs">
@@ -95,7 +95,7 @@ export default async function Evidence() {
             <p className="mt-1 text-ink-soft">OpenStreetMap only says whether a sidewalk was mapped. The City of Toronto&apos;s Pedestrian Network says, per road segment, whether one exists. <code>tools/apply-pednet.mjs</code> checks every road the map had flagged as sidewalk-less against the nearest City segment within 15 m.</p>
             <dl className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-4">
               {([["Flagged by OpenStreetMap", `${sw.roadway_km_before.toLocaleString()} km`], ["Has a sidewalk after all", `${sw.sidewalk_present_km.toLocaleString()} km`], ["Confirmed: no sidewalk", `${sw.no_sidewalk_confirmed_km.toLocaleString()} km`], ["Not in the inventory", `${sw.outside_inventory_km.toLocaleString()} km`]] as const).map(([k, v]) => (
-                <div key={k} className="rounded-lg border border-line bg-surface p-3"><div className="tnum text-2xl font-semibold text-ink">{v}</div><div className="text-xs text-muted">{k}</div></div>
+                <div key={k} className="flex flex-col-reverse rounded-lg border border-line bg-surface p-3"><dt className="text-xs text-muted">{k}</dt><dd className="tnum text-2xl font-semibold text-ink">{v}</dd></div>
               ))}
             </dl>
             <p className="mt-2 text-xs text-muted">Of the kilometres the inventory does not answer for, 3,530 km lie outside Toronto&apos;s limits and 2,193 km are service roads and lanes inside the city that the inventory does not cover. The router now penalises 6,888 km, not 11,441 km, and 4,553 km of Toronto streets stopped being treated as walking in traffic.</p>
@@ -122,7 +122,7 @@ export default async function Evidence() {
         <h2 className="text-lg font-medium">5. Data and method</h2>
         <ul className="mt-1 list-disc space-y-1 pl-5 text-ink-soft">
           <li><strong>Pedestrian graph:</strong> OpenStreetMap ways across the City of Toronto and its margins, 346k nodes and 492k edges covering 24,225 km. Indoor, tunnel, covered and corridor tags mark 95 km of sheltered walking including the PATH; the City&apos;s Pedestrian Network corrects OpenStreetMap&apos;s sidewalk gaps (section 3), leaving 6,888 km of roadway penalised as sidewalk-less; 486 km is loose or unpaved.</li>
-          <li><strong>Shade:</strong> City of Toronto 3D Massing (2025) building heights; for each outdoor segment and each hour bucket a ray is cast toward the sun (NOAA solar position) and blocked if a building is tall enough. Trees are not included, so shade is under-estimated.</li>
+          <li><strong>Shade:</strong> City of Toronto 3D Massing (2025) building heights; for each outdoor segment and each hour bucket a ray is cast toward the sun (NOAA solar position) and blocked if a building is tall enough. City street trees (Street Tree Data, 685k with a trunk diameter) are canopies sized from trunk diameter whose ground shadow keeps a quarter of the sun. Private trees and parkland are not in that inventory, so shade is under-estimated.</li>
           <li><strong>Subway:</strong> TTC GTFS (Lines 1, 2, 4), median inter-station times, legs drawn along the recorded track geometry, stations linked to OpenStreetMap entrances. In step-free mode a station is unusable while the TTC feed lists an elevator out of service there.</li>
           <li><strong>Weather:</strong> Environment and Climate Change Canada city page feed; heat or cold warnings switch the default mode.</li>
           <li><strong>Cost model:</strong> indoor mode weights outdoor time ×2.5 and covered ×1.3; shade mode weights outdoor time ×(1 + 1.8 × sun fraction). Roadway with no sidewalk ×1.35, loose surface ×1.15, steep grades up to ×1.24 — each harsher in step-free mode. Stairs ×1.6 for walkers and forbidden in step-free mode. The fastest feasible route is always computed alongside for comparison.</li>

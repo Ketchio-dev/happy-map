@@ -14,12 +14,12 @@ if [ ! -d "$REPO_DIR/.git" ]; then
   GIT_SSH_COMMAND="$SSH_CMD" git clone --filter=blob:none --no-checkout "$REMOTE" "$REPO_DIR"
   cd "$REPO_DIR"
   git config core.sshCommand "$SSH_CMD"
-  git sparse-checkout set --no-cone '/.gitignore' '/data/ttc-alerts/' '/tools/log-once.mjs' '/tools/analyze-outages.mjs' '/tools/vps/' '/research/'
+  git sparse-checkout set --no-cone '/.gitignore' '/data/ttc-alerts/' '/tools/log-once.mjs' '/tools/analyze-outages.mjs' '/tools/vps/' '/research/*.json'
   git checkout -q main
 fi
 cd "$REPO_DIR"
 # idempotent: an older clone gets the patterns the logger script needs today
-git sparse-checkout set --no-cone '/.gitignore' '/data/ttc-alerts/' '/tools/log-once.mjs' '/tools/analyze-outages.mjs' '/tools/vps/' '/research/'
+git sparse-checkout set --no-cone '/.gitignore' '/data/ttc-alerts/' '/tools/log-once.mjs' '/tools/analyze-outages.mjs' '/tools/vps/' '/research/*.json'
 git config core.sshCommand "$SSH_CMD"
 git config user.name "happy-map logger"
 git config user.email "${GIT_EMAIL:-sr.junsoo.park@gmail.com}"

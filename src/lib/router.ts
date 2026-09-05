@@ -1,7 +1,7 @@
 import type { Edge, Graph } from "./graph";
 import { haversine, nearestNode, stationNodesFor, geomOf, sunAt } from "./graph";
 
-export interface Mode { cold?: boolean; heat?: boolean; mobility?: boolean; /** never ride the subway */ walkOnly?: boolean }
+export interface Mode { cold?: boolean; heat?: boolean; mobility?: boolean; /** never ride the subway */ walkOnly?: boolean; /** walking pace in m/s; defaults to 1.3, or 1.0 in step-free mode */ speed?: number }
 /** how much a segment with no mapped sidewalk is penalised; higher in winter, when snowbanks narrow the road */
 const ROADWAY_PENALTY = 1.35;
 export interface RouteRequest { from: [number, number]; to: [number, number]; mode: Mode; hourBucket?: string; blockedNodes?: number[]; /** TTC station names with elevator outages; blocked only in step-free mode */ blockedStations?: string[] }
@@ -12,6 +12,7 @@ export interface RouteResult { legs: Leg[]; stats: Stats; nodePath: number[] }
 
 const WALK_MPS = 1.3;
 const MOBILITY_MPS = 1.0;
+export const paceOf = (mode: Mode) => Math.min(2, Math.max(0.5, mode.speed ?? (mode.mobility ? MOBILITY_MPS : WALK_MPS)));
 
 class MinHeap {
   private k: number[] = []; private v: number[] = [];
@@ -30,7 +31,7 @@ export function sunFraction(g: Graph, ei: number, bucket: number): number {
 export function edgeCost(g: Graph, ei: number, from: number, mode: Mode, bucket: number): number {
   const e = g.edges[ei];
   const to = e.a === from ? e.b : e.a;
-  const speed = mode.mobility ? MOBILITY_MPS : WALK_MPS;
+  const speed = paceOf(mode);
   let t = e.time_s ?? e.len / speed;
   if (e.transit) return mode.walkOnly ? Infinity : t; // riding: indoors, no stairs, no exposure
   if (e.hw === "station_link" && mode.walkOnly) return Infinity;
@@ -45,6 +46,14 @@ export function edgeCost(g: Graph, ei: number, from: number, mode: Mode, bucket:
     t *= 1.6; // stairs are slow for everyone
   }
   if (e.elev) t += 45; // wait + ride
+  // Crossing a road: everyone waits a little at a signal; anyone slow, on wheels, or on ice
+  // gives an unprotected crossing a wide berth, so the router prices it as a long wait.
+  const xing = g.nodeAttr[String(to)]?.crossing;
+  if (xing && !e.transit && e.hw !== "station_link") {
+    if (xing === "signals") t += 8;
+    else if (mode.mobility) t += xing === "marked" ? 20 : 60;
+    else if (mode.cold) t += xing === "marked" ? 8 : 30;
+  }
   if (mode.cold) {
     // outdoor time is what we are minimizing: weight exposure 2.5x, covered 1.3x
     if (e.shelter === 0) t *= 2.5; else if (e.shelter === 1) t *= 1.3;
@@ -73,7 +82,7 @@ export function search(g: Graph, src: number, dst: number, mode: Mode, bucket: n
   const done = new Uint8Array(n);
   const heap = new MinHeap();
   const goal = g.nodes[dst];
-  const top = mode.walkOnly ? TOP_SPEED_WALK : TOP_SPEED_TRANSIT;
+  const top = mode.walkOnly ? Math.max(TOP_SPEED_WALK, paceOf(mode)) : TOP_SPEED_TRANSIT;
   // straight-line time to the goal: never overestimates, so the first pop of dst is optimal
   const h = (i: number) => haversine(g.nodes[i], goal) / top;
 
@@ -104,7 +113,7 @@ export function search(g: Graph, src: number, dst: number, mode: Mode, bucket: n
 export function assemble(g: Graph, src: number, edgePath: number[], mode: Mode, bucket: number): RouteResult {
   const legs: Leg[] = []; const nodePath = [src];
   const stats: Stats = { distance_m: 0, time_s: 0, indoor_m: 0, covered_m: 0, outdoor_m: 0, sun_m: 0, steps_edges: 0, exposure_s: 0, transit_s: 0, walk_m: 0, roadway_m: 0, rough_m: 0 };
-  const speed = mode.mobility ? MOBILITY_MPS : WALK_MPS;
+  const speed = paceOf(mode);
   let cur = src;
   for (const ei of edgePath) {
     const e = g.edges[ei];
@@ -139,7 +148,7 @@ export function plan(g: Graph, req: RouteRequest): PlanResult | PlanError {
   const blocked = new Set<number>(req.blockedNodes ?? []);
   if (req.mode.mobility) for (const name of req.blockedStations ?? []) for (const n of stationNodesFor(g, name)) blocked.add(n);
   const blockedSet = blocked.size ? blocked : undefined;
-  const baseMode: Mode = { mobility: req.mode.mobility, walkOnly: req.mode.walkOnly }; // fastest feasible route, no exposure weighting
+  const baseMode: Mode = { mobility: req.mode.mobility, walkOnly: req.mode.walkOnly, speed: req.mode.speed }; // fastest feasible route, no exposure weighting
   const bucket = req.hourBucket ? (g.sunBucket.get(req.hourBucket) ?? -1) : -1;
   const basePath = search(g, src, dst, baseMode, bucket, blockedSet);
   if (!basePath) return { ok: false, error: req.mode.mobility ? "no step-free route found between these points" : "no route found" };

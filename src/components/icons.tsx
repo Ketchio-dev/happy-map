@@ -14,3 +14,6 @@ export const Walk = ({ className }: P) => (<svg {...s} className={className}><ci
 export const Train = ({ className }: P) => (<svg {...s} className={className}><rect x="3.6" y="2.3" width="8.8" height="9" rx="2" /><path d="M3.6 7.6h8.8M5.9 13.7 4.6 14.6M10.1 13.7l1.3.9M5.6 9.5v.1M10.4 9.5v.1M5.7 11.3h4.6" /></svg>);
 export const Chevron = ({ className }: P) => (<svg {...s} className={className}><path d="m6.2 3.6 4.6 4.4-4.6 4.4" /></svg>);
 export const Dot = ({ className }: P) => (<svg {...s} className={className}><circle cx="8" cy="8" r="3.2" /></svg>);
+export const Stairs = ({ className }: P) => (<svg {...s} className={className}><path d="M2.2 13.6h3v-3h3v-3h3v-3h2.6" /></svg>);
+export const Lift = ({ className }: P) => (<svg {...s} className={className}><rect x="3" y="2.2" width="10" height="11.6" rx="1.4" /><path d="M6 6.6l1.6-1.8 1.6 1.8M6 9.4 7.6 11.2 9.2 9.4" /></svg>);
+export const Door = ({ className }: P) => (<svg {...s} className={className}><path d="M3.4 13.8V3.2a1 1 0 0 1 1-1h7.2a1 1 0 0 1 1 1v10.6M2 13.8h12M9.6 8.2v.1" /></svg>);

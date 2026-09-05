@@ -1,15 +1,10 @@
 {
- "generated": "2026-09-05T15:40:04.334Z",
+ "generated": "2026-09-05T16:40:07.639Z",
  "source": "City of Toronto Open Data, Pedestrian Network (pednet), SIDEWALK_DESCRIPTION",
  "roadway_km_before": 11441,
  "sidewalk_present_km": 4553,
  "no_sidewalk_confirmed_km": 1165,
  "outside_inventory_km": 5723,
  "roadway_km_after": 6888,
- "edges_checked": 102536,
- "outside_inventory_km_split": {
-  "service_roads_and_lanes_inside_city_km": 2193,
-  "outside_city_limits_km": 3530,
-  "note": "inside-city unmatched is 86% highway=service (parking aisles, lanes, access roads) that the City inventory does not cover"
- }
+ "edges_checked": 102536
 }

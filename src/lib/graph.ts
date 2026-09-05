@@ -22,7 +22,7 @@ export interface Edge {
   /** transit edges: fixed travel time and line id; station links: fixed access time */
   time_s?: number; transit?: string; station?: string;
 }
-export interface NodeAttr { elev?: 1; barrier?: string; wc?: Wc; kerb?: string | null }
+export interface NodeAttr { elev?: 1; barrier?: string; wc?: Wc; kerb?: string | null; /** pedestrian crossing at this node and how protected it is */ crossing?: "signals" | "marked" | "unmarked" }
 export interface Poi { id: number; lon: number; lat: number; kind: string; name: string | null; wc: Wc; level: string | null; ref: string | null; station: string | null; graphNode: number | null }
 export interface GraphFile { meta: Record<string, unknown>; nodes: [number, number][]; edges: Edge[]; nodeAttr: Record<string, NodeAttr>; pois: Poi[] }
 export interface Station { key: string; name: string; lat: number; lon: number; wheelchair_boarding: string; stopIds: string[]; lines: string[]; node: number }

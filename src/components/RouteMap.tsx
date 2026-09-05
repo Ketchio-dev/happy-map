@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { Map as MlMap, Marker as MlMarker, Popup, NavigationControl, GeolocateControl, LngLatBounds, type GeoJSONSource, type MapMouseEvent } from "maplibre-gl";
-import type { Feature, FeatureCollection, LineString, Point } from "geojson";
+import type { Feature, FeatureCollection, LineString, Point, Polygon } from "geojson";
+import type { ReachResult } from "@/lib/reach";
 import "maplibre-gl/dist/maplibre-gl.css";
 import type { Leg } from "@/lib/router";
 import type { Place } from "@/lib/types";
@@ -16,6 +17,8 @@ export interface MapProps {
   weather: Weather | null;
   onPick: (p: [number, number]) => void;
   onLocate?: (p: [number, number]) => void;
+  /** reach cells to shade instead of a route */
+  reach?: ReachResult | null;
 }
 
 const STYLES = { light: "https://tiles.openfreemap.org/styles/positron", dark: "https://tiles.openfreemap.org/styles/dark" } as const;
@@ -70,6 +73,13 @@ function waypoints(legs: Leg[] | null): FeatureCollection {
 function placesGeo(places: Place[]): FeatureCollection {
   return { type: "FeatureCollection", features: places.filter((p) => p.lon !== null).map((p) => ({ type: "Feature", properties: { kind: p.kind, name: p.name, type: p.type, address: p.address, hours: Object.entries(p.hours).filter(([, v]) => v).map(([k, v]) => `${k}: ${v}`).join(" · ") }, geometry: { type: "Point", coordinates: [p.lon as number, p.lat as number] } })) };
 }
+/** one square per reached grid cell, carrying its travel time for the opacity ramp */
+function reachGeo(r: ReachResult | null | undefined, which: "cells" | "lost"): FeatureCollection {
+  if (!r) return empty;
+  const [dx, dy] = r.cellDeg;
+  const sq = (c: [number, number, number, number]): Feature<Polygon> => ({ type: "Feature", properties: { t: c[2], frac: c[2] / r.maxS }, geometry: { type: "Polygon", coordinates: [[[c[0] - dx / 2, c[1] - dy / 2], [c[0] + dx / 2, c[1] - dy / 2], [c[0] + dx / 2, c[1] + dy / 2], [c[0] - dx / 2, c[1] + dy / 2], [c[0] - dx / 2, c[1] - dy / 2]]] } });
+  return { type: "FeatureCollection", features: r[which].map(sq) };
+}
 function midpoint(legs: Leg[] | null): [number, number] | null {
   if (!legs?.length) return null;
   const total = legs.reduce((s, l) => s + l.len, 0); let acc = 0;
@@ -77,7 +87,7 @@ function midpoint(legs: Leg[] | null): [number, number] | null {
   return legs[legs.length - 1].coords[0];
 }
 
-export default function RouteMap({ from, to, legs, ghostLegs, badge, outages, places, weather, onPick, onLocate }: MapProps) {
+export default function RouteMap({ from, to, legs, ghostLegs, badge, outages, places, weather, onPick, onLocate, reach }: MapProps) {
   const el = useRef<HTMLDivElement>(null);
   const map = useRef<MlMap | null>(null);
   const markers = useRef<MlMarker[]>([]);
@@ -88,13 +98,15 @@ export default function RouteMap({ from, to, legs, ghostLegs, badge, outages, pl
   useEffect(() => { pickRef.current = onPick; locateRef.current = onLocate; }, [onPick, onLocate]);
   const [styleKey, setStyleKey] = useState<StyleKey>("light");
   const [styleReady, setStyleReady] = useState(0);
+  const [noSidewalk, setNoSidewalk] = useState(false);
+  const noSidewalkData = useRef<FeatureCollection | null>(null);
 
   /** the base map is toned down so the route is the brightest thing on screen */
   const mute = (m: MlMap, key: StyleKey) => {
     const dark = key === "dark";
     for (const layer of m.getStyle().layers ?? []) {
       const id = layer.id;
-      if (id.startsWith("route") || id === "ghost" || id === "places" || id === "waypoints") continue;
+      if (id.startsWith("route") || id.startsWith("reach") || id === "ghost" || id === "places" || id === "waypoints" || id === "nosidewalk") continue;
       try {
         if (layer.type === "symbol") { m.setPaintProperty(id, "text-opacity", dark ? 0.8 : 0.62); m.setPaintProperty(id, "icon-opacity", 0.45); }
         else if (layer.type === "line") m.setPaintProperty(id, "line-opacity", dark ? 0.9 : 0.62);
@@ -121,6 +133,12 @@ export default function RouteMap({ from, to, legs, ghostLegs, badge, outages, pl
     const halo = key === "dark" ? "#111009" : "#ffffff";
     m.addSource("ghost", { type: "geojson", data: empty });
     m.addLayer({ id: "ghost", type: "line", source: "ghost", paint: { "line-color": key === "dark" ? "#6b6559" : "#a8a294", "line-width": 4.5, "line-dasharray": [1.3, 1.5], "line-opacity": 0.85 }, layout: { "line-cap": "round", "line-join": "round" } });
+    m.addSource("reach-lost", { type: "geojson", data: empty });
+    m.addLayer({ id: "reach-lost", type: "fill", source: "reach-lost", paint: { "fill-color": "#a8331f", "fill-opacity": 0.28, "fill-antialias": false } });
+    m.addSource("reach", { type: "geojson", data: empty });
+    m.addLayer({ id: "reach", type: "fill", source: "reach", paint: { "fill-color": INK, "fill-opacity": ["interpolate", ["linear"], ["get", "frac"], 0, 0.55, 1, 0.12], "fill-antialias": false } });
+    m.addSource("nosidewalk", { type: "geojson", data: empty });
+    m.addLayer({ id: "nosidewalk", type: "line", source: "nosidewalk", paint: { "line-color": "#a8331f", "line-width": 2.2, "line-dasharray": [2, 1.6], "line-opacity": 0.85 }, layout: { "line-cap": "round", "line-join": "round", visibility: "none" } });
     m.addSource("route", { type: "geojson", data: empty });
     m.addLayer({ id: "route-casing", type: "line", source: "route", paint: { "line-color": halo, "line-width": 12, "line-opacity": 0.95 }, layout: { "line-cap": "round", "line-join": "round" } });
     m.addLayer({ id: "route", type: "line", source: "route", layout: { "line-cap": "round", "line-join": "round" }, paint: { "line-width": ["case", ["get", "isTransit"], 8, 7], "line-color": ["get", "color"] } });
@@ -152,6 +170,26 @@ export default function RouteMap({ from, to, legs, ghostLegs, badge, outages, pl
 
   useEffect(() => { const m = map.current; if (m && m.getStyle()?.sprite !== undefined) m.setStyle(STYLES[styleKey]); }, [styleKey]);
 
+  useEffect(() => {
+    const m = map.current; if (!m) return;
+    const apply = () => { addLayers(m, styleKey); (m.getSource("reach") as GeoJSONSource | undefined)?.setData(reachGeo(reach, "cells")); (m.getSource("reach-lost") as GeoJSONSource | undefined)?.setData(reachGeo(reach, "lost")); };
+    if (m.isStyleLoaded()) apply(); else m.once("style.load", apply);
+  }, [reach, styleKey, styleReady]);
+
+  // roads the City's sidewalk inventory confirms have no sidewalk; loaded the first time it is asked for
+  useEffect(() => {
+    const m = map.current; if (!m) return;
+    const apply = () => {
+      addLayers(m, styleKey);
+      m.setLayoutProperty("nosidewalk", "visibility", noSidewalk ? "visible" : "none");
+      if (!noSidewalk) return;
+      const set = () => (m.getSource("nosidewalk") as GeoJSONSource | undefined)?.setData(noSidewalkData.current ?? empty);
+      if (noSidewalkData.current) set();
+      else fetch("/data/no-sidewalk.geojson").then((r) => r.json()).then((d: FeatureCollection) => { noSidewalkData.current = d; set(); }).catch(() => {});
+    };
+    if (m.isStyleLoaded()) apply(); else m.once("style.load", apply);
+  }, [noSidewalk, styleKey, styleReady]);
+
   // draw the chosen route, animating it in from the start point
   useEffect(() => {
     const m = map.current; if (!m) return;
@@ -182,6 +220,7 @@ export default function RouteMap({ from, to, legs, ghostLegs, badge, outages, pl
         node.style.cssText = `background:${INK};color:#fff;font:600 12px/1 ui-sans-serif,system-ui;padding:6px 10px;border-radius:999px;box-shadow:0 2px 8px #0000002e;border:2px solid #fff;white-space:nowrap`;
         node.textContent = badge;
         badgeMarker.current = new MlMarker({ element: node }).setLngLat(mid).addTo(m);
+        node.setAttribute("aria-hidden", "true"); node.tabIndex = -1;
       }
     };
     if (m.isStyleLoaded()) apply(); else m.once("style.load", apply);
@@ -204,17 +243,19 @@ export default function RouteMap({ from, to, legs, ghostLegs, badge, outages, pl
   useEffect(() => {
     const m = map.current; if (!m) return;
     markers.current.forEach((mk) => mk.remove()); markers.current = [];
-    const pin = (lon: number, lat: number, label: string, bg: string, popup?: string) => {
+    const pin = (lon: number, lat: number, label: string, bg: string, popup?: string, name = label) => {
       const node = document.createElement("div");
       node.style.cssText = `background:${bg};color:#fff;font:600 11px/1 ui-sans-serif,system-ui;padding:6px 9px;border-radius:999px;box-shadow:0 2px 6px #00000033;border:2px solid #fff;white-space:nowrap`;
       node.textContent = label;
       const mk = new MlMarker({ element: node, anchor: "bottom" }).setLngLat([lon, lat]);
       if (popup) mk.setPopup(new Popup({ offset: 14, closeButton: false }).setHTML(`<div style="font:13px/1.45 system-ui;max-width:230px">${popup}</div>`));
       mk.addTo(m); markers.current.push(mk);
+      node.setAttribute("aria-label", name);
+      node.setAttribute("role", popup ? "button" : "img");
     };
-    if (from) pin(from[0], from[1], "Start", "#2f6f4e");
-    if (to) pin(to[0], to[1], "End", "#a8331f");
-    for (const o of outages) pin(o.lon, o.lat, "Elevator out", "#a8331f", `<strong>${o.station}</strong><br>${o.detail}`);
+    if (from) pin(from[0], from[1], "Start", "#2f6f4e", undefined, "Start point");
+    if (to) pin(to[0], to[1], "End", "#a8331f", undefined, "Destination");
+    for (const o of outages) pin(o.lon, o.lat, "Elevator out", "#a8331f", `<strong>${o.station}</strong><br>${o.detail}`, `Elevator out at ${o.station}`);
   }, [from, to, outages]);
 
   return (
@@ -223,17 +264,21 @@ export default function RouteMap({ from, to, legs, ghostLegs, badge, outages, pl
       {weather && (
         <div className="absolute left-2.5 top-2.5 flex items-center gap-1.5 rounded-lg bg-white/92 px-2.5 py-1.5 text-[11.5px] shadow-sm backdrop-blur">
           <span className="tnum font-semibold">{weather.temp ?? "?"}°</span>
-          {weather.humidex !== null && <span className="tnum text-[#8b8578]">humidex {weather.humidex}</span>}
+          {weather.humidex !== null && <span className="tnum text-[#736d60]">humidex {weather.humidex}</span>}
           {weather.warnings.length > 0 && <span className="ml-0.5 rounded bg-[#fbeee6] px-1.5 py-px text-[10.5px] font-medium text-[#7c2d12]">{weather.warnings[0].text.split(/[-–—]/)[0].trim().toLowerCase().replace(/^./, (c) => c.toUpperCase())}</span>}
         </div>
       )}
       <div className="absolute right-2.5 top-2.5 flex overflow-hidden rounded-lg shadow-sm" style={{ background: "rgba(255,255,255,0.92)", backdropFilter: "blur(4px)" }}>
         {(Object.keys(STYLES) as StyleKey[]).map((k) => (
-          <button key={k} onClick={() => setStyleKey(k)} title={`${k} basemap`}
+          <button key={k} onClick={() => setStyleKey(k)} title={`${k} basemap`} aria-pressed={styleKey === k}
             style={{ padding: "6px 10px", fontSize: 11, fontWeight: 500, textTransform: "capitalize", background: styleKey === k ? INK : "transparent", color: styleKey === k ? "#ffffff" : "#4a463c" }}>
             {k}
           </button>
         ))}
+        <button onClick={() => setNoSidewalk((v) => !v)} aria-pressed={noSidewalk} title="Roads the City of Toronto confirms have no sidewalk (1,165 km)"
+          style={{ padding: "6px 10px", fontSize: 11, fontWeight: 500, borderLeft: "1px solid #e4e0d7", background: noSidewalk ? "#a8331f" : "transparent", color: noSidewalk ? "#ffffff" : "#4a463c" }}>
+          No sidewalk
+        </button>
       </div>
     </div>
   );

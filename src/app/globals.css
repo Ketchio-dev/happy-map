@@ -8,7 +8,7 @@
   --color-sunk: #f4f2eb;
   --color-ink: #17150f;
   --color-ink-soft: #4a463c;
-  --color-muted: #8b8578;
+  --color-muted: #736d60; /* 5.1:1 on white, 4.6:1 on sunk — AA for small text */
   --color-line: #e4e0d7;
   --color-alert: #7c2d12;
   --color-alert-bg: #fbeee6;
@@ -24,3 +24,6 @@ html, body { height: 100%; margin: 0; background: var(--color-ground); color: va
 .tnum { font-variant-numeric: tabular-nums; }
 .no-bar { scrollbar-width: none; }
 .no-bar::-webkit-scrollbar { display: none; }
+
+/* one focus style for everything we author: the same ink as the selected state */
+:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 2px; border-radius: 4px; }
