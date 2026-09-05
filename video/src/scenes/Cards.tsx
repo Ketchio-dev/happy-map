@@ -89,15 +89,15 @@ export const NumberCard = () => {
   const { fps } = useVideoConfig();
   const a = ease(frame, fps);
   const p = interpolate(frame, [fps * 1.6, fps * 3.4], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const m = Math.round(800 - (800 - 16) * (1 - Math.pow(1 - p, 3)));
+  const m = Math.round(1040 - (1040 - 16) * (1 - Math.pow(1 - p, 3)));
   const c = ease(frame, fps, Math.round(fps * 3.6));
   return (
     <AbsoluteFill style={{ background: color.ground, justifyContent: "center", alignItems: "center" }}>
       <div style={{ opacity: a, transform: `translateY(${(1 - a) * 24}px)`, textAlign: "center" }}>
         <div style={{ fontSize: 32, color: color.muted, letterSpacing: 0.5, textTransform: "uppercase" }}>Scotiabank Arena → Eaton Centre · outdoors</div>
         <div style={{ display: "flex", alignItems: "baseline", justifyContent: "center", gap: 40, marginTop: 8 }}>
-          <div style={{ fontSize: 90, color: color.muted, textDecoration: "line-through", fontVariantNumeric: "tabular-nums" }}>800 m</div>
-          <div style={{ fontSize: 260, fontWeight: 600, letterSpacing: -10, color: color.ink, fontVariantNumeric: "tabular-nums", lineHeight: 1, minWidth: 620, textAlign: "left" }}>{m} m</div>
+          <div style={{ fontSize: 90, color: color.muted, textDecoration: "line-through", fontVariantNumeric: "tabular-nums" }}>1,040 m</div>
+          <div style={{ fontSize: 260, fontWeight: 600, letterSpacing: -10, color: color.ink, fontVariantNumeric: "tabular-nums", lineHeight: 1, minWidth: 620, textAlign: "left" }}>{m.toLocaleString("en-CA")} m</div>
         </div>
         <div style={{ display: "flex", gap: 60, justifyContent: "center", marginTop: 30, opacity: c }}>
           <div style={{ fontSize: 48, color: color.ink }}>−98 % outdoors</div>
