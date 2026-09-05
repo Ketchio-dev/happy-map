@@ -77,6 +77,21 @@ node tools/evaluate.mjs         # needs the dev server running
 - City of Toronto Warming Centres page (addresses; geocoded with OSM Nominatim)
 - Map tiles: OpenFreeMap / OpenMapTiles
 
+## Taking it to another city
+
+Nothing in the method is Toronto-specific; the data is. Each cost layer needs one input, and most large cities publish it:
+
+| Layer | What it needs | Toronto | Elsewhere |
+|---|---|---|---|
+| Walking network, PATH, stairs, kerbs, sidewalks | OpenStreetMap | Overpass | Overpass, worldwide |
+| Subway network and station positions | GTFS | TTC | Standard for nearly every transit agency |
+| Live elevator outages | Agency alerts feed | alerts.ttc.ca | e.g. New York MTA, London TfL, Montréal STM publish elevator status APIs |
+| Shade | Building footprints with heights | 3D Massing | Most large cities publish footprints; heights or LiDAR often too |
+| Cool spaces, warming centres | City open data | Heat Relief Network | Varies by city |
+| Automatic mode switch | National weather warnings | Environment Canada | National weather services |
+
+Where a layer is missing the router still runs; that cost simply stays neutral. The evaluation (`tools/evaluate.mjs`) and the outage logger are city-agnostic already. Turning the bounding box, GTFS source and alerts adapter into a single per-city config is the remaining step, and it is on the list.
+
 ## Limits
 
 Covers the City of Toronto plus margins into Mississauga, Vaughan and Markham: 346k nodes, 492k edges, 24,225 km of walkable network. Shade is geometric (buildings only, no trees) for twelve representative day/hour buckets, not live cloud cover. Snow clearing is not modelled: PlowTO is a seasonal map with no public API, and Toronto's open data has no plowing dataset, so the winter signal here is structural — where sidewalks are missing, loose, or steep — rather than live. Elevator outages are matched to stations by name from the TTC feed; Line 5 stations are not in the routing graph.

@@ -3,8 +3,10 @@
 Zero-shot cloning with Fish Audio S2 Pro running locally through mlx-audio. Nothing
 leaves the machine. The reference recording lives outside the repo on purpose.
 
-  .venv/bin/python synthesize.py ../script/test.json
+  .venv/bin/python synthesize.py ../script/test.json            # Fish Audio S2 Pro (default)
+  .venv/bin/python synthesize.py ../script/x.json --model qwen --out x-qwen
 """
+import argparse
 import json
 import os
 import sys
@@ -33,24 +35,38 @@ def trim(audio: np.ndarray, sr: int) -> np.ndarray:
     return audio[a:b]
 
 
+MODELS = {
+    "fish": "mlx-community/fish-audio-s2-pro",
+    "qwen": "mlx-community/Qwen3-TTS-12Hz-0.6B-Base-bf16",
+}
+
+
 def main() -> None:
-    script = Path(sys.argv[1]).resolve()
-    name = script.stem
+    ap = argparse.ArgumentParser()
+    ap.add_argument("script")
+    ap.add_argument("--model", choices=MODELS, default="fish")
+    ap.add_argument("--out", help="output name (default: script stem)")
+    args = ap.parse_args()
+    script = Path(args.script).resolve()
+    name = args.out or script.stem
     lines = json.loads(script.read_text())
     out_dir = VIDEO / "public" / "audio" / name
     out_dir.mkdir(parents=True, exist_ok=True)
     gen_dir = VIDEO / "src" / "generated"
     gen_dir.mkdir(parents=True, exist_ok=True)
 
-    model = load_model("mlx-community/fish-audio-s2-pro")
+    model = load_model(MODELS[args.model])
     reference = load_audio(str(REF), sample_rate=model.sample_rate, volume_normalize=False)
 
     manifest = []
     for i, line in enumerate(lines):
-        results = list(model.generate(
-            text=line["text"], ref_audio=reference, ref_text=REF_TEXT,
-            temperature=0.7, top_p=0.7, top_k=30, max_tokens=2048, chunk_length=300, verbose=False,
-        ))
+        if args.model == "fish":
+            results = list(model.generate(
+                text=line["text"], ref_audio=reference, ref_text=REF_TEXT,
+                temperature=0.7, top_p=0.7, top_k=30, max_tokens=2048, chunk_length=300, verbose=False,
+            ))
+        else:
+            results = list(model.generate(text=line["text"], ref_audio=str(REF), ref_text=REF_TEXT, language="English", verbose=False))
         if not results:
             raise RuntimeError(f"no audio for line {line['id']}")
         sr = results[0].sample_rate
