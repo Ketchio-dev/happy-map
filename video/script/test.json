@@ -1,0 +1,7 @@
+[
+  { "id": "hook", "text": "This is happy map. It plans a walk across Toronto by what you are exposed to, not only by how long it takes." },
+  { "id": "layers", "text": "Minutes outdoors in January. Metres of direct sun in July. Stairs, missing sidewalks, and subway elevators that are out of service right now." },
+  { "id": "compare", "text": "Every route is shown next to the fastest one, so the trade-off is never hidden." },
+  { "id": "number", "text": "From Scotiabank Arena to the Eaton Centre, the indoor route spends sixteen metres outdoors instead of eight hundred, for one extra minute." },
+  { "id": "evidence", "text": "And since the first of September, a server has logged every elevator outage on the T T C, so the app is judged by data, not by claims." }
+]

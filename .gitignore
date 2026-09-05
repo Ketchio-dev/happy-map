@@ -51,3 +51,11 @@ research/refs/
 data/ttc-alerts/latest.json
 data/ttc-alerts/local/
 data/graph.json
+
+# demo video workspace (video/): rendered media, synthesized narration, footage, generated manifests
+video/node_modules
+video/out
+video/public/audio
+video/public/footage
+video/src/generated
+video/tts/.venv

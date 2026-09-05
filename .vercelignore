@@ -5,3 +5,5 @@ data/*.log
 # Design references and rendered screenshots are documentation, not runtime files.
 research/refs
 research/screens
+# The Remotion demo-video workspace is not part of the app.
+video

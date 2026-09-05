@@ -1,0 +1,4 @@
+# Makes video/ its own pnpm root so the app's Vercel install never pulls Remotion.
+packages: []
+allowBuilds:
+  esbuild: true

@@ -1,0 +1,27 @@
+{
+  "name": "happy-map-video",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Demo video for happy map, rendered with Remotion from the same evidence files the site uses.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts",
+    "captions": "node tts/captions.mjs"
+  },
+  "dependencies": {
+    "@remotion/captions": "4.0.520",
+    "@remotion/cli": "4.0.520",
+    "@remotion/google-fonts": "4.0.520",
+    "@remotion/install-whisper-cpp": "4.0.520",
+    "@remotion/media-utils": "4.0.520",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "remotion": "4.0.520",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
+  }
+}

@@ -30,3 +30,12 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+## Demo video (`video/`)
+Standalone Remotion workspace (own `pnpm-workspace.yaml`, excluded from Vercel via `.vercelignore`). Pipeline, in order, all run from inside `video/` unless noted:
+1. `script/<name>.json` — narration lines `{id, text}`; one line = one audio file = one scene.
+2. `tts/.venv/bin/python tts/synthesize.py script/<name>.json` — Fish Audio S2 Pro via mlx-audio, zero-shot from `~/.happy-map/voice-reference.wav` + `.txt` (the author's own voice; never commit it). Writes `public/audio/<name>/` and `src/generated/<name>.narration.json`.
+3. `node tts/captions.mjs <name>` — whisper-cli word timings → `src/generated/<name>.captions.json`. Needs `-ml 1 -sow`, or every line collapses to one caption token.
+4. `node video/footage/record.mjs <name>` (from the repo root) — Playwright + **headed** system Chrome. Headless screencasts drop MapLibre's base map under every GL flag tried; `page.screenshot` is fine, the screencast is not. Prints the second each click happened; copy those into `FOOTAGE` in `src/Test.tsx`.
+5. `pnpm exec remotion render src/index.ts Test out/<file>.mp4`; `pnpm studio` to scrub in the browser.
+The timeline scene imports `research/outages-summary.json` directly, so rerun `tools/analyze-outages.mjs` before a final render. Pin `zod` to the version Remotion asks for.

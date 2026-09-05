@@ -58,6 +58,10 @@ node tools/log-once.mjs         # one snapshot of the TTC feed → data/ttc-aler
 node tools/evaluate.mjs         # needs the dev server running
 ```
 
+## Demo video
+
+`video/` is a Remotion project that renders the pitch video from the same evidence files the site reads: narration lines in `video/script/`, word-timed captions from whisper.cpp, footage recorded from the live app with Playwright, and an outage timeline drawn straight from `research/outages-summary.json`. The narration is synthesized locally from a short recording of the author's own voice. See `AGENTS.md` for the pipeline.
+
 ## API
 
 `POST /api/route` `{ from: [lon, lat], to: [lon, lat], mode: { cold?, heat?, mobility? }, hourBucket?: "d0715_h14", blockedStations?: ["Bloor-Yonge"] }` → chosen route + fastest baseline, each with legs and stats (`outdoor_m`, `sun_m`, `steps_edges`, `transit_s`, …).
