@@ -1,12 +1,13 @@
 "use client";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import dynamicImport from "next/dynamic";
 import type { Leg, Stats } from "@/lib/router";
 import type { Place, PlacesFile } from "@/lib/types";
 import type { AccessibilityAlert } from "./api/alerts/route";
 import type { Weather } from "./api/weather/route";
 import type { Hit } from "./api/geocode/route";
-import { Bolt, Indoor, Sun, Accessible, Swap, Walk, Train, Warning } from "@/components/icons";
+import { Bolt, Indoor, Sun, Accessible, Swap, Walk, Train } from "@/components/icons";
 
 const RouteMap = dynamicImport(() => import("@/components/RouteMap"), { ssr: false });
 
@@ -38,14 +39,24 @@ const ago = (iso: string | null) => {
 };
 const sentence = (s: string) => s.replace(/\s+/g, " ").trim().toLowerCase().replace(/^./, (c) => c.toUpperCase());
 
-export default function Home() {
-  const [from, setFrom] = useState<Pt | null>(PRESETS[0].from);
-  const [to, setTo] = useState<Pt | null>(PRESETS[0].to);
+// A shared link restores the whole question: places, strategy, hour, walk-only.
+const ptParam = (v: string | null): Pt | null => { const a = v?.split(","); if (!a || a.length < 2) return null; const lon = +a[0], lat = +a[1]; return isFinite(lon) && isFinite(lat) ? { lon, lat, label: a.slice(2).join(",") || "Dropped pin" } : null; };
+
+export default function Page() {
+  return <Suspense><Home /></Suspense>;
+}
+
+function Home() {
+  const q = useSearchParams();
+  // read once: Next mirrors our own replaceState writes back into the search params
+  const [urlMode] = useState(() => q.get("mode"));
+  const [from, setFrom] = useState<Pt | null>(() => ptParam(q.get("from")) ?? PRESETS[0].from);
+  const [to, setTo] = useState<Pt | null>(() => ptParam(q.get("to")) ?? PRESETS[0].to);
   const [pickNext, setPickNext] = useState<"from" | "to">("from");
   const [tab, setTab] = useState<"route" | "live" | "about">("route");
-  const [selected, setSelected] = useState("indoor");
-  const [walkOnly, setWalkOnly] = useState(true);
-  const [when, setWhen] = useState({ day: new Date().getMonth() + 1 >= 6 && new Date().getMonth() + 1 <= 8 ? "d0715" : "d0915", hour: 14 });
+  const [selected, setSelected] = useState(urlMode && urlMode in ICON ? urlMode : "indoor");
+  const [walkOnly, setWalkOnly] = useState(q.get("walk") !== "0");
+  const [when, setWhen] = useState(() => { const h = q.get("hour")?.match(/^(d\d{4})_h(\d{2})$/); return h ? { day: h[1], hour: +h[2] } : { day: new Date().getMonth() + 1 >= 6 && new Date().getMonth() + 1 <= 8 ? "d0715" : "d0915", hour: 14 }; });
   const [resp, setResp] = useState<RoutesResp | { ok: false; error: string } | null>(null);
   const [busy, setBusy] = useState(false);
   const [alerts, setAlerts] = useState<AccessibilityAlert[]>([]);
@@ -54,9 +65,17 @@ export default function Home() {
   const [sheet, setSheet] = useState<"peek" | "full">("full");
 
   const hourBucket = `${when.day}_h${String(when.hour).padStart(2, "0")}`;
+  // keep the address bar shareable
+  useEffect(() => {
+    if (!from || !to) return;
+    const u = new URLSearchParams();
+    const enc = (p: Pt) => `${p.lon.toFixed(5)},${p.lat.toFixed(5)},${p.label}`;
+    u.set("from", enc(from)); u.set("to", enc(to)); u.set("mode", selected); u.set("hour", hourBucket); if (!walkOnly) u.set("walk", "0");
+    window.history.replaceState(null, "", `?${u.toString().replace(/%2C/g, ",")}`);
+  }, [from, to, selected, hourBucket, walkOnly]);
 
   useEffect(() => { fetch("/api/alerts").then((r) => r.json()).then((j) => j.ok && setAlerts(j.elevators)).catch(() => {}); }, []);
-  useEffect(() => { fetch("/api/weather").then((r) => r.json()).then((w: Weather | { ok: false }) => { if (w.ok) { setWeather(w); if (w.suggested.heat) setSelected("shade"); else if (w.suggested.cold) setSelected("indoor"); } }).catch(() => {}); }, []);
+  useEffect(() => { fetch("/api/weather").then((r) => r.json()).then((w: Weather | { ok: false }) => { if (w.ok) { setWeather(w); if (urlMode) return; if (w.suggested.heat) setSelected("shade"); else if (w.suggested.cold) setSelected("indoor"); } }).catch(() => {}); }, [urlMode]);
   useEffect(() => { fetch("/data/places.json").then((r) => r.json()).then(setPlaces).catch(() => {}); }, []);
 
   const outStations = useMemo(() => Array.from(new Set(alerts.filter((a) => /out of service/i.test(a.effect)).map((a) => a.station))), [alerts]);
@@ -78,6 +97,14 @@ export default function Home() {
       if (h) set((cur) => (cur && cur.lon === pt.lon && cur.lat === pt.lat ? { ...cur, label: /^\d+$/.test(h.name) ? `${h.name} ${h.detail.split(",")[0]}` : h.name } : cur));
     }).catch(() => {});
   }, [pickNext]);
+  const onLocate = useCallback((c: [number, number]) => {
+    const pt: Pt = { lon: +c[0].toFixed(6), lat: +c[1].toFixed(6), label: "My location" };
+    setFrom(pt); setPickNext("to");
+    fetch(`/api/geocode?lon=${pt.lon}&lat=${pt.lat}`).then((r) => r.json()).then((j: { ok: boolean; hits?: Hit[] }) => {
+      const h = j.ok ? j.hits?.[0] : null;
+      if (h) setFrom((cur) => (cur && cur.lon === pt.lon && cur.lat === pt.lat ? { ...cur, label: /^\d+$/.test(h.name) ? `${h.name} ${h.detail.split(",")[0]}` : h.name } : cur));
+    }).catch(() => {});
+  }, []);
   const swap = () => { setFrom(to); setTo(from); };
 
   const routes = resp?.ok ? resp.routes : [];
@@ -235,11 +262,11 @@ export default function Home() {
             <div className="rounded-lg border border-line p-3">
               <div className="text-[12px] font-semibold text-ink">150 random trips, downtown core</div>
               <ul className="mt-1.5 space-y-1 text-[12.5px]">
-                {([[Indoor, "Indoor first", "33% less outdoor distance, 6.2% more time"], [Sun, "Shade first", "48% less distance in direct sun, 6.0% more time"], [Accessible, "Step-free", "8 trips had no step-free route at all"]] as const).map(([Icon, k, v]) => (
+                {([[Indoor, "Indoor first", "33% less outdoor distance, 6.2% more time"], [Sun, "Shade first", "47% less distance in direct sun, 6.1% more time"], [Accessible, "Step-free", "8 trips had no step-free route at all"]] as const).map(([Icon, k, v]) => (
                   <li key={k} className="flex items-start gap-2"><Icon className="mt-0.5 h-3.5 w-3.5 shrink-0 text-muted" /><span><span className="font-medium text-ink">{k}</span> — {v}</span></li>
                 ))}
               </ul>
-              <p className="mt-2 text-[11.5px] text-muted">Across the whole city the indoor gain falls to nothing: sheltered walking barely exists outside the financial district, and 47% of the walking network is road with no mapped sidewalk. That gap is the finding.</p>
+              <p className="mt-2 text-[11.5px] text-muted">Across the whole city the indoor gain falls to nothing: sheltered walking barely exists outside the financial district. OpenStreetMap had no sidewalk on 47% of the network; checked against the City&apos;s sidewalk inventory, 4,553 km of that has a sidewalk after all and 1,165 km truly has none. Where the elevator matters most: with Bloor-Yonge&apos;s out, 1 in 4 step-free trips gets 30 minutes longer.</p>
             </div>
             <a href="/evidence" className="inline-block rounded-lg bg-ink px-3 py-2 text-[13px] font-medium text-white">Evidence and method</a>
             <p className="text-[11px] text-muted">OpenStreetMap · City of Toronto 3D Massing, Heat Relief Network, TTC GTFS · TTC live alerts · Environment and Climate Change Canada.</p>
@@ -251,7 +278,7 @@ export default function Home() {
       <div className="relative min-h-0 flex-1">
         <RouteMap from={from ? [from.lon, from.lat] : null} to={to ? [to.lon, to.lat] : null} legs={chosen?.legs ?? null} ghostLegs={ghost}
           badge={chosen?.ok && chosen.stats ? `${chosen.label} · ${fmtMin(chosen.stats.time_s)} min` : null}
-          weather={weather} outages={outageMarkers} places={visiblePlaces} onPick={onPick} />
+          weather={weather} outages={outageMarkers} places={visiblePlaces} onPick={onPick} onLocate={onLocate} />
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ One router, three cost layers, switched automatically by Environment Canada warn
 | Shade first | minimise time in direct sun at the chosen hour; shows Heat Relief Network cool spaces | Toronto 3D Massing (building heights) + NOAA solar position → per-segment sun fraction for 12 day/hour buckets |
 | Step-free | no stairs, no raised kerbs, no station whose elevator is out **right now** | OSM `highway=steps`, `wheelchair`, `barrier=kerb`; TTC live alerts feed |
 
-Every route is also charged for walking on a road with no mapped sidewalk (47 % of the network), for loose or unpaved ground, and for steep grades — the conditions that turn dangerous once there is snow on them.
+Every route is also charged for walking on a road with no sidewalk, for loose or unpaved ground, and for steep grades — the conditions that turn dangerous once there is snow on them. Sidewalk presence comes from OpenStreetMap corrected by the City of Toronto's Pedestrian Network: of 11,441 km the map had flagged as sidewalk-less, 4,553 km has a sidewalk after all and 1,165 km is confirmed to have none (`tools/apply-pednet.mjs`, `research/sidewalks-summary.json`).
 
 Every result is shown next to the plain fastest route, so the trade-off is explicit: *"16 m outdoors, 98 % less than fastest, one minute longer"*.
 
@@ -27,9 +27,21 @@ Every result is shown next to the plain fastest route, so the trade-off is expli
 | Run | Median change vs fastest route | Trips improved | Median extra time |
 |---|---|---|---|
 | Indoor first, downtown core | outdoor distance −33 % (1,241 m → 831 m) | 77 % | +6.2 % |
-| Shade first, July 15 14:00 | direct-sun distance −48 % | 46 % | +6.0 % |
+| Shade first, July 15 14:00 | direct-sun distance −47 % | 47 % | +6.1 % |
 | Indoor first, city-wide | no measurable gain | 33 % | — |
-| Step-free | 8 of 150 trips have **no** step-free route at all | — | — |
+| Step-free | 8 of 150 downtown trips have **no** step-free route at all | — | — |
+
+`tools/outage-impact.mjs` asks what one broken elevator costs: 150 random step-free trips of 3–12 km, walk plus subway, routed again with each logged station's elevator out (`research/outage-impact.json`):
+
+| Elevator out at | Step-free trips through it | Made longer | Median added |
+|---|---|---|---|
+| Bloor-Yonge | 35 of 150 (23 %) | 34 | +30 min |
+| Eglinton | 15 (10 %) | 15 | +21 min |
+| Kennedy | 12 (8 %) | 10 | +21 min |
+| Bathurst | 12 (8 %) | 11 | +17 min |
+| Jane | 9 (6 %) | 8 | +7 min |
+
+Nobody is left without a route, because the router walks around the gap; the price is the detour.
 
 A five-minute timer on a small VPS has been logging every TTC elevator and escalator alert since 2026-09-01 (GitHub Actions and a laptop poller before 2026-09-05); `tools/analyze-outages.mjs` summarizes outage counts, durations and stations (`research/outages-summary.json`).
 
@@ -51,11 +63,13 @@ Data files (`data/graph.json`, `data/subway.json`, `public/data/places.json`) ar
 node tools/fetch-osm.mjs        # OpenStreetMap via Overpass → data/raw/osm-downtown.json
 node tools/build-graph.mjs      # → data/graph.json
 node tools/compute-shade.mjs    # needs data/raw/massing/ (Toronto 3D Massing 2025 shapefile) → adds edge.sun
+node tools/apply-pednet.mjs     # needs data/raw/pednet/pednet-4326.geojson (City Pedestrian Network) → corrects the sidewalk flag
 node tools/build-subway.mjs     # needs data/raw/gtfs/ (TTC GTFS) → data/subway.json
 node tools/build-places.mjs     # needs data/raw/cool-spaces.geojson → public/data/places.json
 node tools/pack-graph.mjs       # data/graph.json → data/graph.bin, what the app actually loads
 node tools/log-once.mjs         # one snapshot of the TTC feed → data/ttc-alerts/ (the VPS timer runs this)
 node tools/evaluate.mjs         # needs the dev server running
+node tools/outage-impact.mjs    # needs the dev server running and research/outages-summary.json
 ```
 
 ## Demo video
@@ -71,7 +85,7 @@ node tools/evaluate.mjs         # needs the dev server running
 ## Data sources
 
 - OpenStreetMap contributors (ODbL) via Overpass API — pedestrian network, PATH, entrances, elevators
-- City of Toronto Open Data: 3D Massing (2025), Air Conditioned and Cool Spaces (Heat Relief Network), TTC Routes and Schedules (GTFS)
+- City of Toronto Open Data: 3D Massing (2025), Pedestrian Network (sidewalk inventory), Air Conditioned and Cool Spaces (Heat Relief Network), TTC Routes and Schedules (GTFS)
 - TTC live service alerts (alerts.ttc.ca)
 - Environment and Climate Change Canada GeoMet OGC API (city page weather, warnings)
 - City of Toronto Warming Centres page (addresses; geocoded with OSM Nominatim)

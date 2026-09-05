@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { Map as MlMap, Marker as MlMarker, Popup, NavigationControl, LngLatBounds, type GeoJSONSource, type MapMouseEvent } from "maplibre-gl";
+import { Map as MlMap, Marker as MlMarker, Popup, NavigationControl, GeolocateControl, LngLatBounds, type GeoJSONSource, type MapMouseEvent } from "maplibre-gl";
 import type { Feature, FeatureCollection, LineString, Point } from "geojson";
 import "maplibre-gl/dist/maplibre-gl.css";
 import type { Leg } from "@/lib/router";
@@ -15,6 +15,7 @@ export interface MapProps {
   outages: OutageMarker[]; places: Place[];
   weather: Weather | null;
   onPick: (p: [number, number]) => void;
+  onLocate?: (p: [number, number]) => void;
 }
 
 const STYLES = { light: "https://tiles.openfreemap.org/styles/positron", dark: "https://tiles.openfreemap.org/styles/dark" } as const;
@@ -76,13 +77,15 @@ function midpoint(legs: Leg[] | null): [number, number] | null {
   return legs[legs.length - 1].coords[0];
 }
 
-export default function RouteMap({ from, to, legs, ghostLegs, badge, outages, places, weather, onPick }: MapProps) {
+export default function RouteMap({ from, to, legs, ghostLegs, badge, outages, places, weather, onPick, onLocate }: MapProps) {
   const el = useRef<HTMLDivElement>(null);
   const map = useRef<MlMap | null>(null);
   const markers = useRef<MlMarker[]>([]);
   const badgeMarker = useRef<MlMarker | null>(null);
   const anim = useRef<number | null>(null);
-  const pickRef = useRef(onPick); pickRef.current = onPick;
+  const pickRef = useRef(onPick);
+  const locateRef = useRef(onLocate);
+  useEffect(() => { pickRef.current = onPick; locateRef.current = onLocate; }, [onPick, onLocate]);
   const [styleKey, setStyleKey] = useState<StyleKey>("light");
   const [styleReady, setStyleReady] = useState(0);
 
@@ -136,6 +139,9 @@ export default function RouteMap({ from, to, legs, ghostLegs, badge, outages, pl
     if (!el.current || map.current) return;
     const m = new MlMap({ container: el.current, style: STYLES.light, center: CENTER, zoom: 14.4, attributionControl: { compact: true }, canvasContextAttributes: { preserveDrawingBuffer: true } });
     m.addControl(new NavigationControl({ showCompass: false }), "bottom-right");
+    const locate = new GeolocateControl({ positionOptions: { enableHighAccuracy: true }, trackUserLocation: false, showUserLocation: true, fitBoundsOptions: { maxZoom: 15 } });
+    locate.on("geolocate", (e) => locateRef.current?.([+e.coords.longitude.toFixed(6), +e.coords.latitude.toFixed(6)]));
+    m.addControl(locate, "bottom-right");
     m.on("error", (e) => console.error("[map]", e.error?.message ?? e));
     m.on("style.load", () => setStyleReady((v) => v + 1));
     m.on("click", (e: MapMouseEvent) => { if (m.getLayer("places") && m.queryRenderedFeatures(e.point, { layers: ["places"] }).length) return; pickRef.current([+e.lngLat.lng.toFixed(6), +e.lngLat.lat.toFixed(6)]); });

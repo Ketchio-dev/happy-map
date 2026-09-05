@@ -1,0 +1,236 @@
+{
+ "meta": {
+  "n": 150,
+  "usable": 149,
+  "bbox": [
+   43.6,
+   -79.56,
+   43.8,
+   -79.2
+  ],
+  "generated": "2026-09-05T15:42:14.574Z",
+  "outagesThrough": "2026-09-04T21:27:16.368Z"
+ },
+ "impact": {
+  "Rosedale": {
+   "trips_using_station": 0,
+   "share_of_trips": 0,
+   "trips_no_route": 0,
+   "trips_longer": 0,
+   "median_added_min": null,
+   "outages_logged": 7,
+   "breakdowns_logged": 0,
+   "outage_hours_logged": 101.6
+  },
+  "Bayview": {
+   "trips_using_station": 2,
+   "share_of_trips": 0.013,
+   "trips_no_route": 0,
+   "trips_longer": 2,
+   "median_added_min": 12.816666666666666,
+   "outages_logged": 6,
+   "breakdowns_logged": 2,
+   "outage_hours_logged": 97.9
+  },
+  "Forest Hill": {
+   "trips_using_station": 0,
+   "share_of_trips": 0,
+   "trips_no_route": 0,
+   "trips_longer": 0,
+   "median_added_min": null,
+   "outages_logged": 3,
+   "breakdowns_logged": 0,
+   "outage_hours_logged": 45.8
+  },
+  "St Andrew": {
+   "trips_using_station": 5,
+   "share_of_trips": 0.034,
+   "trips_no_route": 0,
+   "trips_longer": 4,
+   "median_added_min": 8.166666666666666,
+   "outages_logged": 3,
+   "breakdowns_logged": 1,
+   "outage_hours_logged": 26.8
+  },
+  "Broadview": {
+   "trips_using_station": 2,
+   "share_of_trips": 0.013,
+   "trips_no_route": 0,
+   "trips_longer": 2,
+   "median_added_min": 15.3,
+   "outages_logged": 2,
+   "breakdowns_logged": 0,
+   "outage_hours_logged": 23.5
+  },
+  "Kennedy": {
+   "trips_using_station": 12,
+   "share_of_trips": 0.081,
+   "trips_no_route": 0,
+   "trips_longer": 10,
+   "median_added_min": 20.783333333333335,
+   "outages_logged": 2,
+   "breakdowns_logged": 2,
+   "outage_hours_logged": 66.9
+  },
+  "Eglinton": {
+   "trips_using_station": 15,
+   "share_of_trips": 0.101,
+   "trips_no_route": 0,
+   "trips_longer": 15,
+   "median_added_min": 20.566666666666666,
+   "outages_logged": 2,
+   "breakdowns_logged": 0,
+   "outage_hours_logged": 22.2
+  },
+  "Jane": {
+   "trips_using_station": 9,
+   "share_of_trips": 0.06,
+   "trips_no_route": 0,
+   "trips_longer": 8,
+   "median_added_min": 7.25,
+   "outages_logged": 1,
+   "breakdowns_logged": 0,
+   "outage_hours_logged": 17.1
+  },
+  "Keele": {
+   "trips_using_station": 3,
+   "share_of_trips": 0.02,
+   "trips_no_route": 0,
+   "trips_longer": 2,
+   "median_added_min": 4.183333333333334,
+   "outages_logged": 1,
+   "breakdowns_logged": 0,
+   "outage_hours_logged": 18.5
+  },
+  "Finch": {
+   "trips_using_station": 5,
+   "share_of_trips": 0.034,
+   "trips_no_route": 0,
+   "trips_longer": 5,
+   "median_added_min": 6.533333333333333,
+   "outages_logged": 1,
+   "breakdowns_logged": 0,
+   "outage_hours_logged": 63.2
+  },
+  "Don Valley": {
+   "trips_using_station": 0,
+   "share_of_trips": 0,
+   "trips_no_route": 0,
+   "trips_longer": 0,
+   "median_added_min": null,
+   "outages_logged": 1,
+   "breakdowns_logged": 0,
+   "outage_hours_logged": 5008.5
+  },
+  "Bloor-Yonge": {
+   "trips_using_station": 35,
+   "share_of_trips": 0.235,
+   "trips_no_route": 0,
+   "trips_longer": 34,
+   "median_added_min": 29.9,
+   "outages_logged": 1,
+   "breakdowns_logged": 0,
+   "outage_hours_logged": 25.4
+  },
+  "Osgoode": {
+   "trips_using_station": 0,
+   "share_of_trips": 0,
+   "trips_no_route": 0,
+   "trips_longer": 0,
+   "median_added_min": null,
+   "outages_logged": 1,
+   "breakdowns_logged": 0,
+   "outage_hours_logged": 25.4
+  },
+  "Vaughan Metropolitan Centre": {
+   "trips_using_station": 1,
+   "share_of_trips": 0.007,
+   "trips_no_route": 0,
+   "trips_longer": 1,
+   "median_added_min": 9.3,
+   "outages_logged": 1,
+   "breakdowns_logged": 0,
+   "outage_hours_logged": 20.2
+  },
+  "Avenue": {
+   "trips_using_station": 0,
+   "share_of_trips": 0,
+   "trips_no_route": 0,
+   "trips_longer": 0,
+   "median_added_min": null,
+   "outages_logged": 1,
+   "breakdowns_logged": 0,
+   "outage_hours_logged": 7.2
+  },
+  "Laird": {
+   "trips_using_station": 0,
+   "share_of_trips": 0,
+   "trips_no_route": 0,
+   "trips_longer": 0,
+   "median_added_min": null,
+   "outages_logged": 1,
+   "breakdowns_logged": 0,
+   "outage_hours_logged": 50.6
+  },
+  "Bessarion": {
+   "trips_using_station": 1,
+   "share_of_trips": 0.007,
+   "trips_no_route": 0,
+   "trips_longer": 1,
+   "median_added_min": 12.75,
+   "outages_logged": 1,
+   "breakdowns_logged": 0,
+   "outage_hours_logged": 21.8
+  },
+  "Union": {
+   "trips_using_station": 5,
+   "share_of_trips": 0.034,
+   "trips_no_route": 0,
+   "trips_longer": 4,
+   "median_added_min": 3.7333333333333334,
+   "outages_logged": 1,
+   "breakdowns_logged": 0,
+   "outage_hours_logged": 9.8
+  },
+  "Bathurst": {
+   "trips_using_station": 12,
+   "share_of_trips": 0.081,
+   "trips_no_route": 0,
+   "trips_longer": 11,
+   "median_added_min": 16.85,
+   "outages_logged": 1,
+   "breakdowns_logged": 0,
+   "outage_hours_logged": 17.2
+  },
+  "St George": {
+   "trips_using_station": 3,
+   "share_of_trips": 0.02,
+   "trips_no_route": 0,
+   "trips_longer": 3,
+   "median_added_min": 10.933333333333334,
+   "outages_logged": 1,
+   "breakdowns_logged": 1,
+   "outage_hours_logged": 8.4
+  },
+  "Dundas West": {
+   "trips_using_station": 3,
+   "share_of_trips": 0.02,
+   "trips_no_route": 0,
+   "trips_longer": 3,
+   "median_added_min": 6.066666666666666,
+   "outages_logged": 1,
+   "breakdowns_logged": 0,
+   "outage_hours_logged": 8.2
+  },
+  "Donlands": {
+   "trips_using_station": 0,
+   "share_of_trips": 0,
+   "trips_no_route": 0,
+   "trips_longer": 0,
+   "median_added_min": null,
+   "outages_logged": 1,
+   "breakdowns_logged": 0,
+   "outage_hours_logged": 8
+  }
+ }
+}

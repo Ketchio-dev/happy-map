@@ -11,6 +11,8 @@ LOGGER_SOURCE=oci node tools/log-once.mjs
 if [ -z "$(git status --porcelain -- 'data/ttc-alerts/*.jsonl')" ]; then
   exit 0
 fi
-git add -- 'data/ttc-alerts/*.jsonl'
+# Recompute the summary the evidence page reads, so the live site follows the log.
+node tools/analyze-outages.mjs > /dev/null
+git add -- 'data/ttc-alerts/*.jsonl' research/outages-summary.json
 git commit -q -m "data: TTC accessibility alerts $(date -u +'%Y-%m-%dT%H:%MZ') [skip ci]"
 git push -q origin HEAD:main

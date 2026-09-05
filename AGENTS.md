@@ -8,7 +8,7 @@ Next.js 16 (App Router) + TypeScript + Tailwind 4 + MapLibre 5. pnpm. Dev: `pnpm
 - `src/lib/graph.ts` — loads `data/graph.bin` + `data/subway.json`, builds adjacency + spatial index + connected-component sizes, appends subway nodes/edges.
 - `src/lib/router.ts` — exposure-weighted A*. `edgeCost()` holds the cost model; the heuristic assumes no penalties, so it stays admissible as long as every multiplier is >= 1.
 - `src/app/api/routes` — all four strategies in one call (used by the UI). `api/route` — single strategy (used by `tools/evaluate.mjs`).
-- `tools/*.mjs` — data pipeline and evaluation, see README.
+- `tools/*.mjs` — data pipeline and evaluation, see README. Order: fetch-osm → build-graph → compute-shade → **apply-pednet** (City sidewalk inventory corrects the roadway flag; needs data/raw/pednet/) → build-subway → build-places → pack-graph → evaluate (LABEL=core and LABEL=wide) → outage-impact.
 - `tools/vps/` — the outage logger as deployed: a systemd timer on the user's OCI VPS (`ubuntu@oci-ubuntu-129-153-49-224` over Tailscale SSH, repo at `~/apps/happy-map`) runs `log-once.mjs` every 5 min and pushes with a deploy key. It is the only writer of `data/ttc-alerts/*.jsonl`; do not re-enable the Actions schedule.
 
 ## Rules
@@ -18,7 +18,9 @@ Next.js 16 (App Router) + TypeScript + Tailwind 4 + MapLibre 5. pnpm. Dev: `pnpm
 - Keep the `/api/route` request/response shape stable or `tools/evaluate.mjs` breaks.
 - `data/graph.json` is an intermediate; the app reads `data/graph.bin`. Always run `node tools/pack-graph.mjs` after rebuilding the graph or the shade data, or the app keeps serving the old graph.
 - Sections in `graph.bin` are 8-byte aligned. If you add one, keep the padding or the typed-array views throw.
-- Rerun `node tools/evaluate.mjs` (twice, LABEL=core and LABEL=wide) after any change to `edgeCost()`, and update the numbers in README, the About tab and the evidence page.
+- Rerun `node tools/evaluate.mjs` (twice: `LABEL=core CORE=43.64,-79.395,43.668,-79.37` and `LABEL=wide CORE=43.6,-79.56,43.8,-79.2`, N=150) after any change to `edgeCost()` or the graph, then `node tools/outage-impact.mjs`, and update the numbers in README, the About tab and the evidence page. Edge flag bit 8 means the City inventory was consulted for that edge.
+- `/evidence` fetches `research/outages-summary.json` from GitHub raw (10-min revalidate) because the VPS logger recommits it on every feed change; the other research files are read from the deploy.
+- The map page initialises from search params (`from`, `to`, `mode`, `hour`, `walk`) and mirrors state back with `history.replaceState`; the root layout is `force-dynamic` so SSR sees them.
 - Screenshots: `CHROME_BIN=<cached playwright chromium binary> node tools/screenshot.mjs` with the dev server running.
 
 <!-- BEGIN:nextjs-agent-rules -->
