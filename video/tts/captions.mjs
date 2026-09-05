@@ -18,6 +18,12 @@ for (const line of manifest) {
   // The script text as prompt keeps the spelling of names ("happy map", "TTC") stable.
   execFileSync("whisper-cli", ["-m", MODEL, "-f", wav, "-l", "en", "-ojf", "-of", base, "-ml", "1", "-sow", "--dtw", "large.v3.turbo", "--prompt", line.text], { stdio: ["ignore", "ignore", "inherit"] });
   const { captions } = toCaptions({ whisperCppOutput: JSON.parse(readFileSync(`${base}.json`, "utf8")) });
+  // Whisper supplies the timing; the script supplies the spelling. When the word counts
+  // agree, swap whisper's guesses ("Bloor-Yong's") for the words that were actually read.
+  const words = line.text.trim().split(/\s+/);
+  const spoken = captions.filter((c) => c.text.trim());
+  if (spoken.length === words.length) spoken.forEach((c, i) => { c.text = (c.text.startsWith(" ") ? " " : "") + words[i]; });
+  else console.warn(`   ${line.id}: ${spoken.length} tokens vs ${words.length} words, keeping whisper's text`);
   out[line.id] = captions;
   console.log(`${line.id.padStart(10)} ${captions.length} tokens: ${captions.map((c) => c.text).join("").trim().slice(0, 90)}`);
 }

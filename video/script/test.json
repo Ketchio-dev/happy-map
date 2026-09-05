@@ -1,10 +1,38 @@
 [
-  { "id": "problem", "text": "Every city has walks that hurt. Cold that bites through a coat. Sun with no shade for blocks. A station elevator that is out, with no warning." },
-  { "id": "hook", "text": "happy map plans the walk by what you are exposed to, not only by how long it takes." },
-  { "id": "toronto", "text": "It is built for Toronto, on open data, and every claim in this video is measured." },
-  { "id": "layers", "text": "Minutes outdoors in January. Metres of direct sun in July. Stairs, missing sidewalks, and subway elevators that are out of service right now." },
-  { "id": "compare", "text": "Every route sits next to the fastest one, so the trade-off is never hidden." },
-  { "id": "number", "text": "Scotiabank Arena to the Eaton Centre: sixteen metres outdoors instead of eight hundred, for one extra minute." },
-  { "id": "evidence", "text": "Since the first of September, a server has logged every T T C elevator outage, every five minutes. The app is judged by that data, not by claims." },
-  { "id": "close", "text": "Open source, live today, and honest about what it cannot see yet." }
+  {
+    "id": "problem",
+    "text": "Every city has walks that hurt. Cold that bites through a coat. Sun with no shade for blocks. A station elevator that is out, with no warning."
+  },
+  {
+    "id": "hook",
+    "text": "happy map plans the walk by what you are exposed to, not only by how long it takes."
+  },
+  {
+    "id": "toronto",
+    "text": "It is built for Toronto, on open data, and every claim in this video is measured."
+  },
+  {
+    "id": "layers",
+    "text": "Minutes outdoors in January. Metres of direct sun in July. Stairs, missing sidewalks, and subway elevators that are out of service right now."
+  },
+  {
+    "id": "compare",
+    "text": "Every route sits next to the fastest one, so the trade-off is never hidden."
+  },
+  {
+    "id": "number",
+    "text": "Scotiabank Arena to the Eaton Centre: sixteen metres outdoors instead of eight hundred, for one extra minute."
+  },
+  {
+    "id": "sidewalks",
+    "text": "The map also checks itself. OpenStreetMap had no sidewalk on half the network. The City's own inventory says four and a half thousand kilometres of that has one after all."
+  },
+  {
+    "id": "evidence",
+    "text": "Since the first of September, a server has logged every T T C elevator outage, every five minutes. When Bloor-Yonge's elevator is out, one in four step-free trips gets thirty minutes longer."
+  },
+  {
+    "id": "close",
+    "text": "Open source, live today, and honest about what it cannot see yet."
+  }
 ]

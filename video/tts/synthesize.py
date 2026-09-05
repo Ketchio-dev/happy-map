@@ -46,7 +46,9 @@ def main() -> None:
     ap.add_argument("script")
     ap.add_argument("--model", choices=MODELS, default="fish")
     ap.add_argument("--out", help="output name (default: script stem)")
+    ap.add_argument("--only", help="comma-separated line ids to (re)generate; others keep their existing audio")
     args = ap.parse_args()
+    only = set(args.only.split(",")) if args.only else None
     script = Path(args.script).resolve()
     name = args.out or script.stem
     lines = json.loads(script.read_text())
@@ -58,8 +60,12 @@ def main() -> None:
     model = load_model(MODELS[args.model])
     reference = load_audio(str(REF), sample_rate=model.sample_rate, volume_normalize=False)
 
+    manifest_path = gen_dir / f"{name}.narration.json"
+    previous = {m["id"]: m for m in json.loads(manifest_path.read_text())} if only and manifest_path.exists() else {}
     manifest = []
     for i, line in enumerate(lines):
+        if only and line["id"] not in only and line["id"] in previous:
+            manifest.append(previous[line["id"]]); continue
         if args.model == "fish":
             results = list(model.generate(
                 text=line["text"], ref_audio=reference, ref_text=REF_TEXT,
@@ -80,8 +86,8 @@ def main() -> None:
         manifest.append({"id": line["id"], "file": f"audio/{name}/{file.name}", "text": line["text"], "durationSec": round(dur, 3)})
         print(f"{line['id']:>10} {dur:5.2f} s  {file.name}", flush=True)
 
-    (gen_dir / f"{name}.narration.json").write_text(json.dumps(manifest, indent=1))
-    print(f"total {sum(m['durationSec'] for m in manifest):.1f} s -> {gen_dir / (name + '.narration.json')}")
+    manifest_path.write_text(json.dumps(manifest, indent=1))
+    print(f"total {sum(m['durationSec'] for m in manifest):.1f} s -> {manifest_path}")
 
 
 if __name__ == "__main__":

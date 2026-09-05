@@ -109,11 +109,12 @@ export const NumberCard = () => {
   );
 };
 
-export const Outro = () => {
+// `revealAt`: frame at which the small print may appear, i.e. once the last caption is gone.
+export const Outro = ({ revealAt = 14 }: { revealAt?: number }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const a = ease(frame, fps);
-  const b = ease(frame, fps, 14);
+  const b = ease(frame, fps, revealAt);
   return (
     <AbsoluteFill style={{ background: color.ground, justifyContent: "center", alignItems: "center" }}>
       <div style={{ opacity: a, textAlign: "center" }}>

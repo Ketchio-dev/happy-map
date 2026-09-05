@@ -4,6 +4,7 @@ import { Fade, Layers, NumberCard, Outro, Problem, Provenance, Title } from "./s
 import { Captions } from "./scenes/Captions";
 import { FULL, Footage, PANEL } from "./scenes/Footage";
 import { OutageTimeline } from "./scenes/OutageTimeline";
+import { SidewalkCard } from "./scenes/SidewalkCard";
 import { TAIL_S, markAt, timeline, type Cue } from "./narration";
 import { FPS, color } from "./theme";
 
@@ -17,6 +18,7 @@ const Scene = ({ cue }: { cue: Cue }) => {
     case "layers": return <><Footage startFrom={markAt("Fastest", -0.8)} /><Layers cue={cue} /></>;
     case "compare": return <Footage startFrom={markAt("Fastest", -0.5)} from={FULL} to={PANEL} moveFrames={Math.round(FPS * 1.3)} />;
     case "number": return <NumberCard />;
+    case "sidewalks": return <SidewalkCard cue={cue} />;
     case "evidence": {
       const swap = Math.round(FPS * 3.9);
       return (
@@ -26,7 +28,7 @@ const Scene = ({ cue }: { cue: Cue }) => {
         </>
       );
     }
-    default: return <Outro />;
+    default: return <Outro revealAt={cue.durationInFrames + 6} />;
   }
 };
 
