@@ -6,6 +6,8 @@ Walking and subway routes across Toronto costed by what you are exposed to rathe
 
 Built solo for [GatewayHacks 2026](https://gatewayhacks-2026.devpost.com/) (Accessibility & Health track).
 
+![One trip, four ways: fastest, indoor first, shade first, step-free; then the Live tab and a replayed moment from the outage log](research/screens/demo.gif)
+
 ## What it does
 
 One router, three cost layers, switched automatically by Environment Canada warnings:

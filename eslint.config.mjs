@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // the demo-video workspace has its own dependencies and is not part of the app
+    "video/**",
   ]),
 ]);
 

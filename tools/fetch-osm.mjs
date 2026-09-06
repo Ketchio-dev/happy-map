@@ -8,7 +8,10 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 // south,west,north,east — the City of Toronto plus a margin into Mississauga/Vaughan/Markham
 const BBOX = process.env.BBOX ?? "43.575,-79.640,43.860,-79.115";
 const COLS = Number(process.env.COLS ?? 7), ROWS = Number(process.env.ROWS ?? 5);
-const CACHE = path.join(ROOT, "data", "raw", "osm-tiles");
+// CITY=montreal keeps a second city's raw data under data/raw/<city>/; Toronto stays at data/raw/
+const CITY = process.env.CITY ?? "toronto";
+const RAW = CITY === "toronto" ? path.join(ROOT, "data", "raw") : path.join(ROOT, "data", "raw", CITY);
+const CACHE = path.join(RAW, "osm-tiles");
 const ENDPOINTS = ["https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter"];
 
 const query = (bbox) => `
@@ -69,7 +72,7 @@ for (const [i, t] of tiles.entries()) {
   await sleep(1500);
 }
 
-const out = path.join(ROOT, "data", "raw", "osm-downtown.json");
+const out = path.join(RAW, "osm-downtown.json");
 await writeFile(out, JSON.stringify({ elements }));
 const ways = elements.filter((e) => e.type === "way"), nodes = elements.filter((e) => e.type === "node");
 console.log(`saved ${out}: ${elements.length} elements (${ways.length} ways, ${nodes.length} nodes)`);
