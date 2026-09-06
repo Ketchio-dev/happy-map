@@ -119,7 +119,7 @@ export default async function Evidence() {
         <h2 className="text-lg font-medium">4. What one broken elevator does</h2>
         {imp ? (
           <>
-            <p className="mt-1 text-ink-soft">{imp.meta.usable} random step-free trips of 3 to 12 km across the city, walk plus subway. For every station with a logged outage, the same trips are routed again with that station&apos;s elevator out. Nobody is stranded, because the router walks around the gap, but the detours are long. <code>tools/outage-impact.mjs</code>, outages through {imp.meta.outagesThrough.slice(0, 10)}.</p>
+            <p className="mt-1 text-ink-soft">{imp.meta.usable} random step-free trips of 3 to 12 km across the city, walk plus subway. For every station with a logged outage, the same trips are routed again with that station&apos;s elevator out. Every trip kept a route on paper, because the router walks around the gap; the detours are what it costs, and whether a person can walk them is a question this evaluation cannot answer. <code>tools/outage-impact.mjs</code>, outages through {imp.meta.outagesThrough.slice(0, 10)}.</p>
             <table className="mt-3 w-full text-xs">
               <thead><tr className="border-b border-line text-left text-muted"><th className="py-1 font-normal">Station</th><th className="font-normal">Trips through it</th><th className="font-normal">Made longer</th><th className="font-normal">Median added</th><th className="font-normal">Outages logged</th><th className="font-normal">Of which breakdowns</th></tr></thead>
               <tbody>{impactRows.map(([st, v]) => (

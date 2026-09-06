@@ -44,13 +44,13 @@ Also in the interface: a walking-pace setting (slow, average, brisk) that change
 
 | Elevator out at | Step-free trips through it | Made longer | Median added |
 |---|---|---|---|
-| Bloor-Yonge | 35 of 150 (23 %) | 34 | +30 min |
+| Bloor-Yonge | 36 of 149 (24 %) | 33 | +30 min |
 | Eglinton | 15 (10 %) | 15 | +21 min |
 | Kennedy | 12 (8 %) | 10 | +21 min |
 | Bathurst | 12 (8 %) | 11 | +17 min |
 | Jane | 9 (6 %) | 8 | +7 min |
 
-Nobody is left without a route, because the router walks around the gap; the price is the detour.
+Every trip kept a route on paper, because the router walks around the gap; whether a person can walk the detour is a separate question, and 8 of the 150 downtown trips had no step-free route at all.
 
 A five-minute timer on a small VPS has been logging every TTC elevator and escalator alert since 2026-09-01 (GitHub Actions and a laptop poller before 2026-09-05); `tools/analyze-outages.mjs` summarizes outage counts, durations and stations (`research/outages-summary.json`).
 
