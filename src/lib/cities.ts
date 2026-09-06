@@ -44,7 +44,7 @@ export const CITIES: Record<string, CityConfig> = {
     ],
     lineColors: { "1": "#1fa83a", "2": "#ef7d1a", "4": "#e6c000", "5": "#1a86d0" },
     lineLabels: [["#1fa83a", "Green"], ["#ef7d1a", "Orange"], ["#e6c000", "Yellow"], ["#1a86d0", "Blue"]],
-    hasShade: false, hasOutageLog: false, alerts: "stm",
+    hasShade: false, hasOutageLog: true, alerts: "stm",
     weather: { lat: 45.50, lon: -73.57, ecccBbox: "-73.75,45.40,-73.45,45.70", ecccName: "montr" },
     geocodeViewbox: "-73.62,45.54,-73.53,45.48", sheltered: "RÉSO",
   },

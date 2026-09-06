@@ -20,6 +20,12 @@ describe("parseStm", () => {
     expect(first.header).toMatch(/^Place-des-Arts: .*out of service/i);
     expect(first.causeDesc).toBe("Indefinite period");
   });
+  it("gives the same outage the same id on every poll, so the log can measure its lifetime", () => {
+    const again = parseStm(html, "2026-09-07T09:00:00Z");
+    expect(again.map((a) => a.id)).toEqual(alerts.map((a) => a.id));
+    expect(alerts[0].id).toMatch(/^stm-place-des-arts-[0-9a-f]{8}$/);
+    expect(new Set(alerts.map((a) => a.id)).size).toBe(alerts.length);
+  });
   it("normalises accented station names the same way as GTFS names", () => {
     expect(normName("Station Côte-Vertu")).toBe("cote vertu");
     expect(normName("Côte-Vertu")).toBe("cote vertu");

@@ -19,7 +19,7 @@ if [ ! -d "$REPO_DIR/.git" ]; then
 fi
 cd "$REPO_DIR"
 # idempotent: an older clone gets the patterns the logger script needs today
-git sparse-checkout set --no-cone '/.gitignore' '/data/ttc-alerts/' '/tools/log-once.mjs' '/tools/analyze-outages.mjs' '/tools/vps/' '/research/*.json'
+git sparse-checkout set --no-cone '/.gitignore' '/data/ttc-alerts/' '/data/stm-alerts/' '/tools/log-once.mjs' '/tools/log-once-stm.mjs' '/tools/stm-parse.mjs' '/tools/analyze-outages.mjs' '/tools/vps/' '/research/*.json'
 git config core.sshCommand "$SSH_CMD"
 git config user.name "happy-map logger"
 git config user.email "${GIT_EMAIL:-sr.junsoo.park@gmail.com}"

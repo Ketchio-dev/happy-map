@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
     "/api/route": ["./data/graph.bin", "./data/subway.json", "./data/montreal/graph.bin", "./data/montreal/subway.json"],
     "/api/reach": ["./data/graph.bin", "./data/subway.json", "./data/montreal/graph.bin", "./data/montreal/subway.json"],
     "/api/alerts": ["./data/subway.json", "./data/montreal/subway.json"],
-    "/api/outages": ["./data/subway.json", "./research/outages-summary.json"],
+    "/api/outages": ["./data/subway.json", "./data/montreal/subway.json", "./research/outages-summary.json", "./research/outages-summary-montreal.json"],
     "/evidence": ["./research/eval-core.json", "./research/eval-wide.json", "./research/outages-summary.json"],
   },
 };

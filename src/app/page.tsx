@@ -96,12 +96,12 @@ function Home() {
 
   useEffect(() => {
     const ctl = new AbortController();
-    fetch(replayAt ? `/api/outages?at=${encodeURIComponent(replayAt)}` : `/api/alerts?city=${city.id}`, { signal: ctl.signal }).then((r) => r.json())
+    fetch(replayAt ? `/api/outages?city=${city.id}&at=${encodeURIComponent(replayAt)}` : `/api/alerts?city=${city.id}`, { signal: ctl.signal }).then((r) => r.json())
       .then((j: (OutagesReplay | { ok: false }) & { elevators?: AccessibilityAlert[]; escalators?: AccessibilityAlert[] }) => { if (!j.ok) return; setAlerts(j.elevators ?? []); setEscalators(j.escalators ?? []); setReplay(replayAt ? (j as OutagesReplay) : null); }).catch(() => {});
     return () => ctl.abort();
   }, [replayAt, city]);
   // the log's extent, for the replay scrubber
-  useEffect(() => { if (!city.hasOutageLog) return; fetch("/api/outages").then((r) => r.json()).then((j: OutagesReplay | { ok: false }) => { if (j.ok) setLog(j); }).catch(() => {}); }, [city]);
+  useEffect(() => { if (!city.hasOutageLog) return; fetch(`/api/outages?city=${city.id}`).then((r) => r.json()).then((j: OutagesReplay | { ok: false }) => { if (j.ok) setLog(j); }).catch(() => {}); }, [city]);
   useEffect(() => { fetch(`/api/weather?city=${city.id}`).then((r) => r.json()).then((w: Weather | { ok: false }) => { if (w.ok) { setWeather(w); if (urlMode) return; if (w.suggested.heat && city.hasShade) setSelected("shade"); else if (w.suggested.cold) setSelected("indoor"); } }).catch(() => {}); }, [urlMode, city]);
   useEffect(() => { if (city.id !== "toronto") return; fetch("/data/places.json").then((r) => r.json()).then(setPlaces).catch(() => {}); }, [city]);
 
@@ -162,7 +162,7 @@ function Home() {
   return (
     <div className="flex h-dvh flex-col-reverse md:flex-row">
       <aside className={`relative flex w-full shrink-0 flex-col overflow-y-auto border-line bg-surface transition-[max-height] duration-300 md:max-h-none md:w-[400px] md:border-r ${sheet === "full" ? "max-h-[62dvh]" : "max-h-[32dvh]"}`}>
-        <button onClick={() => setSheet((v) => (v === "full" ? "peek" : "full"))} aria-label="Resize panel" className="sticky top-0 z-30 flex w-full justify-center bg-surface/95 py-1.5 backdrop-blur md:hidden">
+        <button onClick={() => setSheet((v) => (v === "full" ? "peek" : "full"))} aria-label="Resize panel" className="sticky top-0 z-30 flex w-full justify-center bg-surface/95 py-2.5 backdrop-blur md:hidden">
           <span className="h-1 w-10 rounded-full bg-line" />
         </button>
 
@@ -176,7 +176,7 @@ function Home() {
           </div>
           <nav className="-mb-px flex shrink-0 gap-3" role="tablist" aria-label="Panels">
             {([["route", "Route"], ["reach", "Reach"], ["live", "Live"], ["about", "About"]] as const).map(([id, label]) => (
-              <button key={id} role="tab" aria-selected={tab === id} aria-controls={`panel-${id}`} id={`tab-${id}`} onClick={() => setTab(id)} className={`border-b-2 py-2.5 text-[13px] transition ${tab === id ? "border-ink font-semibold" : "border-transparent text-muted hover:text-ink-soft"}`}>{label}</button>
+              <button key={id} role="tab" aria-selected={tab === id} aria-controls={`panel-${id}`} id={`tab-${id}`} onClick={(e) => { setTab(id); e.currentTarget.closest("aside")?.scrollTo({ top: 0 }); }} className={`border-b-2 py-2.5 text-[13px] transition ${tab === id ? "border-ink font-semibold" : "border-transparent text-muted hover:text-ink-soft"}`}>{label}</button>
             ))}
           </nav>
         </header>
@@ -184,7 +184,7 @@ function Home() {
         {replayAt && replay && (
           <div className="flex items-center justify-between gap-2 border-b border-line bg-alert-bg px-4 py-2 text-[12px] text-alert">
             <span><span className="font-semibold">Replay</span> · {fmtWhen(replay.at)} · <span className="tnum">{replay.elevators.length}</span> elevator{replay.elevators.length === 1 ? "" : "s"} out</span>
-            <button onClick={() => setReplayAt(null)} className="shrink-0 rounded-md px-1.5 py-0.5 font-medium ring-1 ring-alert/30 transition hover:bg-white/70">Back to live</button>
+            <button onClick={() => setReplayAt(null)} className="shrink-0 rounded-md px-2 py-1 font-medium ring-1 ring-alert/30 transition hover:bg-white/70">Back to live</button>
           </div>
         )}
 
@@ -211,7 +211,7 @@ function Home() {
                 <span className="pr-0.5 text-muted">Pace</span>
                 {PACES.map(([id, label, mps]) => (
                   <button key={id} onClick={() => setPace(id)} aria-pressed={pace === id} title={mps ? `${mps} m/s` : "1.3 m/s, or 1.0 m/s step-free"}
-                    className={`h-6 rounded-full px-2 transition ${pace === id ? "bg-sunk font-medium ring-1 ring-ink" : "text-ink-soft hover:text-ink"}`}>{label}</button>
+                    className={`h-7 md:h-6 rounded-full px-2 transition ${pace === id ? "bg-sunk font-medium ring-1 ring-ink" : "text-ink-soft hover:text-ink"}`}>{label}</button>
                 ))}
               </div>
 
@@ -231,7 +231,7 @@ function Home() {
                   const on = from?.label === p.from.label && to?.label === p.to.label;
                   return (
                     <button key={p.label} onMouseDown={(e) => e.preventDefault()} onClick={() => { setFrom(p.from); setTo(p.to); }} aria-pressed={on} aria-label={`${p.from.label} to ${p.to.label}`}
-                      className={`h-7 whitespace-nowrap rounded-full px-2.5 text-[11.5px] transition ${on ? "bg-sunk font-medium ring-1 ring-ink" : "bg-sunk text-ink-soft hover:text-ink"}`}>
+                      className={`h-8 md:h-7 whitespace-nowrap rounded-full px-2.5 text-[11.5px] transition ${on ? "bg-sunk font-medium ring-1 ring-ink" : "bg-sunk text-ink-soft hover:text-ink"}`}>
                       {p.label}
                     </button>
                   );
@@ -298,7 +298,7 @@ function Home() {
                     <span className="flex rounded-full bg-sunk p-0.5">
                       {([[true, "Live"], [false, "Clear"]] as const).map(([v, label]) => (
                         <button key={label} onClick={() => setLiveSky(v)} aria-pressed={liveSky === v} title={v ? "Cloud cover now, from Open-Meteo, scales the shade penalty" : "Assume a clear sky"}
-                          className={`h-5 rounded-full px-2 text-[11px] transition ${liveSky === v ? "bg-surface font-medium shadow-[0_1px_2px_rgba(0,0,0,0.07)]" : "text-muted hover:text-ink-soft"}`}>{label}</button>
+                          className={`h-6 md:h-5 rounded-full px-2 text-[11px] transition ${liveSky === v ? "bg-surface font-medium shadow-[0_1px_2px_rgba(0,0,0,0.07)]" : "text-muted hover:text-ink-soft"}`}>{label}</button>
                       ))}
                     </span>
                   </span>
@@ -316,16 +316,16 @@ function Home() {
             <p className="mt-0.5 text-[11px] text-muted">Click the map to move the start</p>
             <div className="mt-3 flex flex-wrap items-center gap-1.5 text-[11.5px]">
               <span className="w-[86px] text-muted">Minutes</span>
-              {REACH_MIN.map((m) => <button key={m} onClick={() => setReachOpts((o) => ({ ...o, min: m }))} aria-pressed={reachOpts.min === m} className={`h-6 rounded-full px-2.5 transition ${reachOpts.min === m ? "bg-sunk font-medium ring-1 ring-ink" : "text-ink-soft hover:text-ink"}`}>{m}</button>)}
+              {REACH_MIN.map((m) => <button key={m} onClick={() => setReachOpts((o) => ({ ...o, min: m }))} aria-pressed={reachOpts.min === m} className={`h-7 md:h-6 rounded-full px-2.5 transition ${reachOpts.min === m ? "bg-sunk font-medium ring-1 ring-ink" : "text-ink-soft hover:text-ink"}`}>{m}</button>)}
             </div>
             <div className="mt-1.5 flex flex-wrap items-center gap-1.5 text-[11.5px]">
               <span className="w-[86px] text-muted">Outdoors, max</span>
-              {REACH_OUT.map((o) => <button key={String(o)} onClick={() => setReachOpts((v) => ({ ...v, out: o }))} aria-pressed={reachOpts.out === o} className={`h-6 rounded-full px-2.5 transition ${reachOpts.out === o ? "bg-sunk font-medium ring-1 ring-ink" : "text-ink-soft hover:text-ink"}`}>{o === null ? "no cap" : `${o} min`}</button>)}
+              {REACH_OUT.map((o) => <button key={String(o)} onClick={() => setReachOpts((v) => ({ ...v, out: o }))} aria-pressed={reachOpts.out === o} className={`h-7 md:h-6 rounded-full px-2.5 transition ${reachOpts.out === o ? "bg-sunk font-medium ring-1 ring-ink" : "text-ink-soft hover:text-ink"}`}>{o === null ? "no cap" : `${o} min`}</button>)}
             </div>
             <div className="mt-1.5 flex flex-wrap items-center gap-1.5 text-[11.5px]">
               <span className="w-[86px] text-muted">Rider</span>
-              <button onClick={() => setReachOpts((v) => ({ ...v, stepFree: false }))} aria-pressed={!reachOpts.stepFree} className={`h-6 rounded-full px-2.5 transition ${!reachOpts.stepFree ? "bg-sunk font-medium ring-1 ring-ink" : "text-ink-soft hover:text-ink"}`}>Anyone</button>
-              <button onClick={() => setReachOpts((v) => ({ ...v, stepFree: true }))} aria-pressed={reachOpts.stepFree} className={`h-6 rounded-full px-2.5 transition ${reachOpts.stepFree ? "bg-sunk font-medium ring-1 ring-ink" : "text-ink-soft hover:text-ink"}`}>Step-free</button>
+              <button onClick={() => setReachOpts((v) => ({ ...v, stepFree: false }))} aria-pressed={!reachOpts.stepFree} className={`h-7 md:h-6 rounded-full px-2.5 transition ${!reachOpts.stepFree ? "bg-sunk font-medium ring-1 ring-ink" : "text-ink-soft hover:text-ink"}`}>Anyone</button>
+              <button onClick={() => setReachOpts((v) => ({ ...v, stepFree: true }))} aria-pressed={reachOpts.stepFree} className={`h-7 md:h-6 rounded-full px-2.5 transition ${reachOpts.stepFree ? "bg-sunk font-medium ring-1 ring-ink" : "text-ink-soft hover:text-ink"}`}>Step-free</button>
             </div>
             {reach && (
               <div className="mt-4">
@@ -370,7 +370,7 @@ function Home() {
             {city.id === "montreal" && (
               <div className="rounded-lg border border-line bg-sunk p-3 text-[12.5px]">
                 <div className="font-semibold text-ink">Montréal runs on the same router</div>
-                <p className="mt-1">OpenStreetMap for the streets and the RÉSO, STM GTFS for the métro, the STM elevator page for outages. 25 of 68 métro stations have an elevator, so step-free trips here detour far more than in Toronto. No building-height data is loaded yet, which is why there is no shade route, and there is no outage log to replay. The Toronto figures below are the ones that have been measured.</p>
+                <p className="mt-1">OpenStreetMap for the streets and the RÉSO, STM GTFS for the métro, the STM elevator page for outages, logged every 5 minutes since Sept 6. 25 of 68 métro stations have an elevator, so step-free trips here detour far more than in Toronto. No building-height data is loaded yet, which is why there is no shade route. The Toronto figures below are the ones that have been measured.</p>
               </div>
             )}
             <p>A broken elevator, an icy block, or 300 m of open sun is an inconvenience for some people and a barrier for others. Routing apps optimise for time and treat all of it as walking.</p>
@@ -420,8 +420,8 @@ function ReplayControl({ log, replayAt, onChange }: { log: OutagesReplay; replay
       <div className="mt-1 flex items-center justify-between gap-2 text-[11.5px]">
         <span className="tnum whitespace-nowrap text-muted">{fmtDay(log.range.first)} → {fmtDay(log.range.last)}</span>
         <span className="flex gap-1">
-          <button onClick={() => onChange(log.busiest.at)} aria-pressed={replayAt === log.busiest.at} title={fmtWhen(log.busiest.at)} className={`h-6 whitespace-nowrap rounded-full px-2 transition ${replayAt === log.busiest.at ? "bg-sunk font-medium ring-1 ring-ink" : "text-ink-soft hover:text-ink"}`}>Worst · {log.busiest.elevators} out</button>
-          <button onClick={() => onChange(null)} aria-pressed={replayAt === null} className={`h-6 whitespace-nowrap rounded-full px-2 transition ${replayAt === null ? "bg-sunk font-medium ring-1 ring-ink" : "text-ink-soft hover:text-ink"}`}>Live</button>
+          <button onClick={() => onChange(log.busiest.at)} aria-pressed={replayAt === log.busiest.at} title={fmtWhen(log.busiest.at)} className={`h-7 md:h-6 whitespace-nowrap rounded-full px-2 transition ${replayAt === log.busiest.at ? "bg-sunk font-medium ring-1 ring-ink" : "text-ink-soft hover:text-ink"}`}>Worst · {log.busiest.elevators} out</button>
+          <button onClick={() => onChange(null)} aria-pressed={replayAt === null} className={`h-7 md:h-6 whitespace-nowrap rounded-full px-2 transition ${replayAt === null ? "bg-sunk font-medium ring-1 ring-ink" : "text-ink-soft hover:text-ink"}`}>Live</button>
         </span>
       </div>
     </section>

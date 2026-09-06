@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-// Summarizes logged TTC elevator/escalator alerts (data/ttc-alerts/*.jsonl) → research/outages-summary.json
+// Summarizes logged elevator/escalator alerts → research/outages-summary.json.
+// CITY=montreal reads data/stm-alerts/ and writes research/outages-summary-montreal.json.
 // Reconstructs alert lifetimes from snapshot lines: an alert starts when the feed says it
 // did, and ends at the first snapshot that no longer lists it. Snapshots are written only
 // when the set changes, so "last seen" would understate every outage by up to a polling gap.
@@ -7,7 +8,9 @@ import { readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const DIR = path.join(ROOT, "data/ttc-alerts");
+const CITY = process.env.CITY ?? "toronto";
+const DIR = path.join(ROOT, CITY === "montreal" ? "data/stm-alerts" : "data/ttc-alerts");
+const OUT = path.join(ROOT, CITY === "toronto" ? "research/outages-summary.json" : `research/outages-summary-${CITY}.json`);
 const files = (await readdir(DIR)).filter(f => /^\d{4}-\d{2}-\d{2}\.jsonl$/.test(f)).sort();
 // The feed labels every alert "Planned", including door failures; the cause code is what
 // actually separates scheduled work from breakdowns.
@@ -48,5 +51,6 @@ const summary = {
   medianElevatorOutageAgeHours: median(elev.map(a => a.sinceFeedStartHours)),
   medianUnplannedElevatorOutageHours: median(elev.filter(a => a.unplanned).map(a => a.sinceFeedStartHours)),
 };
-await writeFile(path.join(ROOT, "research/outages-summary.json"), JSON.stringify({ summary, alerts }, null, 1));
+if (!firstT) { console.log("no snapshots yet"); process.exit(0); }
+await writeFile(OUT, JSON.stringify({ summary, alerts }, null, 1));
 console.log(JSON.stringify(summary, null, 1));

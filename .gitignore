@@ -62,3 +62,4 @@ video/tts/.venv
 
 data/*/graph.json
 data/*/*.log
+data/stm-alerts/latest.json

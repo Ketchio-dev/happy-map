@@ -1,0 +1,60 @@
+{
+ "summary": {
+  "logging": {
+   "first": "2026-09-06T16:40:56.938Z",
+   "last": "2026-09-06T16:40:56.938Z",
+   "hoursCovered": 0,
+   "snapshotsWithChange": 1
+  },
+  "distinctAlerts": 2,
+  "elevatorAlerts": 2,
+  "escalatorAlerts": 0,
+  "elevatorUnplanned": 0,
+  "elevatorOngoingNow": 2,
+  "stationsWithElevatorOutage": 2,
+  "byStation": {
+   "Place-des-Arts": 1,
+   "Viau": 1
+  },
+  "medianElevatorOutageAgeHours": null,
+  "medianUnplannedElevatorOutageHours": null
+ },
+ "alerts": [
+  {
+   "id": "stm-place-des-arts-74f7ad9a",
+   "first": "2026-09-06T16:40:56.938Z",
+   "last": "2026-09-06T16:40:56.938Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Place-des-Arts",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Place-des-Arts: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-viau-214feef9",
+   "first": "2026-09-06T16:40:56.938Z",
+   "last": "2026-09-06T16:40:56.938Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Viau",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Viau: The elevator shuttled between the street level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
+   "sinceFeedStartHours": null
+  }
+ ]
+}
