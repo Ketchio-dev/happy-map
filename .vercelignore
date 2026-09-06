@@ -7,3 +7,6 @@ research/refs
 research/screens
 # The Remotion demo-video workspace is not part of the app.
 video
+
+# per-city intermediates
+data/*/graph.json

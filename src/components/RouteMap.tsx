@@ -10,6 +10,8 @@ import type { Weather } from "@/app/api/weather/route";
 
 export interface OutageMarker { lon: number; lat: number; station: string; detail: string }
 export interface MapProps {
+  /** where the map opens before a route is drawn, and the colour of each transit line */
+  center: [number, number]; zoom: number; lineColors: Record<string, string>;
   from: [number, number] | null; to: [number, number] | null;
   legs: Leg[] | null; ghostLegs: Leg[] | null;
   badge: string | null;
@@ -23,41 +25,41 @@ export interface MapProps {
 
 const STYLES = { light: "https://tiles.openfreemap.org/styles/positron", dark: "https://tiles.openfreemap.org/styles/dark" } as const;
 type StyleKey = keyof typeof STYLES;
-const CENTER: [number, number] = [-79.3835, 43.6512];
 
 // Deliberate, warm-leaning semantic set — these are the only colours in the product, and each
 // one means something. The interface itself stays ink on neutrals so they never compete.
 // The walking ramp runs sheltered -> exposed and deliberately avoids green and yellow,
 // which belong to TTC Lines 2 and 1 and would otherwise collide on the same map.
-const COLORS = { indoor: "#2b5fa8", covered: "#3d7f96", shaded: "#5b4b8a", exposed: "#c2410c", transit: { "1": "#e5b611", "2": "#12823f", "4": "#8f2060", "5": "#e8741a", "6": "#6f6a60" } as Record<string, string> };
+const COLORS = { indoor: "#2b5fa8", covered: "#3d7f96", shaded: "#5b4b8a", exposed: "#c2410c" };
 const INK = "#17150f", PAPER = "#f4f2eb";
-const legColor = (l: Leg) => (l.transit ? COLORS.transit[l.transit] ?? "#64748b" : l.shelter === 2 ? COLORS.indoor : l.shelter === 1 ? COLORS.covered : l.sun < 0.35 ? COLORS.shaded : COLORS.exposed);
+type LineColors = Record<string, string>;
+const legColor = (l: Leg, lines: LineColors) => (l.transit ? lines[l.transit] ?? "#64748b" : l.shelter === 2 ? COLORS.indoor : l.shelter === 1 ? COLORS.covered : l.sun < 0.35 ? COLORS.shaded : COLORS.exposed);
 
-function feature(l: Leg, coords: [number, number][]): Feature<LineString> {
-  return { type: "Feature", properties: { color: legColor(l), steps: l.steps, isTransit: !!l.transit }, geometry: { type: "LineString", coordinates: coords } };
+function feature(l: Leg, coords: [number, number][], lines: LineColors): Feature<LineString> {
+  return { type: "Feature", properties: { color: legColor(l, lines), steps: l.steps, isTransit: !!l.transit }, geometry: { type: "LineString", coordinates: coords } };
 }
 const empty: FeatureCollection = { type: "FeatureCollection", features: [] };
 
 /** legs clipped to the first `p` (0..1) of the route, so the line can draw itself in */
-function partial(legs: Leg[] | null, p: number): FeatureCollection {
+function partial(legs: Leg[] | null, p: number, lines: LineColors): FeatureCollection {
   if (!legs?.length) return empty;
-  if (p >= 1) return { type: "FeatureCollection", features: legs.map((l) => feature(l, l.coords)) };
+  if (p >= 1) return { type: "FeatureCollection", features: legs.map((l) => feature(l, l.coords, lines)) };
   const total = legs.reduce((s, l) => s + Math.max(l.len, 1), 0);
   let budget = total * p;
   const out: Feature<LineString>[] = [];
   for (const l of legs) {
     const len = Math.max(l.len, 1);
     if (budget <= 0) break;
-    if (budget >= len) { out.push(feature(l, l.coords)); budget -= len; continue; }
+    if (budget >= len) { out.push(feature(l, l.coords, lines)); budget -= len; continue; }
     const frac = budget / len, n = l.coords.length;
     const cut = Math.max(1, Math.round(frac * (n - 1)));
-    out.push(feature(l, l.coords.slice(0, cut + 1)));
+    out.push(feature(l, l.coords.slice(0, cut + 1), lines));
     budget = 0;
   }
   return { type: "FeatureCollection", features: out };
 }
-function ghostGeo(legs: Leg[] | null): FeatureCollection {
-  return { type: "FeatureCollection", features: (legs ?? []).map((l) => feature(l, l.coords)) };
+function ghostGeo(legs: Leg[] | null, lines: LineColors): FeatureCollection {
+  return { type: "FeatureCollection", features: (legs ?? []).map((l) => feature(l, l.coords, lines)) };
 }
 /** dots where the trip changes character: entering a station, boarding, or leaving transit */
 function waypoints(legs: Leg[] | null): FeatureCollection {
@@ -87,8 +89,10 @@ function midpoint(legs: Leg[] | null): [number, number] | null {
   return legs[legs.length - 1].coords[0];
 }
 
-export default function RouteMap({ from, to, legs, ghostLegs, badge, outages, places, weather, onPick, onLocate, reach }: MapProps) {
+export default function RouteMap({ center, zoom, lineColors, from, to, legs, ghostLegs, badge, outages, places, weather, onPick, onLocate, reach }: MapProps) {
   const el = useRef<HTMLDivElement>(null);
+  // the map is created once; a city switch reloads the page, so the first centre is the only one
+  const start = useRef({ center, zoom });
   const map = useRef<MlMap | null>(null);
   const markers = useRef<MlMarker[]>([]);
   const badgeMarker = useRef<MlMarker | null>(null);
@@ -155,7 +159,7 @@ export default function RouteMap({ from, to, legs, ghostLegs, badge, outages, pl
 
   useEffect(() => {
     if (!el.current || map.current) return;
-    const m = new MlMap({ container: el.current, style: STYLES.light, center: CENTER, zoom: 14.4, attributionControl: { compact: true }, canvasContextAttributes: { preserveDrawingBuffer: true } });
+    const m = new MlMap({ container: el.current, style: STYLES.light, center: start.current.center, zoom: start.current.zoom, attributionControl: { compact: true }, canvasContextAttributes: { preserveDrawingBuffer: true } });
     m.addControl(new NavigationControl({ showCompass: false }), "bottom-right");
     const locate = new GeolocateControl({ positionOptions: { enableHighAccuracy: true }, trackUserLocation: false, showUserLocation: true, fitBoundsOptions: { maxZoom: 15 } });
     locate.on("geolocate", (e) => locateRef.current?.([+e.coords.longitude.toFixed(6), +e.coords.latitude.toFixed(6)]));
@@ -196,19 +200,19 @@ export default function RouteMap({ from, to, legs, ghostLegs, badge, outages, pl
     const apply = () => {
       addLayers(m, styleKey);
       const route = m.getSource("route") as GeoJSONSource | undefined;
-      (m.getSource("ghost") as GeoJSONSource | undefined)?.setData(ghostGeo(ghostLegs));
+      (m.getSource("ghost") as GeoJSONSource | undefined)?.setData(ghostGeo(ghostLegs, lineColors));
       (m.getSource("waypoints") as GeoJSONSource | undefined)?.setData(waypoints(legs));
 
       if (anim.current !== null) cancelAnimationFrame(anim.current);
       anim.current = null;
       if (!legs?.length) { route?.setData(empty); return; }
-      const full = partial(legs, 1);
+      const full = partial(legs, 1, lineColors);
       const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
       if (reduce || !route) { route?.setData(full); return; }
       const t0 = performance.now(), dur = 620;
       const step = (t: number) => {
         const raw = Math.min(1, (t - t0) / dur);
-        route.setData(raw >= 1 ? full : partial(legs, 1 - Math.pow(1 - raw, 3)));
+        route.setData(raw >= 1 ? full : partial(legs, 1 - Math.pow(1 - raw, 3), lineColors));
         anim.current = raw < 1 ? requestAnimationFrame(step) : null;
       };
       anim.current = requestAnimationFrame(step);
@@ -230,9 +234,9 @@ export default function RouteMap({ from, to, legs, ghostLegs, badge, outages, pl
       if (anim.current === null) return;
       cancelAnimationFrame(anim.current); anim.current = null;
       const src = m.getSource("route") as GeoJSONSource | undefined;
-      if (src && legs?.length) src.setData(partial(legs, 1));
+      if (src && legs?.length) src.setData(partial(legs, 1, lineColors));
     };
-  }, [legs, ghostLegs, badge, styleKey, styleReady]);
+  }, [legs, ghostLegs, badge, styleKey, styleReady, lineColors]);
 
   useEffect(() => {
     const m = map.current; if (!m) return;

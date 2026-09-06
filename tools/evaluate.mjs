@@ -5,9 +5,10 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+import { CITY, GRAPH_JSON } from "./city.mjs";
 const API = process.env.API ?? "http://localhost:3123/api/route";
 const N = Number(process.env.N ?? 200);
-const g = JSON.parse(await readFile(path.join(ROOT, "data/graph.json"), "utf8"));
+const g = JSON.parse(await readFile(GRAPH_JSON, "utf8"));
 // candidate points: ends of named footways/sidewalks in the PATH-dense core + wider downtown
 // sample across the whole covered area, not just the PATH core
 const core = (process.env.CORE ?? "43.600,-79.560,43.800,-79.200").split(",").map(Number);
@@ -26,7 +27,7 @@ const results = [];
 for (const [i, [from, to]] of pairs.entries()) {
   const row = { i, from, to };
   for (const sc of scenarios) {
-    const r = await fetch(API, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ from, to, mode: sc.mode, hourBucket: sc.hourBucket }) }).then(r => r.json());
+    const r = await fetch(API, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ city: CITY, from, to, mode: sc.mode, hourBucket: sc.hourBucket }) }).then(r => r.json());
     row[sc.name] = r.ok ? { route: r.route.stats, baseline: r.baseline.stats } : { error: r.error };
   }
   results.push(row);
@@ -49,5 +50,5 @@ for (const sc of scenarios) {
 await mkdir(path.join(ROOT, "research"), { recursive: true });
 const label = process.env.LABEL ?? "core";
 const out = path.join(ROOT, "research", `eval-${label}.json`);
-await writeFile(out, JSON.stringify({ meta: { n: N, area: label, bbox: core, generated: new Date().toISOString() }, summary, results }, null, 1));
+await writeFile(out, JSON.stringify({ meta: { n: N, area: label, city: CITY, bbox: core, generated: new Date().toISOString() }, summary, results }, null, 1));
 console.log(JSON.stringify(summary, null, 1)); console.log("saved", out);

@@ -4,9 +4,8 @@
 // build-subway.mjs merges them with estimated running times.
 import { writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const BBOX = process.env.BBOX ?? "43.6,-79.65,43.8,-79.15";
+import { BBOX as CITY_BBOX, OSM_LINES } from "./city.mjs";
+void path; const BBOX = process.env.BBOX ?? CITY_BBOX;
 const NETWORK = process.env.NETWORK ?? "TTC";
 const REFS = process.env.REFS ?? "5|6";
 const query = `[out:json][timeout:180];
@@ -17,6 +16,6 @@ way(r.r)->.w; .w out geom;`;
 const res = await fetch("https://overpass-api.de/api/interpreter", { method: "POST", body: "data=" + encodeURIComponent(query), headers: { "content-type": "application/x-www-form-urlencoded", "user-agent": "happy-map/0.1 (GatewayHacks project)" } });
 if (!res.ok) throw new Error(`Overpass HTTP ${res.status}`);
 const j = await res.json();
-const dir = path.join(ROOT, "data/raw/osm-lines"); await mkdir(dir, { recursive: true });
-await writeFile(path.join(dir, `${NETWORK.toLowerCase()}-lrt.json`), JSON.stringify(j));
+await mkdir(OSM_LINES, { recursive: true });
+await writeFile(`${OSM_LINES}/${NETWORK.toLowerCase()}-lrt.json`, JSON.stringify(j));
 console.log(`relations: ${j.elements.filter((e) => e.type === "relation").map((e) => e.tags?.name).join(" | ")}`);

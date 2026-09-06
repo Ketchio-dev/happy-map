@@ -3,7 +3,7 @@
  *  same way, so only genuinely different names need an alias. The feed's stop ids belong
  *  to a different id space than GTFS stop_id, so matching is by name. */
 export const normName = (s: string) =>
-  s.toLowerCase().replace(/\s+station$/i, "").replace(/[.'’]/g, "").replace(/[-–—/]+/g, " ").replace(/\s+/g, " ").trim();
+  s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/^station\s+/i, "").replace(/\s+station$/i, "").replace(/[.'’]/g, "").replace(/[-–—/]+/g, " ").replace(/\s+/g, " ").trim();
 
 /** feed name (normalised) → GTFS station names; one feed name can be two GTFS records */
 export const ALIASES: Record<string, string[]> = {

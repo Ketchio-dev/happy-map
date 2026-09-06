@@ -34,6 +34,8 @@ const LABELS: Record<string, string> = { cold: "Indoor first", heat_jul15_14h: "
 export default async function Evidence() {
   const core = load<Eval>("eval-core.json");
   const wide = load<Eval>("eval-wide.json");
+  const mtlCore = load<Eval>("eval-montreal-core.json");
+  const mtlWide = load<Eval>("eval-montreal-wide.json");
   const ev = core ?? wide;
   const out = await loadLive<Outages>("outages-summary.json");
   const sw = load<Sidewalks>("sidewalks-summary.json");
@@ -128,8 +130,31 @@ export default async function Evidence() {
         ) : <p className="text-alert">No impact file found. Run <code>node tools/outage-impact.mjs</code>.</p>}
       </section>
 
+      {(mtlCore || mtlWide) && (
+        <section>
+          <h2 className="text-lg font-medium">5. The same router in Montréal</h2>
+          <p className="mt-1 text-ink-soft">Nothing in the method is Toronto-specific, so the pipeline was pointed at Montréal: OpenStreetMap for the streets and the RÉSO underground city, STM GTFS for the métro, the STM elevator page for outages. No building heights are loaded, so there is no shade mode there. Same evaluation, same random-trip protocol.</p>
+          {([["Downtown, where the RÉSO is", mtlCore], ["Across the island", mtlWide]] as const).filter(([, e]) => e).map(([title, e]) => (
+            <div key={title} className="mt-4">
+              <h3 className="text-[13px] font-semibold text-ink-soft">{title} <span className="font-normal text-muted">· {e!.meta.n} trips · generated {e!.meta.generated.slice(0, 10)}</span></h3>
+              <div className="mt-1.5 overflow-x-auto">
+                <table className="w-full text-xs">
+                  <thead><tr className="border-b border-line text-left text-muted"><th className="py-1 font-normal">Mode</th><th className="font-normal">Median outdoor distance</th><th className="font-normal">Trips improved</th><th className="font-normal">Median extra time</th><th className="font-normal">No route</th></tr></thead>
+                  <tbody>
+                    {Object.entries(e!.summary).filter(([k]) => !k.startsWith("heat")).map(([k, sc]) => (
+                      <tr key={k} className="border-b border-line"><td className="py-1.5 font-medium">{LABELS[k] ?? k}</td><td>{sc.median_baseline_outdoor_m} m → {sc.median_route_outdoor_m} m ({pct(sc.median_outdoor_reduction === null ? null : -sc.median_outdoor_reduction)})</td><td>{pct(sc.share_with_any_outdoor_reduction, false)}</td><td>{pct(sc.median_time_increase)}</td><td>{sc.failed}</td></tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          ))}
+          <p className="mt-2 text-xs text-muted">25 of Montréal&apos;s 68 métro stations have an elevator (STM GTFS <code>wheelchair_boarding</code>), against 62 of 71 TTC subway stations on Lines 1, 2 and 4, which is why the step-free row looks so different from Toronto&apos;s. Shade routing is not evaluated because no building heights are loaded.</p>
+        </section>
+      )}
+
       <section>
-        <h2 className="text-lg font-medium">5. Data and method</h2>
+        <h2 className="text-lg font-medium">{mtlCore || mtlWide ? "6" : "5"}. Data and method</h2>
         <ul className="mt-1 list-disc space-y-1 pl-5 text-ink-soft">
           <li><strong>Pedestrian graph:</strong> OpenStreetMap ways across the City of Toronto and its margins, 346k nodes and 492k edges covering 24,225 km. Indoor, tunnel, covered and corridor tags mark 95 km of sheltered walking including the PATH; the City&apos;s Pedestrian Network corrects OpenStreetMap&apos;s sidewalk gaps (section 3), leaving 6,888 km of roadway penalised as sidewalk-less; 486 km is loose or unpaved.</li>
           <li><strong>Shade:</strong> City of Toronto 3D Massing (2025) building heights; for each outdoor segment and each hour bucket a ray is cast toward the sun (NOAA solar position) and blocked if a building is tall enough. City street trees (Street Tree Data, 685k with a trunk diameter) are canopies sized from trunk diameter whose ground shadow keeps a quarter of the sun. Private trees and parkland are not in that inventory, so shade is under-estimated.</li>

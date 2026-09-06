@@ -2,8 +2,7 @@ import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
 
-/** Downtown Toronto viewbox used to bias and bound results. */
-const VIEWBOX = "-79.425,43.685,-79.350,43.628";
+import { cityOf } from "@/lib/cities";
 const UA = "toronto-exposure-router/0.1 (GatewayHacks 2026 project)";
 
 export interface Hit { name: string; detail: string; lon: number; lat: number }
@@ -27,14 +26,16 @@ export async function GET(req: Request) {
   const url = new URL(req.url);
   const q = url.searchParams.get("q");
   const lon = url.searchParams.get("lon"), lat = url.searchParams.get("lat");
-  const key = q ? `q:${q.toLowerCase()}` : `r:${lon},${lat}`;
+  const city = cityOf(url.searchParams.get("city"));
+  const viewbox = city.geocodeViewbox;
+  const key = `${city.id}|` + (q ? `q:${q.toLowerCase()}` : `r:${lon},${lat}`);
   const hit = cache.get(key);
   if (hit && Date.now() - hit.at < TTL) return NextResponse.json({ ok: true, hits: hit.hits, cached: true });
 
   try {
     let hits: Hit[] = [];
     if (q && q.trim().length >= 2) {
-      const j = (await nominatim("search", { q: q.trim(), limit: "6", viewbox: VIEWBOX, bounded: "1", countrycodes: "ca" })) as { display_name: string; lon: string; lat: string }[];
+      const j = (await nominatim("search", { q: q.trim(), limit: "6", viewbox: viewbox, bounded: "1", countrycodes: "ca" })) as { display_name: string; lon: string; lat: string }[];
       hits = j.map((r) => ({ ...shorten(r.display_name), lon: +r.lon, lat: +r.lat }));
       if (hits.length === 0) {
         const j2 = (await nominatim("search", { q: `${q.trim()}, Toronto`, limit: "6", countrycodes: "ca" })) as { display_name: string; lon: string; lat: string }[];

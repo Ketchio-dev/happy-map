@@ -63,7 +63,7 @@ export function sunAt(g: Graph, ei: number, bucket: number): number {
 import { normName, gtfsNamesFor } from "./stations";
 export { normName };
 
-let cached: Graph | null = null;
+const cached = new Map<string, Graph>();
 
 const R = 6371008.8;
 export function haversine(a: [number, number], b: [number, number]): number {
@@ -72,9 +72,10 @@ export function haversine(a: [number, number], b: [number, number]): number {
   return 2 * R * Math.asin(Math.sqrt(s));
 }
 
-export function loadGraph(): Graph {
-  if (cached) return cached;
-  const dir = path.join(process.cwd(), "data");
+/** Toronto's files sit in data/; any other city's under data/<city>/. Each is loaded once per instance. */
+export function loadGraph(city = "toronto"): Graph {
+  const hit = cached.get(city); if (hit) return hit;
+  const dir = city === "toronto" ? path.join(process.cwd(), "data") : path.join(process.cwd(), "data", city);
   const sub = JSON.parse(readFileSync(path.join(dir, "subway.json"), "utf8")) as SubwayFile;
   const g = readPacked(readFileSync(path.join(dir, "graph.bin")));
 
@@ -118,8 +119,9 @@ export function loadGraph(): Graph {
   const lists: number[][] = Array.from({ length: g.nodes.length }, () => []);
   g.edges.forEach((e, i) => { lists[e.a].push(i); lists[e.b].push(i); });
   const adj = lists.map((l) => Int32Array.from(l));
-  cached = { ...g, adj, index, compSize: componentSizes(g, adj), stations, stationByName, lines: sub.lines, sunBucket: new Map(g.sunKeys.map((k, i) => [k, i])) };
-  return cached;
+  const out: Graph = { ...g, adj, index, compSize: componentSizes(g, adj), stations, stationByName, lines: sub.lines, sunBucket: new Map(g.sunKeys.map((k, i) => [k, i])) };
+  cached.set(city, out);
+  return out;
 }
 
 /** OSM contains small islands of private or indoor paths that connect to nothing;

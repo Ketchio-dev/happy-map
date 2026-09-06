@@ -4,10 +4,9 @@
 // Views over a Buffer cost nothing, so the same data loads in milliseconds.
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-
-const g = JSON.parse(await readFile(path.join(ROOT, "data/graph.json"), "utf8"));
+import { GRAPH_JSON, GRAPH_BIN } from "./city.mjs";
+void path; 
+const g = JSON.parse(await readFile(GRAPH_JSON, "utf8"));
 if (g.meta.format !== 2) throw new Error("expected graph format 2");
 const N = g.nodes.length, E = g.edges.length;
 const NB = g.sunKeys?.length ?? 0;
@@ -58,5 +57,5 @@ let headerBuf = Buffer.from(JSON.stringify(header), "utf8");
 headerBuf = Buffer.concat([headerBuf, Buffer.alloc(pad(4 + headerBuf.length))]);
 const lenBuf = Buffer.alloc(4); lenBuf.writeUInt32LE(headerBuf.length, 0);
 const out = Buffer.concat([lenBuf, headerBuf, ...parts.map((p) => p.buf)]);
-await writeFile(path.join(ROOT, "data/graph.bin"), out);
+await writeFile(GRAPH_BIN, out);
 console.log(`graph.bin ${(out.length / 1e6).toFixed(1)} MB — header ${(headerBuf.length / 1e6).toFixed(1)} MB, ${N} nodes, ${E} edges, ${pts} interior points, ${NB} sun buckets`);

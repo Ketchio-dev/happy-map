@@ -1,8 +1,8 @@
-# happy map — exposure-aware routing across Toronto
+# happy map — exposure-aware routing across Toronto (and Montréal)
 
 **Live: https://happy-map-ashy.vercel.app** · [![CI](https://github.com/Ketchio-dev/happy-map/actions/workflows/ci.yml/badge.svg)](https://github.com/Ketchio-dev/happy-map/actions/workflows/ci.yml)
 
-Walking and subway routes across Toronto costed by what you are exposed to rather than time alone: minutes outdoors, metres in direct sun, stairs, blocks with no sidewalk, and TTC stations whose elevator is out at this moment.
+Walking and subway routes across Toronto costed by what you are exposed to rather than time alone: minutes outdoors, metres in direct sun, stairs, blocks with no sidewalk, and TTC stations whose elevator is out at this moment. The same router, pointed at Montréal's RÉSO and métro, runs at [`/?city=montreal`](https://happy-map-ashy.vercel.app/?city=montreal).
 
 Built solo for [GatewayHacks 2026](https://gatewayhacks-2026.devpost.com/) (Accessibility & Health track).
 
@@ -53,6 +53,16 @@ Also in the interface: a walking-pace setting (slow, average, brisk) that change
 Nobody is left without a route, because the router walks around the gap; the price is the detour.
 
 A five-minute timer on a small VPS has been logging every TTC elevator and escalator alert since 2026-09-01 (GitHub Actions and a laptop poller before 2026-09-05); `tools/analyze-outages.mjs` summarizes outage counts, durations and stations (`research/outages-summary.json`).
+
+The same evaluation run in Montréal (`research/eval-montreal-core.json`, `research/eval-montreal-wide.json`; no shade mode there, since no building heights are loaded):
+
+| Run | Median change vs fastest route | Trips improved | Median extra time |
+|---|---|---|---|
+| Indoor first, downtown (RÉSO) | outdoor distance −36 % (893 m → 549 m) | 77 % | +5.3 % |
+| Indoor first, across the island | no measurable gain | 29 % | — |
+| Step-free, downtown | 6 of 150 trips have no step-free route; 25 of 68 métro stations have an elevator | — | — |
+
+Two cities, one pattern: an underground network removes about a third of the outdoor walking where it exists and nothing where it does not.
 
 ## Run it
 
@@ -114,7 +124,7 @@ node tools/outage-impact.mjs    # needs the dev server running and research/outa
 
 ## Taking it to another city
 
-Nothing in the method is Toronto-specific; the data is. Each cost layer needs one input, and most large cities publish it:
+Nothing in the method is Toronto-specific; the data is. Montréal is the proof: `CITY=montreal` in front of the same pipeline (`fetch-osm` → `build-graph` → `pack-graph` → `build-subway`) built `data/montreal/` in an afternoon, `src/lib/cities.ts` holds the 40 lines that differ (centre, presets, line colours, which feeds exist), `src/lib/adapters/stm.ts` reads the STM's elevator page because the STM has no elevator feed, and `tests/montreal.test.ts` runs the same invariants against it. Each cost layer needs one input, and most large cities publish it:
 
 | Layer | What it needs | Toronto | Elsewhere |
 |---|---|---|---|
@@ -125,7 +135,7 @@ Nothing in the method is Toronto-specific; the data is. Each cost layer needs on
 | Cool spaces, warming centres | City open data | Heat Relief Network | Varies by city |
 | Automatic mode switch | National weather warnings | Environment Canada | National weather services |
 
-Where a layer is missing the router still runs; that cost simply stays neutral. The evaluation (`tools/evaluate.mjs`) and the outage logger are city-agnostic already. Turning the bounding box, GTFS source and alerts adapter into a single per-city config is the remaining step, and it is on the list.
+Where a layer is missing the router still runs; that cost simply stays neutral, and the interface hides what it cannot do: Montréal shows three route cards, not four, and no replay scrubber, because there is no shade data and no outage log there yet. Adding a city is a bounding box in `tools/city.mjs`, a GTFS folder, an entry in `src/lib/cities.ts`, and an alerts adapter if the agency publishes one.
 
 ## Limits
 

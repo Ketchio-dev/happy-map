@@ -59,3 +59,6 @@ video/public/audio
 video/public/footage
 video/src/generated
 video/tts/.venv
+
+data/*/graph.json
+data/*/*.log

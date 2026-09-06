@@ -3,12 +3,9 @@
 // Written in a compact positional form: the file is loaded on every cold start, so keys,
 // repeated strings and derivable geometry are all stripped out and rebuilt in src/lib/graph.ts.
 import { readFile, writeFile, mkdir } from "node:fs/promises";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const BBOX = process.env.BBOX ?? "43.575,-79.640,43.860,-79.115";
+import { BBOX, OSM_JSON, GRAPH_JSON, DATA } from "./city.mjs";
 
-const osm = JSON.parse(await readFile(path.join(ROOT, "data/raw/osm-downtown.json"), "utf8"));
+const osm = JSON.parse(await readFile(OSM_JSON, "utf8"));
 // Parking aisles and driveways are a third of the raw network and never a route anyone walks
 // between real destinations; named laneways and anything explicitly signed for pedestrians stay.
 const isDeadWeight = (t) => t.highway === "service" && ["parking_aisle", "driveway", "drive-through"].includes(t.service) && !t.name && !["yes", "designated"].includes(t.foot);
@@ -88,8 +85,8 @@ for (const [id, i] of nodeIndex) {
 }
 
 const out = { meta: { built: new Date().toISOString(), source: "OpenStreetMap via Overpass", bbox: BBOX, format: 2 }, hwTable, wcTable: WC, nodes: nodeCoords, edges, nodeAttr, pois };
-await mkdir(path.join(ROOT, "data"), { recursive: true });
-await writeFile(path.join(ROOT, "data/graph.json"), JSON.stringify(out));
+await mkdir(DATA, { recursive: true });
+await writeFile(GRAPH_JSON, JSON.stringify(out));
 const km = (pred) => Math.round(edges.filter(pred).reduce((s, e) => s + e[2], 0) / 100) / 10;
 console.log(`graph: ${nodeCoords.length} nodes, ${edges.length} edges, ${km(() => true)} km`);
 console.log(`  indoor/underground ${km((e) => e[4] === 2)} km | covered ${km((e) => e[4] === 1)} km | open ${km((e) => e[4] === 0)} km`);

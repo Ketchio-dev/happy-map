@@ -6,9 +6,10 @@ const nextConfig: NextConfig = {
   // the routing graph and subway data are read at request time, so they must be
   // traced into each serverless function that loads them
   outputFileTracingIncludes: {
-    "/api/routes": ["./data/graph.bin", "./data/subway.json"],
-    "/api/route": ["./data/graph.bin", "./data/subway.json"],
-    "/api/alerts": ["./data/subway.json"],
+    "/api/routes": ["./data/graph.bin", "./data/subway.json", "./data/montreal/graph.bin", "./data/montreal/subway.json"],
+    "/api/route": ["./data/graph.bin", "./data/subway.json", "./data/montreal/graph.bin", "./data/montreal/subway.json"],
+    "/api/reach": ["./data/graph.bin", "./data/subway.json", "./data/montreal/graph.bin", "./data/montreal/subway.json"],
+    "/api/alerts": ["./data/subway.json", "./data/montreal/subway.json"],
     "/api/outages": ["./data/subway.json", "./research/outages-summary.json"],
     "/evidence": ["./research/eval-core.json", "./research/eval-wide.json", "./research/outages-summary.json"],
   },

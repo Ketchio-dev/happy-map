@@ -4,9 +4,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { createReadStream } from "node:fs";
 import readline from "node:readline";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const G = path.join(ROOT, "data/raw/gtfs");
+import { CITY, GTFS as G, SUBWAY_JSON, OSM_LINES } from "./city.mjs";
 
 const csv = (txt) => { const [h, ...rows] = txt.trim().split(/\r?\n/); const cols = h.split(","); return rows.map(r => { const v = r.match(/("([^"]|"")*"|[^,]*)(,|$)/g).map(x => x.replace(/,$/, "").replace(/^"|"$/g, "").replace(/""/g, '"')); return Object.fromEntries(cols.map((c, i) => [c, v[i] ?? ""])); }); };
 // route_type 1 is the subway; 0 is light rail (Lines 5 and 6), which this GTFS lists as
@@ -53,7 +51,8 @@ for await (const line of rl) {
 }
 const stops = new Map(csv(await readFile(path.join(G, "stops.txt"), "utf8")).map(s => [s.stop_id, s]));
 // stations: group platform stops by parent_station or by normalized name
-const norm = (n) => n.replace(/ Station.*$/i, "").replace(/ - (Northbound|Southbound|Eastbound|Westbound) Platform.*$/i, "").replace(/\s+Platform.*$/i, "").trim();
+// STM suffixes Laval stations with their fare zone ("Montmorency -Zone B"); TTC suffixes platforms
+const norm = (n) => n.replace(/\s*-\s*Zone\s+\w+$/i, "").replace(/^Station /i, "").replace(/ Station.*$/i, "").replace(/ - (Northbound|Southbound|Eastbound|Westbound) Platform.*$/i, "").replace(/\s+Platform.*$/i, "").trim();
 const stationOf = (stopId) => { const s = stops.get(stopId); if (!s) return null; const key = s.parent_station || norm(s.stop_name); return key; };
 const stations = new Map(); // key -> {name, lat, lon, wc, stopIds:Set}
 const edges = new Map();    // "a|b|line" -> time samples
@@ -70,7 +69,6 @@ for (const [trip, list] of stopTimes) {
 }
 // --- lines with no GTFS trips: stations and track from the OSM route relation (tools/fetch-osm-lines.mjs) ---
 // Running times are estimated from track length, since no schedule is published for them.
-const OSM_LINES = path.join(ROOT, "data/raw/osm-lines");
 const ESTIMATE = { "5": { mps: 9, dwell: 30 }, "6": { mps: 7, dwell: 20 } }; // cruise speed between stops, dwell per stop
 const normStation = (n) => n.replace(/ Station$/i, "").replace(/[.'’]/g, "").replace(/[-–—/]+/g, " ").replace(/\s+/g, " ").trim().toLowerCase();
 const byNormName = new Map([...stations.values()].map(s => [normStation(s.name), s]));
@@ -130,7 +128,7 @@ function chainWays(ways) {
 }
 
 const out = {
-  meta: { built: new Date().toISOString(), source: "TTC GTFS via Toronto Open Data; Lines 5 and 6 stations and track from OpenStreetMap route relations", estimated: osmNote },
+  meta: { built: new Date().toISOString(), city: CITY, source: CITY === "toronto" ? "TTC GTFS via Toronto Open Data; Lines 5 and 6 stations and track from OpenStreetMap route relations" : `${CITY} GTFS`, estimated: osmNote },
   lines: routes.map(r => ({ id: r.route_id, name: r.route_long_name, color: r.route_color })),
   stations: [...stations.values()].map(s => ({ key: s.key, name: s.name, lat: +(s.lat / s.n).toFixed(6), lon: +(s.lon / s.n).toFixed(6), wheelchair_boarding: s.wc, stopIds: [...s.stopIds], lines: [...s.lines], ...(s.estimated ? { source: "osm" } : {}) })),
   edges: [...edges.entries()].map(([k, ts]) => {
@@ -151,6 +149,6 @@ const out = {
     return { a, b, line, time_s: ts[Math.floor(ts.length / 2)], geom };
   }),
 };
-await writeFile(path.join(ROOT, "data/subway.json"), JSON.stringify(out, null, 0));
+await writeFile(SUBWAY_JSON, JSON.stringify(out, null, 0));
 console.log(`stations ${out.stations.length}, edges ${out.edges.length}`);
 console.log(out.stations.slice(0, 80).map(s => `${s.name}(${s.lines.join("/")},wc=${s.wheelchair_boarding})`).join(", "));

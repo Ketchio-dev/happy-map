@@ -11,6 +11,7 @@ import type { Hit } from "./api/geocode/route";
 import { Bolt, Indoor, Sun, Accessible, Swap, Walk, Train, Stairs, Lift, Door } from "@/components/icons";
 import { itinerary, type Step } from "@/lib/itinerary";
 import type { ReachResult } from "@/lib/reach";
+import { CITIES, cityOf } from "@/lib/cities";
 
 const RouteMap = dynamicImport(() => import("@/components/RouteMap"), { ssr: false });
 
@@ -18,15 +19,6 @@ interface RouteOpt { id: string; label: string; hint: string; ok: boolean; error
 interface RoutesResp { ok: true; ms: number; baseline: Stats | null; sky: number; routes: RouteOpt[] }
 
 export interface Pt { lon: number; lat: number; label: string }
-const P = (lon: number, lat: number, label: string): Pt => ({ lon, lat, label });
-const PRESETS: { label: string; from: Pt; to: Pt }[] = [
-  { label: "Eaton Centre", from: P(-79.3791, 43.6435, "Scotiabank Arena"), to: P(-79.3806, 43.6544, "CF Toronto Eaton Centre") },
-  { label: "Toronto General", from: P(-79.3806, 43.6453, "Union Station"), to: P(-79.3878, 43.6588, "Toronto General Hospital") },
-  { label: "City Hall", from: P(-79.3846, 43.6476, "St Andrew Station"), to: P(-79.3839, 43.6534, "Toronto City Hall") },
-  { label: "Bloor-Yonge", from: P(-79.3806, 43.6453, "Union Station"), to: P(-79.3864, 43.6708, "Bloor-Yonge Station") },
-  { label: "Etobicoke", from: P(-79.5252, 43.6449, "Kipling Station"), to: P(-79.3806, 43.6453, "Union Station") },
-  { label: "Scarborough", from: P(-79.2634, 43.7325, "Kennedy Station"), to: P(-79.3806, 43.6453, "Union Station") },
-];
 const DAYS = [{ id: "d0715", label: "July 15" }, { id: "d0915", label: "Sept 15" }];
 const HOURS = [8, 10, 12, 14, 16, 18];
 // walking pace in m/s; "auto" leaves the router's defaults (1.3, or 1.0 step-free)
@@ -61,13 +53,15 @@ function Home() {
   const q = useSearchParams();
   // read once: Next mirrors our own replaceState writes back into the search params
   const [urlMode] = useState(() => q.get("mode"));
+  // which city's graph, feeds and presets; switching reloads the page, so this never changes in place
+  const [city] = useState(() => cityOf(q.get("city")));
   // a moment in the outage log instead of the live feed: every route is costed as things were then
-  const [replayAt, setReplayAt] = useState<string | null>(() => { const a = q.get("at"); const t = a ? Date.parse(a) : NaN; return isFinite(t) ? new Date(t).toISOString() : null; });
+  const [replayAt, setReplayAt] = useState<string | null>(() => { if (!city.hasOutageLog) return null; const a = q.get("at"); const t = a ? Date.parse(a) : NaN; return isFinite(t) ? new Date(t).toISOString() : null; });
   const [replay, setReplay] = useState<OutagesReplay | null>(null);
   const [log, setLog] = useState<OutagesReplay | null>(null);
   const [liveSky, setLiveSky] = useState(q.get("sky") !== "clear");
-  const [from, setFrom] = useState<Pt | null>(() => ptParam(q.get("from")) ?? PRESETS[0].from);
-  const [to, setTo] = useState<Pt | null>(() => ptParam(q.get("to")) ?? PRESETS[0].to);
+  const [from, setFrom] = useState<Pt | null>(() => ptParam(q.get("from")) ?? city.presets[0].from);
+  const [to, setTo] = useState<Pt | null>(() => ptParam(q.get("to")) ?? city.presets[0].to);
   const [pickNext, setPickNext] = useState<"from" | "to">("from");
   const [tab, setTab] = useState<Tab>(() => (["route", "reach", "live", "about"].includes(q.get("tab") ?? "") ? (q.get("tab") as Tab) : "route"));
   const [reachOpts, setReachOpts] = useState<{ min: number; out: number | null; stepFree: boolean }>(() => ({ min: REACH_MIN.find((m) => m === +(q.get("rmin") ?? 0)) ?? 15, out: q.get("rout") === "none" ? null : REACH_OUT.find((o) => o !== null && o === +(q.get("rout") ?? 0)) ?? 5, stepFree: q.get("rsf") === "1" }));
@@ -89,6 +83,7 @@ function Home() {
   useEffect(() => {
     if (!from || !to) return;
     const u = new URLSearchParams();
+    if (city.id !== "toronto") u.set("city", city.id);
     const enc = (p: Pt) => `${p.lon.toFixed(5)},${p.lat.toFixed(5)},${p.label}`;
     u.set("from", enc(from)); u.set("to", enc(to)); u.set("mode", selected); u.set("hour", hourBucket); if (!walkOnly) u.set("walk", "0"); if (pace !== "auto") u.set("pace", pace);
     if (tab !== "route") u.set("tab", tab);
@@ -96,19 +91,19 @@ function Home() {
     if (replayAt) u.set("at", replayAt.replace(/\.\d{3}Z$/, "Z"));
     if (!liveSky) u.set("sky", "clear");
     window.history.replaceState(null, "", `?${u.toString().replace(/%2C/g, ",").replace(/%3A/g, ":")}`);
-  }, [from, to, selected, hourBucket, walkOnly, pace, tab, reachOpts, replayAt, liveSky]);
+  }, [city, from, to, selected, hourBucket, walkOnly, pace, tab, reachOpts, replayAt, liveSky]);
 
 
   useEffect(() => {
     const ctl = new AbortController();
-    fetch(replayAt ? `/api/outages?at=${encodeURIComponent(replayAt)}` : "/api/alerts", { signal: ctl.signal }).then((r) => r.json())
+    fetch(replayAt ? `/api/outages?at=${encodeURIComponent(replayAt)}` : `/api/alerts?city=${city.id}`, { signal: ctl.signal }).then((r) => r.json())
       .then((j: (OutagesReplay | { ok: false }) & { elevators?: AccessibilityAlert[]; escalators?: AccessibilityAlert[] }) => { if (!j.ok) return; setAlerts(j.elevators ?? []); setEscalators(j.escalators ?? []); setReplay(replayAt ? (j as OutagesReplay) : null); }).catch(() => {});
     return () => ctl.abort();
-  }, [replayAt]);
+  }, [replayAt, city]);
   // the log's extent, for the replay scrubber
-  useEffect(() => { fetch("/api/outages").then((r) => r.json()).then((j: OutagesReplay | { ok: false }) => { if (j.ok) setLog(j); }).catch(() => {}); }, []);
-  useEffect(() => { fetch("/api/weather").then((r) => r.json()).then((w: Weather | { ok: false }) => { if (w.ok) { setWeather(w); if (urlMode) return; if (w.suggested.heat) setSelected("shade"); else if (w.suggested.cold) setSelected("indoor"); } }).catch(() => {}); }, [urlMode]);
-  useEffect(() => { fetch("/data/places.json").then((r) => r.json()).then(setPlaces).catch(() => {}); }, []);
+  useEffect(() => { if (!city.hasOutageLog) return; fetch("/api/outages").then((r) => r.json()).then((j: OutagesReplay | { ok: false }) => { if (j.ok) setLog(j); }).catch(() => {}); }, [city]);
+  useEffect(() => { fetch(`/api/weather?city=${city.id}`).then((r) => r.json()).then((w: Weather | { ok: false }) => { if (w.ok) { setWeather(w); if (urlMode) return; if (w.suggested.heat && city.hasShade) setSelected("shade"); else if (w.suggested.cold) setSelected("indoor"); } }).catch(() => {}); }, [urlMode, city]);
+  useEffect(() => { if (city.id !== "toronto") return; fetch("/data/places.json").then((r) => r.json()).then(setPlaces).catch(() => {}); }, [city]);
 
   const outStations = useMemo(() => Array.from(new Set(alerts.filter((a) => /out of service/i.test(a.effect)).map((a) => a.station))), [alerts]);
 
@@ -116,21 +111,21 @@ function Home() {
   useEffect(() => {
     if (tab !== "reach" || !from) return;
     const ctl = new AbortController();
-    fetch("/api/reach", { method: "POST", body: JSON.stringify({ from: [from.lon, from.lat], maxMin: reachOpts.min, maxOutdoorMin: reachOpts.out, mobility: reachOpts.stepFree, walkOnly, speed: speed ?? undefined, hourBucket, blockedStations: outStations }), signal: ctl.signal })
+    fetch("/api/reach", { method: "POST", body: JSON.stringify({ city: city.id, from: [from.lon, from.lat], maxMin: reachOpts.min, maxOutdoorMin: reachOpts.out, mobility: reachOpts.stepFree, walkOnly, speed: speed ?? undefined, hourBucket, blockedStations: outStations }), signal: ctl.signal })
       .then((r) => r.json()).then((j: ReachResult | { ok: false }) => setReach(j.ok ? j : null)).catch(() => {});
     return () => ctl.abort();
-  }, [tab, from, reachOpts, walkOnly, speed, hourBucket, outStations]);
+  }, [city, tab, from, reachOpts, walkOnly, speed, hourBucket, outStations]);
 
   // how much of the sun is actually out: scales the shade penalty, 1 under a clear sky
   const sky = liveSky ? weather?.sky ?? 1 : 1;
-  const reqKey = JSON.stringify([from?.lon, from?.lat, to?.lon, to?.lat, hourBucket, outStations, walkOnly, speed, sky]);
+  const reqKey = JSON.stringify([city.id, from?.lon, from?.lat, to?.lon, to?.lat, hourBucket, outStations, walkOnly, speed, sky]);
   useEffect(() => {
     if (!from || !to) return;
     const ctl = new AbortController(); const key = reqKey;
-    fetch("/api/routes", { method: "POST", body: JSON.stringify({ from: [from.lon, from.lat], to: [to.lon, to.lat], hourBucket, blockedStations: outStations, walkOnly, speed: speed ?? undefined, sky }), signal: ctl.signal })
+    fetch("/api/routes", { method: "POST", body: JSON.stringify({ city: city.id, from: [from.lon, from.lat], to: [to.lon, to.lat], hourBucket, blockedStations: outStations, walkOnly, speed: speed ?? undefined, sky }), signal: ctl.signal })
       .then((r) => r.json()).then((data) => setAnswer({ key, data })).catch(() => {});
     return () => ctl.abort();
-  }, [from, to, hourBucket, outStations, walkOnly, speed, sky, reqKey]);
+  }, [city, from, to, hourBucket, outStations, walkOnly, speed, sky, reqKey]);
   const resp = answer?.data ?? null;
   // busy until the answer on screen is the answer to the current question
   const busy = !!from && !!to && answer?.key !== reqKey;
@@ -139,19 +134,19 @@ function Home() {
     const pt: Pt = { lon: c[0], lat: c[1], label: "Dropped pin" };
     const set = tab === "reach" || pickNext === "from" ? setFrom : setTo;
     set(pt); if (tab !== "reach") setPickNext(pickNext === "from" ? "to" : "from");
-    fetch(`/api/geocode?lon=${c[0]}&lat=${c[1]}`).then((r) => r.json()).then((j: { ok: boolean; hits?: Hit[] }) => {
+    fetch(`/api/geocode?city=${city.id}&lon=${c[0]}&lat=${c[1]}`).then((r) => r.json()).then((j: { ok: boolean; hits?: Hit[] }) => {
       const h = j.ok ? j.hits?.[0] : null;
       if (h) set((cur) => (cur && cur.lon === pt.lon && cur.lat === pt.lat ? { ...cur, label: /^\d+$/.test(h.name) ? `${h.name} ${h.detail.split(",")[0]}` : h.name } : cur));
     }).catch(() => {});
-  }, [pickNext, tab]);
+  }, [pickNext, tab, city]);
   const onLocate = useCallback((c: [number, number]) => {
     const pt: Pt = { lon: +c[0].toFixed(6), lat: +c[1].toFixed(6), label: "My location" };
     setFrom(pt); setPickNext("to");
-    fetch(`/api/geocode?lon=${pt.lon}&lat=${pt.lat}`).then((r) => r.json()).then((j: { ok: boolean; hits?: Hit[] }) => {
+    fetch(`/api/geocode?city=${city.id}&lon=${pt.lon}&lat=${pt.lat}`).then((r) => r.json()).then((j: { ok: boolean; hits?: Hit[] }) => {
       const h = j.ok ? j.hits?.[0] : null;
       if (h) setFrom((cur) => (cur && cur.lon === pt.lon && cur.lat === pt.lat ? { ...cur, label: /^\d+$/.test(h.name) ? `${h.name} ${h.detail.split(",")[0]}` : h.name } : cur));
     }).catch(() => {});
-  }, []);
+  }, [city]);
   const swap = () => { setFrom(to); setTo(from); };
 
   const routes = resp?.ok ? resp.routes : [];
@@ -172,8 +167,14 @@ function Home() {
         </button>
 
         <header className="sticky top-0 z-20 flex items-center justify-between gap-3 border-b border-line bg-surface/95 px-4 backdrop-blur">
-          <h1 className="text-[15px] font-semibold tracking-[-0.02em]">happy map<span className="ml-1.5 font-normal text-muted">Toronto</span></h1>
-          <nav className="-mb-px flex gap-3.5" role="tablist" aria-label="Panels">
+          <div className="flex min-w-0 items-center gap-1 whitespace-nowrap text-[15px] tracking-[-0.02em]">
+            <h1 className="font-semibold">happy map</h1>
+            <select aria-label="City" value={city.id} onChange={(e) => { const u = new URLSearchParams(); if (e.target.value !== "toronto") u.set("city", e.target.value); window.location.assign(`/${u.size ? `?${u}` : ""}`); }}
+              className="min-w-0 cursor-pointer appearance-none truncate rounded bg-transparent pr-3 text-[13px] text-muted outline-none hover:text-ink" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5' viewBox='0 0 8 5'%3E%3Cpath d='M1 1l3 3 3-3' fill='none' stroke='%23736d60' stroke-width='1.4'/%3E%3C/svg%3E\")", backgroundRepeat: "no-repeat", backgroundPosition: "right 1px center" }}>
+              {Object.values(CITIES).map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
+            </select>
+          </div>
+          <nav className="-mb-px flex shrink-0 gap-3" role="tablist" aria-label="Panels">
             {([["route", "Route"], ["reach", "Reach"], ["live", "Live"], ["about", "About"]] as const).map(([id, label]) => (
               <button key={id} role="tab" aria-selected={tab === id} aria-controls={`panel-${id}`} id={`tab-${id}`} onClick={() => setTab(id)} className={`border-b-2 py-2.5 text-[13px] transition ${tab === id ? "border-ink font-semibold" : "border-transparent text-muted hover:text-ink-soft"}`}>{label}</button>
             ))}
@@ -217,16 +218,16 @@ function Home() {
               <div className="flex items-stretch gap-2">
                 <div className="relative flex-1 rounded-lg border border-line">
                   <span aria-hidden className="absolute left-[17px] top-[27px] h-4 border-l border-dotted border-line" />
-                  <PlaceInput dot="#146c36" placeholder="Start — or click the map" value={from} active={pickNext === "from"} onFocus={() => setPickNext("from")} onChange={setFrom} />
+                  <PlaceInput city={city.id} dot="#146c36" placeholder="Start — or click the map" value={from} active={pickNext === "from"} onFocus={() => setPickNext("from")} onChange={setFrom} />
                   <div className="mx-2.5 h-px bg-line" />
-                  <PlaceInput dot="#b91c1c" placeholder="Destination — or click the map" value={to} active={pickNext === "to"} onFocus={() => setPickNext("to")} onChange={setTo} />
+                  <PlaceInput city={city.id} dot="#b91c1c" placeholder="Destination — or click the map" value={to} active={pickNext === "to"} onFocus={() => setPickNext("to")} onChange={setTo} />
                 </div>
                 <button onClick={swap} title="Swap start and destination" className="shrink-0 self-center rounded-lg border border-line p-2 text-muted transition hover:bg-sunk hover:text-ink"><Swap className="h-4 w-4" /></button>
               </div>
 
               <div className="flex flex-wrap items-center gap-1.5">
                 <span className="pr-0.5 text-[11px] text-muted">Try</span>
-                {PRESETS.map((p) => {
+                {city.presets.map((p) => {
                   const on = from?.label === p.from.label && to?.label === p.to.label;
                   return (
                     <button key={p.label} onMouseDown={(e) => e.preventDefault()} onClick={() => { setFrom(p.from); setTo(p.to); }} aria-pressed={on} aria-label={`${p.from.label} to ${p.to.label}`}
@@ -252,7 +253,7 @@ function Home() {
                     <span className="flex items-center gap-2">
                       <span className={`grid w-5 shrink-0 place-items-center ${on ? "text-ink" : "text-muted"}`}><Icon className="h-4 w-4" /></span>
                       <span className={`text-[14px] font-semibold ${on ? "text-ink" : "text-ink-soft"}`}>{r.label}</span>
-                      {r.id === "indoor" && r.ok && (r.stats?.indoor_m ?? 0) > 200 && <span className="rounded bg-surface px-1.5 py-px text-[10px] font-medium text-ink-soft ring-1 ring-line">PATH</span>}
+                      {r.id === "indoor" && r.ok && (r.stats?.indoor_m ?? 0) > 200 && <span className="rounded bg-surface px-1.5 py-px text-[10px] font-medium text-ink-soft ring-1 ring-line">{city.sheltered}</span>}
                     </span>
                     {r.ok && r.stats ? (
                       <>
@@ -279,7 +280,7 @@ function Home() {
               })}
             </div>
 
-            {selected === "shade" && (
+            {selected === "shade" && city.hasShade && (
               <div className="border-t border-line px-4 py-3 text-[12px]">
                 <div className="flex items-center justify-between gap-2">
                   <span className="font-semibold">Sun position</span>
@@ -305,7 +306,7 @@ function Home() {
               </div>
             )}
             {steps && chosen && <StepList steps={steps} label={chosen.label} />}
-            <Legend busy={busy} ms={resp?.ok ? resp.ms : null} />
+            <Legend busy={busy} ms={resp?.ok ? resp.ms : null} lines={city.lineLabels} n={routes.length} />
           </div>
         )}
 
@@ -346,7 +347,7 @@ function Home() {
             {summary && <div className="border-b border-line px-4 py-2.5 text-[12.5px] text-ink-soft">Showing <span className="font-semibold text-ink">{summary}</span>{from && to ? <> · {from.label} → {to.label}</> : null}</div>}
             <div className="px-4 pb-1 pt-3">
               <h2 className="text-[13px] font-semibold">Elevators out of service <span className="tnum font-normal text-muted">{alerts.length}</span></h2>
-              <p className="mt-0.5 text-[11px] text-muted">{replay ? `TTC alerts · as logged, ${fmtWhen(replay.at)}` : "TTC alerts · live"}</p>
+              <p className="mt-0.5 text-[11px] text-muted">{replay ? `${city.transit} alerts · as logged, ${fmtWhen(replay.at)}` : `${city.transit} alerts · live`}</p>
             </div>
             <ul className="divide-y divide-line">
               {alerts.map((a) => <AlertRow key={a.id} a={a} onRoute={affected.has(a.station.toLowerCase())} />)}
@@ -366,6 +367,12 @@ function Home() {
 
         {tab === "about" && (
           <div role="tabpanel" id="panel-about" aria-labelledby="tab-about" className="space-y-3 px-4 py-4 text-[13px] leading-relaxed text-ink-soft">
+            {city.id === "montreal" && (
+              <div className="rounded-lg border border-line bg-sunk p-3 text-[12.5px]">
+                <div className="font-semibold text-ink">Montréal runs on the same router</div>
+                <p className="mt-1">OpenStreetMap for the streets and the RÉSO, STM GTFS for the métro, the STM elevator page for outages. 25 of 68 métro stations have an elevator, so step-free trips here detour far more than in Toronto. No building-height data is loaded yet, which is why there is no shade route, and there is no outage log to replay. The Toronto figures below are the ones that have been measured.</p>
+              </div>
+            )}
             <p>A broken elevator, an icy block, or 300 m of open sun is an inconvenience for some people and a barrier for others. Routing apps optimise for time and treat all of it as walking.</p>
             <p>happy map costs a trip by <span className="font-semibold text-ink">exposure</span>: minutes outdoors, metres in direct sun, stairs, blocks with no sidewalk, and stations whose elevator is out right now.</p>
             <div className="rounded-lg border border-line p-3">
@@ -385,7 +392,7 @@ function Home() {
       </aside>
 
       <main className="relative min-h-0 flex-1" aria-label="Map">
-        <RouteMap from={from ? [from.lon, from.lat] : null} to={tab === "reach" || !to ? null : [to.lon, to.lat]} legs={tab === "reach" ? null : chosen?.legs ?? null} ghostLegs={tab === "reach" ? null : ghost}
+        <RouteMap center={city.center} zoom={city.zoom} lineColors={city.lineColors} from={from ? [from.lon, from.lat] : null} to={tab === "reach" || !to ? null : [to.lon, to.lat]} legs={tab === "reach" ? null : chosen?.legs ?? null} ghostLegs={tab === "reach" ? null : ghost}
           badge={tab !== "reach" && chosen?.ok && chosen.stats ? `${chosen.label} · ${fmtMin(chosen.stats.time_s)} min` : null}
           weather={weather} outages={outageMarkers} places={tab === "reach" ? [] : visiblePlaces} onPick={onPick} onLocate={onLocate} reach={tab === "reach" ? reach : null} />
       </main>
@@ -421,7 +428,7 @@ function ReplayControl({ log, replayAt, onChange }: { log: OutagesReplay; replay
   );
 }
 
-function PlaceInput({ dot, placeholder, value, active, onFocus, onChange }: { dot: string; placeholder: string; value: Pt | null; active: boolean; onFocus: () => void; onChange: (p: Pt) => void }) {
+function PlaceInput({ city, dot, placeholder, value, active, onFocus, onChange }: { city: string; dot: string; placeholder: string; value: Pt | null; active: boolean; onFocus: () => void; onChange: (p: Pt) => void }) {
   const [text, setText] = useState("");
   const [editing, setEditing] = useState(false);
   const [found, setFound] = useState<Hit[]>([]);
@@ -433,10 +440,10 @@ function PlaceInput({ dot, placeholder, value, active, onFocus, onChange }: { do
     if (query.length < 2) return;
     const t = setTimeout(() => {
       setLoading(true);
-      fetch(`/api/geocode?q=${encodeURIComponent(query)}`).then((r) => r.json()).then((j: { ok: boolean; hits?: Hit[] }) => setFound(j.ok ? j.hits ?? [] : [])).catch(() => setFound([])).finally(() => setLoading(false));
+      fetch(`/api/geocode?city=${city}&q=${encodeURIComponent(query)}`).then((r) => r.json()).then((j: { ok: boolean; hits?: Hit[] }) => setFound(j.ok ? j.hits ?? [] : [])).catch(() => setFound([])).finally(() => setLoading(false));
     }, 350);
     return () => clearTimeout(t);
-  }, [query]);
+  }, [query, city]);
 
   const choose = (h: Hit) => { onChange({ lon: h.lon, lat: h.lat, label: h.name }); setEditing(false); setText(""); setFound([]); };
 
@@ -503,9 +510,8 @@ function StepList({ steps, label }: { steps: Step[]; label: string }) {
   );
 }
 
-function Legend({ busy, ms }: { busy: boolean; ms: number | null }) {
+function Legend({ busy, ms, lines, n }: { busy: boolean; ms: number | null; lines: [string, string][]; n: number }) {
   const items: [string, string][] = [["#2b5fa8", "indoor"], ["#3d7f96", "covered"], ["#5b4b8a", "shaded"], ["#c2410c", "open sun"], ["#a8a294", "fastest"]];
-  const lines: [string, string][] = [["#e5b611", "Line 1"], ["#12823f", "Line 2"], ["#8f2060", "Line 4"], ["#e8741a", "Line 5"], ["#6f6a60", "Line 6"]];
   return (
     <div className="border-t border-line px-4 py-2.5">
       <div className="flex flex-wrap gap-x-3 gap-y-1 text-[10.5px] text-muted">
@@ -514,7 +520,7 @@ function Legend({ busy, ms }: { busy: boolean; ms: number | null }) {
       <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-[10.5px] text-muted">
         {lines.map(([c, l]) => <span key={l} className="inline-flex items-center gap-1.5"><span className="inline-block h-1.5 w-4 rounded-full" style={{ background: c }} />{l}</span>)}
       </div>
-      <div className="tnum mt-1 text-[10.5px] text-muted">{busy ? "computing…" : ms !== null ? `four routes in ${ms} ms` : ""}</div>
+      <div className="tnum mt-1 text-[10.5px] text-muted">{busy ? "computing…" : ms !== null ? `${["", "one", "two", "three", "four"][n] ?? n} routes in ${ms} ms` : ""}</div>
     </div>
   );
 }
