@@ -1,6 +1,6 @@
 # happy map — exposure-aware routing across Toronto
 
-**Live: https://happy-map-ashy.vercel.app**
+**Live: https://happy-map-ashy.vercel.app** · [![CI](https://github.com/Ketchio-dev/happy-map/actions/workflows/ci.yml/badge.svg)](https://github.com/Ketchio-dev/happy-map/actions/workflows/ci.yml)
 
 Walking and subway routes across Toronto costed by what you are exposed to rather than time alone: minutes outdoors, metres in direct sun, stairs, blocks with no sidewalk, and TTC stations whose elevator is out at this moment.
 
@@ -13,8 +13,8 @@ One router, three cost layers, switched automatically by Environment Canada warn
 | Mode | What it optimizes | Data |
 |---|---|---|
 | Indoor first | minimise time outdoors; prefers PATH, tunnels, covered walkways, the subway | OpenStreetMap `tunnel` / `indoor` / `covered` / `corridor` tags, 95 km of sheltered walking |
-| Shade first | minimise time in direct sun at the chosen hour; shows Heat Relief Network cool spaces | Toronto 3D Massing (building heights) and Street Tree Data (685k canopies sized from trunk diameter) + NOAA solar position → per-segment sun fraction for 12 day/hour buckets |
-| Step-free | no stairs, no raised kerbs, no station whose elevator is out **right now**; prices unprotected road crossings as long waits | OSM `highway=steps`, `wheelchair`, `barrier=kerb`, `crossing=*`; TTC live alerts feed |
+| Shade first | minimise time in direct sun at the chosen hour, scaled by how much sun is actually out; shows Heat Relief Network cool spaces | Toronto 3D Massing (building heights) and Street Tree Data (685k canopies sized from trunk diameter) + NOAA solar position → per-segment sun fraction for 12 day/hour buckets; Open-Meteo cloud cover now → sky factor 1 − 0.75·N^3.4 (Kasten & Czeplak) |
+| Step-free | no stairs, no raised kerbs, no station whose elevator is out **right now**; prices unprotected road crossings as long waits; shows what the outages cost against the same trip with every elevator working | OSM `highway=steps`, `wheelchair`, `barrier=kerb`, `crossing=*`; TTC GTFS (Lines 1, 2, 4, 5, 6); TTC live alerts feed |
 
 Every route is also charged for walking on a road with no sidewalk, for loose or unpaved ground, and for steep grades — the conditions that turn dangerous once there is snow on them. Sidewalk presence comes from OpenStreetMap corrected by the City of Toronto's Pedestrian Network: of 11,441 km the map had flagged as sidewalk-less, 4,553 km has a sidewalk after all and 1,165 km is confirmed to have none (`tools/apply-pednet.mjs`, `research/sidewalks-summary.json`).
 
@@ -22,7 +22,9 @@ Every result is shown next to the plain fastest route, so the trade-off is expli
 
 **Reach** turns the question around: from here, with this much time and at most this many minutes outdoors, where can I get to? The map shades every 90 m cell that is reachable and, in the alert colour, every cell that the outdoor cap or today's elevator outages took away. From Union with 30 minutes, step-free, five stations' elevators out: 10.2 km² reachable, 2.5 km² lost.
 
-Also in the interface: a walking-pace setting (slow, average, brisk) that changes every time and exposure figure; escalator outages alongside elevator outages in the Live tab; a map layer of the 1,165 km of road the City confirms has no sidewalk; shareable links that restore the whole question; a locate control; and an interface that passes axe-core's WCAG 2.1 AA rules on every view (`tools/a11y-audit.mjs`), with a live region and a text itinerary so a screen-reader user gets the route, not a picture of it.
+**Replay** runs the clock back. The outage log has been growing every five minutes since 2026-09-01; the Live tab has a scrubber over it, and any moment you pick (or `?at=2026-09-03T09:02:04Z` in a link) makes every route on the map get costed with the elevators that were out then. The evidence page links each logged outage, and the worst moment so far, straight to the map at that instant.
+
+Also in the interface: a walking-pace setting (slow, average, brisk) that changes every time and exposure figure; escalator outages alongside elevator outages in the Live tab; a map layer of the 1,165 km of road the City confirms has no sidewalk; shareable links that restore the whole question; a locate control; an install manifest so it sits on a phone's home screen; and an interface that passes axe-core's WCAG 2.1 AA rules on every view (`tools/a11y-audit.mjs`), with a live region and a text itinerary so a screen-reader user gets the route, not a picture of it.
 
 ## Evidence (no human testers; all numbers are computed)
 
@@ -55,14 +57,17 @@ A five-minute timer on a small VPS has been logging every TTC elevator and escal
 ```bash
 pnpm install
 pnpm dev            # http://localhost:3000
+pnpm test           # vitest: router and graph invariants against the packed graph (also runs in CI)
 ```
+
+`tests/` checks the things the router silently depends on, against the real `data/graph.bin`: every cost multiplier is ≥ 1 and no subway leg exceeds the heuristic's speed bound (so A* stays admissible), A* returns the same cost as plain Dijkstra on random downtown pairs, `graph.bin` sections are 8-byte aligned, a blocked station never appears on a step-free path, every station the TTC feed has ever named resolves to a graph station, and the replay reconstructs the right outage set. `.github/workflows/ci.yml` runs lint, type-check and the tests on every push.
 
 `tools/vps/` holds the systemd timer that records the TTC accessibility feed every
 5 minutes and commits each change, so the outage history keeps growing whether or
 not a laptop is awake. `tools/vps/install.sh` sets it up on an Ubuntu host with a
 write-enabled deploy key; `.github/workflows/log-ttc-alerts.yml` is a manual fallback.
 
-Data files (`data/graph.json`, `data/subway.json`, `public/data/places.json`) are committed. To rebuild from sources:
+Data files (`data/graph.bin`, `data/subway.json`, `public/data/places.json`) are committed; `data/graph.json` is the untracked intermediate. To rebuild from sources:
 
 ```bash
 node tools/fetch-osm.mjs        # OpenStreetMap via Overpass → data/raw/osm-downtown.json
@@ -71,7 +76,8 @@ node tools/compute-shade.mjs    # needs data/raw/massing/ (Toronto 3D Massing 20
 node tools/fetch-crossings.mjs  # OSM crossing nodes via Overpass → data/raw/osm-crossings.json
 node tools/apply-crossings.mjs  # marks crossing nodes as signals / marked / unmarked
 node tools/apply-pednet.mjs     # needs data/raw/pednet/pednet-4326.geojson (City Pedestrian Network) → corrects the sidewalk flag
-node tools/build-subway.mjs     # needs data/raw/gtfs/ (TTC GTFS) → data/subway.json
+node tools/fetch-osm-lines.mjs  # optional: OSM route relations for lines the GTFS lists but does not schedule → data/raw/osm-lines/
+node tools/build-subway.mjs     # needs data/raw/gtfs/ (TTC GTFS) → data/subway.json; lines with no trips fall back to the OSM relation with estimated times
 node tools/build-places.mjs     # needs data/raw/cool-spaces.geojson → public/data/places.json
 node tools/pack-graph.mjs       # data/graph.json → data/graph.bin, what the app actually loads
 node tools/export-no-sidewalk.mjs # → public/data/no-sidewalk.geojson, the map layer
@@ -90,7 +96,9 @@ node tools/outage-impact.mjs    # needs the dev server running and research/outa
 
 `POST /api/reach` `{ from: [lon, lat], maxMin: 15, maxOutdoorMin: 5 | null, mobility?, walkOnly?, speed?, hourBucket?, blockedStations? }` → reachable 90 m cells `[lon, lat, s, outdoor_s]`, the cells lost to the cap and to closed stations, and areas in km².
 
-`GET /api/alerts` — TTC elevator/escalator outages with station coordinates. `GET /api/weather` — Environment Canada current conditions + warnings + suggested mode. Route requests accept `speed` (m/s) for walking pace.
+`POST /api/routes` — the four strategies in one call (what the interface uses); accepts `sky` (0–1) to scale the shade penalty and returns the step-free trip's `withoutOutages` stats when stations are blocked.
+
+`GET /api/alerts` — TTC elevator/escalator outages with station coordinates. `GET /api/outages?at=<ISO>` — the same shape reconstructed from the log for any past instant, plus the log's range, its busiest moment and an elevator-count timeline. `GET /api/weather` — Environment Canada current conditions + warnings + suggested mode, Open-Meteo cloud cover and the resulting sky factor. Route requests accept `speed` (m/s) for walking pace.
 
 ## Data sources
 
@@ -98,6 +106,7 @@ node tools/outage-impact.mjs    # needs the dev server running and research/outa
 - City of Toronto Open Data: 3D Massing (2025), Street Tree Data (2026), Pedestrian Network (sidewalk inventory), Air Conditioned and Cool Spaces (Heat Relief Network), TTC Routes and Schedules (GTFS)
 - TTC live service alerts (alerts.ttc.ca)
 - Environment and Climate Change Canada GeoMet OGC API (city page weather, warnings)
+- Open-Meteo (current cloud cover)
 - City of Toronto Warming Centres page (addresses; geocoded with OSM Nominatim)
 - Map tiles: OpenFreeMap / OpenMapTiles
 
@@ -118,4 +127,4 @@ Where a layer is missing the router still runs; that cost simply stays neutral. 
 
 ## Limits
 
-Covers the City of Toronto plus margins into Mississauga, Vaughan and Markham: 346k nodes, 492k edges, 24,225 km of walkable network. Shade is geometric for twelve representative day/hour buckets, not live cloud cover: buildings from 3D Massing plus City-owned street trees as canopies sized from trunk diameter; private trees and parks are not in the inventory. Snow clearing is not modelled: PlowTO is a seasonal map with no public API, and Toronto's open data has no plowing dataset, so the winter signal here is structural — where sidewalks are missing, loose, or steep — rather than live. Elevator outages are matched to stations by name from the TTC feed; Line 5 stations are not in the routing graph.
+Covers the City of Toronto plus margins into Mississauga, Vaughan and Markham: 346k nodes, 492k edges, 24,225 km of walkable network. Shade is geometric for twelve representative day/hour buckets: buildings from 3D Massing plus City-owned street trees as canopies sized from trunk diameter; private trees and parks are not in the inventory. Cloud cover scales the whole penalty from the current sky, not from an hourly forecast for the chosen hour. Snow clearing is not modelled: PlowTO is a seasonal map with no public API, and Toronto's open data has no plowing dataset, so the winter signal here is structural — where sidewalks are missing, loose, or steep — rather than live. Elevator outages are matched to stations by name, because the feed's stop ids are not GTFS ids; `tests/stations.test.ts` fails the build if a name the feed has used stops resolving. Scarborough Centre (a bus terminal since Line 3 closed) is the one it knowingly cannot place.

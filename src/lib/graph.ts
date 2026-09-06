@@ -60,9 +60,8 @@ export function sunAt(g: Graph, ei: number, bucket: number): number {
   return g.sunArr[row * g.sunKeys.length + bucket] / 255;
 }
 
-/** TTC alert station names → GTFS station names */
-const ALIASES: Record<string, string[]> = { "bloor-yonge": ["Bloor", "Yonge"], "yonge-bloor": ["Bloor", "Yonge"], "dundas": ["TMU"], "sheppard yonge": ["Sheppard-Yonge"], "st. george": ["St George"], "st. andrew": ["St Andrew"], "st. patrick": ["St Patrick"], "st. clair": ["St Clair"], "st. clair west": ["St Clair West"], "queens park": ["Queen's Park"], "vmc": ["Vaughan Metropolitan Centre"] };
-export const normName = (s: string) => s.toLowerCase().replace(/\s+station$/i, "").replace(/\s+/g, " ").trim();
+import { normName, gtfsNamesFor } from "./stations";
+export { normName };
 
 let cached: Graph | null = null;
 
@@ -206,9 +205,7 @@ function nearestPed(g: GraphFile, index: Flatbush, p: [number, number], maxM: nu
 
 /** resolve a TTC alert station name (e.g. "Bloor-Yonge") to graph station nodes */
 export function stationNodesFor(g: Graph, alertStation: string): number[] {
-  const key = normName(alertStation);
-  const names = ALIASES[key] ?? [alertStation];
-  return names.flatMap((n) => g.stationByName.get(normName(n)) ?? []).map((s) => s.node);
+  return gtfsNamesFor(alertStation).flatMap((n) => g.stationByName.get(normName(n)) ?? []).map((s) => s.node);
 }
 
 /** nearest pedestrian graph node to a lon/lat, or -1 if farther than maxM */

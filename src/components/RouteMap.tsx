@@ -29,7 +29,7 @@ const CENTER: [number, number] = [-79.3835, 43.6512];
 // one means something. The interface itself stays ink on neutrals so they never compete.
 // The walking ramp runs sheltered -> exposed and deliberately avoids green and yellow,
 // which belong to TTC Lines 2 and 1 and would otherwise collide on the same map.
-const COLORS = { indoor: "#2b5fa8", covered: "#3d7f96", shaded: "#5b4b8a", exposed: "#c2410c", transit: { "1": "#e5b611", "2": "#12823f", "4": "#8f2060" } as Record<string, string> };
+const COLORS = { indoor: "#2b5fa8", covered: "#3d7f96", shaded: "#5b4b8a", exposed: "#c2410c", transit: { "1": "#e5b611", "2": "#12823f", "4": "#8f2060", "5": "#e8741a", "6": "#6f6a60" } as Record<string, string> };
 const INK = "#17150f", PAPER = "#f4f2eb";
 const legColor = (l: Leg) => (l.transit ? COLORS.transit[l.transit] ?? "#64748b" : l.shelter === 2 ? COLORS.indoor : l.shelter === 1 ? COLORS.covered : l.sun < 0.35 ? COLORS.shaded : COLORS.exposed);
 

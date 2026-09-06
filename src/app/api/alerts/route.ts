@@ -1,23 +1,11 @@
 import { NextResponse } from "next/server";
-import { readFileSync } from "node:fs";
-import path from "node:path";
+import { coordsFor, type AccessibilityAlert } from "@/lib/alerts";
 
 export const runtime = "nodejs";
 const URL_ALERTS = "https://alerts.ttc.ca/api/alerts/live-alerts";
-
-export interface AccessibilityAlert { id: string; type: "Elevator" | "Escalator" | string; code: string | null; station: string; lat: number | null; lon: number | null; header: string; effect: string; severity: string; cause: string | null; causeDesc: string | null; planned: string; stops: string[]; start: string | null; targetRemoval: string | null; updated: string }
+export type { AccessibilityAlert };
 interface RawAlert { id: string; routeType?: string; elevatorCode?: string | null; escalatorCode?: string | null; headerText?: string; effectDesc?: string; severity?: string; cause?: string | null; causeDescription?: string | null; alertType?: string; stops?: string[]; activePeriod?: { start?: string }; targetRemoval?: string | null; lastUpdated?: string }
 
-const ALIASES: Record<string, string> = { "bloor-yonge": "bloor", "yonge-bloor": "bloor", "dundas": "tmu", "sheppard yonge": "sheppard-yonge", "queens park": "queen's park", "vmc": "vaughan metropolitan centre" };
-const norm = (s: string) => s.toLowerCase().replace(/\./g, "").replace(/\s+station$/, "").replace(/\s+/g, " ").trim();
-let stationCoords: Map<string, [number, number]> | null = null;
-function coordsFor(station: string): [number, number] | null {
-  if (!stationCoords) {
-    stationCoords = new Map();
-    try { const sub = JSON.parse(readFileSync(path.join(process.cwd(), "data", "subway.json"), "utf8")) as { stations: { name: string; lat: number; lon: number }[] }; for (const s of sub.stations) stationCoords.set(norm(s.name), [s.lon, s.lat]); } catch { /* no subway file */ }
-  }
-  const k = norm(station); return stationCoords.get(ALIASES[k] ?? k) ?? null;
-}
 
 export async function GET() {
   try {

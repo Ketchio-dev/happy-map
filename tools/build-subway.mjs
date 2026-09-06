@@ -9,7 +9,9 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const G = path.join(ROOT, "data/raw/gtfs");
 
 const csv = (txt) => { const [h, ...rows] = txt.trim().split(/\r?\n/); const cols = h.split(","); return rows.map(r => { const v = r.match(/("([^"]|"")*"|[^,]*)(,|$)/g).map(x => x.replace(/,$/, "").replace(/^"|"$/g, "").replace(/""/g, '"')); return Object.fromEntries(cols.map((c, i) => [c, v[i] ?? ""])); }); };
-const routes = csv(await readFile(path.join(G, "routes.txt"), "utf8")).filter(r => r.route_type === "1");
+// route_type 1 is the subway; 0 is light rail (Lines 5 and 6), which this GTFS lists as
+// routes but does not schedule, so their stations and tracks come from OpenStreetMap below.
+const routes = csv(await readFile(path.join(G, "routes.txt"), "utf8")).filter(r => r.route_type === "1" || (r.route_type === "0" && /^Line \d/.test(r.route_long_name)));
 const routeIds = new Set(routes.map(r => r.route_id));
 console.log("subway routes:", routes.map(r => `${r.route_id}:${r.route_long_name}`).join(" | "));
 const trips = csv(await readFile(path.join(G, "trips.txt"), "utf8")).filter(t => routeIds.has(t.route_id));
@@ -66,14 +68,76 @@ for (const [trip, list] of stopTimes) {
     if (i > 0) { const ka = stationOf(list[i-1].stop); if (!ka || ka === key) continue; const dt = list[i].t - list[i-1].t; const ek = [ka, key].sort().join("|") + "|" + line; if (!edges.has(ek)) edges.set(ek, []); edges.get(ek).push(dt); if (!edgeShape.has(ek)) edgeShape.set(ek, { trip, from: list[i-1].stop, to: list[i].stop }); }
   }
 }
+// --- lines with no GTFS trips: stations and track from the OSM route relation (tools/fetch-osm-lines.mjs) ---
+// Running times are estimated from track length, since no schedule is published for them.
+const OSM_LINES = path.join(ROOT, "data/raw/osm-lines");
+const ESTIMATE = { "5": { mps: 9, dwell: 30 }, "6": { mps: 7, dwell: 20 } }; // cruise speed between stops, dwell per stop
+const normStation = (n) => n.replace(/ Station$/i, "").replace(/[.'’]/g, "").replace(/[-–—/]+/g, " ").replace(/\s+/g, " ").trim().toLowerCase();
+const byNormName = new Map([...stations.values()].map(s => [normStation(s.name), s]));
+const scheduled = new Set([...stations.values()].flatMap(s => [...s.lines]));
+// FORCE_OSM_LINES=5,6 rebuilds those lines from OSM even though GTFS schedules them (to exercise the fallback)
+for (const l of (process.env.FORCE_OSM_LINES ?? "").split(",").filter(Boolean)) { scheduled.delete(l); for (const st of stations.values()) st.lines.delete(l); for (const k of [...edges.keys()]) if (k.endsWith(`|${l}`)) { edges.delete(k); edgeShape.delete(k); } }
+const osmNote = [];
+let osmFiles = [];
+try { osmFiles = (await import("node:fs")).readdirSync(OSM_LINES).filter(f => f.endsWith(".json")); } catch { /* no OSM lines */ }
+for (const f of osmFiles) {
+  const els = JSON.parse(await readFile(path.join(OSM_LINES, f), "utf8")).elements;
+  const nodeById = new Map(els.filter(e => e.type === "node").map(e => [e.id, e]));
+  const wayById = new Map(els.filter(e => e.type === "way").map(e => [e.id, e]));
+  const rels = els.filter(e => e.type === "relation" && e.tags?.ref && routes.some(r => r.route_id === e.tags.ref));
+  const seenRef = new Set();
+  for (const rel of rels) {
+    const line = rel.tags.ref;
+    if (scheduled.has(line) || seenRef.has(line)) continue; // GTFS already covers it, or the other direction did
+    seenRef.add(line);
+    const est = ESTIMATE[line] ?? { mps: 10, dwell: 25 };
+    // PTv2: stop positions come first in member order, then the track ways
+    const stops = rel.members.filter(m => m.type === "node" && /stop/.test(m.role ?? "stop") && nodeById.get(m.ref)?.tags?.name).map(m => nodeById.get(m.ref));
+    const track = chainWays(rel.members.filter(m => m.type === "way").map(m => wayById.get(m.ref)).filter(Boolean));
+    const keys = [];
+    for (const n of stops) {
+      const name = n.tags.name.replace(/ Station$/i, "");
+      let st = byNormName.get(normStation(name));
+      if (!st) { st = { key: `osm:${line}:${name}`, name, lat: +n.lat, lon: +n.lon, n: 1, wc: "1", stopIds: new Set(), lines: new Set(), estimated: true }; stations.set(st.key, st); byNormName.set(normStation(name), st); }
+      st.lines.add(line);
+      if (keys[keys.length - 1] !== st.key) keys.push(st.key);
+    }
+    for (let i = 1; i < keys.length; i++) {
+      const A = stations.get(keys[i - 1]), B = stations.get(keys[i]);
+      const a = [A.lon / A.n, A.lat / A.n], b = [B.lon / B.n, B.lat / B.n];
+      let geom = null, len = hav(a, b);
+      if (track.length > 1) { let i1 = nearPt(track, a), i2 = nearPt(track, b); if (i1 > i2) [i1, i2] = [i2, i1]; const slice = track.slice(i1, i2 + 1); if (slice.length > 1) { geom = slice.map(p => [Math.round(p[0] * 1e5) / 1e5, Math.round(p[1] * 1e5) / 1e5]); len = 0; for (let k = 1; k < slice.length; k++) len += hav(slice[k - 1], slice[k]); } }
+      const ek = [A.key, B.key].sort().join("|") + "|" + line;
+      edges.set(ek, [Math.round(len / est.mps + est.dwell)]);
+      if (geom) edgeShape.set(ek, { geom });
+    }
+    osmNote.push(`${rel.tags.name}: ${keys.length} stations, times estimated at ${est.mps} m/s + ${est.dwell} s dwell`);
+    console.log(`OSM line ${line}: ${keys.length} stations from relation ${rel.id}, track ${track.length} points`);
+  }
+}
+function hav(a, b) { const R = 6371008.8; const dLat = (b[1] - a[1]) * Math.PI / 180, dLon = (b[0] - a[0]) * Math.PI / 180; const s = Math.sin(dLat / 2) ** 2 + Math.cos(a[1] * Math.PI / 180) * Math.cos(b[1] * Math.PI / 180) * Math.sin(dLon / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(s)); }
+function nearPt(pts, p) { let bi = 0, bd = Infinity; for (let i = 0; i < pts.length; i++) { const d = (pts[i][0] - p[0]) ** 2 + (pts[i][1] - p[1]) ** 2; if (d < bd) { bd = d; bi = i; } } return bi; }
+/** orient and concatenate way geometries into one polyline by matching endpoints */
+function chainWays(ways) {
+  const out = [];
+  const same = (p, q) => Math.abs(p[0] - q[0]) < 1e-6 && Math.abs(p[1] - q[1]) < 1e-6;
+  for (const w of ways) {
+    let g = (w.geometry ?? []).map(p => [p.lon, p.lat]); if (g.length < 2) continue;
+    if (out.length) { const last = out[out.length - 1]; if (same(last, g[g.length - 1])) g = g.reverse(); else if (!same(last, g[0])) { const dA = (last[0] - g[0][0]) ** 2 + (last[1] - g[0][1]) ** 2, dB = (last[0] - g[g.length - 1][0]) ** 2 + (last[1] - g[g.length - 1][1]) ** 2; if (dB < dA) g = g.reverse(); } }
+    for (const p of g) if (!out.length || !same(out[out.length - 1], p)) out.push(p);
+  }
+  return out;
+}
+
 const out = {
-  meta: { built: new Date().toISOString(), source: "TTC GTFS via Toronto Open Data" },
+  meta: { built: new Date().toISOString(), source: "TTC GTFS via Toronto Open Data; Lines 5 and 6 stations and track from OpenStreetMap route relations", estimated: osmNote },
   lines: routes.map(r => ({ id: r.route_id, name: r.route_long_name, color: r.route_color })),
-  stations: [...stations.values()].map(s => ({ key: s.key, name: s.name, lat: +(s.lat / s.n).toFixed(6), lon: +(s.lon / s.n).toFixed(6), wheelchair_boarding: s.wc, stopIds: [...s.stopIds], lines: [...s.lines] })),
+  stations: [...stations.values()].map(s => ({ key: s.key, name: s.name, lat: +(s.lat / s.n).toFixed(6), lon: +(s.lon / s.n).toFixed(6), wheelchair_boarding: s.wc, stopIds: [...s.stopIds], lines: [...s.lines], ...(s.estimated ? { source: "osm" } : {}) })),
   edges: [...edges.entries()].map(([k, ts]) => {
     const [a, b, line] = k.split("|"); ts.sort((x, y) => x - y);
     let geom = null;
     const meta = edgeShape.get(k);
+    if (meta?.geom) return { a, b, line, time_s: ts[0], geom: meta.geom, estimated: true };
     const pts = meta && shapes.get(tripShape.get(meta.trip));
     if (pts && pts.length > 1) {
       const s1 = stops.get(meta.from), s2 = stops.get(meta.to);

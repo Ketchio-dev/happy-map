@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
     "/api/routes": ["./data/graph.bin", "./data/subway.json"],
     "/api/route": ["./data/graph.bin", "./data/subway.json"],
     "/api/alerts": ["./data/subway.json"],
+    "/api/outages": ["./data/subway.json", "./research/outages-summary.json"],
     "/evidence": ["./research/eval-core.json", "./research/eval-wide.json", "./research/outages-summary.json"],
   },
 };

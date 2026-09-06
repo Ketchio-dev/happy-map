@@ -1,7 +1,7 @@
-import type { Edge, Graph } from "./graph";
+import type { Graph } from "./graph";
 import { haversine, nearestNode, stationNodesFor, geomOf, sunAt } from "./graph";
 
-export interface Mode { cold?: boolean; heat?: boolean; mobility?: boolean; /** never ride the subway */ walkOnly?: boolean; /** walking pace in m/s; defaults to 1.3, or 1.0 in step-free mode */ speed?: number }
+export interface Mode { cold?: boolean; heat?: boolean; mobility?: boolean; /** never ride the subway */ walkOnly?: boolean; /** walking pace in m/s; defaults to 1.3, or 1.0 in step-free mode */ speed?: number; /** share of clear-sky sun reaching the ground right now (0–1, see lib/sky.ts); 1 = clear */ sky?: number }
 /** how much a segment with no mapped sidewalk is penalised; higher in winter, when snowbanks narrow the road */
 const ROADWAY_PENALTY = 1.35;
 export interface RouteRequest { from: [number, number]; to: [number, number]; mode: Mode; hourBucket?: string; blockedNodes?: number[]; /** TTC station names with elevator outages; blocked only in step-free mode */ blockedStations?: string[] }
@@ -10,6 +10,8 @@ export interface Leg { coords: [number, number][]; len: number; shelter: 0 | 1 |
 export interface Stats { distance_m: number; time_s: number; indoor_m: number; covered_m: number; outdoor_m: number; sun_m: number; steps_edges: number; exposure_s: number; transit_s: number; walk_m: number; /** metres walked on a road with no mapped sidewalk */ roadway_m: number; /** metres on loose or steep ground */ rough_m: number }
 export interface RouteResult { legs: Leg[]; stats: Stats; nodePath: number[] }
 
+/** shade only matters when the sun is out: an overcast sky scales the penalty down, never below zero */
+export const skyOf = (mode: Mode) => (typeof mode.sky === "number" && isFinite(mode.sky) ? Math.min(1, Math.max(0, mode.sky)) : 1);
 const WALK_MPS = 1.3;
 const MOBILITY_MPS = 1.0;
 export const paceOf = (mode: Mode) => Math.min(2, Math.max(0.5, mode.speed ?? (mode.mobility ? MOBILITY_MPS : WALK_MPS)));
@@ -59,7 +61,7 @@ export function edgeCost(g: Graph, ei: number, from: number, mode: Mode, bucket:
     if (e.shelter === 0) t *= 2.5; else if (e.shelter === 1) t *= 1.3;
   }
   if (mode.heat) {
-    t *= 1 + 1.8 * sunFraction(g, ei, bucket); // full sun 2.8x, shade 1x
+    t *= 1 + 1.8 * skyOf(mode) * sunFraction(g, ei, bucket); // full sun 2.8x under a clear sky, shade 1x
   }
   // no mapped sidewalk means walking in or beside the traffic lane
   if (e.roadway) t *= mode.mobility ? ROADWAY_PENALTY + 0.35 : ROADWAY_PENALTY;
@@ -138,7 +140,7 @@ export function assemble(g: Graph, src: number, edgePath: number[], mode: Mode, 
   return { legs, stats, nodePath };
 }
 
-export interface PlanResult { ok: true; route: RouteResult; baseline: RouteResult; snapped: { from: [number, number]; to: [number, number] }; blockedStations: string[] } 
+export interface PlanResult { ok: true; route: RouteResult; baseline: RouteResult; snapped: { from: [number, number]; to: [number, number] }; blockedStations: string[]; /** sky factor the shade penalty was scaled by */ sky: number }
 export interface PlanError { ok: false; error: string }
 
 export function plan(g: Graph, req: RouteRequest): PlanResult | PlanError {
@@ -153,7 +155,7 @@ export function plan(g: Graph, req: RouteRequest): PlanResult | PlanError {
   const basePath = search(g, src, dst, baseMode, bucket, blockedSet);
   if (!basePath) return { ok: false, error: req.mode.mobility ? "no step-free route found between these points" : "no route found" };
   const path = (req.mode.cold || req.mode.heat) ? search(g, src, dst, req.mode, bucket, blockedSet) ?? basePath : basePath;
-  return { ok: true, route: assemble(g, src, path, req.mode, bucket), baseline: assemble(g, src, basePath, baseMode, bucket), snapped: { from: g.nodes[src], to: g.nodes[dst] }, blockedStations: req.mode.mobility ? (req.blockedStations ?? []) : [] };
+  return { ok: true, route: assemble(g, src, path, req.mode, bucket), baseline: assemble(g, src, basePath, baseMode, bucket), snapped: { from: g.nodes[src], to: g.nodes[dst] }, blockedStations: req.mode.mobility ? (req.blockedStations ?? []) : [], sky: req.mode.heat ? skyOf(req.mode) : 1 };
 }
 
 export { haversine };

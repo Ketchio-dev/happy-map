@@ -16,19 +16,23 @@ export const STRATEGIES = [
 export type StrategyId = (typeof STRATEGIES)[number]["id"];
 
 export async function POST(req: Request) {
-  let body: { from?: [number, number]; to?: [number, number]; hourBucket?: string; blockedStations?: string[]; walkOnly?: boolean; speed?: number };
+  let body: { from?: [number, number]; to?: [number, number]; hourBucket?: string; blockedStations?: string[]; walkOnly?: boolean; speed?: number; /** sky factor for the shade strategy, 0–1; omitted = clear sky */ sky?: number };
   try { body = await req.json(); } catch { return NextResponse.json({ ok: false, error: "invalid JSON" }, { status: 400 }); }
   const ok = (p: unknown): p is [number, number] => Array.isArray(p) && p.length === 2 && p.every((x) => typeof x === "number" && isFinite(x));
   if (!ok(body.from) || !ok(body.to)) return NextResponse.json({ ok: false, error: "from/to must be [lon, lat]" }, { status: 400 });
 
   const t0 = performance.now();
   const g = loadGraph();
+  const sky = typeof body.sky === "number" && isFinite(body.sky) ? Math.min(1, Math.max(0, body.sky)) : 1;
+  const blocked = (body.blockedStations ?? []).filter((x) => typeof x === "string");
   const results = STRATEGIES.map((s) => {
-    const mode: Mode = { ...s.mode, walkOnly: body.walkOnly, speed: typeof body.speed === "number" && isFinite(body.speed) ? body.speed : undefined };
-    const r = plan(g, { from: body.from!, to: body.to!, mode, hourBucket: body.hourBucket, blockedStations: body.blockedStations });
+    const mode: Mode = { ...s.mode, walkOnly: body.walkOnly, speed: typeof body.speed === "number" && isFinite(body.speed) ? body.speed : undefined, sky };
+    const r = plan(g, { from: body.from!, to: body.to!, mode, hourBucket: body.hourBucket, blockedStations: blocked });
     if (!r.ok) return { id: s.id, label: s.label, hint: s.hint, ok: false as const, error: r.error };
-    return { id: s.id, label: s.label, hint: s.hint, ok: true as const, legs: r.route.legs, stats: r.route.stats, blockedStations: r.blockedStations };
+    // what the outages cost: the same step-free trip with every elevator working
+    const open = s.id === "stepfree" && blocked.length ? plan(g, { from: body.from!, to: body.to!, mode, hourBucket: body.hourBucket }) : null;
+    return { id: s.id, label: s.label, hint: s.hint, ok: true as const, legs: r.route.legs, stats: r.route.stats, blockedStations: r.blockedStations, withoutOutages: open?.ok ? open.route.stats : undefined };
   });
   const fastest = results.find((r) => r.id === "fastest");
-  return NextResponse.json({ ok: true, ms: Math.round(performance.now() - t0), baseline: fastest?.ok ? fastest.stats : null, routes: results });
+  return NextResponse.json({ ok: true, ms: Math.round(performance.now() - t0), baseline: fastest?.ok ? fastest.stats : null, sky, routes: results });
 }

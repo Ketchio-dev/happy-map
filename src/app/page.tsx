@@ -6,6 +6,7 @@ import type { Leg, Stats } from "@/lib/router";
 import type { Place, PlacesFile } from "@/lib/types";
 import type { AccessibilityAlert } from "./api/alerts/route";
 import type { Weather } from "./api/weather/route";
+import type { OutagesReplay } from "./api/outages/route";
 import type { Hit } from "./api/geocode/route";
 import { Bolt, Indoor, Sun, Accessible, Swap, Walk, Train, Stairs, Lift, Door } from "@/components/icons";
 import { itinerary, type Step } from "@/lib/itinerary";
@@ -13,8 +14,8 @@ import type { ReachResult } from "@/lib/reach";
 
 const RouteMap = dynamicImport(() => import("@/components/RouteMap"), { ssr: false });
 
-interface RouteOpt { id: string; label: string; hint: string; ok: boolean; error?: string; legs?: Leg[]; stats?: Stats; blockedStations?: string[] }
-interface RoutesResp { ok: true; ms: number; baseline: Stats | null; routes: RouteOpt[] }
+interface RouteOpt { id: string; label: string; hint: string; ok: boolean; error?: string; legs?: Leg[]; stats?: Stats; blockedStations?: string[]; /** the same step-free trip with every elevator working */ withoutOutages?: Stats }
+interface RoutesResp { ok: true; ms: number; baseline: Stats | null; sky: number; routes: RouteOpt[] }
 
 export interface Pt { lon: number; lat: number; label: string }
 const P = (lon: number, lat: number, label: string): Pt => ({ lon, lat, label });
@@ -46,6 +47,8 @@ const ago = (iso: string | null) => {
   return h < 1 ? `${Math.max(1, Math.round(h * 60))} min ago` : h < 48 ? `${Math.round(h)} h ago` : `${Math.round(h / 24)} d ago`;
 };
 const sentence = (s: string) => s.replace(/\s+/g, " ").trim().toLowerCase().replace(/^./, (c) => c.toUpperCase());
+const fmtWhen = (iso: string) => new Date(iso).toLocaleString("en-CA", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/Toronto" }).replace(".m.", "m").replace(/\s+/g, " ");
+const fmtDay = (iso: string) => new Date(iso).toLocaleString("en-CA", { month: "short", day: "numeric", timeZone: "America/Toronto" });
 
 // A shared link restores the whole question: places, strategy, hour, walk-only.
 const ptParam = (v: string | null): Pt | null => { const a = v?.split(","); if (!a || a.length < 2) return null; const lon = +a[0], lat = +a[1]; return isFinite(lon) && isFinite(lat) ? { lon, lat, label: a.slice(2).join(",") || "Dropped pin" } : null; };
@@ -58,6 +61,11 @@ function Home() {
   const q = useSearchParams();
   // read once: Next mirrors our own replaceState writes back into the search params
   const [urlMode] = useState(() => q.get("mode"));
+  // a moment in the outage log instead of the live feed: every route is costed as things were then
+  const [replayAt, setReplayAt] = useState<string | null>(() => { const a = q.get("at"); const t = a ? Date.parse(a) : NaN; return isFinite(t) ? new Date(t).toISOString() : null; });
+  const [replay, setReplay] = useState<OutagesReplay | null>(null);
+  const [log, setLog] = useState<OutagesReplay | null>(null);
+  const [liveSky, setLiveSky] = useState(q.get("sky") !== "clear");
   const [from, setFrom] = useState<Pt | null>(() => ptParam(q.get("from")) ?? PRESETS[0].from);
   const [to, setTo] = useState<Pt | null>(() => ptParam(q.get("to")) ?? PRESETS[0].to);
   const [pickNext, setPickNext] = useState<"from" | "to">("from");
@@ -69,8 +77,7 @@ function Home() {
   const [pace, setPace] = useState<PaceId>(() => (PACES.some((p) => p[0] === q.get("pace")) ? (q.get("pace") as PaceId) : "auto"));
   const speed = PACES.find((p) => p[0] === pace)?.[2] ?? null;
   const [when, setWhen] = useState(() => { const h = q.get("hour")?.match(/^(d\d{4})_h(\d{2})$/); return h ? { day: h[1], hour: +h[2] } : { day: new Date().getMonth() + 1 >= 6 && new Date().getMonth() + 1 <= 8 ? "d0715" : "d0915", hour: 14 }; });
-  const [resp, setResp] = useState<RoutesResp | { ok: false; error: string } | null>(null);
-  const [busy, setBusy] = useState(false);
+  const [answer, setAnswer] = useState<{ key: string; data: RoutesResp | { ok: false; error: string } } | null>(null);
   const [alerts, setAlerts] = useState<AccessibilityAlert[]>([]);
   const [escalators, setEscalators] = useState<AccessibilityAlert[]>([]);
   const [weather, setWeather] = useState<Weather | null>(null);
@@ -86,11 +93,20 @@ function Home() {
     u.set("from", enc(from)); u.set("to", enc(to)); u.set("mode", selected); u.set("hour", hourBucket); if (!walkOnly) u.set("walk", "0"); if (pace !== "auto") u.set("pace", pace);
     if (tab !== "route") u.set("tab", tab);
     if (tab === "reach") { u.set("rmin", String(reachOpts.min)); u.set("rout", reachOpts.out === null ? "none" : String(reachOpts.out)); if (reachOpts.stepFree) u.set("rsf", "1"); }
-    window.history.replaceState(null, "", `?${u.toString().replace(/%2C/g, ",")}`);
-  }, [from, to, selected, hourBucket, walkOnly, pace, tab, reachOpts]);
+    if (replayAt) u.set("at", replayAt.replace(/\.\d{3}Z$/, "Z"));
+    if (!liveSky) u.set("sky", "clear");
+    window.history.replaceState(null, "", `?${u.toString().replace(/%2C/g, ",").replace(/%3A/g, ":")}`);
+  }, [from, to, selected, hourBucket, walkOnly, pace, tab, reachOpts, replayAt, liveSky]);
 
 
-  useEffect(() => { fetch("/api/alerts").then((r) => r.json()).then((j) => { if (j.ok) { setAlerts(j.elevators); setEscalators(j.escalators); } }).catch(() => {}); }, []);
+  useEffect(() => {
+    const ctl = new AbortController();
+    fetch(replayAt ? `/api/outages?at=${encodeURIComponent(replayAt)}` : "/api/alerts", { signal: ctl.signal }).then((r) => r.json())
+      .then((j: (OutagesReplay | { ok: false }) & { elevators?: AccessibilityAlert[]; escalators?: AccessibilityAlert[] }) => { if (!j.ok) return; setAlerts(j.elevators ?? []); setEscalators(j.escalators ?? []); setReplay(replayAt ? (j as OutagesReplay) : null); }).catch(() => {});
+    return () => ctl.abort();
+  }, [replayAt]);
+  // the log's extent, for the replay scrubber
+  useEffect(() => { fetch("/api/outages").then((r) => r.json()).then((j: OutagesReplay | { ok: false }) => { if (j.ok) setLog(j); }).catch(() => {}); }, []);
   useEffect(() => { fetch("/api/weather").then((r) => r.json()).then((w: Weather | { ok: false }) => { if (w.ok) { setWeather(w); if (urlMode) return; if (w.suggested.heat) setSelected("shade"); else if (w.suggested.cold) setSelected("indoor"); } }).catch(() => {}); }, [urlMode]);
   useEffect(() => { fetch("/data/places.json").then((r) => r.json()).then(setPlaces).catch(() => {}); }, []);
 
@@ -105,13 +121,19 @@ function Home() {
     return () => ctl.abort();
   }, [tab, from, reachOpts, walkOnly, speed, hourBucket, outStations]);
 
+  // how much of the sun is actually out: scales the shade penalty, 1 under a clear sky
+  const sky = liveSky ? weather?.sky ?? 1 : 1;
+  const reqKey = JSON.stringify([from?.lon, from?.lat, to?.lon, to?.lat, hourBucket, outStations, walkOnly, speed, sky]);
   useEffect(() => {
     if (!from || !to) return;
-    const ctl = new AbortController(); setBusy(true);
-    fetch("/api/routes", { method: "POST", body: JSON.stringify({ from: [from.lon, from.lat], to: [to.lon, to.lat], hourBucket, blockedStations: outStations, walkOnly, speed: speed ?? undefined }), signal: ctl.signal })
-      .then((r) => r.json()).then(setResp).catch(() => {}).finally(() => setBusy(false));
+    const ctl = new AbortController(); const key = reqKey;
+    fetch("/api/routes", { method: "POST", body: JSON.stringify({ from: [from.lon, from.lat], to: [to.lon, to.lat], hourBucket, blockedStations: outStations, walkOnly, speed: speed ?? undefined, sky }), signal: ctl.signal })
+      .then((r) => r.json()).then((data) => setAnswer({ key, data })).catch(() => {});
     return () => ctl.abort();
-  }, [from, to, hourBucket, outStations, walkOnly, speed]);
+  }, [from, to, hourBucket, outStations, walkOnly, speed, sky, reqKey]);
+  const resp = answer?.data ?? null;
+  // busy until the answer on screen is the answer to the current question
+  const busy = !!from && !!to && answer?.key !== reqKey;
 
   const onPick = useCallback((c: [number, number]) => {
     const pt: Pt = { lon: c[0], lat: c[1], label: "Dropped pin" };
@@ -157,6 +179,13 @@ function Home() {
             ))}
           </nav>
         </header>
+
+        {replayAt && replay && (
+          <div className="flex items-center justify-between gap-2 border-b border-line bg-alert-bg px-4 py-2 text-[12px] text-alert">
+            <span><span className="font-semibold">Replay</span> · {fmtWhen(replay.at)} · <span className="tnum">{replay.elevators.length}</span> elevator{replay.elevators.length === 1 ? "" : "s"} out</span>
+            <button onClick={() => setReplayAt(null)} className="shrink-0 rounded-md px-1.5 py-0.5 font-medium ring-1 ring-alert/30 transition hover:bg-white/70">Back to live</button>
+          </div>
+        )}
 
         {/* what changed, for screen readers: the chosen route in one sentence */}
         <p className="sr-only" aria-live="polite" aria-atomic="true">{busy ? "Computing routes" : chosen?.ok && chosen.stats ? `${chosen.label}: ${fmtMin(chosen.stats.time_s)} minutes, ${fmtM(chosen.stats.distance_m)}, ${chosen.id === "shade" ? `${fmtM(chosen.stats.sun_m)} in sun` : `${fmtM(chosen.stats.outdoor_m)} outdoors`}${chosen.stats.steps_edges ? `, ${chosen.stats.steps_edges} flights of stairs` : ", no stairs"}` : resp && !resp.ok ? resp.error : ""}</p>
@@ -241,7 +270,7 @@ function Home() {
                           {r.stats.transit_s > 0 && <> · {fmtMin(r.stats.transit_s)} min riding</>}
                         </div>
                         {r.id === "stepfree" && (r.blockedStations?.length ?? 0) > 0 && (
-                          <div className="mt-1 pl-7 text-[12px] text-alert">Skips {r.blockedStations!.slice(0, 3).join(", ")}{r.blockedStations!.length > 3 ? ` +${r.blockedStations!.length - 3}` : ""} — elevator out</div>
+                          <div className="mt-1 pl-7 text-[12px] text-alert">Skips {r.blockedStations!.slice(0, 3).join(", ")}{r.blockedStations!.length > 3 ? ` +${r.blockedStations!.length - 3}` : ""} — elevator out{r.withoutOutages && r.stats && r.stats.time_s - r.withoutOutages.time_s >= 60 ? <span className="tnum"> · +{fmtMin(r.stats.time_s - r.withoutOutages.time_s)} min</span> : null}</div>
                         )}
                       </>
                     ) : <div className="mt-1 pl-7 text-[12.5px] text-alert">{r.error}</div>}
@@ -258,8 +287,20 @@ function Home() {
                 </div>
                 <div className="mt-1.5 flex items-center gap-2 text-muted">
                   <span className="tnum">8:00</span>
-                  <input type="range" min={0} max={HOURS.length - 1} value={HOURS.indexOf(when.hour)} onChange={(e) => setWhen((w) => ({ ...w, hour: HOURS[+e.target.value] }))} className="flex-1 accent-[#17150f]" />
+                  <input type="range" min={0} max={HOURS.length - 1} value={HOURS.indexOf(when.hour)} onChange={(e) => setWhen((w) => ({ ...w, hour: HOURS[+e.target.value] }))} className="flex-1 accent-[#17150f]" aria-label="Hour of day" />
                   <strong className="tnum w-11 text-right text-ink">{when.hour}:00</strong>
+                </div>
+                <div className="mt-2.5 flex items-center justify-between gap-2">
+                  <span className="font-semibold">Sky</span>
+                  <span className="flex items-center gap-2">
+                    {liveSky && weather?.cloud !== null && weather?.cloud !== undefined && <span className="tnum text-muted">{weather.cloud}% cloud{sky < 0.995 ? ` · sun ×${sky.toFixed(2)}` : ""}</span>}
+                    <span className="flex rounded-full bg-sunk p-0.5">
+                      {([[true, "Live"], [false, "Clear"]] as const).map(([v, label]) => (
+                        <button key={label} onClick={() => setLiveSky(v)} aria-pressed={liveSky === v} title={v ? "Cloud cover now, from Open-Meteo, scales the shade penalty" : "Assume a clear sky"}
+                          className={`h-5 rounded-full px-2 text-[11px] transition ${liveSky === v ? "bg-surface font-medium shadow-[0_1px_2px_rgba(0,0,0,0.07)]" : "text-muted hover:text-ink-soft"}`}>{label}</button>
+                      ))}
+                    </span>
+                  </span>
                 </div>
               </div>
             )}
@@ -305,7 +346,7 @@ function Home() {
             {summary && <div className="border-b border-line px-4 py-2.5 text-[12.5px] text-ink-soft">Showing <span className="font-semibold text-ink">{summary}</span>{from && to ? <> · {from.label} → {to.label}</> : null}</div>}
             <div className="px-4 pb-1 pt-3">
               <h2 className="text-[13px] font-semibold">Elevators out of service <span className="tnum font-normal text-muted">{alerts.length}</span></h2>
-              <p className="mt-0.5 text-[11px] text-muted">TTC alerts · live</p>
+              <p className="mt-0.5 text-[11px] text-muted">{replay ? `TTC alerts · as logged, ${fmtWhen(replay.at)}` : "TTC alerts · live"}</p>
             </div>
             <ul className="divide-y divide-line">
               {alerts.map((a) => <AlertRow key={a.id} a={a} onRoute={affected.has(a.station.toLowerCase())} />)}
@@ -319,6 +360,7 @@ function Home() {
               {escalators.map((a) => <AlertRow key={a.id} a={a} onRoute={false} />)}
               {escalators.length === 0 && <li className="px-4 py-3 text-[13px] text-muted">Every escalator is reporting in service.</li>}
             </ul>
+            {log && <ReplayControl log={log} replayAt={replayAt} onChange={setReplayAt} />}
           </div>
         )}
 
@@ -336,7 +378,7 @@ function Home() {
               <p className="mt-2 text-[11.5px] text-muted">Across the whole city the indoor gain falls to nothing: sheltered walking barely exists outside the financial district. Shade routing holds up better, and counting the City&apos;s 685,000 street trees doubled its city-wide effect from 5% to 10% less sun. OpenStreetMap had no sidewalk on 47% of the network; checked against the City&apos;s sidewalk inventory, 4,553 km of that has a sidewalk after all and 1,165 km truly has none. Where the elevator matters most: with Bloor-Yonge&apos;s out, 1 in 4 step-free trips gets 30 minutes longer.</p>
             </div>
             <a href="/evidence" className="inline-block rounded-lg bg-ink px-3 py-2 text-[13px] font-medium text-white">Evidence and method</a>
-            <p className="text-[11px] text-muted">OpenStreetMap · City of Toronto 3D Massing, Heat Relief Network, TTC GTFS · TTC live alerts · Environment and Climate Change Canada.</p>
+            <p className="text-[11px] text-muted">OpenStreetMap · City of Toronto 3D Massing, Street Tree Data, Pedestrian Network, Heat Relief Network · TTC GTFS and live alerts, logged every 5 minutes since Sept 1 and replayable from the Live tab · Environment and Climate Change Canada · Open-Meteo cloud cover.</p>
           </div>
         )}
         <div className="h-16 shrink-0" />
@@ -351,22 +393,52 @@ function Home() {
   );
 }
 
+/** Scrub through the outage log: every route is then costed as things were at that moment. */
+function ReplayControl({ log, replayAt, onChange }: { log: OutagesReplay; replayAt: string | null; onChange: (iso: string | null) => void }) {
+  const first = Date.parse(log.range.first), last = Date.parse(log.range.last);
+  const span = Math.max(1, last - first);
+  const pos = replayAt ? Math.round(((Date.parse(replayAt) - first) / span) * 1000) : 1000;
+  const days = Math.max(1, Math.round(span / 864e5));
+  const peak = Math.max(1, ...log.timeline.map((p) => p[1]));
+  // one step per change in the log, drawn as a staircase
+  const steps = log.timeline.flatMap(([t, n], i) => { const x = (((t - first) / span) * 100).toFixed(2), y = (20 - (n / peak) * 18).toFixed(2); const prev = log.timeline[i - 1]; return prev ? [`L${x},${(20 - (prev[1] / peak) * 18).toFixed(2)}`, `L${x},${y}`] : [`M${x},${y}`]; }).join(" ");
+  return (
+    <section className="border-t border-line px-4 py-3" aria-labelledby="replay-heading">
+      <div className="flex items-baseline justify-between gap-2">
+        <h2 id="replay-heading" className="text-[13px] font-semibold">Replay the log</h2>
+        <span className="tnum text-[11px] text-muted">{days} day{days === 1 ? "" : "s"} · polled every 5 min</span>
+      </div>
+      <svg viewBox="0 0 100 20" preserveAspectRatio="none" className="mt-2 h-8 w-full text-ink" aria-hidden><path d={steps} fill="none" stroke="currentColor" strokeWidth="1.2" vectorEffect="non-scaling-stroke" /></svg>
+      <input type="range" min={0} max={1000} value={pos} aria-label="Moment in the outage log" onChange={(e) => { const v = +e.target.value; onChange(v >= 1000 ? null : new Date(first + (v / 1000) * span).toISOString()); }} className="mt-1 w-full accent-[#17150f]" />
+      <div className="mt-1 flex items-center justify-between gap-2 text-[11.5px]">
+        <span className="tnum whitespace-nowrap text-muted">{fmtDay(log.range.first)} → {fmtDay(log.range.last)}</span>
+        <span className="flex gap-1">
+          <button onClick={() => onChange(log.busiest.at)} aria-pressed={replayAt === log.busiest.at} title={fmtWhen(log.busiest.at)} className={`h-6 whitespace-nowrap rounded-full px-2 transition ${replayAt === log.busiest.at ? "bg-sunk font-medium ring-1 ring-ink" : "text-ink-soft hover:text-ink"}`}>Worst · {log.busiest.elevators} out</button>
+          <button onClick={() => onChange(null)} aria-pressed={replayAt === null} className={`h-6 whitespace-nowrap rounded-full px-2 transition ${replayAt === null ? "bg-sunk font-medium ring-1 ring-ink" : "text-ink-soft hover:text-ink"}`}>Live</button>
+        </span>
+      </div>
+    </section>
+  );
+}
+
 function PlaceInput({ dot, placeholder, value, active, onFocus, onChange }: { dot: string; placeholder: string; value: Pt | null; active: boolean; onFocus: () => void; onChange: (p: Pt) => void }) {
   const [text, setText] = useState("");
   const [editing, setEditing] = useState(false);
-  const [hits, setHits] = useState<Hit[]>([]);
+  const [found, setFound] = useState<Hit[]>([]);
   const [loading, setLoading] = useState(false);
+  const query = editing ? text.trim() : "";
+  const hits = query.length >= 2 ? found : [];
 
   useEffect(() => {
-    if (!editing || text.trim().length < 2) { setHits([]); return; }
+    if (query.length < 2) return;
     const t = setTimeout(() => {
       setLoading(true);
-      fetch(`/api/geocode?q=${encodeURIComponent(text)}`).then((r) => r.json()).then((j: { ok: boolean; hits?: Hit[] }) => setHits(j.ok ? j.hits ?? [] : [])).catch(() => setHits([])).finally(() => setLoading(false));
+      fetch(`/api/geocode?q=${encodeURIComponent(query)}`).then((r) => r.json()).then((j: { ok: boolean; hits?: Hit[] }) => setFound(j.ok ? j.hits ?? [] : [])).catch(() => setFound([])).finally(() => setLoading(false));
     }, 350);
     return () => clearTimeout(t);
-  }, [text, editing]);
+  }, [query]);
 
-  const choose = (h: Hit) => { onChange({ lon: h.lon, lat: h.lat, label: h.name }); setEditing(false); setText(""); setHits([]); };
+  const choose = (h: Hit) => { onChange({ lon: h.lon, lat: h.lat, label: h.name }); setEditing(false); setText(""); setFound([]); };
 
   return (
     <div className="relative">
@@ -433,7 +505,7 @@ function StepList({ steps, label }: { steps: Step[]; label: string }) {
 
 function Legend({ busy, ms }: { busy: boolean; ms: number | null }) {
   const items: [string, string][] = [["#2b5fa8", "indoor"], ["#3d7f96", "covered"], ["#5b4b8a", "shaded"], ["#c2410c", "open sun"], ["#a8a294", "fastest"]];
-  const lines: [string, string][] = [["#e5b611", "Line 1"], ["#12823f", "Line 2"], ["#8f2060", "Line 4"]];
+  const lines: [string, string][] = [["#e5b611", "Line 1"], ["#12823f", "Line 2"], ["#8f2060", "Line 4"], ["#e8741a", "Line 5"], ["#6f6a60", "Line 6"]];
   return (
     <div className="border-t border-line px-4 py-2.5">
       <div className="flex flex-wrap gap-x-3 gap-y-1 text-[10.5px] text-muted">
