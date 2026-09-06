@@ -2,20 +2,21 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-06T22:25:05.055Z",
-   "hoursCovered": 5.74,
-   "snapshotsWithChange": 3
+   "last": "2026-09-06T23:25:05.174Z",
+   "hoursCovered": 6.74,
+   "snapshotsWithChange": 4
   },
-  "distinctAlerts": 3,
-  "elevatorAlerts": 3,
+  "distinctAlerts": 4,
+  "elevatorAlerts": 4,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 2,
-  "stationsWithElevatorOutage": 3,
+  "elevatorOngoingNow": 3,
+  "stationsWithElevatorOutage": 4,
   "byStation": {
    "Place-des-Arts": 1,
    "Viau": 1,
-   "5 Snowdon": 1
+   "5 Snowdon": 1,
+   "Place-d'Armes": 1
   },
   "medianElevatorOutageAgeHours": null,
   "medianUnplannedElevatorOutageHours": null
@@ -24,7 +25,7 @@
   {
    "id": "stm-place-des-arts-74f7ad9a",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-06T22:25:05.055Z",
+   "last": "2026-09-06T23:25:05.174Z",
    "end": null,
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -36,13 +37,13 @@
    "unplanned": false,
    "header": "Place-des-Arts: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 5.74,
+   "observedHours": 6.74,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-viau-214feef9",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-06T22:25:05.055Z",
+   "last": "2026-09-06T23:25:05.174Z",
    "end": null,
    "feedStart": null,
    "station": "Viau",
@@ -54,7 +55,7 @@
    "unplanned": false,
    "header": "Viau: The elevator shuttled between the street level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 5.74,
+   "observedHours": 6.74,
    "sinceFeedStartHours": null
   },
   {
@@ -73,6 +74,24 @@
    "header": "5 Snowdon: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 0.5,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-place-d-armes-95659080",
+   "first": "2026-09-06T23:25:05.174Z",
+   "last": "2026-09-06T23:25:05.174Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Place-d'Armes",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Place-d'Armes: The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
