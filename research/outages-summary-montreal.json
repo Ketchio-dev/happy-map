@@ -2,19 +2,20 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-06T16:40:56.938Z",
-   "hoursCovered": 0,
-   "snapshotsWithChange": 1
+   "last": "2026-09-06T21:55:05.728Z",
+   "hoursCovered": 5.24,
+   "snapshotsWithChange": 2
   },
-  "distinctAlerts": 2,
-  "elevatorAlerts": 2,
+  "distinctAlerts": 3,
+  "elevatorAlerts": 3,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 2,
-  "stationsWithElevatorOutage": 2,
+  "elevatorOngoingNow": 3,
+  "stationsWithElevatorOutage": 3,
   "byStation": {
    "Place-des-Arts": 1,
-   "Viau": 1
+   "Viau": 1,
+   "5 Snowdon": 1
   },
   "medianElevatorOutageAgeHours": null,
   "medianUnplannedElevatorOutageHours": null
@@ -23,7 +24,7 @@
   {
    "id": "stm-place-des-arts-74f7ad9a",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-06T16:40:56.938Z",
+   "last": "2026-09-06T21:55:05.728Z",
    "end": null,
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -35,13 +36,13 @@
    "unplanned": false,
    "header": "Place-des-Arts: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0,
+   "observedHours": 5.24,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-viau-214feef9",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-06T16:40:56.938Z",
+   "last": "2026-09-06T21:55:05.728Z",
    "end": null,
    "feedStart": null,
    "station": "Viau",
@@ -52,6 +53,24 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Viau: The elevator shuttled between the street level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 5.24,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-5-snowdon-25850da5",
+   "first": "2026-09-06T21:55:05.728Z",
+   "last": "2026-09-06T21:55:05.728Z",
+   "end": null,
+   "feedStart": null,
+   "station": "5 Snowdon",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "5 Snowdon: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": true,
    "observedHours": 0,
    "sinceFeedStartHours": null
