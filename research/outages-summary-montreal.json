@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-07T08:55:05.116Z",
-   "hoursCovered": 16.24,
-   "snapshotsWithChange": 15
+   "last": "2026-09-07T09:10:05.157Z",
+   "hoursCovered": 16.49,
+   "snapshotsWithChange": 16
   },
   "distinctAlerts": 12,
   "elevatorAlerts": 12,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 7,
+  "elevatorOngoingNow": 5,
   "stationsWithElevatorOutage": 9,
   "byStation": {
    "Place-des-Arts": 1,
@@ -30,7 +30,7 @@
   {
    "id": "stm-place-des-arts-74f7ad9a",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-07T08:55:05.116Z",
+   "last": "2026-09-07T09:10:05.157Z",
    "end": null,
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -42,13 +42,13 @@
    "unplanned": false,
    "header": "Place-des-Arts: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 16.24,
+   "observedHours": 16.49,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-viau-214feef9",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-07T08:55:05.116Z",
+   "last": "2026-09-07T09:10:05.157Z",
    "end": null,
    "feedStart": null,
    "station": "Viau",
@@ -60,7 +60,7 @@
    "unplanned": false,
    "header": "Viau: The elevator shuttled between the street level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 16.24,
+   "observedHours": 16.49,
    "sinceFeedStartHours": null
   },
   {
@@ -84,7 +84,7 @@
   {
    "id": "stm-place-d-armes-95659080",
    "first": "2026-09-06T23:25:05.174Z",
-   "last": "2026-09-07T08:55:05.116Z",
+   "last": "2026-09-07T09:10:05.157Z",
    "end": "2026-09-07T00:50:05.393Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -120,7 +120,7 @@
   {
    "id": "stm-prefontaine-25850da5",
    "first": "2026-09-07T05:05:04.538Z",
-   "last": "2026-09-07T08:55:05.116Z",
+   "last": "2026-09-07T09:10:05.157Z",
    "end": null,
    "feedStart": null,
    "station": "Préfontaine",
@@ -132,7 +132,7 @@
    "unplanned": false,
    "header": "Préfontaine: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 3.83,
+   "observedHours": 4.08,
    "sinceFeedStartHours": null
   },
   {
@@ -156,7 +156,7 @@
   {
    "id": "stm-2-lionel-groulx-db6f52c4",
    "first": "2026-09-07T05:20:05.155Z",
-   "last": "2026-09-07T08:55:05.116Z",
+   "last": "2026-09-07T09:10:05.157Z",
    "end": null,
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -168,13 +168,13 @@
    "unplanned": false,
    "header": "2 Lionel-Groulx: The elevator shuttled between the platforms heading towards Montmorency et Honoré-Beaugrand level and the platforms heading towards Côte-Vertu and Angrignon level is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 3.58,
+   "observedHours": 3.83,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-jolicoeur-3b96de2d",
    "first": "2026-09-07T05:25:05.009Z",
-   "last": "2026-09-07T08:55:05.116Z",
+   "last": "2026-09-07T09:10:05.157Z",
    "end": null,
    "feedStart": null,
    "station": "Jolicoeur",
@@ -186,7 +186,7 @@
    "unplanned": false,
    "header": "Jolicoeur: The elevator shuttled between the street level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 3.5,
+   "observedHours": 3.75,
    "sinceFeedStartHours": null
   },
   {
@@ -211,7 +211,7 @@
    "id": "stm-cartier-zone-b-92ee7ec6",
    "first": "2026-09-07T07:45:05.181Z",
    "last": "2026-09-07T08:55:05.116Z",
-   "end": null,
+   "end": "2026-09-07T09:10:05.157Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
    "type": "Elevator",
@@ -221,15 +221,15 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Cartier (zone B): The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 1.17,
+   "ongoing": false,
+   "observedHours": 1.42,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-angrignon-3b96de2d",
    "first": "2026-09-07T08:55:05.116Z",
    "last": "2026-09-07T08:55:05.116Z",
-   "end": null,
+   "end": "2026-09-07T09:10:05.157Z",
    "feedStart": null,
    "station": "Angrignon",
    "type": "Elevator",
@@ -239,8 +239,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Angrignon: The elevator shuttled between the street level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 0.25,
    "sinceFeedStartHours": null
   }
  ]
