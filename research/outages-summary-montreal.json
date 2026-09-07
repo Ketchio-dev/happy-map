@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-07T15:35:05.101Z",
-   "hoursCovered": 22.9,
-   "snapshotsWithChange": 22
+   "last": "2026-09-07T15:45:05.297Z",
+   "hoursCovered": 23.07,
+   "snapshotsWithChange": 23
   },
   "distinctAlerts": 14,
   "elevatorAlerts": 14,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 3,
+  "elevatorOngoingNow": 2,
   "stationsWithElevatorOutage": 10,
   "byStation": {
    "Place-des-Arts": 1,
@@ -31,7 +31,7 @@
   {
    "id": "stm-place-des-arts-74f7ad9a",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-07T15:35:05.101Z",
+   "last": "2026-09-07T15:45:05.297Z",
    "end": null,
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -43,13 +43,13 @@
    "unplanned": false,
    "header": "Place-des-Arts: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 22.9,
+   "observedHours": 23.07,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-viau-214feef9",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-07T15:35:05.101Z",
+   "last": "2026-09-07T15:45:05.297Z",
    "end": null,
    "feedStart": null,
    "station": "Viau",
@@ -61,7 +61,7 @@
    "unplanned": false,
    "header": "Viau: The elevator shuttled between the street level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 22.9,
+   "observedHours": 23.07,
    "sinceFeedStartHours": null
   },
   {
@@ -266,7 +266,7 @@
    "id": "stm-5-jean-talon-25850da5",
    "first": "2026-09-07T15:35:05.101Z",
    "last": "2026-09-07T15:35:05.101Z",
-   "end": null,
+   "end": "2026-09-07T15:45:05.297Z",
    "feedStart": null,
    "station": "5 Jean-Talon",
    "type": "Elevator",
@@ -276,8 +276,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "5 Jean-Talon: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 0.17,
    "sinceFeedStartHours": null
   }
  ]
