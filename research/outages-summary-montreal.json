@@ -2,21 +2,22 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-07T05:00:04.243Z",
-   "hoursCovered": 12.32,
-   "snapshotsWithChange": 8
+   "last": "2026-09-07T05:05:04.538Z",
+   "hoursCovered": 12.4,
+   "snapshotsWithChange": 9
   },
-  "distinctAlerts": 5,
-  "elevatorAlerts": 5,
+  "distinctAlerts": 6,
+  "elevatorAlerts": 6,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 2,
-  "stationsWithElevatorOutage": 4,
+  "elevatorOngoingNow": 3,
+  "stationsWithElevatorOutage": 5,
   "byStation": {
    "Place-des-Arts": 1,
    "Viau": 1,
    "5 Snowdon": 2,
-   "Place-d'Armes": 1
+   "Place-d'Armes": 1,
+   "Préfontaine": 1
   },
   "medianElevatorOutageAgeHours": null,
   "medianUnplannedElevatorOutageHours": null
@@ -25,7 +26,7 @@
   {
    "id": "stm-place-des-arts-74f7ad9a",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-07T05:00:04.243Z",
+   "last": "2026-09-07T05:05:04.538Z",
    "end": null,
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -37,13 +38,13 @@
    "unplanned": false,
    "header": "Place-des-Arts: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 12.32,
+   "observedHours": 12.4,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-viau-214feef9",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-07T05:00:04.243Z",
+   "last": "2026-09-07T05:05:04.538Z",
    "end": null,
    "feedStart": null,
    "station": "Viau",
@@ -55,7 +56,7 @@
    "unplanned": false,
    "header": "Viau: The elevator shuttled between the street level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 12.32,
+   "observedHours": 12.4,
    "sinceFeedStartHours": null
   },
   {
@@ -79,7 +80,7 @@
   {
    "id": "stm-place-d-armes-95659080",
    "first": "2026-09-06T23:25:05.174Z",
-   "last": "2026-09-07T05:00:04.243Z",
+   "last": "2026-09-07T05:05:04.538Z",
    "end": "2026-09-07T00:50:05.393Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -110,6 +111,24 @@
    "header": "5 Snowdon: The elevator shuttled between the STM ticket booth level and the platforms heading towards Côte-Vertu (Orange line) and the disembarkation of the Blue line is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 0.17,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-prefontaine-25850da5",
+   "first": "2026-09-07T05:05:04.538Z",
+   "last": "2026-09-07T05:05:04.538Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Préfontaine",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Préfontaine: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
