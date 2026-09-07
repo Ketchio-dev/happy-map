@@ -64,11 +64,11 @@ export const Provenance = ({ cue }: { cue: Cue }) => {
   );
 };
 
-// The four exposures, one label at a time, each on its word.
-export const Layers = ({ cue }: { cue: Cue }) => {
+// The four exposures, one label at a time, each on its word: [label, trigger word, fallback fraction].
+const LAYER_ITEMS: [string, string, number][] = [["Minutes outdoors", "minutes", 0.02], ["Metres in direct sun", "metres", 0.27], ["Stairs, kerbs, missing sidewalks", "stairs", 0.52], ["Elevator out right now", "subway", 0.72]];
+export const Layers = ({ cue, items = LAYER_ITEMS }: { cue: Cue; items?: [string, string, number][] }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const items: [string, string, number][] = [["Minutes outdoors", "minutes", 0.02], ["Metres in direct sun", "metres", 0.27], ["Stairs, kerbs, missing sidewalks", "stairs", 0.52], ["Elevator out right now", "subway", 0.72]];
   return (
     <AbsoluteFill style={{ alignItems: "flex-end", padding: "90px 60px 0 0" }}>
       <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
@@ -84,7 +84,7 @@ export const Layers = ({ cue }: { cue: Cue }) => {
 };
 
 // Fastest vs indoor: the headline number counts down from 800 m to 16 m.
-export const NumberCard = () => {
+export const NumberCard = ({ note = "indoor first, via PATH · measured by tools/evaluate.mjs" }: { note?: string }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const a = ease(frame, fps);
@@ -104,13 +104,14 @@ export const NumberCard = () => {
           <div style={{ fontSize: 48, color: color.inkSoft }}>+1 min</div>
         </div>
       </div>
-      <div style={{ position: "absolute", top: 150, fontSize: 28, color: color.muted, opacity: c }}>indoor first, via PATH · measured by tools/evaluate.mjs</div>
+      <div style={{ position: "absolute", top: 150, fontSize: 28, color: color.muted, opacity: c }}>{note}</div>
     </AbsoluteFill>
   );
 };
 
 // `revealAt`: frame at which the small print may appear, i.e. once the last caption is gone.
-export const Outro = ({ revealAt = 14 }: { revealAt?: number }) => {
+// No note by default: the final cut carries no disclosure line (decided 2026-09-06).
+export const Outro = ({ revealAt = 14, note }: { revealAt?: number; note?: string }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const a = ease(frame, fps);
@@ -121,9 +122,9 @@ export const Outro = ({ revealAt = 14 }: { revealAt?: number }) => {
         <div style={{ fontSize: 72, fontWeight: 600, color: color.ink, letterSpacing: -2 }}>happy-map-ashy.vercel.app</div>
         <div style={{ fontSize: 40, color: color.inkSoft, marginTop: 14 }}>github.com/Ketchio-dev/happy-map</div>
       </div>
-      <div style={{ position: "absolute", bottom: 90, fontSize: 25, color: color.muted, opacity: b, textAlign: "center", maxWidth: 1300, lineHeight: 1.4 }}>
-        Narration synthesized on my laptop from a 19-second recording of my own voice (Fish Audio S2 Pro). Every number is computed from open and live data.
-      </div>
+      {note && (
+        <div style={{ position: "absolute", bottom: 90, fontSize: 25, color: color.muted, opacity: b, textAlign: "center", maxWidth: 1300, lineHeight: 1.4 }}>{note}</div>
+      )}
     </AbsoluteFill>
   );
 };

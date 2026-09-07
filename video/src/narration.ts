@@ -1,8 +1,11 @@
 import type { Caption } from "@remotion/captions";
-import manifest from "./generated/test.narration.json";
-import captionsFile from "./generated/test.captions.json";
-import footage from "./generated/test.footage.json";
+import manifest from "./generated/final.narration.json";
+import captionsFile from "./generated/final.captions.json";
+import footage from "./generated/final.footage.json";
 import { FPS } from "./theme";
+
+// The generated files for the final cut: narration (tts/synthesize.py), word timings
+// (tts/captions.mjs) and the footage with its click marks (footage/record-final.mjs).
 
 export interface Line { id: string; file: string; text: string; durationSec: number }
 export interface Cue extends Line { from: number; durationInFrames: number; captions: Caption[] | null }

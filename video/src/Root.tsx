@@ -1,12 +1,12 @@
 import { Composition } from "remotion";
-import { Test } from "./Test";
+import { Final } from "./Final";
 import { timeline } from "./narration";
 import { FPS, HEIGHT, WIDTH } from "./theme";
 
 export const RemotionRoot = () => (
   <Composition
-    id="Test"
-    component={Test}
+    id="Final"
+    component={Final}
     width={WIDTH}
     height={HEIGHT}
     fps={FPS}

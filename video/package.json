@@ -5,7 +5,7 @@
   "description": "Demo video for happy map, rendered with Remotion from the same evidence files the site uses.",
   "scripts": {
     "studio": "remotion studio src/index.ts",
-    "render": "remotion render src/index.ts",
+    "render": "remotion render src/index.ts Final out/final.mp4",
     "captions": "node tts/captions.mjs"
   },
   "dependencies": {
