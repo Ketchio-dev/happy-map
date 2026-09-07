@@ -50,7 +50,9 @@ async function open(url, ready = "Fastest") {
 // 1. the Sept 2 morning: Live tab in replay, then the step-free card
 await open("/?at=2026-09-02T12:00:00Z&mode=stepfree&walk=0&tab=live&from=-79.38060,43.64530,Union%20Station&to=-79.38640,43.67080,Bloor-Yonge%20Station", "Back to live");
 await pause(1.5); mark("replay-sep2"); await pause(4);
-await clickTab("Route"); await pause(4);
+await clickTab("Route"); await pause(1.5);
+// the step-free card is fourth in the list: bring it into view and hold on it
+await click("Step-free"); await pause(4);
 
 // 2. live, the four cards on the Eaton Centre trip
 await open("/");
@@ -75,9 +77,11 @@ await clickButton("No sidewalk", "No sidewalk off"); await pause(1);
 // 5. the replay scrubber
 await clickTab("Live"); await pause(2);
 const slider = page.getByRole("slider", { name: "Moment in the outage log" });
-await slider.scrollIntoViewIfNeeded(); await pause(0.6);
+// the alert list above the scrubber changes length as the moment moves, so pin the panel to its bottom
+const toBottom = () => page.evaluate(() => document.querySelector("aside")?.scrollTo(0, 99999));
+await toBottom(); await pause(0.8);
 { const b = await slider.boundingBox(); const y = b.y + b.height / 2; await page.mouse.move(b.x + b.width * 0.98, y, { steps: 10 }); await page.mouse.down(); mark("Replay drag", (b.x + b.width * 0.98) * SCALE, y * SCALE); await page.mouse.move(b.x + b.width * 0.3, y, { steps: 60 }); await page.mouse.up(); }
-await pause(3.5);
+await pause(0.8); await toBottom(); await pause(3);
 
 // 6. Montréal
 await open("/?city=montreal");

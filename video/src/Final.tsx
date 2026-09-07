@@ -18,8 +18,8 @@ const LOWER_PANEL: Frame = { x: 0, y: 420, w: 980, h: 660 }; // the step-free ca
 // One scene per narration line; footage scenes start at the recorded click marks.
 const Scene = ({ cue }: { cue: Cue }) => {
   switch (cue.id) {
-    case "open": return <Footage startFrom={markAt("replay-sep2", 0.2)} from={FULL} to={MAP} moveFrames={Math.round(FPS * 2.4)} delay={Math.round(FPS * 1.2)} />;
-    case "stakes": return <Footage startFrom={markAt("Route", 0.4)} from={FULL} to={LOWER_PANEL} moveFrames={Math.round(FPS * 1.1)} />;
+    case "open": return <Footage startFrom={markAt("replay-sep2", 0.2)} from={FULL} to={MAP} moveFrames={Math.round(FPS * 2.4)} delay={Math.round(FPS * 2.6)} />;
+    case "stakes": return <Footage startFrom={markAt("Step-free", 0.3)} from={FULL} to={LOWER_PANEL} moveFrames={Math.round(FPS * 1.1)} />;
     case "hook": return <><Footage startFrom={markAt("loaded", 0.4)} /><Layers cue={cue} items={[["Minutes outdoors", "minutes", 0.3], ["Metres in direct sun", "metres", 0.48], ["Stairs, kerbs, missing sidewalks", "stairs", 0.66], ["Elevator out right now", "elevator", 0.82]]} /></>;
     case "compare": return <Footage startFrom={markAt("Indoor first", -0.4)} from={FULL} to={MAP} moveFrames={Math.round(FPS * 1.4)} />;
     case "number": return <NumberCard note="indoor first, walking, via the PATH · this route has stairs; the step-free card beside it does not" />;
