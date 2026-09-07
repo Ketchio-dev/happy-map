@@ -2,23 +2,24 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-07T05:20:05.155Z",
-   "hoursCovered": 12.65,
-   "snapshotsWithChange": 11
+   "last": "2026-09-07T05:25:05.009Z",
+   "hoursCovered": 12.74,
+   "snapshotsWithChange": 12
   },
-  "distinctAlerts": 8,
-  "elevatorAlerts": 8,
+  "distinctAlerts": 9,
+  "elevatorAlerts": 9,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 4,
-  "stationsWithElevatorOutage": 6,
+  "elevatorOngoingNow": 5,
+  "stationsWithElevatorOutage": 7,
   "byStation": {
    "Place-des-Arts": 1,
    "Viau": 1,
    "5 Snowdon": 2,
    "Place-d'Armes": 1,
    "Préfontaine": 1,
-   "2 Lionel-Groulx": 2
+   "2 Lionel-Groulx": 2,
+   "Jolicoeur": 1
   },
   "medianElevatorOutageAgeHours": null,
   "medianUnplannedElevatorOutageHours": null
@@ -27,7 +28,7 @@
   {
    "id": "stm-place-des-arts-74f7ad9a",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-07T05:20:05.155Z",
+   "last": "2026-09-07T05:25:05.009Z",
    "end": null,
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -39,13 +40,13 @@
    "unplanned": false,
    "header": "Place-des-Arts: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 12.65,
+   "observedHours": 12.74,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-viau-214feef9",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-07T05:20:05.155Z",
+   "last": "2026-09-07T05:25:05.009Z",
    "end": null,
    "feedStart": null,
    "station": "Viau",
@@ -57,7 +58,7 @@
    "unplanned": false,
    "header": "Viau: The elevator shuttled between the street level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 12.65,
+   "observedHours": 12.74,
    "sinceFeedStartHours": null
   },
   {
@@ -81,7 +82,7 @@
   {
    "id": "stm-place-d-armes-95659080",
    "first": "2026-09-06T23:25:05.174Z",
-   "last": "2026-09-07T05:20:05.155Z",
+   "last": "2026-09-07T05:25:05.009Z",
    "end": "2026-09-07T00:50:05.393Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -117,7 +118,7 @@
   {
    "id": "stm-prefontaine-25850da5",
    "first": "2026-09-07T05:05:04.538Z",
-   "last": "2026-09-07T05:20:05.155Z",
+   "last": "2026-09-07T05:25:05.009Z",
    "end": null,
    "feedStart": null,
    "station": "Préfontaine",
@@ -129,7 +130,7 @@
    "unplanned": false,
    "header": "Préfontaine: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.25,
+   "observedHours": 0.33,
    "sinceFeedStartHours": null
   },
   {
@@ -153,7 +154,7 @@
   {
    "id": "stm-2-lionel-groulx-db6f52c4",
    "first": "2026-09-07T05:20:05.155Z",
-   "last": "2026-09-07T05:20:05.155Z",
+   "last": "2026-09-07T05:25:05.009Z",
    "end": null,
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -164,6 +165,24 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "2 Lionel-Groulx: The elevator shuttled between the platforms heading towards Montmorency et Honoré-Beaugrand level and the platforms heading towards Côte-Vertu and Angrignon level is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0.08,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-jolicoeur-3b96de2d",
+   "first": "2026-09-07T05:25:05.009Z",
+   "last": "2026-09-07T05:25:05.009Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Jolicoeur",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Jolicoeur: The elevator shuttled between the street level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
    "ongoing": true,
    "observedHours": 0,
    "sinceFeedStartHours": null
