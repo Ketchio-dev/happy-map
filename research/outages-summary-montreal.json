@@ -2,16 +2,16 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-08T14:20:05.261Z",
-   "hoursCovered": 45.65,
-   "snapshotsWithChange": 47
+   "last": "2026-09-08T14:45:05.606Z",
+   "hoursCovered": 46.07,
+   "snapshotsWithChange": 48
   },
-  "distinctAlerts": 22,
-  "elevatorAlerts": 22,
+  "distinctAlerts": 23,
+  "elevatorAlerts": 23,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 2,
-  "stationsWithElevatorOutage": 13,
+  "elevatorOngoingNow": 3,
+  "stationsWithElevatorOutage": 14,
   "byStation": {
    "Place-des-Arts": 1,
    "Viau": 1,
@@ -25,7 +25,8 @@
    "5 Jean-Talon": 1,
    "Place-Saint-Henri": 1,
    "Villa-Maria": 3,
-   "Vendôme": 1
+   "Vendôme": 1,
+   "Rosemont": 1
   },
   "medianElevatorOutageAgeHours": null,
   "medianUnplannedElevatorOutageHours": null
@@ -34,7 +35,7 @@
   {
    "id": "stm-place-des-arts-74f7ad9a",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-08T14:20:05.261Z",
+   "last": "2026-09-08T14:45:05.606Z",
    "end": null,
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -46,13 +47,13 @@
    "unplanned": false,
    "header": "Place-des-Arts: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 45.65,
+   "observedHours": 46.07,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-viau-214feef9",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-08T14:20:05.261Z",
+   "last": "2026-09-08T14:45:05.606Z",
    "end": null,
    "feedStart": null,
    "station": "Viau",
@@ -64,7 +65,7 @@
    "unplanned": false,
    "header": "Viau: The elevator shuttled between the street level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 45.65,
+   "observedHours": 46.07,
    "sinceFeedStartHours": null
   },
   {
@@ -142,7 +143,7 @@
   {
    "id": "stm-2-lionel-groulx-25850da5",
    "first": "2026-09-07T05:10:05.209Z",
-   "last": "2026-09-08T14:20:05.261Z",
+   "last": "2026-09-08T14:45:05.606Z",
    "end": "2026-09-07T05:20:05.155Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -425,6 +426,24 @@
    "header": "Vendôme: The elevator shuttled between the street level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 0.08,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-rosemont-1b51c479",
+   "first": "2026-09-08T14:45:05.606Z",
+   "last": "2026-09-08T14:45:05.606Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Rosemont",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Rosemont: The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
