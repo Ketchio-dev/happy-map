@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-08T11:45:05.230Z",
-   "hoursCovered": 43.07,
-   "snapshotsWithChange": 37
+   "last": "2026-09-08T11:50:05.842Z",
+   "hoursCovered": 43.15,
+   "snapshotsWithChange": 38
   },
   "distinctAlerts": 20,
   "elevatorAlerts": 20,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 3,
+  "elevatorOngoingNow": 2,
   "stationsWithElevatorOutage": 12,
   "byStation": {
    "Place-des-Arts": 1,
@@ -33,7 +33,7 @@
   {
    "id": "stm-place-des-arts-74f7ad9a",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-08T11:45:05.230Z",
+   "last": "2026-09-08T11:50:05.842Z",
    "end": null,
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -45,13 +45,13 @@
    "unplanned": false,
    "header": "Place-des-Arts: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 43.07,
+   "observedHours": 43.15,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-viau-214feef9",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-08T11:45:05.230Z",
+   "last": "2026-09-08T11:50:05.842Z",
    "end": null,
    "feedStart": null,
    "station": "Viau",
@@ -63,7 +63,7 @@
    "unplanned": false,
    "header": "Viau: The elevator shuttled between the street level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 43.07,
+   "observedHours": 43.15,
    "sinceFeedStartHours": null
   },
   {
@@ -376,7 +376,7 @@
    "id": "stm-villa-maria-29a6675c",
    "first": "2026-09-08T11:45:05.230Z",
    "last": "2026-09-08T11:45:05.230Z",
-   "end": null,
+   "end": "2026-09-08T11:50:05.842Z",
    "feedStart": null,
    "station": "Villa-Maria",
    "type": "Elevator",
@@ -386,8 +386,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Villa-Maria: The elevator shuttled between the intermediate level of this station and the platform heading towards Montmorency is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 0.08,
    "sinceFeedStartHours": null
   }
  ]
