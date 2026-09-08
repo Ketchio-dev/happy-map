@@ -2,16 +2,16 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-08T11:20:05.133Z",
-   "hoursCovered": 42.65,
-   "snapshotsWithChange": 34
+   "last": "2026-09-08T11:25:05.046Z",
+   "hoursCovered": 42.74,
+   "snapshotsWithChange": 35
   },
-  "distinctAlerts": 18,
-  "elevatorAlerts": 18,
+  "distinctAlerts": 19,
+  "elevatorAlerts": 19,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 2,
-  "stationsWithElevatorOutage": 11,
+  "elevatorOngoingNow": 3,
+  "stationsWithElevatorOutage": 12,
   "byStation": {
    "Place-des-Arts": 1,
    "Viau": 1,
@@ -23,7 +23,8 @@
    "Angrignon": 2,
    "Cartier (zone B)": 1,
    "5 Jean-Talon": 1,
-   "Place-Saint-Henri": 1
+   "Place-Saint-Henri": 1,
+   "Villa-Maria": 1
   },
   "medianElevatorOutageAgeHours": null,
   "medianUnplannedElevatorOutageHours": null
@@ -32,7 +33,7 @@
   {
    "id": "stm-place-des-arts-74f7ad9a",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-08T11:20:05.133Z",
+   "last": "2026-09-08T11:25:05.046Z",
    "end": null,
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -44,13 +45,13 @@
    "unplanned": false,
    "header": "Place-des-Arts: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 42.65,
+   "observedHours": 42.74,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-viau-214feef9",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-08T11:20:05.133Z",
+   "last": "2026-09-08T11:25:05.046Z",
    "end": null,
    "feedStart": null,
    "station": "Viau",
@@ -62,7 +63,7 @@
    "unplanned": false,
    "header": "Viau: The elevator shuttled between the street level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 42.65,
+   "observedHours": 42.74,
    "sinceFeedStartHours": null
   },
   {
@@ -351,6 +352,24 @@
    "header": "Place-Saint-Henri: The elevator shuttled between the street level, STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 0.08,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-villa-maria-94baa2e6",
+   "first": "2026-09-08T11:25:05.046Z",
+   "last": "2026-09-08T11:25:05.046Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Villa-Maria",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Villa-Maria: The elevator shuttled between the STM ticket booth level, intermediate level of this station and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
