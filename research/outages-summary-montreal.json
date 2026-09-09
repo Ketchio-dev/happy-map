@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-09T13:55:05.410Z",
-   "hoursCovered": 69.24,
-   "snapshotsWithChange": 66
+   "last": "2026-09-09T14:10:05.181Z",
+   "hoursCovered": 69.49,
+   "snapshotsWithChange": 67
   },
-  "distinctAlerts": 35,
-  "elevatorAlerts": 35,
+  "distinctAlerts": 36,
+  "elevatorAlerts": 36,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 4,
+  "elevatorOngoingNow": 5,
   "stationsWithElevatorOutage": 18,
   "byStation": {
    "Place-des-Arts": 1,
@@ -28,7 +28,7 @@
    "Vendôme": 1,
    "Rosemont": 1,
    "2 4 Berri-UQAM": 2,
-   "Atwater": 1,
+   "Atwater": 2,
    "Côte-Vertu": 2,
    "D'Iberville": 2
   },
@@ -39,7 +39,7 @@
   {
    "id": "stm-place-des-arts-74f7ad9a",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-09T13:55:05.410Z",
+   "last": "2026-09-09T14:10:05.181Z",
    "end": null,
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -51,13 +51,13 @@
    "unplanned": false,
    "header": "Place-des-Arts: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 69.24,
+   "observedHours": 69.49,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-viau-214feef9",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-09T13:55:05.410Z",
+   "last": "2026-09-09T14:10:05.181Z",
    "end": null,
    "feedStart": null,
    "station": "Viau",
@@ -69,7 +69,7 @@
    "unplanned": false,
    "header": "Viau: The elevator shuttled between the street level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 69.24,
+   "observedHours": 69.49,
    "sinceFeedStartHours": null
   },
   {
@@ -633,7 +633,7 @@
   {
    "id": "stm-d-iberville-5079b5d5",
    "first": "2026-09-09T13:15:05.251Z",
-   "last": "2026-09-09T13:55:05.410Z",
+   "last": "2026-09-09T14:10:05.181Z",
    "end": null,
    "feedStart": null,
    "station": "D'Iberville",
@@ -645,13 +645,13 @@
    "unplanned": false,
    "header": "D'Iberville: The elevator shuttled between the STM ticket booth level and the platform heading towards Snowdon is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Saint-Michel is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.67,
+   "observedHours": 0.92,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-2-4-berri-uqam-7888768d",
    "first": "2026-09-09T13:55:05.410Z",
-   "last": "2026-09-09T13:55:05.410Z",
+   "last": "2026-09-09T14:10:05.181Z",
    "end": null,
    "feedStart": null,
    "station": "2 4 Berri-UQAM",
@@ -662,6 +662,24 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "2 4 Berri-UQAM: The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period. The elevator shuttled between the platform heading towards Montmorency level of the Orange line and the platform heading towards Angrignon of the Green line is presently out of service. Indefinite period. The elevator shuttled between the platform heading towards Côte-Vertu level of the Orange line and the platform heading towards Honoré-Beaugrand of the Green line is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0.25,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-atwater-47d97100",
+   "first": "2026-09-09T14:10:05.181Z",
+   "last": "2026-09-09T14:10:05.181Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Atwater",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Atwater: The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
    "ongoing": true,
    "observedHours": 0,
    "sinceFeedStartHours": null
