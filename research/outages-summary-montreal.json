@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-09T09:35:03.229Z",
-   "hoursCovered": 64.9,
-   "snapshotsWithChange": 61
+   "last": "2026-09-09T09:45:05.154Z",
+   "hoursCovered": 65.07,
+   "snapshotsWithChange": 62
   },
   "distinctAlerts": 32,
   "elevatorAlerts": 32,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 3,
+  "elevatorOngoingNow": 2,
   "stationsWithElevatorOutage": 17,
   "byStation": {
    "Place-des-Arts": 1,
@@ -38,7 +38,7 @@
   {
    "id": "stm-place-des-arts-74f7ad9a",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-09T09:35:03.229Z",
+   "last": "2026-09-09T09:45:05.154Z",
    "end": null,
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -50,13 +50,13 @@
    "unplanned": false,
    "header": "Place-des-Arts: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 64.9,
+   "observedHours": 65.07,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-viau-214feef9",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-09T09:35:03.229Z",
+   "last": "2026-09-09T09:45:05.154Z",
    "end": null,
    "feedStart": null,
    "station": "Viau",
@@ -68,7 +68,7 @@
    "unplanned": false,
    "header": "Viau: The elevator shuttled between the street level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 64.9,
+   "observedHours": 65.07,
    "sinceFeedStartHours": null
   },
   {
@@ -471,7 +471,7 @@
    "id": "stm-atwater-74f7ad9a",
    "first": "2026-09-09T05:15:05.152Z",
    "last": "2026-09-09T09:35:03.229Z",
-   "end": null,
+   "end": "2026-09-09T09:45:05.154Z",
    "feedStart": null,
    "station": "Atwater",
    "type": "Elevator",
@@ -481,8 +481,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Atwater: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 4.33,
+   "ongoing": false,
+   "observedHours": 4.5,
    "sinceFeedStartHours": null
   },
   {
