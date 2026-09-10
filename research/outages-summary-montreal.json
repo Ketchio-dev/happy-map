@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T15:10:05.419Z",
-   "hoursCovered": 94.49,
-   "snapshotsWithChange": 122
+   "last": "2026-09-10T15:20:05.847Z",
+   "hoursCovered": 94.65,
+   "snapshotsWithChange": 123
   },
   "distinctAlerts": 54,
   "elevatorAlerts": 54,
@@ -369,7 +369,7 @@
   {
    "id": "stm-villa-maria-94baa2e6",
    "first": "2026-09-08T11:25:05.046Z",
-   "last": "2026-09-10T15:10:05.419Z",
+   "last": "2026-09-10T15:20:05.847Z",
    "end": "2026-09-08T11:30:05.531Z",
    "feedStart": null,
    "station": "Villa-Maria",
@@ -747,7 +747,7 @@
   {
    "id": "stm-cote-vertu-29a6675c",
    "first": "2026-09-09T20:00:04.153Z",
-   "last": "2026-09-10T15:10:05.419Z",
+   "last": "2026-09-10T15:20:05.847Z",
    "end": "2026-09-09T20:30:05.403Z",
    "feedStart": null,
    "station": "Côte-Vertu",
@@ -765,7 +765,7 @@
   {
    "id": "stm-jolicoeur-214feef9",
    "first": "2026-09-09T21:05:03.864Z",
-   "last": "2026-09-10T15:10:05.419Z",
+   "last": "2026-09-10T15:20:05.847Z",
    "end": "2026-09-09T21:20:03.542Z",
    "feedStart": null,
    "station": "Jolicoeur",
