@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T17:50:05.332Z",
-   "hoursCovered": 97.15,
-   "snapshotsWithChange": 130
+   "last": "2026-09-10T18:20:05.333Z",
+   "hoursCovered": 97.65,
+   "snapshotsWithChange": 131
   },
   "distinctAlerts": 56,
   "elevatorAlerts": 56,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 24,
   "byStation": {
    "Place-des-Arts": 2,
@@ -387,7 +387,7 @@
   {
    "id": "stm-villa-maria-29a6675c",
    "first": "2026-09-08T11:45:05.230Z",
-   "last": "2026-09-10T17:50:05.332Z",
+   "last": "2026-09-10T18:20:05.333Z",
    "end": "2026-09-08T11:50:05.842Z",
    "feedStart": null,
    "station": "Villa-Maria",
@@ -765,7 +765,7 @@
   {
    "id": "stm-jolicoeur-214feef9",
    "first": "2026-09-09T21:05:03.864Z",
-   "last": "2026-09-10T17:50:05.332Z",
+   "last": "2026-09-10T18:20:05.333Z",
    "end": "2026-09-09T21:20:03.542Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -1036,7 +1036,7 @@
    "id": "stm-vendome-d577cf57",
    "first": "2026-09-10T17:50:05.332Z",
    "last": "2026-09-10T17:50:05.332Z",
-   "end": null,
+   "end": "2026-09-10T18:20:05.333Z",
    "feedStart": null,
    "station": "Vendôme",
    "type": "Elevator",
@@ -1046,8 +1046,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Vendôme: The elevator shuttled between the street level and the platform heading towards Montmorency is presently out of service. Indefinite period. The elevator shuttled between the street level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 0.5,
    "sinceFeedStartHours": null
   }
  ]
