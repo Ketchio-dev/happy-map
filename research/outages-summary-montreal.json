@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T13:20:05.232Z",
-   "hoursCovered": 92.65,
-   "snapshotsWithChange": 116
+   "last": "2026-09-10T13:25:05.315Z",
+   "hoursCovered": 92.74,
+   "snapshotsWithChange": 117
   },
   "distinctAlerts": 54,
   "elevatorAlerts": 54,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 2,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 24,
   "byStation": {
    "Place-des-Arts": 2,
@@ -63,7 +63,7 @@
   {
    "id": "stm-viau-214feef9",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T13:20:05.232Z",
+   "last": "2026-09-10T13:25:05.315Z",
    "end": null,
    "feedStart": null,
    "station": "Viau",
@@ -75,7 +75,7 @@
    "unplanned": false,
    "header": "Viau: The elevator shuttled between the street level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 92.65,
+   "observedHours": 92.74,
    "sinceFeedStartHours": null
   },
   {
@@ -369,7 +369,7 @@
   {
    "id": "stm-villa-maria-94baa2e6",
    "first": "2026-09-08T11:25:05.046Z",
-   "last": "2026-09-10T13:20:05.232Z",
+   "last": "2026-09-10T13:25:05.315Z",
    "end": "2026-09-08T11:30:05.531Z",
    "feedStart": null,
    "station": "Villa-Maria",
@@ -765,7 +765,7 @@
   {
    "id": "stm-jolicoeur-214feef9",
    "first": "2026-09-09T21:05:03.864Z",
-   "last": "2026-09-10T13:20:05.232Z",
+   "last": "2026-09-10T13:25:05.315Z",
    "end": "2026-09-09T21:20:03.542Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -1000,7 +1000,7 @@
    "id": "stm-jean-talon-84c5ffb6",
    "first": "2026-09-10T13:20:05.232Z",
    "last": "2026-09-10T13:20:05.232Z",
-   "end": null,
+   "end": "2026-09-10T13:25:05.315Z",
    "feedStart": null,
    "station": "Jean-Talon",
    "type": "Elevator",
@@ -1010,8 +1010,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Jean-Talon: The elevator shuttled between the platform heading towards Côte-Vertu level of the Orange line and the 2 platforms level (heading towards Snowdon and Saint-Michel) of the Blue line is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 0.08,
    "sinceFeedStartHours": null
   }
  ]
