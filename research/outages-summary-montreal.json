@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T09:35:03.449Z",
-   "hoursCovered": 88.9,
-   "snapshotsWithChange": 110
+   "last": "2026-09-10T10:15:05.380Z",
+   "hoursCovered": 89.57,
+   "snapshotsWithChange": 111
   },
   "distinctAlerts": 52,
   "elevatorAlerts": 52,
@@ -44,7 +44,7 @@
   {
    "id": "stm-place-des-arts-74f7ad9a",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T09:35:03.449Z",
+   "last": "2026-09-10T10:15:05.380Z",
    "end": "2026-09-09T14:30:05.912Z",
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -62,7 +62,7 @@
   {
    "id": "stm-viau-214feef9",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T09:35:03.449Z",
+   "last": "2026-09-10T10:15:05.380Z",
    "end": null,
    "feedStart": null,
    "station": "Viau",
@@ -74,7 +74,7 @@
    "unplanned": false,
    "header": "Viau: The elevator shuttled between the street level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 88.9,
+   "observedHours": 89.57,
    "sinceFeedStartHours": null
   },
   {
@@ -764,7 +764,7 @@
   {
    "id": "stm-jolicoeur-214feef9",
    "first": "2026-09-09T21:05:03.864Z",
-   "last": "2026-09-10T09:35:03.449Z",
+   "last": "2026-09-10T10:15:05.380Z",
    "end": "2026-09-09T21:20:03.542Z",
    "feedStart": null,
    "station": "Jolicoeur",
