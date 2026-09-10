@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T05:25:05.084Z",
-   "hoursCovered": 84.74,
-   "snapshotsWithChange": 95
+   "last": "2026-09-10T05:30:05.020Z",
+   "hoursCovered": 84.82,
+   "snapshotsWithChange": 96
   },
-  "distinctAlerts": 46,
-  "elevatorAlerts": 46,
+  "distinctAlerts": 47,
+  "elevatorAlerts": 47,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 3,
+  "elevatorOngoingNow": 4,
   "stationsWithElevatorOutage": 21,
   "byStation": {
    "Place-des-Arts": 2,
@@ -29,7 +29,7 @@
    "Rosemont": 1,
    "2 4 Berri-UQAM": 4,
    "Atwater": 2,
-   "Côte-Vertu": 3,
+   "Côte-Vertu": 4,
    "D'Iberville": 2,
    "Mont-Royal": 2,
    "Du Collège": 1,
@@ -42,7 +42,7 @@
   {
    "id": "stm-place-des-arts-74f7ad9a",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T05:25:05.084Z",
+   "last": "2026-09-10T05:30:05.020Z",
    "end": "2026-09-09T14:30:05.912Z",
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -60,7 +60,7 @@
   {
    "id": "stm-viau-214feef9",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T05:25:05.084Z",
+   "last": "2026-09-10T05:30:05.020Z",
    "end": null,
    "feedStart": null,
    "station": "Viau",
@@ -72,7 +72,7 @@
    "unplanned": false,
    "header": "Viau: The elevator shuttled between the street level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 84.74,
+   "observedHours": 84.82,
    "sinceFeedStartHours": null
   },
   {
@@ -510,7 +510,7 @@
   {
    "id": "stm-prefontaine-f95d10df",
    "first": "2026-09-09T05:20:05.121Z",
-   "last": "2026-09-10T05:25:05.084Z",
+   "last": "2026-09-10T05:30:05.020Z",
    "end": "2026-09-09T09:35:03.229Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -762,7 +762,7 @@
   {
    "id": "stm-jolicoeur-214feef9",
    "first": "2026-09-09T21:05:03.864Z",
-   "last": "2026-09-10T05:25:05.084Z",
+   "last": "2026-09-10T05:30:05.020Z",
    "end": "2026-09-09T21:20:03.542Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -780,7 +780,7 @@
   {
    "id": "stm-place-d-armes-92ee7ec6",
    "first": "2026-09-09T21:50:05.212Z",
-   "last": "2026-09-10T05:25:05.084Z",
+   "last": "2026-09-10T05:30:05.020Z",
    "end": "2026-09-09T22:10:05.320Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -834,7 +834,7 @@
   {
    "id": "stm-du-college-95659080",
    "first": "2026-09-10T05:15:05.083Z",
-   "last": "2026-09-10T05:25:05.084Z",
+   "last": "2026-09-10T05:30:05.020Z",
    "end": null,
    "feedStart": null,
    "station": "Du Collège",
@@ -846,13 +846,13 @@
    "unplanned": false,
    "header": "Du Collège: The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.17,
+   "observedHours": 0.25,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-henri-bourassa-25850da5",
    "first": "2026-09-10T05:15:05.083Z",
-   "last": "2026-09-10T05:25:05.084Z",
+   "last": "2026-09-10T05:30:05.020Z",
    "end": null,
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -864,7 +864,25 @@
    "unplanned": false,
    "header": "Henri-Bourassa: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.17,
+   "observedHours": 0.25,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-cote-vertu-80b1519b",
+   "first": "2026-09-10T05:30:05.020Z",
+   "last": "2026-09-10T05:30:05.020Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Côte-Vertu",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Côte-Vertu: The elevator shuttled between the intermediate level of this station and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the intermediate level of this station and the platform heading towards Montmorency is presently out of service. Indefinite period. The elevator shuttled between the street level and the intermediate level of this station is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
