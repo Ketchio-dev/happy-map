@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T14:40:05.415Z",
-   "hoursCovered": 93.99,
-   "snapshotsWithChange": 119
+   "last": "2026-09-10T14:50:05.730Z",
+   "hoursCovered": 94.15,
+   "snapshotsWithChange": 120
   },
   "distinctAlerts": 54,
   "elevatorAlerts": 54,
@@ -117,7 +117,7 @@
   {
    "id": "stm-5-snowdon-79bea365",
    "first": "2026-09-07T00:20:05.182Z",
-   "last": "2026-09-08T14:00:05.624Z",
+   "last": "2026-09-10T14:50:05.730Z",
    "end": "2026-09-07T00:30:05.264Z",
    "feedStart": null,
    "station": "5 Snowdon",
@@ -369,7 +369,7 @@
   {
    "id": "stm-villa-maria-94baa2e6",
    "first": "2026-09-08T11:25:05.046Z",
-   "last": "2026-09-10T14:40:05.415Z",
+   "last": "2026-09-10T14:50:05.730Z",
    "end": "2026-09-08T11:30:05.531Z",
    "feedStart": null,
    "station": "Villa-Maria",
@@ -765,7 +765,7 @@
   {
    "id": "stm-jolicoeur-214feef9",
    "first": "2026-09-09T21:05:03.864Z",
-   "last": "2026-09-10T14:40:05.415Z",
+   "last": "2026-09-10T14:50:05.730Z",
    "end": "2026-09-09T21:20:03.542Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -981,7 +981,7 @@
   {
    "id": "stm-5-jean-talon-84c5ffb6",
    "first": "2026-09-10T12:05:03.722Z",
-   "last": "2026-09-10T14:40:05.415Z",
+   "last": "2026-09-10T14:50:05.730Z",
    "end": "2026-09-10T13:20:05.232Z",
    "feedStart": null,
    "station": "5 Jean-Talon",
