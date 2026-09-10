@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T15:40:05.189Z",
-   "hoursCovered": 94.99,
-   "snapshotsWithChange": 126
+   "last": "2026-09-10T15:45:05.324Z",
+   "hoursCovered": 95.07,
+   "snapshotsWithChange": 127
   },
   "distinctAlerts": 55,
   "elevatorAlerts": 55,
@@ -765,7 +765,7 @@
   {
    "id": "stm-jolicoeur-214feef9",
    "first": "2026-09-09T21:05:03.864Z",
-   "last": "2026-09-10T15:40:05.189Z",
+   "last": "2026-09-10T15:45:05.324Z",
    "end": "2026-09-09T21:20:03.542Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -1017,7 +1017,7 @@
   {
    "id": "stm-mont-royal-15637ddb",
    "first": "2026-09-10T15:40:05.189Z",
-   "last": "2026-09-10T15:40:05.189Z",
+   "last": "2026-09-10T15:45:05.324Z",
    "end": null,
    "feedStart": null,
    "station": "Mont-Royal",
@@ -1029,7 +1029,7 @@
    "unplanned": false,
    "header": "Mont-Royal: The elevator shuttled between the street level, STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0,
+   "observedHours": 0.08,
    "sinceFeedStartHours": null
   }
  ]
