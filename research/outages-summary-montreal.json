@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T15:45:05.324Z",
-   "hoursCovered": 95.07,
-   "snapshotsWithChange": 127
+   "last": "2026-09-10T15:50:05.403Z",
+   "hoursCovered": 95.15,
+   "snapshotsWithChange": 128
   },
   "distinctAlerts": 55,
   "elevatorAlerts": 55,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 24,
   "byStation": {
    "Place-des-Arts": 2,
@@ -765,7 +765,7 @@
   {
    "id": "stm-jolicoeur-214feef9",
    "first": "2026-09-09T21:05:03.864Z",
-   "last": "2026-09-10T15:45:05.324Z",
+   "last": "2026-09-10T15:50:05.403Z",
    "end": "2026-09-09T21:20:03.542Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -1018,7 +1018,7 @@
    "id": "stm-mont-royal-15637ddb",
    "first": "2026-09-10T15:40:05.189Z",
    "last": "2026-09-10T15:45:05.324Z",
-   "end": null,
+   "end": "2026-09-10T15:50:05.403Z",
    "feedStart": null,
    "station": "Mont-Royal",
    "type": "Elevator",
@@ -1028,8 +1028,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Mont-Royal: The elevator shuttled between the street level, STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0.08,
+   "ongoing": false,
+   "observedHours": 0.17,
    "sinceFeedStartHours": null
   }
  ]
