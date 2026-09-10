@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T15:20:05.847Z",
-   "hoursCovered": 94.65,
-   "snapshotsWithChange": 123
+   "last": "2026-09-10T15:25:04.080Z",
+   "hoursCovered": 94.74,
+   "snapshotsWithChange": 124
   },
   "distinctAlerts": 54,
   "elevatorAlerts": 54,
@@ -81,7 +81,7 @@
   {
    "id": "stm-5-snowdon-25850da5",
    "first": "2026-09-06T21:55:05.728Z",
-   "last": "2026-09-10T15:10:05.419Z",
+   "last": "2026-09-10T15:25:04.080Z",
    "end": "2026-09-06T22:25:05.055Z",
    "feedStart": null,
    "station": "5 Snowdon",
@@ -369,7 +369,7 @@
   {
    "id": "stm-villa-maria-94baa2e6",
    "first": "2026-09-08T11:25:05.046Z",
-   "last": "2026-09-10T15:20:05.847Z",
+   "last": "2026-09-10T15:25:04.080Z",
    "end": "2026-09-08T11:30:05.531Z",
    "feedStart": null,
    "station": "Villa-Maria",
@@ -747,7 +747,7 @@
   {
    "id": "stm-cote-vertu-29a6675c",
    "first": "2026-09-09T20:00:04.153Z",
-   "last": "2026-09-10T15:20:05.847Z",
+   "last": "2026-09-10T15:25:04.080Z",
    "end": "2026-09-09T20:30:05.403Z",
    "feedStart": null,
    "station": "Côte-Vertu",
@@ -765,7 +765,7 @@
   {
    "id": "stm-jolicoeur-214feef9",
    "first": "2026-09-09T21:05:03.864Z",
-   "last": "2026-09-10T15:20:05.847Z",
+   "last": "2026-09-10T15:25:04.080Z",
    "end": "2026-09-09T21:20:03.542Z",
    "feedStart": null,
    "station": "Jolicoeur",
