@@ -2,12 +2,12 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T08:40:05.125Z",
-   "hoursCovered": 87.99,
-   "snapshotsWithChange": 105
+   "last": "2026-09-10T08:55:05.714Z",
+   "hoursCovered": 88.24,
+   "snapshotsWithChange": 106
   },
-  "distinctAlerts": 51,
-  "elevatorAlerts": 51,
+  "distinctAlerts": 52,
+  "elevatorAlerts": 52,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
   "elevatorOngoingNow": 3,
@@ -29,7 +29,7 @@
    "Rosemont": 1,
    "2 4 Berri-UQAM": 4,
    "Atwater": 2,
-   "Côte-Vertu": 4,
+   "Côte-Vertu": 5,
    "D'Iberville": 2,
    "Mont-Royal": 2,
    "Du Collège": 2,
@@ -44,7 +44,7 @@
   {
    "id": "stm-place-des-arts-74f7ad9a",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T08:40:05.125Z",
+   "last": "2026-09-10T08:55:05.714Z",
    "end": "2026-09-09T14:30:05.912Z",
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -62,7 +62,7 @@
   {
    "id": "stm-viau-214feef9",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T08:40:05.125Z",
+   "last": "2026-09-10T08:55:05.714Z",
    "end": null,
    "feedStart": null,
    "station": "Viau",
@@ -74,7 +74,7 @@
    "unplanned": false,
    "header": "Viau: The elevator shuttled between the street level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 87.99,
+   "observedHours": 88.24,
    "sinceFeedStartHours": null
   },
   {
@@ -512,7 +512,7 @@
   {
    "id": "stm-prefontaine-f95d10df",
    "first": "2026-09-09T05:20:05.121Z",
-   "last": "2026-09-10T08:40:05.125Z",
+   "last": "2026-09-10T08:55:05.714Z",
    "end": "2026-09-09T09:35:03.229Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -764,7 +764,7 @@
   {
    "id": "stm-jolicoeur-214feef9",
    "first": "2026-09-09T21:05:03.864Z",
-   "last": "2026-09-10T08:40:05.125Z",
+   "last": "2026-09-10T08:55:05.714Z",
    "end": "2026-09-09T21:20:03.542Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -782,7 +782,7 @@
   {
    "id": "stm-place-d-armes-92ee7ec6",
    "first": "2026-09-09T21:50:05.212Z",
-   "last": "2026-09-10T08:40:05.125Z",
+   "last": "2026-09-10T08:55:05.714Z",
    "end": "2026-09-09T22:10:05.320Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -873,7 +873,7 @@
    "id": "stm-cote-vertu-80b1519b",
    "first": "2026-09-10T05:30:05.020Z",
    "last": "2026-09-10T08:40:05.125Z",
-   "end": null,
+   "end": "2026-09-10T08:55:05.714Z",
    "feedStart": null,
    "station": "Côte-Vertu",
    "type": "Elevator",
@@ -883,14 +883,14 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Côte-Vertu: The elevator shuttled between the intermediate level of this station and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the intermediate level of this station and the platform heading towards Montmorency is presently out of service. Indefinite period. The elevator shuttled between the street level and the intermediate level of this station is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 3.17,
+   "ongoing": false,
+   "observedHours": 3.42,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-du-college-5ba3275c",
    "first": "2026-09-10T05:45:05.241Z",
-   "last": "2026-09-10T08:40:05.125Z",
+   "last": "2026-09-10T08:55:05.714Z",
    "end": null,
    "feedStart": null,
    "station": "Du Collège",
@@ -902,7 +902,7 @@
    "unplanned": false,
    "header": "Du Collège: The elevator shuttled between the street level, STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 2.92,
+   "observedHours": 3.17,
    "sinceFeedStartHours": null
   },
   {
@@ -957,6 +957,24 @@
    "header": "Lionel-Groulx: The elevator shuttled between the platforms heading towards Montmorency et Honoré-Beaugrand level and the platforms heading towards Côte-Vertu and Angrignon level is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platforms heading towards Montmorency and Honoré-Beaugrand is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 0.08,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-cote-vertu-f23b6b09",
+   "first": "2026-09-10T08:55:05.714Z",
+   "last": "2026-09-10T08:55:05.714Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Côte-Vertu",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Côte-Vertu: The elevator shuttled between the intermediate level of this station and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the intermediate level of this station and the platform heading towards Montmorency is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
