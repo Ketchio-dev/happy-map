@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T03:10:05.257Z",
-   "hoursCovered": 82.49,
-   "snapshotsWithChange": 89
+   "last": "2026-09-10T03:20:05.064Z",
+   "hoursCovered": 82.65,
+   "snapshotsWithChange": 90
   },
   "distinctAlerts": 43,
   "elevatorAlerts": 43,
@@ -40,7 +40,7 @@
   {
    "id": "stm-place-des-arts-74f7ad9a",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T03:10:05.257Z",
+   "last": "2026-09-10T03:20:05.064Z",
    "end": "2026-09-09T14:30:05.912Z",
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -58,7 +58,7 @@
   {
    "id": "stm-viau-214feef9",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T03:10:05.257Z",
+   "last": "2026-09-10T03:20:05.064Z",
    "end": null,
    "feedStart": null,
    "station": "Viau",
@@ -70,7 +70,7 @@
    "unplanned": false,
    "header": "Viau: The elevator shuttled between the street level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 82.49,
+   "observedHours": 82.65,
    "sinceFeedStartHours": null
   },
   {
@@ -760,7 +760,7 @@
   {
    "id": "stm-jolicoeur-214feef9",
    "first": "2026-09-09T21:05:03.864Z",
-   "last": "2026-09-10T03:00:05.269Z",
+   "last": "2026-09-10T03:20:05.064Z",
    "end": "2026-09-09T21:20:03.542Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -778,7 +778,7 @@
   {
    "id": "stm-place-d-armes-92ee7ec6",
    "first": "2026-09-09T21:50:05.212Z",
-   "last": "2026-09-10T03:10:05.257Z",
+   "last": "2026-09-10T03:20:05.064Z",
    "end": "2026-09-09T22:10:05.320Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -796,7 +796,7 @@
   {
    "id": "stm-mont-royal-cccaaf1e",
    "first": "2026-09-10T03:00:05.269Z",
-   "last": "2026-09-10T03:10:05.257Z",
+   "last": "2026-09-10T03:20:05.064Z",
    "end": null,
    "feedStart": null,
    "station": "Mont-Royal",
@@ -808,7 +808,7 @@
    "unplanned": false,
    "header": "Mont-Royal: The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period. The elevator shuttled between the street level, STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.17,
+   "observedHours": 0.33,
    "sinceFeedStartHours": null
   }
  ]
