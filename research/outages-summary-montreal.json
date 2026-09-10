@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T02:10:05.146Z",
-   "hoursCovered": 81.49,
-   "snapshotsWithChange": 85
+   "last": "2026-09-10T02:20:05.106Z",
+   "hoursCovered": 81.65,
+   "snapshotsWithChange": 86
   },
   "distinctAlerts": 42,
   "elevatorAlerts": 42,
@@ -39,7 +39,7 @@
   {
    "id": "stm-place-des-arts-74f7ad9a",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T02:10:05.146Z",
+   "last": "2026-09-10T02:20:05.106Z",
    "end": "2026-09-09T14:30:05.912Z",
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -57,7 +57,7 @@
   {
    "id": "stm-viau-214feef9",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T02:10:05.146Z",
+   "last": "2026-09-10T02:20:05.106Z",
    "end": null,
    "feedStart": null,
    "station": "Viau",
@@ -69,7 +69,7 @@
    "unplanned": false,
    "header": "Viau: The elevator shuttled between the street level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 81.49,
+   "observedHours": 81.65,
    "sinceFeedStartHours": null
   },
   {
