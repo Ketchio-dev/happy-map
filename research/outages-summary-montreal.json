@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T15:30:05.688Z",
-   "hoursCovered": 94.82,
-   "snapshotsWithChange": 125
+   "last": "2026-09-10T15:40:05.189Z",
+   "hoursCovered": 94.99,
+   "snapshotsWithChange": 126
   },
-  "distinctAlerts": 54,
-  "elevatorAlerts": 54,
+  "distinctAlerts": 55,
+  "elevatorAlerts": 55,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 0,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 24,
   "byStation": {
    "Place-des-Arts": 2,
@@ -31,7 +31,7 @@
    "Atwater": 2,
    "Côte-Vertu": 5,
    "D'Iberville": 2,
-   "Mont-Royal": 2,
+   "Mont-Royal": 3,
    "Du Collège": 2,
    "Henri-Bourassa": 1,
    "Honoré-Beaugrand": 1,
@@ -747,7 +747,7 @@
   {
    "id": "stm-cote-vertu-29a6675c",
    "first": "2026-09-09T20:00:04.153Z",
-   "last": "2026-09-10T15:30:05.688Z",
+   "last": "2026-09-10T15:40:05.189Z",
    "end": "2026-09-09T20:30:05.403Z",
    "feedStart": null,
    "station": "Côte-Vertu",
@@ -765,7 +765,7 @@
   {
    "id": "stm-jolicoeur-214feef9",
    "first": "2026-09-09T21:05:03.864Z",
-   "last": "2026-09-10T15:30:05.688Z",
+   "last": "2026-09-10T15:40:05.189Z",
    "end": "2026-09-09T21:20:03.542Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -1012,6 +1012,24 @@
    "header": "Jean-Talon: The elevator shuttled between the platform heading towards Côte-Vertu level of the Orange line and the 2 platforms level (heading towards Snowdon and Saint-Michel) of the Blue line is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 0.08,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-mont-royal-15637ddb",
+   "first": "2026-09-10T15:40:05.189Z",
+   "last": "2026-09-10T15:40:05.189Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Mont-Royal",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Mont-Royal: The elevator shuttled between the street level, STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
