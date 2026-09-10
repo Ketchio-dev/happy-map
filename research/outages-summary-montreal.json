@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T15:50:05.403Z",
-   "hoursCovered": 95.15,
-   "snapshotsWithChange": 128
+   "last": "2026-09-10T17:30:05.685Z",
+   "hoursCovered": 96.82,
+   "snapshotsWithChange": 129
   },
   "distinctAlerts": 55,
   "elevatorAlerts": 55,
@@ -387,7 +387,7 @@
   {
    "id": "stm-villa-maria-29a6675c",
    "first": "2026-09-08T11:45:05.230Z",
-   "last": "2026-09-08T11:45:05.230Z",
+   "last": "2026-09-10T17:30:05.685Z",
    "end": "2026-09-08T11:50:05.842Z",
    "feedStart": null,
    "station": "Villa-Maria",
@@ -765,7 +765,7 @@
   {
    "id": "stm-jolicoeur-214feef9",
    "first": "2026-09-09T21:05:03.864Z",
-   "last": "2026-09-10T15:50:05.403Z",
+   "last": "2026-09-10T17:30:05.685Z",
    "end": "2026-09-09T21:20:03.542Z",
    "feedStart": null,
    "station": "Jolicoeur",
