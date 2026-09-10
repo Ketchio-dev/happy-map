@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-10T17:30:05.685Z",
-   "hoursCovered": 96.82,
-   "snapshotsWithChange": 129
+   "last": "2026-09-10T17:50:05.332Z",
+   "hoursCovered": 97.15,
+   "snapshotsWithChange": 130
   },
-  "distinctAlerts": 55,
-  "elevatorAlerts": 55,
+  "distinctAlerts": 56,
+  "elevatorAlerts": 56,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 0,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 24,
   "byStation": {
    "Place-des-Arts": 2,
@@ -25,7 +25,7 @@
    "5 Jean-Talon": 2,
    "Place-Saint-Henri": 1,
    "Villa-Maria": 3,
-   "Vendôme": 1,
+   "Vendôme": 2,
    "Rosemont": 1,
    "2 4 Berri-UQAM": 4,
    "Atwater": 2,
@@ -387,7 +387,7 @@
   {
    "id": "stm-villa-maria-29a6675c",
    "first": "2026-09-08T11:45:05.230Z",
-   "last": "2026-09-10T17:30:05.685Z",
+   "last": "2026-09-10T17:50:05.332Z",
    "end": "2026-09-08T11:50:05.842Z",
    "feedStart": null,
    "station": "Villa-Maria",
@@ -765,7 +765,7 @@
   {
    "id": "stm-jolicoeur-214feef9",
    "first": "2026-09-09T21:05:03.864Z",
-   "last": "2026-09-10T17:30:05.685Z",
+   "last": "2026-09-10T17:50:05.332Z",
    "end": "2026-09-09T21:20:03.542Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -1030,6 +1030,24 @@
    "header": "Mont-Royal: The elevator shuttled between the street level, STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 0.17,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-vendome-d577cf57",
+   "first": "2026-09-10T17:50:05.332Z",
+   "last": "2026-09-10T17:50:05.332Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Vendôme",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Vendôme: The elevator shuttled between the street level and the platform heading towards Montmorency is presently out of service. Indefinite period. The elevator shuttled between the street level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
