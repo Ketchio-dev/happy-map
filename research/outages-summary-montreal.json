@@ -2,21 +2,21 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-11T05:05:03.520Z",
-   "hoursCovered": 108.4,
-   "snapshotsWithChange": 139
+   "last": "2026-09-11T05:10:05.521Z",
+   "hoursCovered": 108.49,
+   "snapshotsWithChange": 140
   },
-  "distinctAlerts": 57,
-  "elevatorAlerts": 57,
+  "distinctAlerts": 59,
+  "elevatorAlerts": 59,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
-  "stationsWithElevatorOutage": 25,
+  "elevatorOngoingNow": 3,
+  "stationsWithElevatorOutage": 26,
   "byStation": {
    "Place-des-Arts": 2,
    "Viau": 1,
    "5 Snowdon": 2,
-   "Place-d'Armes": 2,
+   "Place-d'Armes": 3,
    "Préfontaine": 6,
    "2 Lionel-Groulx": 4,
    "Jolicoeur": 4,
@@ -37,7 +37,8 @@
    "Honoré-Beaugrand": 1,
    "Lionel-Groulx": 1,
    "Jean-Talon": 1,
-   "Bonaventure": 1
+   "Bonaventure": 1,
+   "Pie-IX": 1
   },
   "medianElevatorOutageAgeHours": null,
   "medianUnplannedElevatorOutageHours": null
@@ -298,7 +299,7 @@
   {
    "id": "stm-prefontaine-74f7ad9a",
    "first": "2026-09-08T05:05:05.206Z",
-   "last": "2026-09-08T05:05:05.206Z",
+   "last": "2026-09-11T05:10:05.521Z",
    "end": "2026-09-08T05:15:05.023Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -676,7 +677,7 @@
   {
    "id": "stm-atwater-47d97100",
    "first": "2026-09-09T14:10:05.181Z",
-   "last": "2026-09-11T05:05:03.520Z",
+   "last": "2026-09-11T05:10:05.521Z",
    "end": "2026-09-09T15:55:05.269Z",
    "feedStart": null,
    "station": "Atwater",
@@ -856,7 +857,7 @@
   {
    "id": "stm-henri-bourassa-25850da5",
    "first": "2026-09-10T05:15:05.083Z",
-   "last": "2026-09-10T08:35:03.456Z",
+   "last": "2026-09-11T05:10:05.521Z",
    "end": "2026-09-10T08:40:05.125Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -1018,7 +1019,7 @@
   {
    "id": "stm-mont-royal-15637ddb",
    "first": "2026-09-10T15:40:05.189Z",
-   "last": "2026-09-11T05:05:03.520Z",
+   "last": "2026-09-11T05:10:05.521Z",
    "end": "2026-09-10T15:50:05.403Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -1054,7 +1055,7 @@
   {
    "id": "stm-bonaventure-95659080",
    "first": "2026-09-11T05:00:05.240Z",
-   "last": "2026-09-11T05:05:03.520Z",
+   "last": "2026-09-11T05:10:05.521Z",
    "end": null,
    "feedStart": null,
    "station": "Bonaventure",
@@ -1066,7 +1067,43 @@
    "unplanned": false,
    "header": "Bonaventure: The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.08,
+   "observedHours": 0.17,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-pie-ix-74f7ad9a",
+   "first": "2026-09-11T05:10:05.521Z",
+   "last": "2026-09-11T05:10:05.521Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Pie-IX",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Pie-IX: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-place-d-armes-58f0c5f9",
+   "first": "2026-09-11T05:10:05.521Z",
+   "last": "2026-09-11T05:10:05.521Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Place-d'Armes",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Place-d'Armes: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
