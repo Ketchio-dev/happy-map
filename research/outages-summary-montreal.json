@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-11T05:15:05.431Z",
-   "hoursCovered": 108.57,
-   "snapshotsWithChange": 141
+   "last": "2026-09-11T05:20:05.274Z",
+   "hoursCovered": 108.65,
+   "snapshotsWithChange": 142
   },
-  "distinctAlerts": 60,
-  "elevatorAlerts": 60,
+  "distinctAlerts": 62,
+  "elevatorAlerts": 62,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 3,
+  "elevatorOngoingNow": 4,
   "stationsWithElevatorOutage": 26,
   "byStation": {
    "Place-des-Arts": 2,
@@ -28,7 +28,7 @@
    "Vendôme": 2,
    "Rosemont": 1,
    "2 4 Berri-UQAM": 4,
-   "Atwater": 2,
+   "Atwater": 3,
    "Côte-Vertu": 5,
    "D'Iberville": 2,
    "Mont-Royal": 3,
@@ -38,7 +38,7 @@
    "Lionel-Groulx": 1,
    "Jean-Talon": 1,
    "Bonaventure": 1,
-   "Pie-IX": 2
+   "Pie-IX": 3
   },
   "medianElevatorOutageAgeHours": null,
   "medianUnplannedElevatorOutageHours": null
@@ -371,7 +371,7 @@
   {
    "id": "stm-villa-maria-94baa2e6",
    "first": "2026-09-08T11:25:05.046Z",
-   "last": "2026-09-11T05:15:05.431Z",
+   "last": "2026-09-11T05:20:05.274Z",
    "end": "2026-09-08T11:30:05.531Z",
    "feedStart": null,
    "station": "Villa-Maria",
@@ -515,7 +515,7 @@
   {
    "id": "stm-prefontaine-f95d10df",
    "first": "2026-09-09T05:20:05.121Z",
-   "last": "2026-09-11T05:15:05.431Z",
+   "last": "2026-09-11T05:20:05.274Z",
    "end": "2026-09-09T09:35:03.229Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -839,7 +839,7 @@
   {
    "id": "stm-du-college-95659080",
    "first": "2026-09-10T05:15:05.083Z",
-   "last": "2026-09-11T05:15:05.431Z",
+   "last": "2026-09-11T05:20:05.274Z",
    "end": "2026-09-10T05:45:05.241Z",
    "feedStart": null,
    "station": "Du Collège",
@@ -857,7 +857,7 @@
   {
    "id": "stm-henri-bourassa-25850da5",
    "first": "2026-09-10T05:15:05.083Z",
-   "last": "2026-09-11T05:15:05.431Z",
+   "last": "2026-09-11T05:20:05.274Z",
    "end": "2026-09-10T08:40:05.125Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -1019,7 +1019,7 @@
   {
    "id": "stm-mont-royal-15637ddb",
    "first": "2026-09-10T15:40:05.189Z",
-   "last": "2026-09-11T05:15:05.431Z",
+   "last": "2026-09-11T05:20:05.274Z",
    "end": "2026-09-10T15:50:05.403Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -1055,7 +1055,7 @@
   {
    "id": "stm-bonaventure-95659080",
    "first": "2026-09-11T05:00:05.240Z",
-   "last": "2026-09-11T05:15:05.431Z",
+   "last": "2026-09-11T05:20:05.274Z",
    "end": null,
    "feedStart": null,
    "station": "Bonaventure",
@@ -1067,7 +1067,7 @@
    "unplanned": false,
    "header": "Bonaventure: The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.25,
+   "observedHours": 0.33,
    "sinceFeedStartHours": null
   },
   {
@@ -1091,7 +1091,7 @@
   {
    "id": "stm-place-d-armes-58f0c5f9",
    "first": "2026-09-11T05:10:05.521Z",
-   "last": "2026-09-11T05:15:05.431Z",
+   "last": "2026-09-11T05:20:05.274Z",
    "end": null,
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -1103,14 +1103,14 @@
    "unplanned": false,
    "header": "Place-d'Armes: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.08,
+   "observedHours": 0.17,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-pie-ix-9ad2f5b9",
    "first": "2026-09-11T05:15:05.431Z",
    "last": "2026-09-11T05:15:05.431Z",
-   "end": null,
+   "end": "2026-09-11T05:20:05.274Z",
    "feedStart": null,
    "station": "Pie-IX",
    "type": "Elevator",
@@ -1120,6 +1120,42 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Pie-IX: The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
+   "ongoing": false,
+   "observedHours": 0.08,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-atwater-78d99afb",
+   "first": "2026-09-11T05:20:05.274Z",
+   "last": "2026-09-11T05:20:05.274Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Atwater",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Atwater: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-pie-ix-487f28bc",
+   "first": "2026-09-11T05:20:05.274Z",
+   "last": "2026-09-11T05:20:05.274Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Pie-IX",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Pie-IX: The elevator shuttled between the street level (West access) and the STM ticket booth level (East access elevator available, please check its status) is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
    "observedHours": 0,
    "sinceFeedStartHours": null
