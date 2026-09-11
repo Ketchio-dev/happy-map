@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-11T19:05:04.425Z",
-   "hoursCovered": 122.4,
-   "snapshotsWithChange": 175
+   "last": "2026-09-11T19:25:06.066Z",
+   "hoursCovered": 122.74,
+   "snapshotsWithChange": 176
   },
   "distinctAlerts": 73,
   "elevatorAlerts": 73,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 27,
   "byStation": {
    "Place-des-Arts": 2,
@@ -1327,7 +1327,7 @@
    "id": "stm-honore-beaugrand-47d97100",
    "first": "2026-09-11T17:35:04.427Z",
    "last": "2026-09-11T19:05:04.425Z",
-   "end": null,
+   "end": "2026-09-11T19:25:06.066Z",
    "feedStart": null,
    "station": "Honoré-Beaugrand",
    "type": "Elevator",
@@ -1337,8 +1337,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Honoré-Beaugrand: The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 1.5,
+   "ongoing": false,
+   "observedHours": 1.83,
    "sinceFeedStartHours": null
   },
   {
