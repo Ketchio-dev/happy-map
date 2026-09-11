@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-11T09:15:05.808Z",
-   "hoursCovered": 112.57,
-   "snapshotsWithChange": 156
+   "last": "2026-09-11T09:20:05.220Z",
+   "hoursCovered": 112.65,
+   "snapshotsWithChange": 157
   },
   "distinctAlerts": 67,
   "elevatorAlerts": 67,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 3,
+  "elevatorOngoingNow": 2,
   "stationsWithElevatorOutage": 26,
   "byStation": {
    "Place-des-Arts": 2,
@@ -1019,7 +1019,7 @@
   {
    "id": "stm-mont-royal-15637ddb",
    "first": "2026-09-10T15:40:05.189Z",
-   "last": "2026-09-11T09:15:05.808Z",
+   "last": "2026-09-11T09:20:05.220Z",
    "end": "2026-09-10T15:50:05.403Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -1055,7 +1055,7 @@
   {
    "id": "stm-bonaventure-95659080",
    "first": "2026-09-11T05:00:05.240Z",
-   "last": "2026-09-11T09:15:05.808Z",
+   "last": "2026-09-11T09:20:05.220Z",
    "end": null,
    "feedStart": null,
    "station": "Bonaventure",
@@ -1067,7 +1067,7 @@
    "unplanned": false,
    "header": "Bonaventure: The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 4.25,
+   "observedHours": 4.33,
    "sinceFeedStartHours": null
   },
   {
@@ -1091,7 +1091,7 @@
   {
    "id": "stm-place-d-armes-58f0c5f9",
    "first": "2026-09-11T05:10:05.521Z",
-   "last": "2026-09-11T09:15:05.808Z",
+   "last": "2026-09-11T09:20:05.220Z",
    "end": null,
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -1103,7 +1103,7 @@
    "unplanned": false,
    "header": "Place-d'Armes: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 4.08,
+   "observedHours": 4.17,
    "sinceFeedStartHours": null
   },
   {
@@ -1128,7 +1128,7 @@
    "id": "stm-atwater-78d99afb",
    "first": "2026-09-11T05:20:05.274Z",
    "last": "2026-09-11T09:15:05.808Z",
-   "end": null,
+   "end": "2026-09-11T09:20:05.220Z",
    "feedStart": null,
    "station": "Atwater",
    "type": "Elevator",
@@ -1138,8 +1138,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Atwater: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 3.92,
+   "ongoing": false,
+   "observedHours": 4,
    "sinceFeedStartHours": null
   },
   {
