@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-11T16:25:05.339Z",
-   "hoursCovered": 119.74,
-   "snapshotsWithChange": 170
+   "last": "2026-09-11T16:30:05.404Z",
+   "hoursCovered": 119.82,
+   "snapshotsWithChange": 171
   },
   "distinctAlerts": 71,
   "elevatorAlerts": 71,
@@ -246,7 +246,7 @@
   {
    "id": "stm-angrignon-3b96de2d",
    "first": "2026-09-07T08:55:05.116Z",
-   "last": "2026-09-11T16:25:05.339Z",
+   "last": "2026-09-11T16:30:05.404Z",
    "end": "2026-09-07T09:10:05.157Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -1290,7 +1290,7 @@
   {
    "id": "stm-edouard-montpetit-16a655d5",
    "first": "2026-09-11T14:20:05.251Z",
-   "last": "2026-09-11T16:25:05.339Z",
+   "last": "2026-09-11T16:30:05.404Z",
    "end": null,
    "feedStart": null,
    "station": "Édouard-Montpetit",
@@ -1302,7 +1302,7 @@
    "unplanned": false,
    "header": "Édouard-Montpetit: The elevator shuttled between the street level, STM ticket booth level and access to the REM, intermediate level of this station and the platform heading towards Saint-Michel is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 2.08,
+   "observedHours": 2.17,
    "sinceFeedStartHours": null
   },
   {
