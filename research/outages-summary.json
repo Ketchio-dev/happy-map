@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-09-11T15:20:03.786Z",
-   "hoursCovered": 233.06,
-   "snapshotsWithChange": 317
+   "last": "2026-09-11T15:45:04.473Z",
+   "hoursCovered": 233.48,
+   "snapshotsWithChange": 318
   },
   "distinctAlerts": 320,
   "elevatorAlerts": 69,
@@ -342,7 +342,7 @@
   {
    "id": "74831",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-02-08T05:00:00Z",
    "station": "Don Valley",
@@ -354,13 +354,13 @@
    "unplanned": false,
    "header": "Don Valley: Elevator ELV03-C out of service between concourse and Don Mills Road west side entrance due to the Ontario Line construction. Elevator is expected to be back in service February 8, 2032.",
    "ongoing": true,
-   "observedHours": 233.06,
-   "sinceFeedStartHours": 5170.3
+   "observedHours": 233.48,
+   "sinceFeedStartHours": 5170.8
   },
   {
    "id": "74136",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-08-12T01:59:00Z",
    "station": "Spadina",
@@ -372,8 +372,8 @@
    "unplanned": false,
    "header": "Spadina: Escalator 2B3E out of service from Line 2 Kipling platform to south concourse while we perform maintenance. Escalator is expected to be back in service February 27, 2027.",
    "ongoing": true,
-   "observedHours": 233.06,
-   "sinceFeedStartHours": 733.4
+   "observedHours": 233.48,
+   "sinceFeedStartHours": 733.8
   },
   {
    "id": "73985",
@@ -450,7 +450,7 @@
   {
    "id": "73835",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-08-10T07:30:00Z",
    "station": "Kennedy",
@@ -462,13 +462,13 @@
    "unplanned": false,
    "header": "Kennedy: Escalator 16D2E out of service from Line 2 platform to concourse while we perform maintenance. Escalator is expected to be back in service December 11, 2026.",
    "ongoing": true,
-   "observedHours": 233.06,
-   "sinceFeedStartHours": 775.8
+   "observedHours": 233.48,
+   "sinceFeedStartHours": 776.3
   },
   {
    "id": "73474",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-07-05T05:00:00Z",
    "station": "Kipling",
@@ -480,13 +480,13 @@
    "unplanned": false,
    "header": "Kipling: Escalator 16B6E out of service from concourse to Aukland Rd entrance while we perform maintenance. Escalator is expected to be back in service October 30, 2026.",
    "ongoing": true,
-   "observedHours": 233.06,
-   "sinceFeedStartHours": 1642.3
+   "observedHours": 233.48,
+   "sinceFeedStartHours": 1642.8
   },
   {
    "id": "73154",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-07-27T07:30:00Z",
    "station": "Jane",
@@ -498,13 +498,13 @@
    "unplanned": false,
    "header": "Jane: Escalator 12B2E out of service from Line 2 Kipling platform to concourse while we perform maintenance. Escalator is expected to be back in service September 6, 2026.",
    "ongoing": true,
-   "observedHours": 233.06,
-   "sinceFeedStartHours": 1111.8
+   "observedHours": 233.48,
+   "sinceFeedStartHours": 1112.3
   },
   {
    "id": "71416",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-03-12T05:00:00Z",
    "station": "Broadview",
@@ -516,13 +516,13 @@
    "unplanned": false,
    "header": "Broadview: Escalator 6D3E out of service from concourse to Broadview Ave entrance while we perform maintenance. Escalator is expected to be back in service December 31, 2026.",
    "ongoing": true,
-   "observedHours": 233.06,
-   "sinceFeedStartHours": 4402.3
+   "observedHours": 233.48,
+   "sinceFeedStartHours": 4402.8
   },
   {
    "id": "71415",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-03-25T05:00:00Z",
    "station": "Museum",
@@ -534,13 +534,13 @@
    "unplanned": false,
    "header": "Museum: Escalator 2Y1E out of service from concourse to Line 1 platform while we perform maintenance. Escalator is expected to be back in service September 18, 2026.",
    "ongoing": true,
-   "observedHours": 233.06,
-   "sinceFeedStartHours": 4090.3
+   "observedHours": 233.48,
+   "sinceFeedStartHours": 4090.8
   },
   {
    "id": "69889",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-05-22T15:30:00Z",
    "station": "Greenwood",
@@ -552,8 +552,8 @@
    "unplanned": false,
    "header": "Greenwood: Escalator 10D2E out of service from Line 2 Kennedy platform to concourse while we perform maintenance. Escalator is expected to be back in service September 11, 2026.",
    "ongoing": true,
-   "observedHours": 233.06,
-   "sinceFeedStartHours": 2687.8
+   "observedHours": 233.48,
+   "sinceFeedStartHours": 2688.3
   },
   {
    "id": "75199",
@@ -1926,7 +1926,7 @@
   {
    "id": "75328",
    "first": "2026-09-03T00:36:25.594Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-09-02T18:49:02.127Z",
    "station": "Laird",
@@ -1938,8 +1938,8 @@
    "unplanned": false,
    "header": "Laird: Elevator ELV02-B out of service between Eglinton Avenue south side entrance and concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 206.73,
-   "sinceFeedStartHours": 212.5
+   "observedHours": 207.14,
+   "sinceFeedStartHours": 212.9
   },
   {
    "id": "75327",
@@ -4518,7 +4518,7 @@
   {
    "id": "75762",
    "first": "2026-09-08T11:35:02.717Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-09-08T07:30:00Z",
    "station": "Sheppard-Yonge",
@@ -4530,8 +4530,8 @@
    "unplanned": false,
    "header": "Sheppard-Yonge: Escalator 51P2E out of service from Line 1 platform to Line 4 Don Mills platform while we perform maintenance. Escalator is expected to be back in service September 11, 2026.",
    "ongoing": true,
-   "observedHours": 75.75,
-   "sinceFeedStartHours": 79.8
+   "observedHours": 76.17,
+   "sinceFeedStartHours": 80.3
   },
   {
    "id": "75761",
@@ -4554,7 +4554,7 @@
   {
    "id": "75760",
    "first": "2026-09-08T11:35:02.717Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-09-08T07:30:00Z",
    "station": "Sheppard West",
@@ -4566,8 +4566,8 @@
    "unplanned": false,
    "header": "Sheppard West: Escalator 9S5E out of service from bus platform to concourse while we perform maintenance. Escalator is expected to be back in service September 11, 2026.",
    "ongoing": true,
-   "observedHours": 75.75,
-   "sinceFeedStartHours": 79.8
+   "observedHours": 76.17,
+   "sinceFeedStartHours": 80.3
   },
   {
    "id": "75759",
@@ -5112,7 +5112,7 @@
   {
    "id": "75879",
    "first": "2026-09-09T16:15:04.090Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-09-09T12:13:52.273Z",
    "station": "St Patrick",
@@ -5124,8 +5124,8 @@
    "unplanned": false,
    "header": "St Patrick: Elevator 4Y1L out of service between concourse and Line 1 centre platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 47.08,
-   "sinceFeedStartHours": 51.1
+   "observedHours": 47.5,
+   "sinceFeedStartHours": 51.5
   },
   {
    "id": "75881",
@@ -5184,7 +5184,7 @@
   {
    "id": "75887",
    "first": "2026-09-09T19:15:03.759Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-09-09T15:09:49.727Z",
    "station": "Chaplin",
@@ -5196,8 +5196,8 @@
    "unplanned": true,
    "header": "Chaplin: Escalator 6 out of service between platform and concourse due to a technical problem. Escalator is expected to be back in service September 30, 2026.",
    "ongoing": true,
-   "observedHours": 44.08,
-   "sinceFeedStartHours": 48.2
+   "observedHours": 44.5,
+   "sinceFeedStartHours": 48.6
   },
   {
    "id": "75888",
@@ -5400,7 +5400,7 @@
   {
    "id": "75910",
    "first": "2026-09-10T02:35:02.645Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-09-09T22:33:20.3Z",
    "station": "Keelesdale",
@@ -5412,8 +5412,8 @@
    "unplanned": false,
    "header": "Keelesdale: Elevator ELV02-B out of service between Keele Street north east side entrance and concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 36.75,
-   "sinceFeedStartHours": 40.8
+   "observedHours": 37.17,
+   "sinceFeedStartHours": 41.2
   },
   {
    "id": "75914",
@@ -5508,7 +5508,7 @@
   {
    "id": "75923",
    "first": "2026-09-10T10:30:03.977Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-09-10T06:26:37.357Z",
    "station": "Sheppard-Yonge",
@@ -5520,8 +5520,8 @@
    "unplanned": false,
    "header": "Sheppard-Yonge: Escalator 51P1E out of service from Line 4 Don Mills platform to Line 1 platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 28.83,
-   "sinceFeedStartHours": 32.9
+   "observedHours": 29.25,
+   "sinceFeedStartHours": 33.3
   },
   {
    "id": "75930",
@@ -5544,7 +5544,7 @@
   {
    "id": "75934",
    "first": "2026-09-10T14:50:04.058Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-09-10T10:49:16.267Z",
    "station": "Cedarvale",
@@ -5556,8 +5556,8 @@
    "unplanned": true,
    "header": "Cedarvale: Escalator 8 out of service between lower concourse and upper concourse due to a technical problem. Escalator is expected to be back in service September 11, 2026.",
    "ongoing": true,
-   "observedHours": 24.5,
-   "sinceFeedStartHours": 28.5
+   "observedHours": 24.92,
+   "sinceFeedStartHours": 28.9
   },
   {
    "id": "75935",
@@ -5616,7 +5616,7 @@
   {
    "id": "75951",
    "first": "2026-09-10T20:40:04.550Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-09-10T16:38:57.117Z",
    "station": "Wellesley",
@@ -5628,13 +5628,13 @@
    "unplanned": true,
    "header": "Wellesley: Escalator 12Y2E out of service from Line 1 Finch platform to Wellesley St entrance due to a technical problem.",
    "ongoing": true,
-   "observedHours": 18.67,
-   "sinceFeedStartHours": 22.7
+   "observedHours": 19.08,
+   "sinceFeedStartHours": 23.1
   },
   {
    "id": "75956",
    "first": "2026-09-10T23:25:03.845Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-09-10T19:24:28.19Z",
    "station": "St Andrew",
@@ -5646,8 +5646,8 @@
    "unplanned": true,
    "header": "St Andrew: Escalator 6Y2E out of service from concourse to Line 1 platform due to a technical problem.",
    "ongoing": true,
-   "observedHours": 15.92,
-   "sinceFeedStartHours": 19.9
+   "observedHours": 16.33,
+   "sinceFeedStartHours": 20.3
   },
   {
    "id": "75957",
@@ -5670,7 +5670,7 @@
   {
    "id": "75961",
    "first": "2026-09-11T01:50:03.763Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-09-10T21:46:25.47Z",
    "station": "Bay",
@@ -5682,13 +5682,13 @@
    "unplanned": true,
    "header": "Bay: Escalator 2D4E out of service from west concourse to Bay St west side entrance due to a technical problem.",
    "ongoing": true,
-   "observedHours": 13.5,
-   "sinceFeedStartHours": 17.6
+   "observedHours": 13.92,
+   "sinceFeedStartHours": 18
   },
   {
    "id": "75969",
    "first": "2026-09-11T05:45:04.500Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-09-11T01:43:11.433Z",
    "station": "Spadina",
@@ -5700,13 +5700,13 @@
    "unplanned": false,
    "header": "Spadina: Escalator 2B1E out of service from south concourse to Spadina Rd west side entrance while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 9.58,
-   "sinceFeedStartHours": 13.6
+   "observedHours": 10,
+   "sinceFeedStartHours": 14
   },
   {
    "id": "75968",
    "first": "2026-09-11T05:45:04.500Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-09-11T01:40:55.997Z",
    "station": "Wellesley",
@@ -5718,8 +5718,8 @@
    "unplanned": false,
    "header": "Wellesley: Escalator 12Y1E out of service from Line 1 Vaughan via Union platform to Wellesley St entrance while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 9.58,
-   "sinceFeedStartHours": 13.7
+   "observedHours": 10,
+   "sinceFeedStartHours": 14.1
   },
   {
    "id": "75972",
@@ -5760,7 +5760,7 @@
   {
    "id": "75983",
    "first": "2026-09-11T13:00:04.060Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-09-11T08:57:51.677Z",
    "station": "Chester",
@@ -5772,13 +5772,13 @@
    "unplanned": false,
    "header": "Chester: Elevator 7D2L out of service between Chester Ave west side entrance and Line 2 eastbound platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 2.33,
-   "sinceFeedStartHours": 6.4
+   "observedHours": 2.75,
+   "sinceFeedStartHours": 6.8
   },
   {
    "id": "75985",
    "first": "2026-09-11T14:00:03.834Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-09-11T09:55:52.923Z",
    "station": "St Patrick",
@@ -5790,13 +5790,13 @@
    "unplanned": true,
    "header": "St Patrick: Escalator 4Y1E out of service from concourse to Line 1 platform due to a technical problem.",
    "ongoing": true,
-   "observedHours": 1.33,
-   "sinceFeedStartHours": 5.4
+   "observedHours": 1.75,
+   "sinceFeedStartHours": 5.8
   },
   {
    "id": "75989",
    "first": "2026-09-11T15:10:03.876Z",
-   "last": "2026-09-11T15:20:03.786Z",
+   "last": "2026-09-11T15:45:04.473Z",
    "end": null,
    "feedStart": "2026-09-11T11:08:56.957Z",
    "station": "Pape",
@@ -5808,8 +5808,8 @@
    "unplanned": false,
    "header": "Pape: Escalator 8D2E out of service from Line 2 Kennedy platform to concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 0.17,
-   "sinceFeedStartHours": 4.2
+   "observedHours": 0.58,
+   "sinceFeedStartHours": 4.6
   }
  ]
 }
