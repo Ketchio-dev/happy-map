@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-11T09:25:05.245Z",
-   "hoursCovered": 112.74,
-   "snapshotsWithChange": 158
+   "last": "2026-09-11T11:35:03.661Z",
+   "hoursCovered": 114.9,
+   "snapshotsWithChange": 159
   },
   "distinctAlerts": 67,
   "elevatorAlerts": 67,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 26,
   "byStation": {
    "Place-des-Arts": 2,
@@ -1019,7 +1019,7 @@
   {
    "id": "stm-mont-royal-15637ddb",
    "first": "2026-09-10T15:40:05.189Z",
-   "last": "2026-09-11T09:25:05.245Z",
+   "last": "2026-09-11T11:35:03.661Z",
    "end": "2026-09-10T15:50:05.403Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -1092,7 +1092,7 @@
    "id": "stm-place-d-armes-58f0c5f9",
    "first": "2026-09-11T05:10:05.521Z",
    "last": "2026-09-11T09:25:05.245Z",
-   "end": null,
+   "end": "2026-09-11T11:35:03.661Z",
    "feedStart": null,
    "station": "Place-d'Armes",
    "type": "Elevator",
@@ -1102,8 +1102,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Place-d'Armes: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 4.25,
+   "ongoing": false,
+   "observedHours": 6.42,
    "sinceFeedStartHours": null
   },
   {
