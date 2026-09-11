@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-11T12:10:05.197Z",
-   "hoursCovered": 115.49,
-   "snapshotsWithChange": 160
+   "last": "2026-09-11T12:50:05.957Z",
+   "hoursCovered": 116.15,
+   "snapshotsWithChange": 161
   },
   "distinctAlerts": 68,
   "elevatorAlerts": 68,
@@ -768,7 +768,7 @@
   {
    "id": "stm-jolicoeur-214feef9",
    "first": "2026-09-09T21:05:03.864Z",
-   "last": "2026-09-10T22:40:05.193Z",
+   "last": "2026-09-11T12:50:05.957Z",
    "end": "2026-09-09T21:20:03.542Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -1020,7 +1020,7 @@
   {
    "id": "stm-mont-royal-15637ddb",
    "first": "2026-09-10T15:40:05.189Z",
-   "last": "2026-09-11T12:10:05.197Z",
+   "last": "2026-09-11T12:50:05.957Z",
    "end": "2026-09-10T15:50:05.403Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -1254,7 +1254,7 @@
   {
    "id": "stm-edouard-montpetit-2653c2f7",
    "first": "2026-09-11T12:10:05.197Z",
-   "last": "2026-09-11T12:10:05.197Z",
+   "last": "2026-09-11T12:50:05.957Z",
    "end": null,
    "feedStart": null,
    "station": "Édouard-Montpetit",
@@ -1266,7 +1266,7 @@
    "unplanned": false,
    "header": "Édouard-Montpetit: The elevator shuttled between the intermediate level of this station and the platform heading towards Snowdon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0,
+   "observedHours": 0.67,
    "sinceFeedStartHours": null
   }
  ]
