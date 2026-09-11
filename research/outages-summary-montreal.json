@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-11T09:05:03.738Z",
-   "hoursCovered": 112.4,
-   "snapshotsWithChange": 154
+   "last": "2026-09-11T09:10:05.229Z",
+   "hoursCovered": 112.49,
+   "snapshotsWithChange": 155
   },
-  "distinctAlerts": 66,
-  "elevatorAlerts": 66,
+  "distinctAlerts": 67,
+  "elevatorAlerts": 67,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 3,
+  "elevatorOngoingNow": 4,
   "stationsWithElevatorOutage": 26,
   "byStation": {
    "Place-des-Arts": 2,
@@ -38,7 +38,7 @@
    "Lionel-Groulx": 1,
    "Jean-Talon": 1,
    "Bonaventure": 1,
-   "Pie-IX": 4
+   "Pie-IX": 5
   },
   "medianElevatorOutageAgeHours": null,
   "medianUnplannedElevatorOutageHours": null
@@ -515,7 +515,7 @@
   {
    "id": "stm-prefontaine-f95d10df",
    "first": "2026-09-09T05:20:05.121Z",
-   "last": "2026-09-11T09:05:03.738Z",
+   "last": "2026-09-11T09:10:05.229Z",
    "end": "2026-09-09T09:35:03.229Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -1019,7 +1019,7 @@
   {
    "id": "stm-mont-royal-15637ddb",
    "first": "2026-09-10T15:40:05.189Z",
-   "last": "2026-09-11T09:05:03.738Z",
+   "last": "2026-09-11T09:10:05.229Z",
    "end": "2026-09-10T15:50:05.403Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -1055,7 +1055,7 @@
   {
    "id": "stm-bonaventure-95659080",
    "first": "2026-09-11T05:00:05.240Z",
-   "last": "2026-09-11T09:05:03.738Z",
+   "last": "2026-09-11T09:10:05.229Z",
    "end": null,
    "feedStart": null,
    "station": "Bonaventure",
@@ -1067,7 +1067,7 @@
    "unplanned": false,
    "header": "Bonaventure: The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 4.08,
+   "observedHours": 4.17,
    "sinceFeedStartHours": null
   },
   {
@@ -1091,7 +1091,7 @@
   {
    "id": "stm-place-d-armes-58f0c5f9",
    "first": "2026-09-11T05:10:05.521Z",
-   "last": "2026-09-11T09:05:03.738Z",
+   "last": "2026-09-11T09:10:05.229Z",
    "end": null,
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -1103,7 +1103,7 @@
    "unplanned": false,
    "header": "Place-d'Armes: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 3.92,
+   "observedHours": 4,
    "sinceFeedStartHours": null
   },
   {
@@ -1127,7 +1127,7 @@
   {
    "id": "stm-atwater-78d99afb",
    "first": "2026-09-11T05:20:05.274Z",
-   "last": "2026-09-11T09:05:03.738Z",
+   "last": "2026-09-11T09:10:05.229Z",
    "end": null,
    "feedStart": null,
    "station": "Atwater",
@@ -1139,7 +1139,7 @@
    "unplanned": false,
    "header": "Atwater: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 3.75,
+   "observedHours": 3.83,
    "sinceFeedStartHours": null
   },
   {
@@ -1230,6 +1230,24 @@
    "header": "5 Snowdon: The elevator shuttled between the platforms heading towards Côte-Vertu (Orange line) and the disembarkation of the Blue line and the platforms heading towards Montmorency (Orange line) and Saint-Michel (Blue line) level is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platforms heading towards Côte-Vertu (Orange line) and the disembarkation of the Blue line is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 0.5,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-pie-ix-47d97100",
+   "first": "2026-09-11T09:10:05.229Z",
+   "last": "2026-09-11T09:10:05.229Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Pie-IX",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Pie-IX: The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
