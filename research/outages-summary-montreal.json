@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-11T05:45:05.933Z",
-   "hoursCovered": 109.07,
-   "snapshotsWithChange": 145
+   "last": "2026-09-11T05:50:05.936Z",
+   "hoursCovered": 109.15,
+   "snapshotsWithChange": 146
   },
   "distinctAlerts": 65,
   "elevatorAlerts": 65,
@@ -515,7 +515,7 @@
   {
    "id": "stm-prefontaine-f95d10df",
    "first": "2026-09-09T05:20:05.121Z",
-   "last": "2026-09-11T05:45:05.933Z",
+   "last": "2026-09-11T05:50:05.936Z",
    "end": "2026-09-09T09:35:03.229Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -551,7 +551,7 @@
   {
    "id": "stm-angrignon-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-10T08:25:05.504Z",
+   "last": "2026-09-11T05:50:05.936Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -569,7 +569,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-09T08:40:05.250Z",
+   "last": "2026-09-11T05:50:05.936Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -587,7 +587,7 @@
   {
    "id": "stm-2-lionel-groulx-467444fc",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-10T07:40:05.049Z",
+   "last": "2026-09-11T05:50:05.936Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -857,7 +857,7 @@
   {
    "id": "stm-henri-bourassa-25850da5",
    "first": "2026-09-10T05:15:05.083Z",
-   "last": "2026-09-11T05:45:05.933Z",
+   "last": "2026-09-11T05:50:05.936Z",
    "end": "2026-09-10T08:40:05.125Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -893,7 +893,7 @@
   {
    "id": "stm-du-college-5ba3275c",
    "first": "2026-09-10T05:45:05.241Z",
-   "last": "2026-09-11T05:45:05.933Z",
+   "last": "2026-09-11T05:50:05.936Z",
    "end": "2026-09-10T09:05:03.491Z",
    "feedStart": null,
    "station": "Du Collège",
@@ -1019,7 +1019,7 @@
   {
    "id": "stm-mont-royal-15637ddb",
    "first": "2026-09-10T15:40:05.189Z",
-   "last": "2026-09-11T05:45:05.933Z",
+   "last": "2026-09-11T05:50:05.936Z",
    "end": "2026-09-10T15:50:05.403Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -1055,7 +1055,7 @@
   {
    "id": "stm-bonaventure-95659080",
    "first": "2026-09-11T05:00:05.240Z",
-   "last": "2026-09-11T05:45:05.933Z",
+   "last": "2026-09-11T05:50:05.936Z",
    "end": null,
    "feedStart": null,
    "station": "Bonaventure",
@@ -1067,7 +1067,7 @@
    "unplanned": false,
    "header": "Bonaventure: The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.75,
+   "observedHours": 0.83,
    "sinceFeedStartHours": null
   },
   {
@@ -1091,7 +1091,7 @@
   {
    "id": "stm-place-d-armes-58f0c5f9",
    "first": "2026-09-11T05:10:05.521Z",
-   "last": "2026-09-11T05:45:05.933Z",
+   "last": "2026-09-11T05:50:05.936Z",
    "end": null,
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -1103,7 +1103,7 @@
    "unplanned": false,
    "header": "Place-d'Armes: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.58,
+   "observedHours": 0.67,
    "sinceFeedStartHours": null
   },
   {
@@ -1127,7 +1127,7 @@
   {
    "id": "stm-atwater-78d99afb",
    "first": "2026-09-11T05:20:05.274Z",
-   "last": "2026-09-11T05:45:05.933Z",
+   "last": "2026-09-11T05:50:05.936Z",
    "end": null,
    "feedStart": null,
    "station": "Atwater",
@@ -1139,7 +1139,7 @@
    "unplanned": false,
    "header": "Atwater: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.42,
+   "observedHours": 0.5,
    "sinceFeedStartHours": null
   },
   {
@@ -1181,7 +1181,7 @@
   {
    "id": "stm-pie-ix-a46ca45d",
    "first": "2026-09-11T05:25:05.525Z",
-   "last": "2026-09-11T05:45:05.933Z",
+   "last": "2026-09-11T05:50:05.936Z",
    "end": null,
    "feedStart": null,
    "station": "Pie-IX",
@@ -1193,13 +1193,13 @@
    "unplanned": false,
    "header": "Pie-IX: The elevator shuttled between the street level (East access) and the STM ticket booth level (West access elevator available, please check its status) is presently out of service. Indefinite period. The elevator shuttled between the street level (West access) and the STM ticket booth level (East access elevator available, please check its status) is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.33,
+   "observedHours": 0.42,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-cote-vertu-4dd23d2a",
    "first": "2026-09-11T05:35:05.780Z",
-   "last": "2026-09-11T05:45:05.933Z",
+   "last": "2026-09-11T05:50:05.936Z",
    "end": null,
    "feedStart": null,
    "station": "Côte-Vertu",
@@ -1211,7 +1211,7 @@
    "unplanned": false,
    "header": "Côte-Vertu: The elevator shuttled between the intermediate level of this station and the platform heading towards Montmorency is presently out of service. Indefinite period. The elevator shuttled between the street level and the intermediate level of this station is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.17,
+   "observedHours": 0.25,
    "sinceFeedStartHours": null
   }
  ]
