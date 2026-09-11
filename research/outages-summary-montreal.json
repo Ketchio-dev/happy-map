@@ -2,19 +2,19 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-11T17:35:04.427Z",
-   "hoursCovered": 120.9,
-   "snapshotsWithChange": 173
+   "last": "2026-09-11T18:30:05.518Z",
+   "hoursCovered": 121.82,
+   "snapshotsWithChange": 174
   },
-  "distinctAlerts": 72,
-  "elevatorAlerts": 72,
+  "distinctAlerts": 73,
+  "elevatorAlerts": 73,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 2,
   "stationsWithElevatorOutage": 27,
   "byStation": {
    "Place-des-Arts": 2,
-   "Viau": 1,
+   "Viau": 2,
    "5 Snowdon": 3,
    "Place-d'Armes": 3,
    "Préfontaine": 6,
@@ -1326,7 +1326,7 @@
   {
    "id": "stm-honore-beaugrand-47d97100",
    "first": "2026-09-11T17:35:04.427Z",
-   "last": "2026-09-11T17:35:04.427Z",
+   "last": "2026-09-11T18:30:05.518Z",
    "end": null,
    "feedStart": null,
    "station": "Honoré-Beaugrand",
@@ -1337,6 +1337,24 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Honoré-Beaugrand: The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0.92,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-viau-bf3e641b",
+   "first": "2026-09-11T18:30:05.518Z",
+   "last": "2026-09-11T18:30:05.518Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Viau",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Viau: The elevator shuttled between the street level and the platform heading towards Angrignon is presently out of service. Indefinite period. The elevator shuttled between the street level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
    "ongoing": true,
    "observedHours": 0,
    "sinceFeedStartHours": null
