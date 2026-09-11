@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-11T14:20:05.251Z",
-   "hoursCovered": 117.65,
-   "snapshotsWithChange": 164
+   "last": "2026-09-11T14:25:05.866Z",
+   "hoursCovered": 117.74,
+   "snapshotsWithChange": 165
   },
-  "distinctAlerts": 70,
-  "elevatorAlerts": 70,
+  "distinctAlerts": 71,
+  "elevatorAlerts": 71,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 2,
+  "elevatorOngoingNow": 3,
   "stationsWithElevatorOutage": 27,
   "byStation": {
    "Place-des-Arts": 2,
@@ -37,7 +37,7 @@
    "Honoré-Beaugrand": 1,
    "Lionel-Groulx": 1,
    "Jean-Talon": 1,
-   "Bonaventure": 1,
+   "Bonaventure": 2,
    "Pie-IX": 5,
    "Édouard-Montpetit": 2
   },
@@ -192,7 +192,7 @@
   {
    "id": "stm-jolicoeur-3b96de2d",
    "first": "2026-09-07T05:25:05.009Z",
-   "last": "2026-09-11T14:20:05.251Z",
+   "last": "2026-09-11T14:25:05.866Z",
    "end": "2026-09-07T10:15:05.065Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -1020,7 +1020,7 @@
   {
    "id": "stm-mont-royal-15637ddb",
    "first": "2026-09-10T15:40:05.189Z",
-   "last": "2026-09-11T14:20:05.251Z",
+   "last": "2026-09-11T14:25:05.866Z",
    "end": "2026-09-10T15:50:05.403Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -1272,7 +1272,7 @@
   {
    "id": "stm-angrignon-214feef9",
    "first": "2026-09-11T13:20:06.217Z",
-   "last": "2026-09-11T14:20:05.251Z",
+   "last": "2026-09-11T14:25:05.866Z",
    "end": null,
    "feedStart": null,
    "station": "Angrignon",
@@ -1284,13 +1284,13 @@
    "unplanned": false,
    "header": "Angrignon: The elevator shuttled between the street level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 1,
+   "observedHours": 1.08,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-edouard-montpetit-16a655d5",
    "first": "2026-09-11T14:20:05.251Z",
-   "last": "2026-09-11T14:20:05.251Z",
+   "last": "2026-09-11T14:25:05.866Z",
    "end": null,
    "feedStart": null,
    "station": "Édouard-Montpetit",
@@ -1301,6 +1301,24 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Édouard-Montpetit: The elevator shuttled between the street level, STM ticket booth level and access to the REM, intermediate level of this station and the platform heading towards Saint-Michel is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0.08,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-bonaventure-92ee7ec6",
+   "first": "2026-09-11T14:25:05.866Z",
+   "last": "2026-09-11T14:25:05.866Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Bonaventure",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Bonaventure: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
    "ongoing": true,
    "observedHours": 0,
    "sinceFeedStartHours": null
