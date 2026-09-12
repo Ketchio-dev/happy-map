@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-12T09:25:03.390Z",
-   "hoursCovered": 136.74,
-   "snapshotsWithChange": 191
+   "last": "2026-09-12T09:30:05.169Z",
+   "hoursCovered": 136.82,
+   "snapshotsWithChange": 192
   },
   "distinctAlerts": 78,
   "elevatorAlerts": 78,
@@ -318,7 +318,7 @@
   {
    "id": "stm-prefontaine-9ad2f5b9",
    "first": "2026-09-08T05:15:05.023Z",
-   "last": "2026-09-12T09:25:03.390Z",
+   "last": "2026-09-12T09:30:05.169Z",
    "end": "2026-09-08T05:20:05.205Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -570,7 +570,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-12T09:25:03.390Z",
+   "last": "2026-09-12T09:30:05.169Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -1380,7 +1380,7 @@
   {
    "id": "stm-place-saint-henri-01106772",
    "first": "2026-09-12T05:15:05.357Z",
-   "last": "2026-09-12T09:25:03.390Z",
+   "last": "2026-09-12T09:30:05.169Z",
    "end": null,
    "feedStart": null,
    "station": "Place-Saint-Henri",
@@ -1392,7 +1392,7 @@
    "unplanned": false,
    "header": "Place-Saint-Henri: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the street level, STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 4.17,
+   "observedHours": 4.25,
    "sinceFeedStartHours": null
   },
   {
