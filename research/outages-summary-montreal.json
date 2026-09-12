@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-12T16:25:03.831Z",
-   "hoursCovered": 143.74,
-   "snapshotsWithChange": 199
+   "last": "2026-09-12T19:25:03.895Z",
+   "hoursCovered": 146.74,
+   "snapshotsWithChange": 200
   },
   "distinctAlerts": 79,
   "elevatorAlerts": 79,
@@ -85,7 +85,7 @@
   {
    "id": "stm-5-snowdon-25850da5",
    "first": "2026-09-06T21:55:05.728Z",
-   "last": "2026-09-11T07:05:05.975Z",
+   "last": "2026-09-12T19:25:03.895Z",
    "end": "2026-09-06T22:25:05.055Z",
    "feedStart": null,
    "station": "5 Snowdon",
