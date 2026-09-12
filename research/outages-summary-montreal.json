@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-12T10:30:05.231Z",
-   "hoursCovered": 137.82,
-   "snapshotsWithChange": 195
+   "last": "2026-09-12T10:55:03.487Z",
+   "hoursCovered": 138.24,
+   "snapshotsWithChange": 196
   },
   "distinctAlerts": 79,
   "elevatorAlerts": 79,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 2,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 28,
   "byStation": {
    "Place-des-Arts": 2,
@@ -1382,7 +1382,7 @@
    "id": "stm-place-saint-henri-01106772",
    "first": "2026-09-12T05:15:05.357Z",
    "last": "2026-09-12T10:30:05.231Z",
-   "end": null,
+   "end": "2026-09-12T10:55:03.487Z",
    "feedStart": null,
    "station": "Place-Saint-Henri",
    "type": "Elevator",
@@ -1392,8 +1392,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Place-Saint-Henri: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the street level, STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 5.25,
+   "ongoing": false,
+   "observedHours": 5.67,
    "sinceFeedStartHours": null
   },
   {
@@ -1453,7 +1453,7 @@
   {
    "id": "stm-de-la-concorde-zone-b-92ee7ec6",
    "first": "2026-09-12T10:30:05.231Z",
-   "last": "2026-09-12T10:30:05.231Z",
+   "last": "2026-09-12T10:55:03.487Z",
    "end": null,
    "feedStart": null,
    "station": "De la Concorde (zone B)",
@@ -1465,7 +1465,7 @@
    "unplanned": false,
    "header": "De la Concorde (zone B): The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0,
+   "observedHours": 0.42,
    "sinceFeedStartHours": null
   }
  ]
