@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-12T09:40:05.807Z",
-   "hoursCovered": 136.99,
-   "snapshotsWithChange": 193
+   "last": "2026-09-12T10:15:03.525Z",
+   "hoursCovered": 137.57,
+   "snapshotsWithChange": 194
   },
   "distinctAlerts": 78,
   "elevatorAlerts": 78,
@@ -1380,7 +1380,7 @@
   {
    "id": "stm-place-saint-henri-01106772",
    "first": "2026-09-12T05:15:05.357Z",
-   "last": "2026-09-12T09:40:05.807Z",
+   "last": "2026-09-12T10:15:03.525Z",
    "end": null,
    "feedStart": null,
    "station": "Place-Saint-Henri",
@@ -1392,7 +1392,7 @@
    "unplanned": false,
    "header": "Place-Saint-Henri: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the street level, STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 4.42,
+   "observedHours": 5,
    "sinceFeedStartHours": null
   },
   {
