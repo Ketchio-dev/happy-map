@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-13T05:20:05.919Z",
-   "hoursCovered": 156.65,
-   "snapshotsWithChange": 207
+   "last": "2026-09-13T05:25:03.475Z",
+   "hoursCovered": 156.74,
+   "snapshotsWithChange": 208
   },
-  "distinctAlerts": 79,
-  "elevatorAlerts": 79,
+  "distinctAlerts": 80,
+  "elevatorAlerts": 80,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 0,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 28,
   "byStation": {
    "Place-des-Arts": 2,
@@ -23,7 +23,7 @@
    "Angrignon": 4,
    "Cartier (zone B)": 1,
    "5 Jean-Talon": 2,
-   "Place-Saint-Henri": 2,
+   "Place-Saint-Henri": 3,
    "Villa-Maria": 6,
    "Vendôme": 2,
    "Rosemont": 1,
@@ -193,7 +193,7 @@
   {
    "id": "stm-jolicoeur-3b96de2d",
    "first": "2026-09-07T05:25:05.009Z",
-   "last": "2026-09-13T05:20:05.919Z",
+   "last": "2026-09-13T05:25:03.475Z",
    "end": "2026-09-07T10:15:05.065Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -859,7 +859,7 @@
   {
    "id": "stm-henri-bourassa-25850da5",
    "first": "2026-09-10T05:15:05.083Z",
-   "last": "2026-09-13T05:20:05.919Z",
+   "last": "2026-09-13T05:25:03.475Z",
    "end": "2026-09-10T08:40:05.125Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -1466,6 +1466,24 @@
    "header": "De la Concorde (zone B): The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 1.83,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-place-saint-henri-92ee7ec6",
+   "first": "2026-09-13T05:25:03.475Z",
+   "last": "2026-09-13T05:25:03.475Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Place-Saint-Henri",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Place-Saint-Henri: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
