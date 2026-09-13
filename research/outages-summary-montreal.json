@@ -2,18 +2,18 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-13T05:30:05.239Z",
-   "hoursCovered": 156.82,
-   "snapshotsWithChange": 209
+   "last": "2026-09-13T05:35:05.136Z",
+   "hoursCovered": 156.9,
+   "snapshotsWithChange": 210
   },
-  "distinctAlerts": 81,
-  "elevatorAlerts": 81,
+  "distinctAlerts": 82,
+  "elevatorAlerts": 82,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
   "elevatorOngoingNow": 2,
   "stationsWithElevatorOutage": 28,
   "byStation": {
-   "Place-des-Arts": 3,
+   "Place-des-Arts": 4,
    "Viau": 2,
    "5 Snowdon": 3,
    "Place-d'Armes": 3,
@@ -193,7 +193,7 @@
   {
    "id": "stm-jolicoeur-3b96de2d",
    "first": "2026-09-07T05:25:05.009Z",
-   "last": "2026-09-13T05:30:05.239Z",
+   "last": "2026-09-13T05:35:05.136Z",
    "end": "2026-09-07T10:15:05.065Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -859,7 +859,7 @@
   {
    "id": "stm-henri-bourassa-25850da5",
    "first": "2026-09-10T05:15:05.083Z",
-   "last": "2026-09-13T05:30:05.239Z",
+   "last": "2026-09-13T05:35:05.136Z",
    "end": "2026-09-10T08:40:05.125Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -1471,7 +1471,7 @@
   {
    "id": "stm-place-saint-henri-92ee7ec6",
    "first": "2026-09-13T05:25:03.475Z",
-   "last": "2026-09-13T05:30:05.239Z",
+   "last": "2026-09-13T05:35:05.136Z",
    "end": null,
    "feedStart": null,
    "station": "Place-Saint-Henri",
@@ -1483,14 +1483,14 @@
    "unplanned": false,
    "header": "Place-Saint-Henri: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.08,
+   "observedHours": 0.17,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-place-des-arts-47d97100",
    "first": "2026-09-13T05:30:05.239Z",
    "last": "2026-09-13T05:30:05.239Z",
-   "end": null,
+   "end": "2026-09-13T05:35:05.136Z",
    "feedStart": null,
    "station": "Place-des-Arts",
    "type": "Elevator",
@@ -1500,6 +1500,24 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Place-des-Arts: The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
+   "ongoing": false,
+   "observedHours": 0.08,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-place-des-arts-78d99afb",
+   "first": "2026-09-13T05:35:05.136Z",
+   "last": "2026-09-13T05:35:05.136Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Place-des-Arts",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Place-des-Arts: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
    "ongoing": true,
    "observedHours": 0,
    "sinceFeedStartHours": null
