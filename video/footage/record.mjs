@@ -18,7 +18,7 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.resolve(HERE, "../public/footage");
 const RAW = path.join(OUT, "raw");
 const GEN = path.resolve(HERE, "../src/generated");
-const SITE = process.env.HM_URL ?? "https://happy-map-ashy.vercel.app/";
+const SITE = process.env.HM_URL ?? "https://happy-map.ketchio.com/";
 const SCALE = 1.5;
 const name = process.argv[2] ?? "test";
 mkdirSync(RAW, { recursive: true }); mkdirSync(GEN, { recursive: true });

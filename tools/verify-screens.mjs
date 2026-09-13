@@ -3,7 +3,7 @@
 // the Live tab and /evidence. Run from the repo root: node tools/verify-screens.mjs [baseUrl] [outDir]
 import { chromium } from "playwright";
 import { mkdirSync } from "node:fs";
-const BASE = process.argv[2] ?? "https://happy-map-ashy.vercel.app";
+const BASE = process.argv[2] ?? "https://happy-map.ketchio.com";
 const OUT = process.argv[3] ?? "research/screens/verify";
 mkdirSync(OUT, { recursive: true });
 const browser = await chromium.launch({ channel: "chrome", headless: true, args: ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"] });

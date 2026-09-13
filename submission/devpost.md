@@ -85,12 +85,12 @@ I also learned to distrust my own map. Much of what looked like missing sidewalk
 
 ## Try it in sixty seconds
 
-1. [Scotiabank Arena to the Eaton Centre, indoor first](https://happy-map-ashy.vercel.app/?from=-79.37910,43.64350,Scotiabank%20Arena&to=-79.38060,43.65440,CF%20Toronto%20Eaton%20Centre&mode=indoor&hour=d0715_h14): 16 metres outdoors instead of a kilometre, for one extra minute. This one has stairs; the step-free card beside it does not.
-2. [Union to Bloor-Yonge, step-free, on the morning its elevator was out](https://happy-map-ashy.vercel.app/?at=2026-09-02T12:00:00Z&mode=stepfree&walk=0&from=-79.38060,43.64530,Union%20Station&to=-79.38640,43.67080,Bloor-Yonge%20Station): 19 minutes becomes 30, and the card says why.
-3. [Montréal](https://happy-map-ashy.vercel.app/?city=montreal): the same router on the RÉSO.
-4. [Evidence](https://happy-map-ashy.vercel.app/evidence): every number above, with its method and its limits.
+1. [Scotiabank Arena to the Eaton Centre, indoor first](https://happy-map.ketchio.com/?from=-79.37910,43.64350,Scotiabank%20Arena&to=-79.38060,43.65440,CF%20Toronto%20Eaton%20Centre&mode=indoor&hour=d0715_h14): 16 metres outdoors instead of a kilometre, for one extra minute. This one has stairs; the step-free card beside it does not.
+2. [Union to Bloor-Yonge, step-free, on the morning its elevator was out](https://happy-map.ketchio.com/?at=2026-09-02T12:00:00Z&mode=stepfree&walk=0&from=-79.38060,43.64530,Union%20Station&to=-79.38640,43.67080,Bloor-Yonge%20Station): 19 minutes becomes 30, and the card says why.
+3. [Montréal](https://happy-map.ketchio.com/?city=montreal): the same router on the RÉSO.
+4. [Evidence](https://happy-map.ketchio.com/evidence): every number above, with its method and its limits.
 
-Source: https://github.com/Ketchio-dev/happy-map · Live: https://happy-map-ashy.vercel.app
+Source: https://github.com/Ketchio-dev/happy-map · Live: https://happy-map.ketchio.com
 
 ---
 

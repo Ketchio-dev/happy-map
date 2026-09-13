@@ -1,8 +1,8 @@
 # happy map — exposure-aware routing across Toronto (and Montréal)
 
-**Live: https://happy-map-ashy.vercel.app** · [![CI](https://github.com/Ketchio-dev/happy-map/actions/workflows/ci.yml/badge.svg)](https://github.com/Ketchio-dev/happy-map/actions/workflows/ci.yml)
+**Live: https://happy-map.ketchio.com** · [![CI](https://github.com/Ketchio-dev/happy-map/actions/workflows/ci.yml/badge.svg)](https://github.com/Ketchio-dev/happy-map/actions/workflows/ci.yml)
 
-Walking and subway routes across Toronto costed by what you are exposed to rather than time alone: minutes outdoors, metres in direct sun, stairs, blocks with no sidewalk, and TTC stations whose elevator is out at this moment. The same router, pointed at Montréal's RÉSO and métro, runs at [`/?city=montreal`](https://happy-map-ashy.vercel.app/?city=montreal).
+Walking and subway routes across Toronto costed by what you are exposed to rather than time alone: minutes outdoors, metres in direct sun, stairs, blocks with no sidewalk, and TTC stations whose elevator is out at this moment. The same router, pointed at Montréal's RÉSO and métro, runs at [`/?city=montreal`](https://happy-map.ketchio.com/?city=montreal).
 
 Built solo for [GatewayHacks 2026](https://gatewayhacks-2026.devpost.com/) (Accessibility & Health track).
 

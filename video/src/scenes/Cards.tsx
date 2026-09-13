@@ -119,7 +119,7 @@ export const Outro = ({ revealAt = 14, note }: { revealAt?: number; note?: strin
   return (
     <AbsoluteFill style={{ background: color.ground, justifyContent: "center", alignItems: "center" }}>
       <div style={{ opacity: a, textAlign: "center" }}>
-        <div style={{ fontSize: 72, fontWeight: 600, color: color.ink, letterSpacing: -2 }}>happy-map-ashy.vercel.app</div>
+        <div style={{ fontSize: 72, fontWeight: 600, color: color.ink, letterSpacing: -2 }}>happy-map.ketchio.com</div>
         <div style={{ fontSize: 40, color: color.inkSoft, marginTop: 14 }}>github.com/Ketchio-dev/happy-map</div>
       </div>
       {note && (
