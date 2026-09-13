@@ -12,11 +12,8 @@ LOGGER_SOURCE=oci node tools/log-once.mjs
 # Montréal's elevator status page, same cadence; a failure there must not stop the TTC log
 LOGGER_SOURCE=oci node tools/log-once-stm.mjs || true
 
-# Keep the routing function warm: its cold start is a 30 MB graph load, and a request every
-# five minutes is enough to hold a Fluid Compute instance. Failures here must not stop the log.
-curl -s -m 25 -o /dev/null -X POST -H 'content-type: application/json' \
-  -d '{"from":[-79.3791,43.6435],"to":[-79.3806,43.6544],"walkOnly":true}' \
-  "${HM_URL:-https://happy-map-ashy.vercel.app}/api/routes" || true
+# The app moved to this same box (happy-map-web.service), where the process holds the
+# routing graph for its lifetime. There is no cold start left to warm.
 
 if [ -z "$(git status --porcelain -- 'data/ttc-alerts/*.jsonl' 'data/stm-alerts/*.jsonl')" ]; then
   exit 0
