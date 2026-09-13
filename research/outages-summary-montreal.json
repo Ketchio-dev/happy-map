@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-13T06:00:03.845Z",
-   "hoursCovered": 157.32,
-   "snapshotsWithChange": 214
+   "last": "2026-09-13T07:50:07.090Z",
+   "hoursCovered": 159.15,
+   "snapshotsWithChange": 215
   },
   "distinctAlerts": 83,
   "elevatorAlerts": 83,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 3,
+  "elevatorOngoingNow": 2,
   "stationsWithElevatorOutage": 28,
   "byStation": {
    "Place-des-Arts": 4,
@@ -553,7 +553,7 @@
   {
    "id": "stm-angrignon-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-13T06:00:03.845Z",
+   "last": "2026-09-13T07:50:07.090Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -571,7 +571,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-13T06:00:03.845Z",
+   "last": "2026-09-13T07:50:07.090Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -859,7 +859,7 @@
   {
    "id": "stm-henri-bourassa-25850da5",
    "first": "2026-09-10T05:15:05.083Z",
-   "last": "2026-09-13T06:00:03.845Z",
+   "last": "2026-09-13T07:50:07.090Z",
    "end": "2026-09-10T08:40:05.125Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -1039,7 +1039,7 @@
   {
    "id": "stm-vendome-d577cf57",
    "first": "2026-09-10T17:50:05.332Z",
-   "last": "2026-09-13T06:00:03.845Z",
+   "last": "2026-09-13T07:50:07.090Z",
    "end": "2026-09-10T18:20:05.333Z",
    "feedStart": null,
    "station": "Vendôme",
@@ -1129,7 +1129,7 @@
   {
    "id": "stm-atwater-78d99afb",
    "first": "2026-09-11T05:20:05.274Z",
-   "last": "2026-09-13T06:00:03.845Z",
+   "last": "2026-09-13T07:50:07.090Z",
    "end": "2026-09-11T09:20:05.220Z",
    "feedStart": null,
    "station": "Atwater",
@@ -1471,7 +1471,7 @@
   {
    "id": "stm-place-saint-henri-92ee7ec6",
    "first": "2026-09-13T05:25:03.475Z",
-   "last": "2026-09-13T06:00:03.845Z",
+   "last": "2026-09-13T07:50:07.090Z",
    "end": null,
    "feedStart": null,
    "station": "Place-Saint-Henri",
@@ -1483,13 +1483,13 @@
    "unplanned": false,
    "header": "Place-Saint-Henri: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.58,
+   "observedHours": 2.42,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-place-des-arts-47d97100",
    "first": "2026-09-13T05:30:05.239Z",
-   "last": "2026-09-13T05:30:05.239Z",
+   "last": "2026-09-13T07:50:07.090Z",
    "end": "2026-09-13T05:35:05.136Z",
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -1508,7 +1508,7 @@
    "id": "stm-place-des-arts-78d99afb",
    "first": "2026-09-13T05:35:05.136Z",
    "last": "2026-09-13T06:00:03.845Z",
-   "end": null,
+   "end": "2026-09-13T07:50:07.090Z",
    "feedStart": null,
    "station": "Place-des-Arts",
    "type": "Elevator",
@@ -1518,14 +1518,14 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Place-des-Arts: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0.42,
+   "ongoing": false,
+   "observedHours": 2.25,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-villa-maria-c78e2ca0",
    "first": "2026-09-13T05:45:05.222Z",
-   "last": "2026-09-13T06:00:03.845Z",
+   "last": "2026-09-13T07:50:07.090Z",
    "end": null,
    "feedStart": null,
    "station": "Villa-Maria",
@@ -1537,7 +1537,7 @@
    "unplanned": false,
    "header": "Villa-Maria: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level, intermediate level of this station and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.25,
+   "observedHours": 2.08,
    "sinceFeedStartHours": null
   }
  ]
