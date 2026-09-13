@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-13T09:45:03.011Z",
-   "hoursCovered": 161.07,
-   "snapshotsWithChange": 221
+   "last": "2026-09-13T09:50:05.823Z",
+   "hoursCovered": 161.15,
+   "snapshotsWithChange": 222
   },
   "distinctAlerts": 84,
   "elevatorAlerts": 84,
@@ -859,7 +859,7 @@
   {
    "id": "stm-henri-bourassa-25850da5",
    "first": "2026-09-10T05:15:05.083Z",
-   "last": "2026-09-13T09:45:03.011Z",
+   "last": "2026-09-13T09:50:05.823Z",
    "end": "2026-09-10T08:40:05.125Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -1489,7 +1489,7 @@
   {
    "id": "stm-place-des-arts-47d97100",
    "first": "2026-09-13T05:30:05.239Z",
-   "last": "2026-09-13T09:45:03.011Z",
+   "last": "2026-09-13T09:50:05.823Z",
    "end": "2026-09-13T05:35:05.136Z",
    "feedStart": null,
    "station": "Place-des-Arts",
