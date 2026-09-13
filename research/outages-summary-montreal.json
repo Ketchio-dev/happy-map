@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-13T01:30:04.735Z",
-   "hoursCovered": 152.82,
-   "snapshotsWithChange": 206
+   "last": "2026-09-13T05:20:05.919Z",
+   "hoursCovered": 156.65,
+   "snapshotsWithChange": 207
   },
   "distinctAlerts": 79,
   "elevatorAlerts": 79,
@@ -193,7 +193,7 @@
   {
    "id": "stm-jolicoeur-3b96de2d",
    "first": "2026-09-07T05:25:05.009Z",
-   "last": "2026-09-12T05:20:05.080Z",
+   "last": "2026-09-13T05:20:05.919Z",
    "end": "2026-09-07T10:15:05.065Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -859,7 +859,7 @@
   {
    "id": "stm-henri-bourassa-25850da5",
    "first": "2026-09-10T05:15:05.083Z",
-   "last": "2026-09-13T01:30:04.735Z",
+   "last": "2026-09-13T05:20:05.919Z",
    "end": "2026-09-10T08:40:05.125Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
