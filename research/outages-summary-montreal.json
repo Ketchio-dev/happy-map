@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-14T06:45:05.158Z",
-   "hoursCovered": 182.07,
-   "snapshotsWithChange": 232
+   "last": "2026-09-14T06:55:05.148Z",
+   "hoursCovered": 182.24,
+   "snapshotsWithChange": 233
   },
   "distinctAlerts": 88,
   "elevatorAlerts": 88,
@@ -554,7 +554,7 @@
   {
    "id": "stm-angrignon-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-14T06:45:05.158Z",
+   "last": "2026-09-14T06:55:05.148Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -860,7 +860,7 @@
   {
    "id": "stm-henri-bourassa-25850da5",
    "first": "2026-09-10T05:15:05.083Z",
-   "last": "2026-09-14T06:45:05.158Z",
+   "last": "2026-09-14T06:55:05.148Z",
    "end": "2026-09-10T08:40:05.125Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -1130,7 +1130,7 @@
   {
    "id": "stm-atwater-78d99afb",
    "first": "2026-09-11T05:20:05.274Z",
-   "last": "2026-09-14T06:45:05.158Z",
+   "last": "2026-09-14T06:55:05.148Z",
    "end": "2026-09-11T09:20:05.220Z",
    "feedStart": null,
    "station": "Atwater",
@@ -1562,7 +1562,7 @@
   {
    "id": "stm-bonaventure-c93b5a43",
    "first": "2026-09-14T05:10:05.286Z",
-   "last": "2026-09-14T06:45:05.158Z",
+   "last": "2026-09-14T06:55:05.148Z",
    "end": null,
    "feedStart": null,
    "station": "Bonaventure",
@@ -1574,13 +1574,13 @@
    "unplanned": false,
    "header": "Bonaventure: The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 1.58,
+   "observedHours": 1.75,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-2-4-berri-uqam-58f0c5f9",
    "first": "2026-09-14T05:50:05.295Z",
-   "last": "2026-09-14T06:45:05.158Z",
+   "last": "2026-09-14T06:55:05.148Z",
    "end": null,
    "feedStart": null,
    "station": "2 4 Berri-UQAM",
@@ -1592,13 +1592,13 @@
    "unplanned": false,
    "header": "2 4 Berri-UQAM: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.92,
+   "observedHours": 1.08,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-mcgill-37a2628e",
    "first": "2026-09-14T05:50:05.295Z",
-   "last": "2026-09-14T06:45:05.158Z",
+   "last": "2026-09-14T06:55:05.148Z",
    "end": null,
    "feedStart": null,
    "station": "McGill",
@@ -1610,13 +1610,13 @@
    "unplanned": false,
    "header": "McGill: The elevator shuttled between the street level, STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.92,
+   "observedHours": 1.08,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-place-des-arts-df5cffe1",
    "first": "2026-09-14T05:50:05.295Z",
-   "last": "2026-09-14T06:45:05.158Z",
+   "last": "2026-09-14T06:55:05.148Z",
    "end": null,
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -1628,7 +1628,7 @@
    "unplanned": false,
    "header": "Place-des-Arts: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.92,
+   "observedHours": 1.08,
    "sinceFeedStartHours": null
   }
  ]
