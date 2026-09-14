@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-14T13:40:05.329Z",
-   "hoursCovered": 188.99,
-   "snapshotsWithChange": 257
+   "last": "2026-09-14T13:50:05.314Z",
+   "hoursCovered": 189.15,
+   "snapshotsWithChange": 258
   },
   "distinctAlerts": 91,
   "elevatorAlerts": 91,
@@ -429,7 +429,7 @@
   {
    "id": "stm-vendome-e2a70183",
    "first": "2026-09-08T13:15:05.183Z",
-   "last": "2026-09-08T13:15:05.183Z",
+   "last": "2026-09-14T13:50:05.314Z",
    "end": "2026-09-08T13:20:05.419Z",
    "feedStart": null,
    "station": "Vendôme",
@@ -1023,7 +1023,7 @@
   {
    "id": "stm-mont-royal-15637ddb",
    "first": "2026-09-10T15:40:05.189Z",
-   "last": "2026-09-14T13:40:05.329Z",
+   "last": "2026-09-14T13:50:05.314Z",
    "end": "2026-09-10T15:50:05.403Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -1077,7 +1077,7 @@
   {
    "id": "stm-pie-ix-74f7ad9a",
    "first": "2026-09-11T05:10:05.521Z",
-   "last": "2026-09-14T13:40:05.329Z",
+   "last": "2026-09-14T13:50:05.314Z",
    "end": "2026-09-11T05:15:05.431Z",
    "feedStart": null,
    "station": "Pie-IX",
@@ -1653,7 +1653,7 @@
   {
    "id": "stm-henri-bourassa-80f551dc",
    "first": "2026-09-14T13:05:04.724Z",
-   "last": "2026-09-14T13:40:05.329Z",
+   "last": "2026-09-14T13:50:05.314Z",
    "end": null,
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -1665,13 +1665,13 @@
    "unplanned": false,
    "header": "Henri-Bourassa: The elevator shuttled between the intermediate level of this station and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.58,
+   "observedHours": 0.75,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-2-lionel-groulx-ae05cea0",
    "first": "2026-09-14T13:35:05.300Z",
-   "last": "2026-09-14T13:40:05.329Z",
+   "last": "2026-09-14T13:50:05.314Z",
    "end": null,
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -1683,7 +1683,7 @@
    "unplanned": false,
    "header": "2 Lionel-Groulx: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period. The elevator shuttled between the platforms heading towards Montmorency et Honoré-Beaugrand level and the platforms heading towards Côte-Vertu and Angrignon level is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.08,
+   "observedHours": 0.25,
    "sinceFeedStartHours": null
   }
  ]
