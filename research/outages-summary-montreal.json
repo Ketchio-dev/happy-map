@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-14T13:05:04.724Z",
-   "hoursCovered": 188.4,
-   "snapshotsWithChange": 254
+   "last": "2026-09-14T13:25:05.352Z",
+   "hoursCovered": 188.74,
+   "snapshotsWithChange": 255
   },
   "distinctAlerts": 90,
   "elevatorAlerts": 90,
@@ -141,7 +141,7 @@
   {
    "id": "stm-prefontaine-25850da5",
    "first": "2026-09-07T05:05:04.538Z",
-   "last": "2026-09-14T13:05:04.724Z",
+   "last": "2026-09-14T13:25:05.352Z",
    "end": "2026-09-07T09:20:05.522Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -267,7 +267,7 @@
   {
    "id": "stm-2-lionel-groulx-385f3642",
    "first": "2026-09-07T09:25:05.210Z",
-   "last": "2026-09-14T13:05:04.724Z",
+   "last": "2026-09-14T13:25:05.352Z",
    "end": "2026-09-07T09:40:05.313Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -1023,7 +1023,7 @@
   {
    "id": "stm-mont-royal-15637ddb",
    "first": "2026-09-10T15:40:05.189Z",
-   "last": "2026-09-14T13:05:04.724Z",
+   "last": "2026-09-14T13:25:05.352Z",
    "end": "2026-09-10T15:50:05.403Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -1653,7 +1653,7 @@
   {
    "id": "stm-henri-bourassa-80f551dc",
    "first": "2026-09-14T13:05:04.724Z",
-   "last": "2026-09-14T13:05:04.724Z",
+   "last": "2026-09-14T13:25:05.352Z",
    "end": null,
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -1665,7 +1665,7 @@
    "unplanned": false,
    "header": "Henri-Bourassa: The elevator shuttled between the intermediate level of this station and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0,
+   "observedHours": 0.33,
    "sinceFeedStartHours": null
   }
  ]
