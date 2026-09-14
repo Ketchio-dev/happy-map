@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-14T07:50:05.120Z",
-   "hoursCovered": 183.15,
-   "snapshotsWithChange": 237
+   "last": "2026-09-14T09:10:05.194Z",
+   "hoursCovered": 184.49,
+   "snapshotsWithChange": 238
   },
   "distinctAlerts": 89,
   "elevatorAlerts": 89,
@@ -861,7 +861,7 @@
   {
    "id": "stm-henri-bourassa-25850da5",
    "first": "2026-09-10T05:15:05.083Z",
-   "last": "2026-09-14T07:50:05.120Z",
+   "last": "2026-09-14T09:10:05.194Z",
    "end": "2026-09-10T08:40:05.125Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -1275,7 +1275,7 @@
   {
    "id": "stm-angrignon-214feef9",
    "first": "2026-09-11T13:20:06.217Z",
-   "last": "2026-09-11T14:25:05.866Z",
+   "last": "2026-09-14T09:10:05.194Z",
    "end": "2026-09-11T14:30:06.142Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -1563,7 +1563,7 @@
   {
    "id": "stm-bonaventure-c93b5a43",
    "first": "2026-09-14T05:10:05.286Z",
-   "last": "2026-09-14T07:50:05.120Z",
+   "last": "2026-09-14T09:10:05.194Z",
    "end": null,
    "feedStart": null,
    "station": "Bonaventure",
@@ -1575,13 +1575,13 @@
    "unplanned": false,
    "header": "Bonaventure: The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 2.67,
+   "observedHours": 4,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-2-4-berri-uqam-58f0c5f9",
    "first": "2026-09-14T05:50:05.295Z",
-   "last": "2026-09-14T07:50:05.120Z",
+   "last": "2026-09-14T09:10:05.194Z",
    "end": "2026-09-14T07:45:03.337Z",
    "feedStart": null,
    "station": "2 4 Berri-UQAM",
