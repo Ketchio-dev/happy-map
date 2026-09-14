@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-14T16:05:05.393Z",
-   "hoursCovered": 191.4,
-   "snapshotsWithChange": 272
+   "last": "2026-09-14T16:55:03.160Z",
+   "hoursCovered": 192.24,
+   "snapshotsWithChange": 273
   },
   "distinctAlerts": 94,
   "elevatorAlerts": 94,
@@ -267,7 +267,7 @@
   {
    "id": "stm-2-lionel-groulx-385f3642",
    "first": "2026-09-07T09:25:05.210Z",
-   "last": "2026-09-14T16:05:05.393Z",
+   "last": "2026-09-14T16:55:03.160Z",
    "end": "2026-09-07T09:40:05.313Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -861,7 +861,7 @@
   {
    "id": "stm-henri-bourassa-25850da5",
    "first": "2026-09-10T05:15:05.083Z",
-   "last": "2026-09-14T16:05:05.393Z",
+   "last": "2026-09-14T16:55:03.160Z",
    "end": "2026-09-10T08:40:05.125Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
