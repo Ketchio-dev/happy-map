@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-15T15:25:05.444Z",
-   "hoursCovered": 214.74,
-   "snapshotsWithChange": 292
+   "last": "2026-09-15T15:50:05.454Z",
+   "hoursCovered": 215.15,
+   "snapshotsWithChange": 293
   },
   "distinctAlerts": 99,
   "elevatorAlerts": 99,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 30,
   "byStation": {
    "Place-des-Arts": 5,
@@ -69,7 +69,7 @@
   {
    "id": "stm-viau-214feef9",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-15T15:25:05.444Z",
+   "last": "2026-09-15T15:50:05.454Z",
    "end": "2026-09-10T14:40:05.415Z",
    "feedStart": null,
    "station": "Viau",
@@ -87,7 +87,7 @@
   {
    "id": "stm-5-snowdon-25850da5",
    "first": "2026-09-06T21:55:05.728Z",
-   "last": "2026-09-15T15:25:05.444Z",
+   "last": "2026-09-15T15:50:05.454Z",
    "end": "2026-09-06T22:25:05.055Z",
    "feedStart": null,
    "station": "5 Snowdon",
@@ -1816,7 +1816,7 @@
    "id": "stm-pie-ix-da0da4a0",
    "first": "2026-09-15T15:25:05.444Z",
    "last": "2026-09-15T15:25:05.444Z",
-   "end": null,
+   "end": "2026-09-15T15:50:05.454Z",
    "feedStart": null,
    "station": "Pie-IX",
    "type": "Elevator",
@@ -1826,8 +1826,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Pie-IX: The elevator shuttled between the street level (East access) and the STM ticket booth level (West access elevator available, please check its status) is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 0.42,
    "sinceFeedStartHours": null
   }
  ]
