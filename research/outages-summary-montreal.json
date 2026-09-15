@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-15T20:50:03.305Z",
-   "hoursCovered": 220.15,
-   "snapshotsWithChange": 297
+   "last": "2026-09-15T23:35:05.388Z",
+   "hoursCovered": 222.9,
+   "snapshotsWithChange": 298
   },
   "distinctAlerts": 99,
   "elevatorAlerts": 99,
@@ -51,7 +51,7 @@
   {
    "id": "stm-place-des-arts-74f7ad9a",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-11T16:25:05.339Z",
+   "last": "2026-09-15T23:35:05.388Z",
    "end": "2026-09-09T14:30:05.912Z",
    "feedStart": null,
    "station": "Place-des-Arts",
