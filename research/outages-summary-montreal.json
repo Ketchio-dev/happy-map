@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-16T05:10:05.344Z",
-   "hoursCovered": 228.49,
-   "snapshotsWithChange": 302
+   "last": "2026-09-16T05:15:05.222Z",
+   "hoursCovered": 228.57,
+   "snapshotsWithChange": 303
   },
   "distinctAlerts": 100,
   "elevatorAlerts": 100,
@@ -375,7 +375,7 @@
   {
    "id": "stm-villa-maria-94baa2e6",
    "first": "2026-09-08T11:25:05.046Z",
-   "last": "2026-09-15T05:20:05.183Z",
+   "last": "2026-09-16T05:15:05.222Z",
    "end": "2026-09-08T11:30:05.531Z",
    "feedStart": null,
    "station": "Villa-Maria",
@@ -1743,7 +1743,7 @@
   {
    "id": "stm-edouard-montpetit-4a3c1dc5",
    "first": "2026-09-15T05:15:02.401Z",
-   "last": "2026-09-15T08:45:05.457Z",
+   "last": "2026-09-16T05:15:05.222Z",
    "end": "2026-09-15T09:25:05.325Z",
    "feedStart": null,
    "station": "Édouard-Montpetit",
