@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-16T13:30:05.699Z",
-   "hoursCovered": 236.82,
-   "snapshotsWithChange": 315
+   "last": "2026-09-16T13:40:05.979Z",
+   "hoursCovered": 236.99,
+   "snapshotsWithChange": 316
   },
   "distinctAlerts": 104,
   "elevatorAlerts": 104,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 2,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 31,
   "byStation": {
    "Place-des-Arts": 6,
@@ -1870,7 +1870,7 @@
   {
    "id": "stm-outremont-1d52eebb",
    "first": "2026-09-16T12:10:05.310Z",
-   "last": "2026-09-16T13:30:05.699Z",
+   "last": "2026-09-16T13:40:05.979Z",
    "end": null,
    "feedStart": null,
    "station": "Outremont",
@@ -1882,13 +1882,13 @@
    "unplanned": false,
    "header": "Outremont: The elevator shuttled between the STM ticket booth level and the platform heading towards Snowdon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 1.33,
+   "observedHours": 1.5,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-cartier-zone-b-95659080",
    "first": "2026-09-16T12:50:05.429Z",
-   "last": "2026-09-16T12:50:05.429Z",
+   "last": "2026-09-16T13:40:05.979Z",
    "end": "2026-09-16T13:30:05.699Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
@@ -1907,7 +1907,7 @@
    "id": "stm-cartier-zone-b-58f0c5f9",
    "first": "2026-09-16T13:30:05.699Z",
    "last": "2026-09-16T13:30:05.699Z",
-   "end": null,
+   "end": "2026-09-16T13:40:05.979Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
    "type": "Elevator",
@@ -1917,8 +1917,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Cartier (zone B): The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 0.17,
    "sinceFeedStartHours": null
   }
  ]
