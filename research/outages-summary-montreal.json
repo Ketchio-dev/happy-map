@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-16T14:15:06.142Z",
-   "hoursCovered": 237.57,
-   "snapshotsWithChange": 320
+   "last": "2026-09-16T14:20:05.862Z",
+   "hoursCovered": 237.65,
+   "snapshotsWithChange": 321
   },
   "distinctAlerts": 106,
   "elevatorAlerts": 106,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 2,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 31,
   "byStation": {
    "Place-des-Arts": 6,
@@ -232,7 +232,7 @@
   {
    "id": "stm-cartier-zone-b-92ee7ec6",
    "first": "2026-09-07T07:45:05.181Z",
-   "last": "2026-09-16T14:05:04.249Z",
+   "last": "2026-09-16T14:20:05.862Z",
    "end": "2026-09-07T09:10:05.157Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
@@ -1924,7 +1924,7 @@
   {
    "id": "stm-outremont-d26a28b1",
    "first": "2026-09-16T14:05:04.249Z",
-   "last": "2026-09-16T14:15:06.142Z",
+   "last": "2026-09-16T14:20:05.862Z",
    "end": null,
    "feedStart": null,
    "station": "Outremont",
@@ -1936,14 +1936,14 @@
    "unplanned": false,
    "header": "Outremont: The elevator shuttled between the STM ticket booth level and the platform heading towards Saint-Michel is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.17,
+   "observedHours": 0.25,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-cartier-zone-b-c93b5a43",
    "first": "2026-09-16T14:15:06.142Z",
    "last": "2026-09-16T14:15:06.142Z",
-   "end": null,
+   "end": "2026-09-16T14:20:05.862Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
    "type": "Elevator",
@@ -1953,8 +1953,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Cartier (zone B): The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 0.08,
    "sinceFeedStartHours": null
   }
  ]
