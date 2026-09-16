@@ -2,12 +2,12 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-16T13:50:05.638Z",
-   "hoursCovered": 237.15,
-   "snapshotsWithChange": 318
+   "last": "2026-09-16T14:05:04.249Z",
+   "hoursCovered": 237.4,
+   "snapshotsWithChange": 319
   },
-  "distinctAlerts": 104,
-  "elevatorAlerts": 104,
+  "distinctAlerts": 105,
+  "elevatorAlerts": 105,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
   "elevatorOngoingNow": 1,
@@ -43,7 +43,7 @@
    "De la Concorde (zone B)": 1,
    "McGill": 1,
    "Berri-UQAM": 1,
-   "Outremont": 1
+   "Outremont": 2
   },
   "medianElevatorOutageAgeHours": null,
   "medianUnplannedElevatorOutageHours": null
@@ -232,7 +232,7 @@
   {
    "id": "stm-cartier-zone-b-92ee7ec6",
    "first": "2026-09-07T07:45:05.181Z",
-   "last": "2026-09-16T13:50:05.638Z",
+   "last": "2026-09-16T14:05:04.249Z",
    "end": "2026-09-07T09:10:05.157Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
@@ -1871,7 +1871,7 @@
    "id": "stm-outremont-1d52eebb",
    "first": "2026-09-16T12:10:05.310Z",
    "last": "2026-09-16T13:50:05.638Z",
-   "end": null,
+   "end": "2026-09-16T14:05:04.249Z",
    "feedStart": null,
    "station": "Outremont",
    "type": "Elevator",
@@ -1881,8 +1881,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Outremont: The elevator shuttled between the STM ticket booth level and the platform heading towards Snowdon is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 1.67,
+   "ongoing": false,
+   "observedHours": 1.92,
    "sinceFeedStartHours": null
   },
   {
@@ -1919,6 +1919,24 @@
    "header": "Cartier (zone B): The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 0.17,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-outremont-d26a28b1",
+   "first": "2026-09-16T14:05:04.249Z",
+   "last": "2026-09-16T14:05:04.249Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Outremont",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Outremont: The elevator shuttled between the STM ticket booth level and the platform heading towards Saint-Michel is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
