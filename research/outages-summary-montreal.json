@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-16T15:15:05.332Z",
-   "hoursCovered": 238.57,
-   "snapshotsWithChange": 325
+   "last": "2026-09-16T15:20:04.264Z",
+   "hoursCovered": 238.65,
+   "snapshotsWithChange": 326
   },
   "distinctAlerts": 109,
   "elevatorAlerts": 109,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 2,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 31,
   "byStation": {
    "Place-des-Arts": 6,
@@ -1780,7 +1780,7 @@
   {
    "id": "stm-cartier-zone-b-25850da5",
    "first": "2026-09-15T12:25:05.262Z",
-   "last": "2026-09-16T15:15:05.332Z",
+   "last": "2026-09-16T15:20:04.264Z",
    "end": "2026-09-15T14:10:05.899Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
@@ -1979,7 +1979,7 @@
    "id": "stm-place-d-armes-c93b5a43",
    "first": "2026-09-16T14:40:06.055Z",
    "last": "2026-09-16T15:15:05.332Z",
-   "end": null,
+   "end": "2026-09-16T15:20:04.264Z",
    "feedStart": null,
    "station": "Place-d'Armes",
    "type": "Elevator",
@@ -1989,14 +1989,14 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Place-d'Armes: The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0.58,
+   "ongoing": false,
+   "observedHours": 0.67,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-outremont-25850da5",
    "first": "2026-09-16T15:15:05.332Z",
-   "last": "2026-09-16T15:15:05.332Z",
+   "last": "2026-09-16T15:20:04.264Z",
    "end": null,
    "feedStart": null,
    "station": "Outremont",
@@ -2008,7 +2008,7 @@
    "unplanned": false,
    "header": "Outremont: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0,
+   "observedHours": 0.08,
    "sinceFeedStartHours": null
   }
  ]
