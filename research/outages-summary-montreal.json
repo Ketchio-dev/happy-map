@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-16T18:20:05.490Z",
-   "hoursCovered": 241.65,
-   "snapshotsWithChange": 330
+   "last": "2026-09-16T18:25:05.258Z",
+   "hoursCovered": 241.74,
+   "snapshotsWithChange": 331
   },
   "distinctAlerts": 110,
   "elevatorAlerts": 110,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 31,
   "byStation": {
    "Place-des-Arts": 6,
@@ -736,7 +736,7 @@
   {
    "id": "stm-2-4-berri-uqam-25850da5",
    "first": "2026-09-09T14:40:05.494Z",
-   "last": "2026-09-13T21:50:05.165Z",
+   "last": "2026-09-16T18:25:05.258Z",
    "end": "2026-09-09T14:55:05.130Z",
    "feedStart": null,
    "station": "2 4 Berri-UQAM",
@@ -2015,7 +2015,7 @@
    "id": "stm-2-4-berri-uqam-f84bb60f",
    "first": "2026-09-16T18:20:05.490Z",
    "last": "2026-09-16T18:20:05.490Z",
-   "end": null,
+   "end": "2026-09-16T18:25:05.258Z",
    "feedStart": null,
    "station": "2 4 Berri-UQAM",
    "type": "Elevator",
@@ -2025,8 +2025,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "2 4 Berri-UQAM: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period. The elevator shuttled between the platform heading towards Côte-Vertu level of the Orange line and the platform heading towards Honoré-Beaugrand of the Green line is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 0.08,
    "sinceFeedStartHours": null
   }
  ]
