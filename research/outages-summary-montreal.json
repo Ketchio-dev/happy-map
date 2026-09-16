@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-16T15:55:03.674Z",
-   "hoursCovered": 239.24,
-   "snapshotsWithChange": 327
+   "last": "2026-09-16T16:35:05.485Z",
+   "hoursCovered": 239.9,
+   "snapshotsWithChange": 328
   },
   "distinctAlerts": 109,
   "elevatorAlerts": 109,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 31,
   "byStation": {
    "Place-des-Arts": 6,
@@ -1997,7 +1997,7 @@
    "id": "stm-outremont-25850da5",
    "first": "2026-09-16T15:15:05.332Z",
    "last": "2026-09-16T15:55:03.674Z",
-   "end": null,
+   "end": "2026-09-16T16:35:05.485Z",
    "feedStart": null,
    "station": "Outremont",
    "type": "Elevator",
@@ -2007,8 +2007,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Outremont: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0.67,
+   "ongoing": false,
+   "observedHours": 1.33,
    "sinceFeedStartHours": null
   }
  ]
