@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-16T12:20:05.401Z",
-   "hoursCovered": 235.65,
-   "snapshotsWithChange": 313
+   "last": "2026-09-16T12:50:05.429Z",
+   "hoursCovered": 236.15,
+   "snapshotsWithChange": 314
   },
-  "distinctAlerts": 102,
-  "elevatorAlerts": 102,
+  "distinctAlerts": 103,
+  "elevatorAlerts": 103,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 2,
   "stationsWithElevatorOutage": 31,
   "byStation": {
    "Place-des-Arts": 6,
@@ -21,7 +21,7 @@
    "2 Lionel-Groulx": 6,
    "Jolicoeur": 4,
    "Angrignon": 4,
-   "Cartier (zone B)": 2,
+   "Cartier (zone B)": 3,
    "5 Jean-Talon": 2,
    "Place-Saint-Henri": 4,
    "Villa-Maria": 7,
@@ -1870,7 +1870,7 @@
   {
    "id": "stm-outremont-1d52eebb",
    "first": "2026-09-16T12:10:05.310Z",
-   "last": "2026-09-16T12:20:05.401Z",
+   "last": "2026-09-16T12:50:05.429Z",
    "end": null,
    "feedStart": null,
    "station": "Outremont",
@@ -1882,7 +1882,25 @@
    "unplanned": false,
    "header": "Outremont: The elevator shuttled between the STM ticket booth level and the platform heading towards Snowdon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.17,
+   "observedHours": 0.67,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-cartier-zone-b-95659080",
+   "first": "2026-09-16T12:50:05.429Z",
+   "last": "2026-09-16T12:50:05.429Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Cartier (zone B)",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Cartier (zone B): The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
