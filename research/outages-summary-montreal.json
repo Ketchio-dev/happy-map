@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-16T00:10:05.411Z",
-   "hoursCovered": 223.49,
-   "snapshotsWithChange": 300
+   "last": "2026-09-16T01:25:04.651Z",
+   "hoursCovered": 224.74,
+   "snapshotsWithChange": 301
   },
   "distinctAlerts": 100,
   "elevatorAlerts": 100,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 30,
   "byStation": {
    "Place-des-Arts": 6,
@@ -1834,7 +1834,7 @@
    "id": "stm-place-des-arts-25850da5",
    "first": "2026-09-16T00:10:05.411Z",
    "last": "2026-09-16T00:10:05.411Z",
-   "end": null,
+   "end": "2026-09-16T01:25:04.651Z",
    "feedStart": null,
    "station": "Place-des-Arts",
    "type": "Elevator",
@@ -1844,8 +1844,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Place-des-Arts: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 1.25,
    "sinceFeedStartHours": null
   }
  ]
