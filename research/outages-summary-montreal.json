@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-16T14:05:04.249Z",
-   "hoursCovered": 237.4,
-   "snapshotsWithChange": 319
+   "last": "2026-09-16T14:15:06.142Z",
+   "hoursCovered": 237.57,
+   "snapshotsWithChange": 320
   },
-  "distinctAlerts": 105,
-  "elevatorAlerts": 105,
+  "distinctAlerts": 106,
+  "elevatorAlerts": 106,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 2,
   "stationsWithElevatorOutage": 31,
   "byStation": {
    "Place-des-Arts": 6,
@@ -21,7 +21,7 @@
    "2 Lionel-Groulx": 6,
    "Jolicoeur": 4,
    "Angrignon": 4,
-   "Cartier (zone B)": 4,
+   "Cartier (zone B)": 5,
    "5 Jean-Talon": 2,
    "Place-Saint-Henri": 4,
    "Villa-Maria": 7,
@@ -1924,7 +1924,7 @@
   {
    "id": "stm-outremont-d26a28b1",
    "first": "2026-09-16T14:05:04.249Z",
-   "last": "2026-09-16T14:05:04.249Z",
+   "last": "2026-09-16T14:15:06.142Z",
    "end": null,
    "feedStart": null,
    "station": "Outremont",
@@ -1935,6 +1935,24 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Outremont: The elevator shuttled between the STM ticket booth level and the platform heading towards Saint-Michel is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0.17,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-cartier-zone-b-c93b5a43",
+   "first": "2026-09-16T14:15:06.142Z",
+   "last": "2026-09-16T14:15:06.142Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Cartier (zone B)",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Cartier (zone B): The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
    "ongoing": true,
    "observedHours": 0,
    "sinceFeedStartHours": null
