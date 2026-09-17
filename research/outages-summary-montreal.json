@@ -2,12 +2,12 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-17T13:45:06.175Z",
-   "hoursCovered": 261.07,
-   "snapshotsWithChange": 352
+   "last": "2026-09-17T13:50:05.715Z",
+   "hoursCovered": 261.15,
+   "snapshotsWithChange": 353
   },
-  "distinctAlerts": 118,
-  "elevatorAlerts": 118,
+  "distinctAlerts": 119,
+  "elevatorAlerts": 119,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
   "elevatorOngoingNow": 1,
@@ -15,7 +15,7 @@
   "byStation": {
    "Place-des-Arts": 6,
    "Viau": 2,
-   "5 Snowdon": 5,
+   "5 Snowdon": 6,
    "Place-d'Armes": 4,
    "Préfontaine": 6,
    "2 Lionel-Groulx": 6,
@@ -2159,7 +2159,7 @@
    "id": "stm-5-snowdon-3653ef75",
    "first": "2026-09-17T13:45:06.175Z",
    "last": "2026-09-17T13:45:06.175Z",
-   "end": null,
+   "end": "2026-09-17T13:50:05.715Z",
    "feedStart": null,
    "station": "5 Snowdon",
    "type": "Elevator",
@@ -2169,6 +2169,24 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "5 Snowdon: The elevator shuttled between the platforms heading towards Côte-Vertu (Orange line) and the disembarkation of the Blue line and the platforms heading towards Montmorency (Orange line) and Saint-Michel (Blue line) level is presently out of service. Indefinite period.",
+   "ongoing": false,
+   "observedHours": 0.08,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-5-snowdon-99ea7f1f",
+   "first": "2026-09-17T13:50:05.715Z",
+   "last": "2026-09-17T13:50:05.715Z",
+   "end": null,
+   "feedStart": null,
+   "station": "5 Snowdon",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "5 Snowdon: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period. The elevator shuttled between the platforms heading towards Côte-Vertu (Orange line) and the disembarkation of the Blue line and the platforms heading towards Montmorency (Orange line) and Saint-Michel (Blue line) level is presently out of service. Indefinite period.",
    "ongoing": true,
    "observedHours": 0,
    "sinceFeedStartHours": null
