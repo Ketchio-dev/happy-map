@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-17T08:10:05.186Z",
-   "hoursCovered": 255.49,
-   "snapshotsWithChange": 344
+   "last": "2026-09-17T08:15:05.515Z",
+   "hoursCovered": 255.57,
+   "snapshotsWithChange": 345
   },
   "distinctAlerts": 115,
   "elevatorAlerts": 115,
@@ -2050,7 +2050,7 @@
   {
    "id": "stm-honore-beaugrand-e8aad51f",
    "first": "2026-09-17T06:00:03.550Z",
-   "last": "2026-09-17T08:10:05.186Z",
+   "last": "2026-09-17T08:15:05.515Z",
    "end": null,
    "feedStart": null,
    "station": "Honoré-Beaugrand",
@@ -2062,7 +2062,7 @@
    "unplanned": false,
    "header": "Honoré-Beaugrand: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 2.17,
+   "observedHours": 2.25,
    "sinceFeedStartHours": null
   },
   {
