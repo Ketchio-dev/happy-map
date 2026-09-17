@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-17T14:05:05.937Z",
-   "hoursCovered": 261.4,
-   "snapshotsWithChange": 355
+   "last": "2026-09-17T14:25:05.352Z",
+   "hoursCovered": 261.74,
+   "snapshotsWithChange": 356
   },
   "distinctAlerts": 120,
   "elevatorAlerts": 120,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 31,
   "byStation": {
    "Place-des-Arts": 6,
@@ -2158,7 +2158,7 @@
   {
    "id": "stm-5-snowdon-3653ef75",
    "first": "2026-09-17T13:45:06.175Z",
-   "last": "2026-09-17T14:00:06.165Z",
+   "last": "2026-09-17T14:25:05.352Z",
    "end": "2026-09-17T13:50:05.715Z",
    "feedStart": null,
    "station": "5 Snowdon",
@@ -2195,7 +2195,7 @@
    "id": "stm-5-snowdon-7ca942df",
    "first": "2026-09-17T14:05:05.937Z",
    "last": "2026-09-17T14:05:05.937Z",
-   "end": null,
+   "end": "2026-09-17T14:25:05.352Z",
    "feedStart": null,
    "station": "5 Snowdon",
    "type": "Elevator",
@@ -2205,8 +2205,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "5 Snowdon: The elevator shuttled between the STM ticket booth level and the platforms heading towards Côte-Vertu (Orange line) and the disembarkation of the Blue line is presently out of service. Indefinite period. The elevator shuttled between the platforms heading towards Côte-Vertu (Orange line) and the disembarkation of the Blue line and the platforms heading towards Montmorency (Orange line) and Saint-Michel (Blue line) level is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 0.33,
    "sinceFeedStartHours": null
   }
  ]
