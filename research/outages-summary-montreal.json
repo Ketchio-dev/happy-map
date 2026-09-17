@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-17T08:05:05.335Z",
-   "hoursCovered": 255.4,
-   "snapshotsWithChange": 343
+   "last": "2026-09-17T08:10:05.186Z",
+   "hoursCovered": 255.49,
+   "snapshotsWithChange": 344
   },
   "distinctAlerts": 115,
   "elevatorAlerts": 115,
@@ -1276,7 +1276,7 @@
   {
    "id": "stm-angrignon-214feef9",
    "first": "2026-09-11T13:20:06.217Z",
-   "last": "2026-09-14T14:05:05.461Z",
+   "last": "2026-09-17T08:10:05.186Z",
    "end": "2026-09-11T14:30:06.142Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -2050,7 +2050,7 @@
   {
    "id": "stm-honore-beaugrand-e8aad51f",
    "first": "2026-09-17T06:00:03.550Z",
-   "last": "2026-09-17T08:05:05.335Z",
+   "last": "2026-09-17T08:10:05.186Z",
    "end": null,
    "feedStart": null,
    "station": "Honoré-Beaugrand",
@@ -2062,7 +2062,7 @@
    "unplanned": false,
    "header": "Honoré-Beaugrand: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 2.08,
+   "observedHours": 2.17,
    "sinceFeedStartHours": null
   },
   {
