@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-17T07:45:05.297Z",
-   "hoursCovered": 255.07,
-   "snapshotsWithChange": 341
+   "last": "2026-09-17T07:50:05.348Z",
+   "hoursCovered": 255.15,
+   "snapshotsWithChange": 342
   },
   "distinctAlerts": 115,
   "elevatorAlerts": 115,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 2,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 31,
   "byStation": {
    "Place-des-Arts": 6,
@@ -556,7 +556,7 @@
   {
    "id": "stm-angrignon-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-17T07:45:05.297Z",
+   "last": "2026-09-17T07:50:05.348Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -574,7 +574,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-17T07:45:05.297Z",
+   "last": "2026-09-17T07:50:05.348Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -592,7 +592,7 @@
   {
    "id": "stm-2-lionel-groulx-467444fc",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-17T07:45:05.297Z",
+   "last": "2026-09-17T07:50:05.348Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -2050,7 +2050,7 @@
   {
    "id": "stm-honore-beaugrand-e8aad51f",
    "first": "2026-09-17T06:00:03.550Z",
-   "last": "2026-09-17T07:45:05.297Z",
+   "last": "2026-09-17T07:50:05.348Z",
    "end": null,
    "feedStart": null,
    "station": "Honoré-Beaugrand",
@@ -2062,7 +2062,7 @@
    "unplanned": false,
    "header": "Honoré-Beaugrand: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 1.75,
+   "observedHours": 1.83,
    "sinceFeedStartHours": null
   },
   {
@@ -2105,7 +2105,7 @@
    "id": "stm-henri-bourassa-fbcaa731",
    "first": "2026-09-17T07:45:05.297Z",
    "last": "2026-09-17T07:45:05.297Z",
-   "end": null,
+   "end": "2026-09-17T07:50:05.348Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
    "type": "Elevator",
@@ -2115,8 +2115,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Henri-Bourassa: The elevator shuttled between the STM ticket booth level and the intermediate level of this station is presently out of service. Indefinite period. The elevator shuttled between the intermediate level of this station and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 0.08,
    "sinceFeedStartHours": null
   }
  ]
