@@ -2,20 +2,20 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-17T14:00:06.165Z",
-   "hoursCovered": 261.32,
-   "snapshotsWithChange": 354
+   "last": "2026-09-17T14:05:05.937Z",
+   "hoursCovered": 261.4,
+   "snapshotsWithChange": 355
   },
-  "distinctAlerts": 119,
-  "elevatorAlerts": 119,
+  "distinctAlerts": 120,
+  "elevatorAlerts": 120,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 0,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 31,
   "byStation": {
    "Place-des-Arts": 6,
    "Viau": 2,
-   "5 Snowdon": 6,
+   "5 Snowdon": 7,
    "Place-d'Armes": 4,
    "Préfontaine": 6,
    "2 Lionel-Groulx": 6,
@@ -2189,6 +2189,24 @@
    "header": "5 Snowdon: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period. The elevator shuttled between the platforms heading towards Côte-Vertu (Orange line) and the disembarkation of the Blue line and the platforms heading towards Montmorency (Orange line) and Saint-Michel (Blue line) level is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 0.17,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-5-snowdon-7ca942df",
+   "first": "2026-09-17T14:05:05.937Z",
+   "last": "2026-09-17T14:05:05.937Z",
+   "end": null,
+   "feedStart": null,
+   "station": "5 Snowdon",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "5 Snowdon: The elevator shuttled between the STM ticket booth level and the platforms heading towards Côte-Vertu (Orange line) and the disembarkation of the Blue line is presently out of service. Indefinite period. The elevator shuttled between the platforms heading towards Côte-Vertu (Orange line) and the disembarkation of the Blue line and the platforms heading towards Montmorency (Orange line) and Saint-Michel (Blue line) level is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
