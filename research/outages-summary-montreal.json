@@ -2,12 +2,12 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-17T05:55:03.353Z",
-   "hoursCovered": 253.24,
-   "snapshotsWithChange": 337
+   "last": "2026-09-17T06:00:03.550Z",
+   "hoursCovered": 253.32,
+   "snapshotsWithChange": 338
   },
-  "distinctAlerts": 111,
-  "elevatorAlerts": 111,
+  "distinctAlerts": 112,
+  "elevatorAlerts": 112,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
   "elevatorOngoingNow": 1,
@@ -34,7 +34,7 @@
    "Mont-Royal": 3,
    "Du Collège": 3,
    "Henri-Bourassa": 4,
-   "Honoré-Beaugrand": 3,
+   "Honoré-Beaugrand": 4,
    "Lionel-Groulx": 2,
    "Jean-Talon": 1,
    "Bonaventure": 3,
@@ -556,7 +556,7 @@
   {
    "id": "stm-angrignon-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-17T05:55:03.353Z",
+   "last": "2026-09-17T06:00:03.550Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -574,7 +574,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-17T05:55:03.353Z",
+   "last": "2026-09-17T06:00:03.550Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -592,7 +592,7 @@
   {
    "id": "stm-2-lionel-groulx-467444fc",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-17T05:55:03.353Z",
+   "last": "2026-09-17T06:00:03.550Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -2033,7 +2033,7 @@
    "id": "stm-honore-beaugrand-9ad2f5b9",
    "first": "2026-09-17T05:55:03.353Z",
    "last": "2026-09-17T05:55:03.353Z",
-   "end": null,
+   "end": "2026-09-17T06:00:03.550Z",
    "feedStart": null,
    "station": "Honoré-Beaugrand",
    "type": "Elevator",
@@ -2043,6 +2043,24 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Honoré-Beaugrand: The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
+   "ongoing": false,
+   "observedHours": 0.08,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-honore-beaugrand-e8aad51f",
+   "first": "2026-09-17T06:00:03.550Z",
+   "last": "2026-09-17T06:00:03.550Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Honoré-Beaugrand",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Honoré-Beaugrand: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
    "observedHours": 0,
    "sinceFeedStartHours": null
