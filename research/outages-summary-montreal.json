@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-17T19:55:04.120Z",
-   "hoursCovered": 267.24,
-   "snapshotsWithChange": 360
+   "last": "2026-09-17T21:10:04.332Z",
+   "hoursCovered": 268.49,
+   "snapshotsWithChange": 361
   },
-  "distinctAlerts": 120,
-  "elevatorAlerts": 120,
+  "distinctAlerts": 121,
+  "elevatorAlerts": 121,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 0,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 31,
   "byStation": {
    "Place-des-Arts": 6,
@@ -34,7 +34,7 @@
    "Mont-Royal": 3,
    "Du Collège": 3,
    "Henri-Bourassa": 6,
-   "Honoré-Beaugrand": 5,
+   "Honoré-Beaugrand": 6,
    "Lionel-Groulx": 2,
    "Jean-Talon": 1,
    "Bonaventure": 3,
@@ -196,7 +196,7 @@
   {
    "id": "stm-jolicoeur-3b96de2d",
    "first": "2026-09-07T05:25:05.009Z",
-   "last": "2026-09-17T19:55:04.120Z",
+   "last": "2026-09-17T21:10:04.332Z",
    "end": "2026-09-07T10:15:05.065Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -2207,6 +2207,24 @@
    "header": "5 Snowdon: The elevator shuttled between the STM ticket booth level and the platforms heading towards Côte-Vertu (Orange line) and the disembarkation of the Blue line is presently out of service. Indefinite period. The elevator shuttled between the platforms heading towards Côte-Vertu (Orange line) and the disembarkation of the Blue line and the platforms heading towards Montmorency (Orange line) and Saint-Michel (Blue line) level is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 0.33,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-honore-beaugrand-74f7ad9a",
+   "first": "2026-09-17T21:10:04.332Z",
+   "last": "2026-09-17T21:10:04.332Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Honoré-Beaugrand",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Honoré-Beaugrand: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
