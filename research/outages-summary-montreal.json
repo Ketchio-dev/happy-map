@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-18T11:35:05.521Z",
-   "hoursCovered": 282.9,
-   "snapshotsWithChange": 383
+   "last": "2026-09-18T11:45:05.436Z",
+   "hoursCovered": 283.07,
+   "snapshotsWithChange": 384
   },
   "distinctAlerts": 123,
   "elevatorAlerts": 123,
@@ -1097,7 +1097,7 @@
   {
    "id": "stm-place-d-armes-58f0c5f9",
    "first": "2026-09-11T05:10:05.521Z",
-   "last": "2026-09-18T11:35:05.521Z",
+   "last": "2026-09-18T11:45:05.436Z",
    "end": "2026-09-11T11:35:03.661Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -1331,7 +1331,7 @@
   {
    "id": "stm-honore-beaugrand-47d97100",
    "first": "2026-09-11T17:35:04.427Z",
-   "last": "2026-09-14T12:15:05.384Z",
+   "last": "2026-09-18T11:45:05.436Z",
    "end": "2026-09-11T19:25:06.066Z",
    "feedStart": null,
    "station": "Honoré-Beaugrand",
