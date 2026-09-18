@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-17T22:10:03.173Z",
-   "hoursCovered": 269.49,
-   "snapshotsWithChange": 363
+   "last": "2026-09-18T04:55:05.321Z",
+   "hoursCovered": 276.24,
+   "snapshotsWithChange": 364
   },
-  "distinctAlerts": 121,
-  "elevatorAlerts": 121,
+  "distinctAlerts": 122,
+  "elevatorAlerts": 122,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 0,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 31,
   "byStation": {
    "Place-des-Arts": 6,
@@ -26,7 +26,7 @@
    "Place-Saint-Henri": 4,
    "Villa-Maria": 7,
    "Vendôme": 3,
-   "Rosemont": 1,
+   "Rosemont": 2,
    "2 4 Berri-UQAM": 6,
    "Atwater": 3,
    "Côte-Vertu": 7,
@@ -2225,6 +2225,24 @@
    "header": "Honoré-Beaugrand: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 1,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-rosemont-92ee7ec6",
+   "first": "2026-09-18T04:55:05.321Z",
+   "last": "2026-09-18T04:55:05.321Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Rosemont",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Rosemont: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
