@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-18T09:50:05.378Z",
-   "hoursCovered": 281.15,
-   "snapshotsWithChange": 379
+   "last": "2026-09-18T09:55:03.780Z",
+   "hoursCovered": 281.24,
+   "snapshotsWithChange": 380
   },
   "distinctAlerts": 122,
   "elevatorAlerts": 122,
@@ -358,7 +358,7 @@
   {
    "id": "stm-place-saint-henri-3082f303",
    "first": "2026-09-08T11:15:05.203Z",
-   "last": "2026-09-18T09:50:05.378Z",
+   "last": "2026-09-18T09:55:03.780Z",
    "end": "2026-09-08T11:20:05.133Z",
    "feedStart": null,
    "station": "Place-Saint-Henri",
@@ -1096,7 +1096,7 @@
   {
    "id": "stm-place-d-armes-58f0c5f9",
    "first": "2026-09-11T05:10:05.521Z",
-   "last": "2026-09-18T09:50:05.378Z",
+   "last": "2026-09-18T09:55:03.780Z",
    "end": "2026-09-11T11:35:03.661Z",
    "feedStart": null,
    "station": "Place-d'Armes",
