@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-18T05:10:05.321Z",
-   "hoursCovered": 276.49,
-   "snapshotsWithChange": 367
+   "last": "2026-09-18T05:15:02.592Z",
+   "hoursCovered": 276.57,
+   "snapshotsWithChange": 368
   },
   "distinctAlerts": 122,
   "elevatorAlerts": 122,
@@ -358,7 +358,7 @@
   {
    "id": "stm-place-saint-henri-3082f303",
    "first": "2026-09-08T11:15:05.203Z",
-   "last": "2026-09-14T14:30:05.567Z",
+   "last": "2026-09-18T05:15:02.592Z",
    "end": "2026-09-08T11:20:05.133Z",
    "feedStart": null,
    "station": "Place-Saint-Henri",
@@ -682,7 +682,7 @@
   {
    "id": "stm-atwater-47d97100",
    "first": "2026-09-09T14:10:05.181Z",
-   "last": "2026-09-18T05:10:05.321Z",
+   "last": "2026-09-18T05:15:02.592Z",
    "end": "2026-09-09T15:55:05.269Z",
    "feedStart": null,
    "station": "Atwater",
@@ -1096,7 +1096,7 @@
   {
    "id": "stm-place-d-armes-58f0c5f9",
    "first": "2026-09-11T05:10:05.521Z",
-   "last": "2026-09-18T05:10:05.321Z",
+   "last": "2026-09-18T05:15:02.592Z",
    "end": "2026-09-11T11:35:03.661Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -1114,7 +1114,7 @@
   {
    "id": "stm-pie-ix-9ad2f5b9",
    "first": "2026-09-11T05:15:05.431Z",
-   "last": "2026-09-11T09:05:03.738Z",
+   "last": "2026-09-18T05:15:02.592Z",
    "end": "2026-09-11T05:20:05.274Z",
    "feedStart": null,
    "station": "Pie-IX",
@@ -1294,7 +1294,7 @@
   {
    "id": "stm-edouard-montpetit-16a655d5",
    "first": "2026-09-11T14:20:05.251Z",
-   "last": "2026-09-18T05:10:05.321Z",
+   "last": "2026-09-18T05:15:02.592Z",
    "end": "2026-09-11T16:50:05.202Z",
    "feedStart": null,
    "station": "Édouard-Montpetit",
@@ -2230,7 +2230,7 @@
   {
    "id": "stm-rosemont-92ee7ec6",
    "first": "2026-09-18T04:55:05.321Z",
-   "last": "2026-09-18T05:10:05.321Z",
+   "last": "2026-09-18T05:15:02.592Z",
    "end": null,
    "feedStart": null,
    "station": "Rosemont",
@@ -2242,7 +2242,7 @@
    "unplanned": false,
    "header": "Rosemont: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.25,
+   "observedHours": 0.33,
    "sinceFeedStartHours": null
   }
  ]
