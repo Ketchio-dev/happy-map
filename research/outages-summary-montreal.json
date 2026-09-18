@@ -2,16 +2,16 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-18T10:50:05.193Z",
-   "hoursCovered": 282.15,
-   "snapshotsWithChange": 381
+   "last": "2026-09-18T11:10:05.417Z",
+   "hoursCovered": 282.49,
+   "snapshotsWithChange": 382
   },
-  "distinctAlerts": 122,
-  "elevatorAlerts": 122,
+  "distinctAlerts": 123,
+  "elevatorAlerts": 123,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 0,
-  "stationsWithElevatorOutage": 31,
+  "elevatorOngoingNow": 1,
+  "stationsWithElevatorOutage": 32,
   "byStation": {
    "Place-des-Arts": 6,
    "Viau": 2,
@@ -43,7 +43,8 @@
    "De la Concorde (zone B)": 1,
    "McGill": 1,
    "Berri-UQAM": 1,
-   "Outremont": 3
+   "Outremont": 3,
+   "Champ-de-Mars": 1
   },
   "medianElevatorOutageAgeHours": null,
   "medianUnplannedElevatorOutageHours": null
@@ -1096,7 +1097,7 @@
   {
    "id": "stm-place-d-armes-58f0c5f9",
    "first": "2026-09-11T05:10:05.521Z",
-   "last": "2026-09-18T10:50:05.193Z",
+   "last": "2026-09-18T11:10:05.417Z",
    "end": "2026-09-11T11:35:03.661Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -2243,6 +2244,24 @@
    "header": "Rosemont: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 4.92,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-champ-de-mars-d577cf57",
+   "first": "2026-09-18T11:10:05.417Z",
+   "last": "2026-09-18T11:10:05.417Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Champ-de-Mars",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Champ-de-Mars: The elevator shuttled between the street level and the platform heading towards Montmorency is presently out of service. Indefinite period. The elevator shuttled between the street level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
