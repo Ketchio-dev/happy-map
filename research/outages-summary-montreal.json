@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-19T05:25:05.597Z",
-   "hoursCovered": 300.74,
-   "snapshotsWithChange": 395
+   "last": "2026-09-19T08:50:05.487Z",
+   "hoursCovered": 304.15,
+   "snapshotsWithChange": 396
   },
   "distinctAlerts": 123,
   "elevatorAlerts": 123,
@@ -359,7 +359,7 @@
   {
    "id": "stm-place-saint-henri-3082f303",
    "first": "2026-09-08T11:15:05.203Z",
-   "last": "2026-09-19T05:25:05.597Z",
+   "last": "2026-09-19T08:50:05.487Z",
    "end": "2026-09-08T11:20:05.133Z",
    "feedStart": null,
    "station": "Place-Saint-Henri",
@@ -575,7 +575,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-19T05:25:05.597Z",
+   "last": "2026-09-19T08:50:05.487Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -863,7 +863,7 @@
   {
    "id": "stm-henri-bourassa-25850da5",
    "first": "2026-09-10T05:15:05.083Z",
-   "last": "2026-09-15T11:20:05.228Z",
+   "last": "2026-09-19T08:50:05.487Z",
    "end": "2026-09-10T08:40:05.125Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
