@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-20T05:20:05.541Z",
-   "hoursCovered": 324.65,
-   "snapshotsWithChange": 406
+   "last": "2026-09-20T05:35:05.316Z",
+   "hoursCovered": 324.9,
+   "snapshotsWithChange": 407
   },
   "distinctAlerts": 123,
   "elevatorAlerts": 123,
@@ -107,7 +107,7 @@
   {
    "id": "stm-place-d-armes-95659080",
    "first": "2026-09-06T23:25:05.174Z",
-   "last": "2026-09-18T05:05:02.682Z",
+   "last": "2026-09-20T05:35:05.316Z",
    "end": "2026-09-07T00:50:05.393Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -197,7 +197,7 @@
   {
    "id": "stm-jolicoeur-3b96de2d",
    "first": "2026-09-07T05:25:05.009Z",
-   "last": "2026-09-20T05:20:05.541Z",
+   "last": "2026-09-20T05:35:05.316Z",
    "end": "2026-09-07T10:15:05.065Z",
    "feedStart": null,
    "station": "Jolicoeur",
