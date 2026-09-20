@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-20T05:55:05.441Z",
-   "hoursCovered": 325.24,
-   "snapshotsWithChange": 411
+   "last": "2026-09-20T09:15:05.408Z",
+   "hoursCovered": 328.57,
+   "snapshotsWithChange": 412
   },
   "distinctAlerts": 123,
   "elevatorAlerts": 123,
@@ -107,7 +107,7 @@
   {
    "id": "stm-place-d-armes-95659080",
    "first": "2026-09-06T23:25:05.174Z",
-   "last": "2026-09-20T05:55:05.441Z",
+   "last": "2026-09-20T09:15:05.408Z",
    "end": "2026-09-07T00:50:05.393Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -773,7 +773,7 @@
   {
    "id": "stm-jolicoeur-214feef9",
    "first": "2026-09-09T21:05:03.864Z",
-   "last": "2026-09-19T09:15:05.328Z",
+   "last": "2026-09-20T09:15:05.408Z",
    "end": "2026-09-09T21:20:03.542Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -1133,7 +1133,7 @@
   {
    "id": "stm-atwater-78d99afb",
    "first": "2026-09-11T05:20:05.274Z",
-   "last": "2026-09-20T05:55:05.441Z",
+   "last": "2026-09-20T09:15:05.408Z",
    "end": "2026-09-11T09:20:05.220Z",
    "feedStart": null,
    "station": "Atwater",
@@ -1385,7 +1385,7 @@
   {
    "id": "stm-place-saint-henri-01106772",
    "first": "2026-09-12T05:15:05.357Z",
-   "last": "2026-09-20T05:55:05.441Z",
+   "last": "2026-09-20T09:15:05.408Z",
    "end": "2026-09-12T10:55:03.487Z",
    "feedStart": null,
    "station": "Place-Saint-Henri",
@@ -1529,7 +1529,7 @@
   {
    "id": "stm-villa-maria-c78e2ca0",
    "first": "2026-09-13T05:45:05.222Z",
-   "last": "2026-09-20T05:55:05.441Z",
+   "last": "2026-09-20T09:15:05.408Z",
    "end": "2026-09-13T09:35:05.825Z",
    "feedStart": null,
    "station": "Villa-Maria",
