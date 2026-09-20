@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-20T05:50:05.454Z",
-   "hoursCovered": 325.15,
-   "snapshotsWithChange": 410
+   "last": "2026-09-20T05:55:05.441Z",
+   "hoursCovered": 325.24,
+   "snapshotsWithChange": 411
   },
   "distinctAlerts": 123,
   "elevatorAlerts": 123,
@@ -107,7 +107,7 @@
   {
    "id": "stm-place-d-armes-95659080",
    "first": "2026-09-06T23:25:05.174Z",
-   "last": "2026-09-20T05:50:05.454Z",
+   "last": "2026-09-20T05:55:05.441Z",
    "end": "2026-09-07T00:50:05.393Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -575,7 +575,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-19T08:50:05.487Z",
+   "last": "2026-09-20T05:55:05.441Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -1043,7 +1043,7 @@
   {
    "id": "stm-vendome-d577cf57",
    "first": "2026-09-10T17:50:05.332Z",
-   "last": "2026-09-14T14:40:05.436Z",
+   "last": "2026-09-20T05:55:05.441Z",
    "end": "2026-09-10T18:20:05.333Z",
    "feedStart": null,
    "station": "Vendôme",
@@ -1133,7 +1133,7 @@
   {
    "id": "stm-atwater-78d99afb",
    "first": "2026-09-11T05:20:05.274Z",
-   "last": "2026-09-20T05:50:05.454Z",
+   "last": "2026-09-20T05:55:05.441Z",
    "end": "2026-09-11T09:20:05.220Z",
    "feedStart": null,
    "station": "Atwater",
@@ -1385,7 +1385,7 @@
   {
    "id": "stm-place-saint-henri-01106772",
    "first": "2026-09-12T05:15:05.357Z",
-   "last": "2026-09-18T09:20:05.810Z",
+   "last": "2026-09-20T05:55:05.441Z",
    "end": "2026-09-12T10:55:03.487Z",
    "feedStart": null,
    "station": "Place-Saint-Henri",
@@ -1529,7 +1529,7 @@
   {
    "id": "stm-villa-maria-c78e2ca0",
    "first": "2026-09-13T05:45:05.222Z",
-   "last": "2026-09-20T05:50:05.454Z",
+   "last": "2026-09-20T05:55:05.441Z",
    "end": "2026-09-13T09:35:05.825Z",
    "feedStart": null,
    "station": "Villa-Maria",
