@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-20T09:35:05.549Z",
-   "hoursCovered": 328.9,
-   "snapshotsWithChange": 414
+   "last": "2026-09-20T09:40:02.783Z",
+   "hoursCovered": 328.98,
+   "snapshotsWithChange": 415
   },
   "distinctAlerts": 123,
   "elevatorAlerts": 123,
@@ -1133,7 +1133,7 @@
   {
    "id": "stm-atwater-78d99afb",
    "first": "2026-09-11T05:20:05.274Z",
-   "last": "2026-09-20T09:35:05.549Z",
+   "last": "2026-09-20T09:40:02.783Z",
    "end": "2026-09-11T09:20:05.220Z",
    "feedStart": null,
    "station": "Atwater",
@@ -1529,7 +1529,7 @@
   {
    "id": "stm-villa-maria-c78e2ca0",
    "first": "2026-09-13T05:45:05.222Z",
-   "last": "2026-09-20T09:35:05.549Z",
+   "last": "2026-09-20T09:40:02.783Z",
    "end": "2026-09-13T09:35:05.825Z",
    "feedStart": null,
    "station": "Villa-Maria",
