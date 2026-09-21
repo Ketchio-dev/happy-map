@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-21T09:10:05.854Z",
-   "hoursCovered": 352.49,
-   "snapshotsWithChange": 449
+   "last": "2026-09-21T09:15:05.527Z",
+   "hoursCovered": 352.57,
+   "snapshotsWithChange": 450
   },
   "distinctAlerts": 128,
   "elevatorAlerts": 128,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 32,
   "byStation": {
    "Place-des-Arts": 6,
@@ -143,7 +143,7 @@
   {
    "id": "stm-prefontaine-25850da5",
    "first": "2026-09-07T05:05:04.538Z",
-   "last": "2026-09-21T09:10:05.854Z",
+   "last": "2026-09-21T09:15:05.527Z",
    "end": "2026-09-07T09:20:05.522Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -1943,7 +1943,7 @@
   {
    "id": "stm-cartier-zone-b-c93b5a43",
    "first": "2026-09-16T14:15:06.142Z",
-   "last": "2026-09-21T08:05:05.185Z",
+   "last": "2026-09-21T09:15:05.527Z",
    "end": "2026-09-16T14:20:05.862Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
@@ -2267,7 +2267,7 @@
   {
    "id": "stm-outremont-b17d66a1",
    "first": "2026-09-21T05:00:05.450Z",
-   "last": "2026-09-21T09:10:05.854Z",
+   "last": "2026-09-21T09:15:05.527Z",
    "end": "2026-09-21T05:55:05.479Z",
    "feedStart": null,
    "station": "Outremont",
@@ -2286,7 +2286,7 @@
    "id": "stm-bonaventure-58f0c5f9",
    "first": "2026-09-21T05:05:05.352Z",
    "last": "2026-09-21T09:10:05.854Z",
-   "end": null,
+   "end": "2026-09-21T09:15:05.527Z",
    "feedStart": null,
    "station": "Bonaventure",
    "type": "Elevator",
@@ -2296,8 +2296,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Bonaventure: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 4.08,
+   "ongoing": false,
+   "observedHours": 4.17,
    "sinceFeedStartHours": null
   },
   {
