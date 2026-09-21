@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-21T07:00:05.375Z",
-   "hoursCovered": 350.32,
-   "snapshotsWithChange": 441
+   "last": "2026-09-21T07:05:05.367Z",
+   "hoursCovered": 350.4,
+   "snapshotsWithChange": 442
   },
   "distinctAlerts": 128,
   "elevatorAlerts": 128,
@@ -143,7 +143,7 @@
   {
    "id": "stm-prefontaine-25850da5",
    "first": "2026-09-07T05:05:04.538Z",
-   "last": "2026-09-21T07:00:05.375Z",
+   "last": "2026-09-21T07:05:05.367Z",
    "end": "2026-09-07T09:20:05.522Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -557,7 +557,7 @@
   {
    "id": "stm-angrignon-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-21T07:00:05.375Z",
+   "last": "2026-09-21T07:05:05.367Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -989,7 +989,7 @@
   {
    "id": "stm-5-jean-talon-84c5ffb6",
    "first": "2026-09-10T12:05:03.722Z",
-   "last": "2026-09-21T07:00:05.375Z",
+   "last": "2026-09-21T07:05:05.367Z",
    "end": "2026-09-10T13:20:05.232Z",
    "feedStart": null,
    "station": "5 Jean-Talon",
@@ -1025,7 +1025,7 @@
   {
    "id": "stm-mont-royal-15637ddb",
    "first": "2026-09-10T15:40:05.189Z",
-   "last": "2026-09-21T07:00:05.375Z",
+   "last": "2026-09-21T07:05:05.367Z",
    "end": "2026-09-10T15:50:05.403Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -2267,7 +2267,7 @@
   {
    "id": "stm-outremont-b17d66a1",
    "first": "2026-09-21T05:00:05.450Z",
-   "last": "2026-09-21T07:00:05.375Z",
+   "last": "2026-09-21T07:05:05.367Z",
    "end": "2026-09-21T05:55:05.479Z",
    "feedStart": null,
    "station": "Outremont",
@@ -2285,7 +2285,7 @@
   {
    "id": "stm-bonaventure-58f0c5f9",
    "first": "2026-09-21T05:05:05.352Z",
-   "last": "2026-09-21T07:00:05.375Z",
+   "last": "2026-09-21T07:05:05.367Z",
    "end": null,
    "feedStart": null,
    "station": "Bonaventure",
@@ -2297,7 +2297,7 @@
    "unplanned": false,
    "header": "Bonaventure: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 1.92,
+   "observedHours": 2,
    "sinceFeedStartHours": null
   },
   {
