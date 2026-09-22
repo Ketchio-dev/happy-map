@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-22T05:15:05.451Z",
-   "hoursCovered": 372.57,
-   "snapshotsWithChange": 499
+   "last": "2026-09-22T05:25:05.443Z",
+   "hoursCovered": 372.74,
+   "snapshotsWithChange": 500
   },
   "distinctAlerts": 129,
   "elevatorAlerts": 129,
@@ -1601,7 +1601,7 @@
   {
    "id": "stm-mcgill-37a2628e",
    "first": "2026-09-14T05:50:05.295Z",
-   "last": "2026-09-22T05:15:05.451Z",
+   "last": "2026-09-22T05:25:05.443Z",
    "end": "2026-09-14T07:00:05.180Z",
    "feedStart": null,
    "station": "McGill",
@@ -1745,7 +1745,7 @@
   {
    "id": "stm-edouard-montpetit-4a3c1dc5",
    "first": "2026-09-15T05:15:02.401Z",
-   "last": "2026-09-22T05:15:05.451Z",
+   "last": "2026-09-22T05:25:05.443Z",
    "end": "2026-09-15T09:25:05.325Z",
    "feedStart": null,
    "station": "Édouard-Montpetit",
@@ -1889,7 +1889,7 @@
   {
    "id": "stm-cartier-zone-b-95659080",
    "first": "2026-09-16T12:50:05.429Z",
-   "last": "2026-09-22T05:15:05.451Z",
+   "last": "2026-09-22T05:25:05.443Z",
    "end": "2026-09-16T13:30:05.699Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
