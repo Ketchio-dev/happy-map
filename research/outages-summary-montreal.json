@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-22T11:30:05.885Z",
-   "hoursCovered": 378.82,
-   "snapshotsWithChange": 512
+   "last": "2026-09-22T12:45:05.483Z",
+   "hoursCovered": 380.07,
+   "snapshotsWithChange": 513
   },
-  "distinctAlerts": 130,
-  "elevatorAlerts": 130,
+  "distinctAlerts": 131,
+  "elevatorAlerts": 131,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 0,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 32,
   "byStation": {
    "Place-des-Arts": 6,
@@ -33,7 +33,7 @@
    "D'Iberville": 2,
    "Mont-Royal": 3,
    "Du Collège": 4,
-   "Henri-Bourassa": 6,
+   "Henri-Bourassa": 7,
    "Honoré-Beaugrand": 6,
    "Lionel-Groulx": 2,
    "Jean-Talon": 1,
@@ -1889,7 +1889,7 @@
   {
    "id": "stm-cartier-zone-b-95659080",
    "first": "2026-09-16T12:50:05.429Z",
-   "last": "2026-09-22T11:30:05.885Z",
+   "last": "2026-09-22T12:45:05.483Z",
    "end": "2026-09-16T13:30:05.699Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
@@ -2388,6 +2388,24 @@
    "header": "Villa-Maria: The elevator shuttled between the intermediate level of this station and the platform heading towards Montmorency is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level, intermediate level of this station and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 2.5,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-henri-bourassa-29a6675c",
+   "first": "2026-09-22T12:45:05.483Z",
+   "last": "2026-09-22T12:45:05.483Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Henri-Bourassa",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Henri-Bourassa: The elevator shuttled between the intermediate level of this station and the platform heading towards Montmorency is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
