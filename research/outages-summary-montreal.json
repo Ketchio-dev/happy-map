@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-22T05:55:05.869Z",
-   "hoursCovered": 373.24,
-   "snapshotsWithChange": 502
+   "last": "2026-09-22T08:20:05.486Z",
+   "hoursCovered": 375.65,
+   "snapshotsWithChange": 503
   },
   "distinctAlerts": 130,
   "elevatorAlerts": 130,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 32,
   "byStation": {
    "Place-des-Arts": 6,
@@ -557,7 +557,7 @@
   {
    "id": "stm-angrignon-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-22T05:55:05.869Z",
+   "last": "2026-09-22T08:20:05.486Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -575,7 +575,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-22T05:55:05.869Z",
+   "last": "2026-09-22T08:20:05.486Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -593,7 +593,7 @@
   {
    "id": "stm-2-lionel-groulx-467444fc",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-22T05:55:05.869Z",
+   "last": "2026-09-22T08:20:05.486Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -1547,7 +1547,7 @@
   {
    "id": "stm-vendome-708c435b",
    "first": "2026-09-13T09:15:05.122Z",
-   "last": "2026-09-15T05:50:05.155Z",
+   "last": "2026-09-22T08:20:05.486Z",
    "end": "2026-09-13T09:20:05.138Z",
    "feedStart": null,
    "station": "Vendôme",
@@ -1601,7 +1601,7 @@
   {
    "id": "stm-mcgill-37a2628e",
    "first": "2026-09-14T05:50:05.295Z",
-   "last": "2026-09-22T05:55:05.869Z",
+   "last": "2026-09-22T08:20:05.486Z",
    "end": "2026-09-14T07:00:05.180Z",
    "feedStart": null,
    "station": "McGill",
@@ -1745,7 +1745,7 @@
   {
    "id": "stm-edouard-montpetit-4a3c1dc5",
    "first": "2026-09-15T05:15:02.401Z",
-   "last": "2026-09-22T05:55:05.869Z",
+   "last": "2026-09-22T08:20:05.486Z",
    "end": "2026-09-15T09:25:05.325Z",
    "feedStart": null,
    "station": "Édouard-Montpetit",
@@ -1763,7 +1763,7 @@
   {
    "id": "stm-place-saint-henri-20b32172",
    "first": "2026-09-15T05:15:02.401Z",
-   "last": "2026-09-22T05:55:05.869Z",
+   "last": "2026-09-22T08:20:05.486Z",
    "end": "2026-09-15T09:45:05.305Z",
    "feedStart": null,
    "station": "Place-Saint-Henri",
@@ -1889,7 +1889,7 @@
   {
    "id": "stm-cartier-zone-b-95659080",
    "first": "2026-09-16T12:50:05.429Z",
-   "last": "2026-09-22T05:55:05.869Z",
+   "last": "2026-09-22T08:20:05.486Z",
    "end": "2026-09-16T13:30:05.699Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
@@ -2376,7 +2376,7 @@
    "id": "stm-villa-maria-64c83851",
    "first": "2026-09-22T05:50:05.341Z",
    "last": "2026-09-22T05:55:05.869Z",
-   "end": null,
+   "end": "2026-09-22T08:20:05.486Z",
    "feedStart": null,
    "station": "Villa-Maria",
    "type": "Elevator",
@@ -2386,8 +2386,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Villa-Maria: The elevator shuttled between the intermediate level of this station and the platform heading towards Montmorency is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level, intermediate level of this station and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0.08,
+   "ongoing": false,
+   "observedHours": 2.5,
    "sinceFeedStartHours": null
   }
  ]
