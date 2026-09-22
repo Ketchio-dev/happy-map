@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-22T04:55:05.349Z",
-   "hoursCovered": 372.24,
-   "snapshotsWithChange": 496
+   "last": "2026-09-22T05:05:05.367Z",
+   "hoursCovered": 372.4,
+   "snapshotsWithChange": 497
   },
-  "distinctAlerts": 128,
-  "elevatorAlerts": 128,
+  "distinctAlerts": 129,
+  "elevatorAlerts": 129,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 0,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 32,
   "byStation": {
    "Place-des-Arts": 6,
@@ -41,7 +41,7 @@
    "Pie-IX": 7,
    "Édouard-Montpetit": 3,
    "De la Concorde (zone B)": 1,
-   "McGill": 1,
+   "McGill": 2,
    "Berri-UQAM": 1,
    "Outremont": 5,
    "Champ-de-Mars": 1
@@ -377,7 +377,7 @@
   {
    "id": "stm-villa-maria-94baa2e6",
    "first": "2026-09-08T11:25:05.046Z",
-   "last": "2026-09-22T04:55:05.349Z",
+   "last": "2026-09-22T05:05:05.367Z",
    "end": "2026-09-08T11:30:05.531Z",
    "feedStart": null,
    "station": "Villa-Maria",
@@ -1889,7 +1889,7 @@
   {
    "id": "stm-cartier-zone-b-95659080",
    "first": "2026-09-16T12:50:05.429Z",
-   "last": "2026-09-22T04:55:05.349Z",
+   "last": "2026-09-22T05:05:05.367Z",
    "end": "2026-09-16T13:30:05.699Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
@@ -2352,6 +2352,24 @@
    "header": "Outremont: The elevator shuttled between the STM ticket booth level and the platform heading towards Saint-Michel is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Snowdon is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 1.08,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-mcgill-47d97100",
+   "first": "2026-09-22T05:05:05.367Z",
+   "last": "2026-09-22T05:05:05.367Z",
+   "end": null,
+   "feedStart": null,
+   "station": "McGill",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "McGill: The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
