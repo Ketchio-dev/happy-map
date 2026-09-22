@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-22T16:15:05.593Z",
-   "hoursCovered": 383.57,
-   "snapshotsWithChange": 515
+   "last": "2026-09-22T16:35:07.096Z",
+   "hoursCovered": 383.9,
+   "snapshotsWithChange": 516
   },
   "distinctAlerts": 131,
   "elevatorAlerts": 131,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 32,
   "byStation": {
    "Place-des-Arts": 6,
@@ -1889,7 +1889,7 @@
   {
    "id": "stm-cartier-zone-b-95659080",
    "first": "2026-09-16T12:50:05.429Z",
-   "last": "2026-09-22T16:15:05.593Z",
+   "last": "2026-09-22T16:35:07.096Z",
    "end": "2026-09-16T13:30:05.699Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
@@ -2394,7 +2394,7 @@
    "id": "stm-henri-bourassa-29a6675c",
    "first": "2026-09-22T12:45:05.483Z",
    "last": "2026-09-22T16:15:05.593Z",
-   "end": null,
+   "end": "2026-09-22T16:35:07.096Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
    "type": "Elevator",
@@ -2404,8 +2404,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Henri-Bourassa: The elevator shuttled between the intermediate level of this station and the platform heading towards Montmorency is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 3.5,
+   "ongoing": false,
+   "observedHours": 3.83,
    "sinceFeedStartHours": null
   }
  ]
