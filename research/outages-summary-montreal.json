@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-23T05:10:05.374Z",
-   "hoursCovered": 396.49,
-   "snapshotsWithChange": 521
+   "last": "2026-09-23T05:15:05.474Z",
+   "hoursCovered": 396.57,
+   "snapshotsWithChange": 522
   },
   "distinctAlerts": 132,
   "elevatorAlerts": 132,
@@ -1745,7 +1745,7 @@
   {
    "id": "stm-edouard-montpetit-4a3c1dc5",
    "first": "2026-09-15T05:15:02.401Z",
-   "last": "2026-09-22T08:45:05.605Z",
+   "last": "2026-09-23T05:15:05.474Z",
    "end": "2026-09-15T09:25:05.325Z",
    "feedStart": null,
    "station": "Édouard-Montpetit",
@@ -2357,7 +2357,7 @@
   {
    "id": "stm-mcgill-47d97100",
    "first": "2026-09-22T05:05:05.367Z",
-   "last": "2026-09-23T05:10:05.374Z",
+   "last": "2026-09-23T05:15:05.474Z",
    "end": "2026-09-22T05:10:05.336Z",
    "feedStart": null,
    "station": "McGill",
