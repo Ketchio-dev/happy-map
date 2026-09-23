@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-23T13:55:05.548Z",
-   "hoursCovered": 405.24,
-   "snapshotsWithChange": 534
+   "last": "2026-09-23T14:15:06.025Z",
+   "hoursCovered": 405.57,
+   "snapshotsWithChange": 535
   },
   "distinctAlerts": 132,
   "elevatorAlerts": 132,
@@ -233,7 +233,7 @@
   {
    "id": "stm-cartier-zone-b-92ee7ec6",
    "first": "2026-09-07T07:45:05.181Z",
-   "last": "2026-09-23T13:20:05.797Z",
+   "last": "2026-09-23T14:15:06.025Z",
    "end": "2026-09-07T09:10:05.157Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
@@ -863,7 +863,7 @@
   {
    "id": "stm-henri-bourassa-25850da5",
    "first": "2026-09-10T05:15:05.083Z",
-   "last": "2026-09-23T13:55:05.548Z",
+   "last": "2026-09-23T14:15:06.025Z",
    "end": "2026-09-10T08:40:05.125Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -1241,7 +1241,7 @@
   {
    "id": "stm-pie-ix-47d97100",
    "first": "2026-09-11T09:10:05.229Z",
-   "last": "2026-09-23T13:55:05.548Z",
+   "last": "2026-09-23T14:15:06.025Z",
    "end": "2026-09-11T09:15:05.808Z",
    "feedStart": null,
    "station": "Pie-IX",
