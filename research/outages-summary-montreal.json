@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-23T14:25:07.043Z",
-   "hoursCovered": 405.74,
-   "snapshotsWithChange": 537
+   "last": "2026-09-23T14:35:05.433Z",
+   "hoursCovered": 405.9,
+   "snapshotsWithChange": 538
   },
   "distinctAlerts": 133,
   "elevatorAlerts": 133,
@@ -233,7 +233,7 @@
   {
    "id": "stm-cartier-zone-b-92ee7ec6",
    "first": "2026-09-07T07:45:05.181Z",
-   "last": "2026-09-23T14:20:06.245Z",
+   "last": "2026-09-23T14:35:05.433Z",
    "end": "2026-09-07T09:10:05.157Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
@@ -863,7 +863,7 @@
   {
    "id": "stm-henri-bourassa-25850da5",
    "first": "2026-09-10T05:15:05.083Z",
-   "last": "2026-09-23T14:25:07.043Z",
+   "last": "2026-09-23T14:35:05.433Z",
    "end": "2026-09-10T08:40:05.125Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -2429,7 +2429,7 @@
   {
    "id": "stm-pie-ix-ec37904d",
    "first": "2026-09-23T14:20:06.245Z",
-   "last": "2026-09-23T14:25:07.043Z",
+   "last": "2026-09-23T14:35:05.433Z",
    "end": null,
    "feedStart": null,
    "station": "Pie-IX",
@@ -2441,7 +2441,7 @@
    "unplanned": false,
    "header": "Pie-IX: The elevator shuttled between the street level (East access) and the STM ticket booth level (West access elevator available, please check its status) is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.08,
+   "observedHours": 0.25,
    "sinceFeedStartHours": null
   }
  ]
