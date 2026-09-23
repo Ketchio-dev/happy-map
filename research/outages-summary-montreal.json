@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-23T02:30:05.697Z",
-   "hoursCovered": 393.82,
-   "snapshotsWithChange": 517
+   "last": "2026-09-23T02:50:05.360Z",
+   "hoursCovered": 394.15,
+   "snapshotsWithChange": 518
   },
   "distinctAlerts": 132,
   "elevatorAlerts": 132,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 32,
   "byStation": {
    "Place-des-Arts": 6,
@@ -1889,7 +1889,7 @@
   {
    "id": "stm-cartier-zone-b-95659080",
    "first": "2026-09-16T12:50:05.429Z",
-   "last": "2026-09-23T02:30:05.697Z",
+   "last": "2026-09-23T02:50:05.360Z",
    "end": "2026-09-16T13:30:05.699Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
@@ -2412,7 +2412,7 @@
    "id": "stm-rosemont-25850da5",
    "first": "2026-09-23T02:30:05.697Z",
    "last": "2026-09-23T02:30:05.697Z",
-   "end": null,
+   "end": "2026-09-23T02:50:05.360Z",
    "feedStart": null,
    "station": "Rosemont",
    "type": "Elevator",
@@ -2422,8 +2422,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Rosemont: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 0.33,
    "sinceFeedStartHours": null
   }
  ]
