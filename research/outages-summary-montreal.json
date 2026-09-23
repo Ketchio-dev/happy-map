@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-23T05:15:05.474Z",
-   "hoursCovered": 396.57,
-   "snapshotsWithChange": 522
+   "last": "2026-09-23T05:25:02.925Z",
+   "hoursCovered": 396.73,
+   "snapshotsWithChange": 523
   },
   "distinctAlerts": 132,
   "elevatorAlerts": 132,
@@ -1745,7 +1745,7 @@
   {
    "id": "stm-edouard-montpetit-4a3c1dc5",
    "first": "2026-09-15T05:15:02.401Z",
-   "last": "2026-09-23T05:15:05.474Z",
+   "last": "2026-09-23T05:25:02.925Z",
    "end": "2026-09-15T09:25:05.325Z",
    "feedStart": null,
    "station": "Édouard-Montpetit",
