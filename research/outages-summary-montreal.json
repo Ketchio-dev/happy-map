@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-23T06:20:05.588Z",
-   "hoursCovered": 397.65,
-   "snapshotsWithChange": 526
+   "last": "2026-09-23T08:15:05.480Z",
+   "hoursCovered": 399.57,
+   "snapshotsWithChange": 527
   },
   "distinctAlerts": 132,
   "elevatorAlerts": 132,
@@ -557,7 +557,7 @@
   {
    "id": "stm-angrignon-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-23T06:20:05.588Z",
+   "last": "2026-09-23T08:15:05.480Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -575,7 +575,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-23T06:20:05.588Z",
+   "last": "2026-09-23T08:15:05.480Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -593,7 +593,7 @@
   {
    "id": "stm-2-lionel-groulx-467444fc",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-23T06:20:05.588Z",
+   "last": "2026-09-23T08:15:05.480Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -1745,7 +1745,7 @@
   {
    "id": "stm-edouard-montpetit-4a3c1dc5",
    "first": "2026-09-15T05:15:02.401Z",
-   "last": "2026-09-23T06:20:05.588Z",
+   "last": "2026-09-23T08:15:05.480Z",
    "end": "2026-09-15T09:25:05.325Z",
    "feedStart": null,
    "station": "Édouard-Montpetit",
@@ -1763,7 +1763,7 @@
   {
    "id": "stm-place-saint-henri-20b32172",
    "first": "2026-09-15T05:15:02.401Z",
-   "last": "2026-09-23T06:20:05.588Z",
+   "last": "2026-09-23T08:15:05.480Z",
    "end": "2026-09-15T09:45:05.305Z",
    "feedStart": null,
    "station": "Place-Saint-Henri",
