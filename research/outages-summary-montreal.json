@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-23T12:00:04.184Z",
-   "hoursCovered": 403.32,
-   "snapshotsWithChange": 531
+   "last": "2026-09-23T13:10:06.054Z",
+   "hoursCovered": 404.49,
+   "snapshotsWithChange": 532
   },
   "distinctAlerts": 132,
   "elevatorAlerts": 132,
@@ -863,7 +863,7 @@
   {
    "id": "stm-henri-bourassa-25850da5",
    "first": "2026-09-10T05:15:05.083Z",
-   "last": "2026-09-19T09:40:02.950Z",
+   "last": "2026-09-23T13:10:06.054Z",
    "end": "2026-09-10T08:40:05.125Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -1241,7 +1241,7 @@
   {
    "id": "stm-pie-ix-47d97100",
    "first": "2026-09-11T09:10:05.229Z",
-   "last": "2026-09-23T12:00:04.184Z",
+   "last": "2026-09-23T13:10:06.054Z",
    "end": "2026-09-11T09:15:05.808Z",
    "feedStart": null,
    "station": "Pie-IX",
