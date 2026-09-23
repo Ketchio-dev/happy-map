@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-23T03:20:06.098Z",
-   "hoursCovered": 394.65,
-   "snapshotsWithChange": 519
+   "last": "2026-09-23T05:00:05.534Z",
+   "hoursCovered": 396.32,
+   "snapshotsWithChange": 520
   },
   "distinctAlerts": 132,
   "elevatorAlerts": 132,
@@ -2357,7 +2357,7 @@
   {
    "id": "stm-mcgill-47d97100",
    "first": "2026-09-22T05:05:05.367Z",
-   "last": "2026-09-22T09:30:05.790Z",
+   "last": "2026-09-23T05:00:05.534Z",
    "end": "2026-09-22T05:10:05.336Z",
    "feedStart": null,
    "station": "McGill",
