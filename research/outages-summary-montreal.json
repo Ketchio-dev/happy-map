@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-24T11:45:05.423Z",
-   "hoursCovered": 427.07,
-   "snapshotsWithChange": 567
+   "last": "2026-09-24T13:00:06.745Z",
+   "hoursCovered": 428.32,
+   "snapshotsWithChange": 568
   },
   "distinctAlerts": 133,
   "elevatorAlerts": 133,
@@ -233,7 +233,7 @@
   {
    "id": "stm-cartier-zone-b-92ee7ec6",
    "first": "2026-09-07T07:45:05.181Z",
-   "last": "2026-09-24T11:45:05.423Z",
+   "last": "2026-09-24T13:00:06.745Z",
    "end": "2026-09-07T09:10:05.157Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
@@ -1313,7 +1313,7 @@
   {
    "id": "stm-bonaventure-92ee7ec6",
    "first": "2026-09-11T14:25:05.866Z",
-   "last": "2026-09-11T15:25:05.245Z",
+   "last": "2026-09-24T13:00:06.745Z",
    "end": "2026-09-11T15:40:05.344Z",
    "feedStart": null,
    "station": "Bonaventure",
