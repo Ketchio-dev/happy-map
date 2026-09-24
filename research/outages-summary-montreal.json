@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-24T16:50:06.277Z",
-   "hoursCovered": 432.15,
-   "snapshotsWithChange": 573
+   "last": "2026-09-24T19:10:06.013Z",
+   "hoursCovered": 434.49,
+   "snapshotsWithChange": 574
   },
   "distinctAlerts": 134,
   "elevatorAlerts": 134,
@@ -233,7 +233,7 @@
   {
    "id": "stm-cartier-zone-b-92ee7ec6",
    "first": "2026-09-07T07:45:05.181Z",
-   "last": "2026-09-24T16:50:06.277Z",
+   "last": "2026-09-24T19:10:06.013Z",
    "end": "2026-09-07T09:10:05.157Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
@@ -665,7 +665,7 @@
   {
    "id": "stm-2-4-berri-uqam-7888768d",
    "first": "2026-09-09T13:55:05.410Z",
-   "last": "2026-09-16T17:35:05.294Z",
+   "last": "2026-09-24T19:10:06.013Z",
    "end": "2026-09-09T14:30:05.912Z",
    "feedStart": null,
    "station": "2 4 Berri-UQAM",
