@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-24T05:35:05.504Z",
-   "hoursCovered": 420.9,
-   "snapshotsWithChange": 562
+   "last": "2026-09-24T06:10:05.530Z",
+   "hoursCovered": 421.49,
+   "snapshotsWithChange": 563
   },
   "distinctAlerts": 133,
   "elevatorAlerts": 133,
@@ -233,7 +233,7 @@
   {
    "id": "stm-cartier-zone-b-92ee7ec6",
    "first": "2026-09-07T07:45:05.181Z",
-   "last": "2026-09-24T05:35:05.504Z",
+   "last": "2026-09-24T06:10:05.530Z",
    "end": "2026-09-07T09:10:05.157Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
