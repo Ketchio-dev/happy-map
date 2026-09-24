@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-24T16:40:06.241Z",
-   "hoursCovered": 431.99,
-   "snapshotsWithChange": 572
+   "last": "2026-09-24T16:50:06.277Z",
+   "hoursCovered": 432.15,
+   "snapshotsWithChange": 573
   },
   "distinctAlerts": 134,
   "elevatorAlerts": 134,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 32,
   "byStation": {
    "Place-des-Arts": 6,
@@ -233,7 +233,7 @@
   {
    "id": "stm-cartier-zone-b-92ee7ec6",
    "first": "2026-09-07T07:45:05.181Z",
-   "last": "2026-09-24T16:40:06.241Z",
+   "last": "2026-09-24T16:50:06.277Z",
    "end": "2026-09-07T09:10:05.157Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
@@ -2448,7 +2448,7 @@
    "id": "stm-5-jean-talon-92ee7ec6",
    "first": "2026-09-24T16:40:06.241Z",
    "last": "2026-09-24T16:40:06.241Z",
-   "end": null,
+   "end": "2026-09-24T16:50:06.277Z",
    "feedStart": null,
    "station": "5 Jean-Talon",
    "type": "Elevator",
@@ -2458,8 +2458,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "5 Jean-Talon: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 0.17,
    "sinceFeedStartHours": null
   }
  ]
