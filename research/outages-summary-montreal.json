@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-24T19:25:04.351Z",
-   "hoursCovered": 434.74,
-   "snapshotsWithChange": 575
+   "last": "2026-09-24T19:35:06.174Z",
+   "hoursCovered": 434.9,
+   "snapshotsWithChange": 576
   },
   "distinctAlerts": 135,
   "elevatorAlerts": 135,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 32,
   "byStation": {
    "Place-des-Arts": 6,
@@ -233,7 +233,7 @@
   {
    "id": "stm-cartier-zone-b-92ee7ec6",
    "first": "2026-09-07T07:45:05.181Z",
-   "last": "2026-09-24T19:25:04.351Z",
+   "last": "2026-09-24T19:35:06.174Z",
    "end": "2026-09-07T09:10:05.157Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
@@ -467,7 +467,7 @@
   {
    "id": "stm-2-4-berri-uqam-92ee7ec6",
    "first": "2026-09-08T23:55:05.152Z",
-   "last": "2026-09-08T23:55:05.152Z",
+   "last": "2026-09-24T19:35:06.174Z",
    "end": "2026-09-09T00:05:02.476Z",
    "feedStart": null,
    "station": "2 4 Berri-UQAM",
@@ -2466,7 +2466,7 @@
    "id": "stm-2-4-berri-uqam-35589c30",
    "first": "2026-09-24T19:25:04.351Z",
    "last": "2026-09-24T19:25:04.351Z",
-   "end": null,
+   "end": "2026-09-24T19:35:06.174Z",
    "feedStart": null,
    "station": "2 4 Berri-UQAM",
    "type": "Elevator",
@@ -2476,8 +2476,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "2 4 Berri-UQAM: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 0.17,
    "sinceFeedStartHours": null
   }
  ]
