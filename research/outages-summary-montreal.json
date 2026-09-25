@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-25T18:10:05.425Z",
-   "hoursCovered": 457.49,
-   "snapshotsWithChange": 594
+   "last": "2026-09-25T21:45:05.694Z",
+   "hoursCovered": 461.07,
+   "snapshotsWithChange": 595
   },
   "distinctAlerts": 138,
   "elevatorAlerts": 138,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 32,
   "byStation": {
    "Place-des-Arts": 6,
@@ -2520,7 +2520,7 @@
    "id": "stm-viau-3b96de2d",
    "first": "2026-09-25T18:10:05.425Z",
    "last": "2026-09-25T18:10:05.425Z",
-   "end": null,
+   "end": "2026-09-25T21:45:05.694Z",
    "feedStart": null,
    "station": "Viau",
    "type": "Elevator",
@@ -2530,8 +2530,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Viau: The elevator shuttled between the street level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 3.58,
    "sinceFeedStartHours": null
   }
  ]
