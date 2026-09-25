@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-25T14:05:05.137Z",
-   "hoursCovered": 453.4,
-   "snapshotsWithChange": 587
+   "last": "2026-09-25T14:15:05.441Z",
+   "hoursCovered": 453.57,
+   "snapshotsWithChange": 588
   },
   "distinctAlerts": 136,
   "elevatorAlerts": 136,
@@ -71,7 +71,7 @@
   {
    "id": "stm-viau-214feef9",
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-15T15:50:05.454Z",
+   "last": "2026-09-25T14:15:05.441Z",
    "end": "2026-09-10T14:40:05.415Z",
    "feedStart": null,
    "station": "Viau",
@@ -2483,7 +2483,7 @@
   {
    "id": "stm-pie-ix-c8816c68",
    "first": "2026-09-25T12:00:05.574Z",
-   "last": "2026-09-25T14:05:05.137Z",
+   "last": "2026-09-25T14:15:05.441Z",
    "end": "2026-09-25T14:00:02.980Z",
    "feedStart": null,
    "station": "Pie-IX",
