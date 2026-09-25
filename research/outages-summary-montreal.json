@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-25T05:10:05.487Z",
-   "hoursCovered": 444.49,
-   "snapshotsWithChange": 581
+   "last": "2026-09-25T05:35:05.945Z",
+   "hoursCovered": 444.9,
+   "snapshotsWithChange": 582
   },
   "distinctAlerts": 135,
   "elevatorAlerts": 135,
@@ -683,7 +683,7 @@
   {
    "id": "stm-atwater-47d97100",
    "first": "2026-09-09T14:10:05.181Z",
-   "last": "2026-09-25T05:10:05.487Z",
+   "last": "2026-09-25T05:35:05.945Z",
    "end": "2026-09-09T15:55:05.269Z",
    "feedStart": null,
    "station": "Atwater",
@@ -1169,7 +1169,7 @@
   {
    "id": "stm-cote-vertu-63d6deb9",
    "first": "2026-09-11T05:25:05.525Z",
-   "last": "2026-09-24T05:35:05.504Z",
+   "last": "2026-09-25T05:35:05.945Z",
    "end": "2026-09-11T05:35:05.780Z",
    "feedStart": null,
    "station": "Côte-Vertu",
