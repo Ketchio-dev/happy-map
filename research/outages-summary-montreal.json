@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-25T05:35:05.945Z",
-   "hoursCovered": 444.9,
-   "snapshotsWithChange": 582
+   "last": "2026-09-25T06:05:05.513Z",
+   "hoursCovered": 445.4,
+   "snapshotsWithChange": 583
   },
   "distinctAlerts": 135,
   "elevatorAlerts": 135,
@@ -683,7 +683,7 @@
   {
    "id": "stm-atwater-47d97100",
    "first": "2026-09-09T14:10:05.181Z",
-   "last": "2026-09-25T05:35:05.945Z",
+   "last": "2026-09-25T06:05:05.513Z",
    "end": "2026-09-09T15:55:05.269Z",
    "feedStart": null,
    "station": "Atwater",
