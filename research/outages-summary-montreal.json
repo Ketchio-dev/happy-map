@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-25T06:05:05.513Z",
-   "hoursCovered": 445.4,
-   "snapshotsWithChange": 583
+   "last": "2026-09-25T09:10:05.375Z",
+   "hoursCovered": 448.49,
+   "snapshotsWithChange": 584
   },
   "distinctAlerts": 135,
   "elevatorAlerts": 135,
