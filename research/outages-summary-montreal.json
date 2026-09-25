@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-25T12:00:05.574Z",
-   "hoursCovered": 451.32,
-   "snapshotsWithChange": 585
+   "last": "2026-09-25T14:00:02.980Z",
+   "hoursCovered": 453.32,
+   "snapshotsWithChange": 586
   },
   "distinctAlerts": 136,
   "elevatorAlerts": 136,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 32,
   "byStation": {
    "Place-des-Arts": 6,
@@ -2484,7 +2484,7 @@
    "id": "stm-pie-ix-c8816c68",
    "first": "2026-09-25T12:00:05.574Z",
    "last": "2026-09-25T12:00:05.574Z",
-   "end": null,
+   "end": "2026-09-25T14:00:02.980Z",
    "feedStart": null,
    "station": "Pie-IX",
    "type": "Elevator",
@@ -2494,8 +2494,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Pie-IX: The elevator shuttled between the street level (West access) and the STM ticket booth level (East access elevator available, please check its status) is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 2,
    "sinceFeedStartHours": null
   }
  ]
