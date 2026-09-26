@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-26T07:30:05.693Z",
-   "hoursCovered": 470.82,
-   "snapshotsWithChange": 605
+   "last": "2026-09-26T09:20:05.390Z",
+   "hoursCovered": 472.65,
+   "snapshotsWithChange": 606
   },
   "distinctAlerts": 141,
   "elevatorAlerts": 141,
@@ -575,7 +575,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-26T07:30:05.693Z",
+   "last": "2026-09-26T09:20:05.390Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -2357,7 +2357,7 @@
   {
    "id": "stm-mcgill-47d97100",
    "first": "2026-09-22T05:05:05.367Z",
-   "last": "2026-09-26T05:15:05.509Z",
+   "last": "2026-09-26T09:20:05.390Z",
    "end": "2026-09-22T05:10:05.336Z",
    "feedStart": null,
    "station": "McGill",
