@@ -2,22 +2,22 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-26T05:35:05.648Z",
-   "hoursCovered": 468.9,
-   "snapshotsWithChange": 599
+   "last": "2026-09-26T05:55:06.072Z",
+   "hoursCovered": 469.24,
+   "snapshotsWithChange": 600
   },
-  "distinctAlerts": 138,
-  "elevatorAlerts": 138,
+  "distinctAlerts": 140,
+  "elevatorAlerts": 140,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 0,
+  "elevatorOngoingNow": 2,
   "stationsWithElevatorOutage": 32,
   "byStation": {
    "Place-des-Arts": 6,
    "Viau": 3,
    "5 Snowdon": 7,
    "Place-d'Armes": 4,
-   "Préfontaine": 6,
+   "Préfontaine": 7,
    "2 Lionel-Groulx": 6,
    "Jolicoeur": 4,
    "Angrignon": 4,
@@ -38,7 +38,7 @@
    "Lionel-Groulx": 2,
    "Jean-Talon": 1,
    "Bonaventure": 4,
-   "Pie-IX": 9,
+   "Pie-IX": 10,
    "Édouard-Montpetit": 3,
    "De la Concorde (zone B)": 1,
    "McGill": 2,
@@ -575,7 +575,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-26T05:35:05.648Z",
+   "last": "2026-09-26T05:55:06.072Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -917,7 +917,7 @@
   {
    "id": "stm-honore-beaugrand-df5cffe1",
    "first": "2026-09-10T05:50:05.094Z",
-   "last": "2026-09-10T07:20:05.738Z",
+   "last": "2026-09-26T05:55:06.072Z",
    "end": "2026-09-10T07:40:05.049Z",
    "feedStart": null,
    "station": "Honoré-Beaugrand",
@@ -1169,7 +1169,7 @@
   {
    "id": "stm-cote-vertu-63d6deb9",
    "first": "2026-09-11T05:25:05.525Z",
-   "last": "2026-09-26T05:35:05.648Z",
+   "last": "2026-09-26T05:55:06.072Z",
    "end": "2026-09-11T05:35:05.780Z",
    "feedStart": null,
    "station": "Côte-Vertu",
@@ -1349,7 +1349,7 @@
   {
    "id": "stm-viau-bf3e641b",
    "first": "2026-09-11T18:30:05.518Z",
-   "last": "2026-09-12T14:45:03.673Z",
+   "last": "2026-09-26T05:55:06.072Z",
    "end": "2026-09-11T19:05:04.425Z",
    "feedStart": null,
    "station": "Viau",
@@ -1601,7 +1601,7 @@
   {
    "id": "stm-mcgill-37a2628e",
    "first": "2026-09-14T05:50:05.295Z",
-   "last": "2026-09-26T05:35:05.648Z",
+   "last": "2026-09-26T05:55:06.072Z",
    "end": "2026-09-14T07:00:05.180Z",
    "feedStart": null,
    "station": "McGill",
@@ -2532,6 +2532,42 @@
    "header": "Viau: The elevator shuttled between the street level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 3.58,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-pie-ix-d5102221",
+   "first": "2026-09-26T05:55:06.072Z",
+   "last": "2026-09-26T05:55:06.072Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Pie-IX",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Pie-IX: The elevator shuttled between the street level (West access) and the STM ticket booth level (East access elevator available, please check its status) is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period. The elevator shuttled between the street level (East access) and the STM ticket booth level (West access elevator available, please check its status) is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-prefontaine-df5cffe1",
+   "first": "2026-09-26T05:55:06.072Z",
+   "last": "2026-09-26T05:55:06.072Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Préfontaine",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Préfontaine: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
