@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-26T07:20:05.381Z",
-   "hoursCovered": 470.65,
-   "snapshotsWithChange": 603
+   "last": "2026-09-26T07:25:06.191Z",
+   "hoursCovered": 470.74,
+   "snapshotsWithChange": 604
   },
   "distinctAlerts": 141,
   "elevatorAlerts": 141,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 32,
   "byStation": {
    "Place-des-Arts": 6,
@@ -575,7 +575,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-26T07:20:05.381Z",
+   "last": "2026-09-26T07:25:06.191Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -1349,7 +1349,7 @@
   {
    "id": "stm-viau-bf3e641b",
    "first": "2026-09-11T18:30:05.518Z",
-   "last": "2026-09-26T07:20:05.381Z",
+   "last": "2026-09-26T07:25:06.191Z",
    "end": "2026-09-11T19:05:04.425Z",
    "feedStart": null,
    "station": "Viau",
@@ -1601,7 +1601,7 @@
   {
    "id": "stm-mcgill-37a2628e",
    "first": "2026-09-14T05:50:05.295Z",
-   "last": "2026-09-26T07:20:05.381Z",
+   "last": "2026-09-26T07:25:06.191Z",
    "end": "2026-09-14T07:00:05.180Z",
    "feedStart": null,
    "station": "McGill",
@@ -2538,7 +2538,7 @@
    "id": "stm-pie-ix-d5102221",
    "first": "2026-09-26T05:55:06.072Z",
    "last": "2026-09-26T07:20:05.381Z",
-   "end": null,
+   "end": "2026-09-26T07:25:06.191Z",
    "feedStart": null,
    "station": "Pie-IX",
    "type": "Elevator",
@@ -2548,8 +2548,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Pie-IX: The elevator shuttled between the street level (West access) and the STM ticket booth level (East access elevator available, please check its status) is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period. The elevator shuttled between the street level (East access) and the STM ticket booth level (West access elevator available, please check its status) is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 1.42,
+   "ongoing": false,
+   "observedHours": 1.5,
    "sinceFeedStartHours": null
   },
   {
