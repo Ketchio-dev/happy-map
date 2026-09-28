@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-28T12:20:06.201Z",
-   "hoursCovered": 523.65,
-   "snapshotsWithChange": 642
+   "last": "2026-09-28T12:25:04.244Z",
+   "hoursCovered": 523.74,
+   "snapshotsWithChange": 643
   },
   "distinctAlerts": 146,
   "elevatorAlerts": 146,
@@ -161,7 +161,7 @@
   {
    "id": "stm-2-lionel-groulx-25850da5",
    "first": "2026-09-07T05:10:05.209Z",
-   "last": "2026-09-15T11:15:05.736Z",
+   "last": "2026-09-28T12:25:04.244Z",
    "end": "2026-09-07T05:20:05.155Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -1493,7 +1493,7 @@
   {
    "id": "stm-place-des-arts-47d97100",
    "first": "2026-09-13T05:30:05.239Z",
-   "last": "2026-09-28T12:20:06.201Z",
+   "last": "2026-09-28T12:25:04.244Z",
    "end": "2026-09-13T05:35:05.136Z",
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -2231,7 +2231,7 @@
   {
    "id": "stm-rosemont-92ee7ec6",
    "first": "2026-09-18T04:55:05.321Z",
-   "last": "2026-09-18T09:35:05.327Z",
+   "last": "2026-09-28T12:25:04.244Z",
    "end": "2026-09-18T09:50:05.378Z",
    "feedStart": null,
    "station": "Rosemont",
