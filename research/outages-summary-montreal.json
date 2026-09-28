@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-28T02:00:05.533Z",
-   "hoursCovered": 513.32,
-   "snapshotsWithChange": 625
+   "last": "2026-09-28T02:55:06.239Z",
+   "hoursCovered": 514.24,
+   "snapshotsWithChange": 626
   },
-  "distinctAlerts": 143,
-  "elevatorAlerts": 143,
+  "distinctAlerts": 144,
+  "elevatorAlerts": 144,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 0,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 32,
   "byStation": {
    "Place-des-Arts": 6,
@@ -33,7 +33,7 @@
    "D'Iberville": 2,
    "Mont-Royal": 3,
    "Du Collège": 4,
-   "Henri-Bourassa": 7,
+   "Henri-Bourassa": 8,
    "Honoré-Beaugrand": 6,
    "Lionel-Groulx": 2,
    "Jean-Talon": 1,
@@ -1025,7 +1025,7 @@
   {
    "id": "stm-mont-royal-15637ddb",
    "first": "2026-09-10T15:40:05.189Z",
-   "last": "2026-09-28T02:00:05.533Z",
+   "last": "2026-09-28T02:55:06.239Z",
    "end": "2026-09-10T15:50:05.403Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -2622,6 +2622,24 @@
    "header": "Villa-Maria: The elevator shuttled between the intermediate level of this station and the platform heading towards Montmorency is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level, intermediate level of this station and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 4,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-henri-bourassa-d53a4d8a",
+   "first": "2026-09-28T02:55:06.239Z",
+   "last": "2026-09-28T02:55:06.239Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Henri-Bourassa",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Henri-Bourassa: The elevator shuttled between the intermediate level of this station and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
