@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-28T02:55:06.239Z",
-   "hoursCovered": 514.24,
-   "snapshotsWithChange": 626
+   "last": "2026-09-28T04:55:05.594Z",
+   "hoursCovered": 516.24,
+   "snapshotsWithChange": 627
   },
   "distinctAlerts": 144,
   "elevatorAlerts": 144,
@@ -1025,7 +1025,7 @@
   {
    "id": "stm-mont-royal-15637ddb",
    "first": "2026-09-10T15:40:05.189Z",
-   "last": "2026-09-28T02:55:06.239Z",
+   "last": "2026-09-28T04:55:05.594Z",
    "end": "2026-09-10T15:50:05.403Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -2339,7 +2339,7 @@
   {
    "id": "stm-outremont-8c88e3e3",
    "first": "2026-09-21T05:55:05.479Z",
-   "last": "2026-09-21T06:25:04.284Z",
+   "last": "2026-09-28T04:55:05.594Z",
    "end": "2026-09-21T07:00:05.375Z",
    "feedStart": null,
    "station": "Outremont",
@@ -2627,7 +2627,7 @@
   {
    "id": "stm-henri-bourassa-d53a4d8a",
    "first": "2026-09-28T02:55:06.239Z",
-   "last": "2026-09-28T02:55:06.239Z",
+   "last": "2026-09-28T04:55:05.594Z",
    "end": null,
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -2639,7 +2639,7 @@
    "unplanned": false,
    "header": "Henri-Bourassa: The elevator shuttled between the intermediate level of this station and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0,
+   "observedHours": 2,
    "sinceFeedStartHours": null
   }
  ]
