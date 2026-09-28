@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-28T05:15:05.642Z",
-   "hoursCovered": 516.57,
-   "snapshotsWithChange": 629
+   "last": "2026-09-28T06:05:05.495Z",
+   "hoursCovered": 517.4,
+   "snapshotsWithChange": 630
   },
   "distinctAlerts": 144,
   "elevatorAlerts": 144,
@@ -143,7 +143,7 @@
   {
    "id": "stm-prefontaine-25850da5",
    "first": "2026-09-07T05:05:04.538Z",
-   "last": "2026-09-28T05:15:05.642Z",
+   "last": "2026-09-28T06:05:05.495Z",
    "end": "2026-09-07T09:20:05.522Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -557,7 +557,7 @@
   {
    "id": "stm-angrignon-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-23T08:15:05.480Z",
+   "last": "2026-09-28T06:05:05.495Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -575,7 +575,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-26T09:25:05.632Z",
+   "last": "2026-09-28T06:05:05.495Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -1025,7 +1025,7 @@
   {
    "id": "stm-mont-royal-15637ddb",
    "first": "2026-09-10T15:40:05.189Z",
-   "last": "2026-09-28T05:15:05.642Z",
+   "last": "2026-09-28T06:05:05.495Z",
    "end": "2026-09-10T15:50:05.403Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -1043,7 +1043,7 @@
   {
    "id": "stm-vendome-d577cf57",
    "first": "2026-09-10T17:50:05.332Z",
-   "last": "2026-09-24T06:20:05.438Z",
+   "last": "2026-09-28T06:05:05.495Z",
    "end": "2026-09-10T18:20:05.333Z",
    "feedStart": null,
    "station": "Vendôme",
@@ -1061,7 +1061,7 @@
   {
    "id": "stm-bonaventure-95659080",
    "first": "2026-09-11T05:00:05.240Z",
-   "last": "2026-09-28T05:15:05.642Z",
+   "last": "2026-09-28T06:05:05.495Z",
    "end": "2026-09-11T09:25:05.245Z",
    "feedStart": null,
    "station": "Bonaventure",
@@ -1763,7 +1763,7 @@
   {
    "id": "stm-place-saint-henri-20b32172",
    "first": "2026-09-15T05:15:02.401Z",
-   "last": "2026-09-27T09:15:05.512Z",
+   "last": "2026-09-28T06:05:05.495Z",
    "end": "2026-09-15T09:45:05.305Z",
    "feedStart": null,
    "station": "Place-Saint-Henri",
@@ -2339,7 +2339,7 @@
   {
    "id": "stm-outremont-8c88e3e3",
    "first": "2026-09-21T05:55:05.479Z",
-   "last": "2026-09-28T05:15:05.642Z",
+   "last": "2026-09-28T06:05:05.495Z",
    "end": "2026-09-21T07:00:05.375Z",
    "feedStart": null,
    "station": "Outremont",
@@ -2375,7 +2375,7 @@
   {
    "id": "stm-villa-maria-64c83851",
    "first": "2026-09-22T05:50:05.341Z",
-   "last": "2026-09-24T06:20:05.438Z",
+   "last": "2026-09-28T06:05:05.495Z",
    "end": "2026-09-22T08:20:05.486Z",
    "feedStart": null,
    "station": "Villa-Maria",
@@ -2627,7 +2627,7 @@
   {
    "id": "stm-henri-bourassa-d53a4d8a",
    "first": "2026-09-28T02:55:06.239Z",
-   "last": "2026-09-28T05:15:05.642Z",
+   "last": "2026-09-28T06:05:05.495Z",
    "end": null,
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -2639,7 +2639,7 @@
    "unplanned": false,
    "header": "Henri-Bourassa: The elevator shuttled between the intermediate level of this station and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 2.33,
+   "observedHours": 3.17,
    "sinceFeedStartHours": null
   }
  ]
