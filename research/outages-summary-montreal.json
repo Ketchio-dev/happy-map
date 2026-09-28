@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-28T09:30:06.071Z",
-   "hoursCovered": 520.82,
-   "snapshotsWithChange": 637
+   "last": "2026-09-28T10:25:05.808Z",
+   "hoursCovered": 521.74,
+   "snapshotsWithChange": 638
   },
   "distinctAlerts": 145,
   "elevatorAlerts": 145,
@@ -2627,7 +2627,7 @@
   {
    "id": "stm-henri-bourassa-d53a4d8a",
    "first": "2026-09-28T02:55:06.239Z",
-   "last": "2026-09-28T09:30:06.071Z",
+   "last": "2026-09-28T10:25:05.808Z",
    "end": null,
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -2639,7 +2639,7 @@
    "unplanned": false,
    "header": "Henri-Bourassa: The elevator shuttled between the intermediate level of this station and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 6.58,
+   "observedHours": 7.5,
    "sinceFeedStartHours": null
   },
   {
