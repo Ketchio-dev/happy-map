@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-28T18:10:06.034Z",
-   "hoursCovered": 529.49,
-   "snapshotsWithChange": 658
+   "last": "2026-09-28T18:15:05.582Z",
+   "hoursCovered": 529.57,
+   "snapshotsWithChange": 659
   },
   "distinctAlerts": 148,
   "elevatorAlerts": 148,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 32,
   "byStation": {
    "Place-des-Arts": 6,
@@ -251,7 +251,7 @@
   {
    "id": "stm-angrignon-3b96de2d",
    "first": "2026-09-07T08:55:05.116Z",
-   "last": "2026-09-28T18:10:06.034Z",
+   "last": "2026-09-28T18:15:05.582Z",
    "end": "2026-09-07T09:10:05.157Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -665,7 +665,7 @@
   {
    "id": "stm-2-4-berri-uqam-7888768d",
    "first": "2026-09-09T13:55:05.410Z",
-   "last": "2026-09-24T19:10:06.013Z",
+   "last": "2026-09-28T18:15:05.582Z",
    "end": "2026-09-09T14:30:05.912Z",
    "feedStart": null,
    "station": "2 4 Berri-UQAM",
@@ -2700,7 +2700,7 @@
    "id": "stm-berri-uqam-7888768d",
    "first": "2026-09-28T18:10:06.034Z",
    "last": "2026-09-28T18:10:06.034Z",
-   "end": null,
+   "end": "2026-09-28T18:15:05.582Z",
    "feedStart": null,
    "station": "Berri-UQAM",
    "type": "Elevator",
@@ -2710,8 +2710,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Berri-UQAM: The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period. The elevator shuttled between the platform heading towards Montmorency level of the Orange line and the platform heading towards Angrignon of the Green line is presently out of service. Indefinite period. The elevator shuttled between the platform heading towards Côte-Vertu level of the Orange line and the platform heading towards Honoré-Beaugrand of the Green line is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 0.08,
    "sinceFeedStartHours": null
   }
  ]
