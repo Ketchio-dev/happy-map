@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-28T06:20:05.436Z",
-   "hoursCovered": 517.65,
-   "snapshotsWithChange": 631
+   "last": "2026-09-28T07:05:05.448Z",
+   "hoursCovered": 518.4,
+   "snapshotsWithChange": 632
   },
   "distinctAlerts": 144,
   "elevatorAlerts": 144,
@@ -143,7 +143,7 @@
   {
    "id": "stm-prefontaine-25850da5",
    "first": "2026-09-07T05:05:04.538Z",
-   "last": "2026-09-28T06:20:05.436Z",
+   "last": "2026-09-28T07:05:05.448Z",
    "end": "2026-09-07T09:20:05.522Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -1025,7 +1025,7 @@
   {
    "id": "stm-mont-royal-15637ddb",
    "first": "2026-09-10T15:40:05.189Z",
-   "last": "2026-09-28T06:20:05.436Z",
+   "last": "2026-09-28T07:05:05.448Z",
    "end": "2026-09-10T15:50:05.403Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -1043,7 +1043,7 @@
   {
    "id": "stm-vendome-d577cf57",
    "first": "2026-09-10T17:50:05.332Z",
-   "last": "2026-09-28T06:20:05.436Z",
+   "last": "2026-09-28T07:05:05.448Z",
    "end": "2026-09-10T18:20:05.333Z",
    "feedStart": null,
    "station": "Vendôme",
@@ -1061,7 +1061,7 @@
   {
    "id": "stm-bonaventure-95659080",
    "first": "2026-09-11T05:00:05.240Z",
-   "last": "2026-09-28T06:20:05.436Z",
+   "last": "2026-09-28T07:05:05.448Z",
    "end": "2026-09-11T09:25:05.245Z",
    "feedStart": null,
    "station": "Bonaventure",
@@ -1169,7 +1169,7 @@
   {
    "id": "stm-cote-vertu-63d6deb9",
    "first": "2026-09-11T05:25:05.525Z",
-   "last": "2026-09-28T06:20:05.436Z",
+   "last": "2026-09-28T07:05:05.448Z",
    "end": "2026-09-11T05:35:05.780Z",
    "feedStart": null,
    "station": "Côte-Vertu",
@@ -1763,7 +1763,7 @@
   {
    "id": "stm-place-saint-henri-20b32172",
    "first": "2026-09-15T05:15:02.401Z",
-   "last": "2026-09-28T06:20:05.436Z",
+   "last": "2026-09-28T07:05:05.448Z",
    "end": "2026-09-15T09:45:05.305Z",
    "feedStart": null,
    "station": "Place-Saint-Henri",
@@ -2339,7 +2339,7 @@
   {
    "id": "stm-outremont-8c88e3e3",
    "first": "2026-09-21T05:55:05.479Z",
-   "last": "2026-09-28T06:20:05.436Z",
+   "last": "2026-09-28T07:05:05.448Z",
    "end": "2026-09-21T07:00:05.375Z",
    "feedStart": null,
    "station": "Outremont",
@@ -2627,7 +2627,7 @@
   {
    "id": "stm-henri-bourassa-d53a4d8a",
    "first": "2026-09-28T02:55:06.239Z",
-   "last": "2026-09-28T06:20:05.436Z",
+   "last": "2026-09-28T07:05:05.448Z",
    "end": null,
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -2639,7 +2639,7 @@
    "unplanned": false,
    "header": "Henri-Bourassa: The elevator shuttled between the intermediate level of this station and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 3.42,
+   "observedHours": 4.17,
    "sinceFeedStartHours": null
   }
  ]
