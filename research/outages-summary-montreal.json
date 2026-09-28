@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-28T10:55:05.585Z",
-   "hoursCovered": 522.24,
-   "snapshotsWithChange": 639
+   "last": "2026-09-28T11:10:03.946Z",
+   "hoursCovered": 522.49,
+   "snapshotsWithChange": 640
   },
-  "distinctAlerts": 145,
-  "elevatorAlerts": 145,
+  "distinctAlerts": 146,
+  "elevatorAlerts": 146,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 0,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 32,
   "byStation": {
    "Place-des-Arts": 6,
@@ -44,7 +44,7 @@
    "McGill": 2,
    "Berri-UQAM": 1,
    "Outremont": 6,
-   "Champ-de-Mars": 2
+   "Champ-de-Mars": 3
   },
   "medianElevatorOutageAgeHours": null,
   "medianUnplannedElevatorOutageHours": null
@@ -2658,6 +2658,24 @@
    "header": "Outremont: The elevator shuttled between the STM ticket booth level and the platform heading towards Saint-Michel is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Snowdon is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 0.17,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-champ-de-mars-e83fa94f",
+   "first": "2026-09-28T11:10:03.946Z",
+   "last": "2026-09-28T11:10:03.946Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Champ-de-Mars",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Champ-de-Mars: The elevator shuttled between the street level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the street level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
