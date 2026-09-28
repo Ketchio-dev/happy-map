@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-28T10:25:05.808Z",
-   "hoursCovered": 521.74,
-   "snapshotsWithChange": 638
+   "last": "2026-09-28T10:55:05.585Z",
+   "hoursCovered": 522.24,
+   "snapshotsWithChange": 639
   },
   "distinctAlerts": 145,
   "elevatorAlerts": 145,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 32,
   "byStation": {
    "Place-des-Arts": 6,
@@ -2628,7 +2628,7 @@
    "id": "stm-henri-bourassa-d53a4d8a",
    "first": "2026-09-28T02:55:06.239Z",
    "last": "2026-09-28T10:25:05.808Z",
-   "end": null,
+   "end": "2026-09-28T10:55:05.585Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
    "type": "Elevator",
@@ -2638,8 +2638,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Henri-Bourassa: The elevator shuttled between the intermediate level of this station and the platform heading towards Côte-Vertu is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 7.5,
+   "ongoing": false,
+   "observedHours": 8,
    "sinceFeedStartHours": null
   },
   {
