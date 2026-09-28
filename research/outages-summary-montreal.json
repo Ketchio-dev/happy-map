@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-28T15:55:06.282Z",
-   "hoursCovered": 527.24,
-   "snapshotsWithChange": 656
+   "last": "2026-09-28T16:00:06.888Z",
+   "hoursCovered": 527.32,
+   "snapshotsWithChange": 657
   },
   "distinctAlerts": 147,
   "elevatorAlerts": 147,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 32,
   "byStation": {
    "Place-des-Arts": 6,
@@ -251,7 +251,7 @@
   {
    "id": "stm-angrignon-3b96de2d",
    "first": "2026-09-07T08:55:05.116Z",
-   "last": "2026-09-28T15:55:06.282Z",
+   "last": "2026-09-28T16:00:06.888Z",
    "end": "2026-09-07T09:10:05.157Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -2682,7 +2682,7 @@
    "id": "stm-2-lionel-groulx-1b8ad5a7",
    "first": "2026-09-28T15:40:06.199Z",
    "last": "2026-09-28T15:55:06.282Z",
-   "end": null,
+   "end": "2026-09-28T16:00:06.888Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
    "type": "Elevator",
@@ -2692,8 +2692,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "2 Lionel-Groulx: The elevator shuttled between the STM ticket booth level and the platforms heading towards Montmorency and Honoré-Beaugrand is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0.25,
+   "ongoing": false,
+   "observedHours": 0.33,
    "sinceFeedStartHours": null
   }
  ]
