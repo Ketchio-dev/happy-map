@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-29T14:05:04.108Z",
-   "hoursCovered": 549.4,
-   "snapshotsWithChange": 689
+   "last": "2026-09-29T14:15:06.013Z",
+   "hoursCovered": 549.57,
+   "snapshotsWithChange": 690
   },
   "distinctAlerts": 154,
   "elevatorAlerts": 154,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 33,
   "byStation": {
    "Place-des-Arts": 6,
@@ -162,7 +162,7 @@
   {
    "id": "stm-2-lionel-groulx-25850da5",
    "first": "2026-09-07T05:10:05.209Z",
-   "last": "2026-09-29T13:50:06.988Z",
+   "last": "2026-09-29T14:15:06.013Z",
    "end": "2026-09-07T05:20:05.155Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -774,7 +774,7 @@
   {
    "id": "stm-jolicoeur-214feef9",
    "first": "2026-09-09T21:05:03.864Z",
-   "last": "2026-09-29T14:05:04.108Z",
+   "last": "2026-09-29T14:15:06.013Z",
    "end": "2026-09-09T21:20:03.542Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -2124,7 +2124,7 @@
   {
    "id": "stm-honore-beaugrand-25850da5",
    "first": "2026-09-17T09:20:05.339Z",
-   "last": "2026-09-29T14:05:04.108Z",
+   "last": "2026-09-29T14:15:06.013Z",
    "end": "2026-09-17T10:30:05.355Z",
    "feedStart": null,
    "station": "Honoré-Beaugrand",
@@ -2772,7 +2772,7 @@
   {
    "id": "stm-montmorency-zone-b-95659080",
    "first": "2026-09-29T07:30:05.643Z",
-   "last": "2026-09-29T09:25:04.469Z",
+   "last": "2026-09-29T14:15:06.013Z",
    "end": "2026-09-29T10:40:05.427Z",
    "feedStart": null,
    "station": "Montmorency (zone B)",
@@ -2809,7 +2809,7 @@
    "id": "stm-lionel-groulx-25850da5",
    "first": "2026-09-29T14:05:04.108Z",
    "last": "2026-09-29T14:05:04.108Z",
-   "end": null,
+   "end": "2026-09-29T14:15:06.013Z",
    "feedStart": null,
    "station": "Lionel-Groulx",
    "type": "Elevator",
@@ -2819,8 +2819,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Lionel-Groulx: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 0.17,
    "sinceFeedStartHours": null
   }
  ]
