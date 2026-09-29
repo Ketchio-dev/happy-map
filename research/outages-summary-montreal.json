@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-29T15:10:03.575Z",
-   "hoursCovered": 550.49,
-   "snapshotsWithChange": 693
+   "last": "2026-09-29T15:30:05.197Z",
+   "hoursCovered": 550.82,
+   "snapshotsWithChange": 694
   },
   "distinctAlerts": 154,
   "elevatorAlerts": 154,
@@ -1548,7 +1548,7 @@
   {
    "id": "stm-vendome-708c435b",
    "first": "2026-09-13T09:15:05.122Z",
-   "last": "2026-09-29T15:10:03.575Z",
+   "last": "2026-09-29T15:30:05.197Z",
    "end": "2026-09-13T09:20:05.138Z",
    "feedStart": null,
    "station": "Vendôme",
