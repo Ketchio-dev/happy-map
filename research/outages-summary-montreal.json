@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-29T12:10:05.651Z",
-   "hoursCovered": 547.49,
-   "snapshotsWithChange": 684
+   "last": "2026-09-29T12:35:06.736Z",
+   "hoursCovered": 547.9,
+   "snapshotsWithChange": 685
   },
   "distinctAlerts": 153,
   "elevatorAlerts": 153,
@@ -198,7 +198,7 @@
   {
    "id": "stm-jolicoeur-3b96de2d",
    "first": "2026-09-07T05:25:05.009Z",
-   "last": "2026-09-20T05:50:05.454Z",
+   "last": "2026-09-29T12:35:06.736Z",
    "end": "2026-09-07T10:15:05.065Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -270,7 +270,7 @@
   {
    "id": "stm-2-lionel-groulx-385f3642",
    "first": "2026-09-07T09:25:05.210Z",
-   "last": "2026-09-29T12:10:05.651Z",
+   "last": "2026-09-29T12:35:06.736Z",
    "end": "2026-09-07T09:40:05.313Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
