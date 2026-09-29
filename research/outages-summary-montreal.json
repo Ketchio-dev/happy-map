@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-29T05:15:03.466Z",
-   "hoursCovered": 540.57,
-   "snapshotsWithChange": 669
+   "last": "2026-09-29T05:45:05.592Z",
+   "hoursCovered": 541.07,
+   "snapshotsWithChange": 670
   },
   "distinctAlerts": 148,
   "elevatorAlerts": 148,
@@ -557,7 +557,7 @@
   {
    "id": "stm-angrignon-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-28T06:20:05.436Z",
+   "last": "2026-09-29T05:45:05.592Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -575,7 +575,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-28T06:20:05.436Z",
+   "last": "2026-09-29T05:45:05.592Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -593,7 +593,7 @@
   {
    "id": "stm-2-lionel-groulx-467444fc",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-23T08:15:05.480Z",
+   "last": "2026-09-29T05:45:05.592Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -1601,7 +1601,7 @@
   {
    "id": "stm-mcgill-37a2628e",
    "first": "2026-09-14T05:50:05.295Z",
-   "last": "2026-09-29T05:15:03.466Z",
+   "last": "2026-09-29T05:45:05.592Z",
    "end": "2026-09-14T07:00:05.180Z",
    "feedStart": null,
    "station": "McGill",
@@ -1745,7 +1745,7 @@
   {
    "id": "stm-edouard-montpetit-4a3c1dc5",
    "first": "2026-09-15T05:15:02.401Z",
-   "last": "2026-09-29T05:15:03.466Z",
+   "last": "2026-09-29T05:45:05.592Z",
    "end": "2026-09-15T09:25:05.325Z",
    "feedStart": null,
    "station": "Édouard-Montpetit",
