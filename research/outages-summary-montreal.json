@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-29T12:00:04.890Z",
-   "hoursCovered": 547.32,
-   "snapshotsWithChange": 683
+   "last": "2026-09-29T12:10:05.651Z",
+   "hoursCovered": 547.49,
+   "snapshotsWithChange": 684
   },
   "distinctAlerts": 153,
   "elevatorAlerts": 153,
@@ -270,7 +270,7 @@
   {
    "id": "stm-2-lionel-groulx-385f3642",
    "first": "2026-09-07T09:25:05.210Z",
-   "last": "2026-09-29T12:00:04.890Z",
+   "last": "2026-09-29T12:10:05.651Z",
    "end": "2026-09-07T09:40:05.313Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
