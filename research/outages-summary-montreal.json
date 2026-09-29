@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-29T08:30:05.600Z",
-   "hoursCovered": 543.82,
-   "snapshotsWithChange": 678
+   "last": "2026-09-29T08:35:05.569Z",
+   "hoursCovered": 543.9,
+   "snapshotsWithChange": 679
   },
   "distinctAlerts": 153,
   "elevatorAlerts": 153,
@@ -1602,7 +1602,7 @@
   {
    "id": "stm-mcgill-37a2628e",
    "first": "2026-09-14T05:50:05.295Z",
-   "last": "2026-09-29T08:30:05.600Z",
+   "last": "2026-09-29T08:35:05.569Z",
    "end": "2026-09-14T07:00:05.180Z",
    "feedStart": null,
    "station": "McGill",
@@ -1746,7 +1746,7 @@
   {
    "id": "stm-edouard-montpetit-4a3c1dc5",
    "first": "2026-09-15T05:15:02.401Z",
-   "last": "2026-09-29T08:30:05.600Z",
+   "last": "2026-09-29T08:35:05.569Z",
    "end": "2026-09-15T09:25:05.325Z",
    "feedStart": null,
    "station": "Édouard-Montpetit",
@@ -2772,7 +2772,7 @@
   {
    "id": "stm-montmorency-zone-b-95659080",
    "first": "2026-09-29T07:30:05.643Z",
-   "last": "2026-09-29T08:30:05.600Z",
+   "last": "2026-09-29T08:35:05.569Z",
    "end": null,
    "feedStart": null,
    "station": "Montmorency (zone B)",
@@ -2784,7 +2784,7 @@
    "unplanned": false,
    "header": "Montmorency (zone B): The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 1,
+   "observedHours": 1.08,
    "sinceFeedStartHours": null
   },
   {
