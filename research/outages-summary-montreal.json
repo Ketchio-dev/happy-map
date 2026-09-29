@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-29T07:30:05.643Z",
-   "hoursCovered": 542.82,
-   "snapshotsWithChange": 674
+   "last": "2026-09-29T08:00:06.624Z",
+   "hoursCovered": 543.32,
+   "snapshotsWithChange": 675
   },
-  "distinctAlerts": 152,
-  "elevatorAlerts": 152,
+  "distinctAlerts": 153,
+  "elevatorAlerts": 153,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 2,
+  "elevatorOngoingNow": 3,
   "stationsWithElevatorOutage": 33,
   "byStation": {
    "Place-des-Arts": 6,
@@ -22,7 +22,7 @@
    "Jolicoeur": 4,
    "Angrignon": 4,
    "Cartier (zone B)": 6,
-   "5 Jean-Talon": 4,
+   "5 Jean-Talon": 5,
    "Place-Saint-Henri": 4,
    "Villa-Maria": 9,
    "Vendôme": 4,
@@ -450,7 +450,7 @@
   {
    "id": "stm-rosemont-1b51c479",
    "first": "2026-09-08T14:45:05.606Z",
-   "last": "2026-09-29T07:30:05.643Z",
+   "last": "2026-09-29T08:00:06.624Z",
    "end": "2026-09-08T14:55:05.125Z",
    "feedStart": null,
    "station": "Rosemont",
@@ -558,7 +558,7 @@
   {
    "id": "stm-angrignon-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-29T07:30:05.643Z",
+   "last": "2026-09-29T08:00:06.624Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -576,7 +576,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-29T07:30:05.643Z",
+   "last": "2026-09-29T08:00:06.624Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -594,7 +594,7 @@
   {
    "id": "stm-2-lionel-groulx-467444fc",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-09-29T07:30:05.643Z",
+   "last": "2026-09-29T08:00:06.624Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -810,7 +810,7 @@
   {
    "id": "stm-mont-royal-cccaaf1e",
    "first": "2026-09-10T03:00:05.269Z",
-   "last": "2026-09-29T07:30:05.643Z",
+   "last": "2026-09-29T08:00:06.624Z",
    "end": "2026-09-10T03:40:05.144Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -1602,7 +1602,7 @@
   {
    "id": "stm-mcgill-37a2628e",
    "first": "2026-09-14T05:50:05.295Z",
-   "last": "2026-09-29T07:30:05.643Z",
+   "last": "2026-09-29T08:00:06.624Z",
    "end": "2026-09-14T07:00:05.180Z",
    "feedStart": null,
    "station": "McGill",
@@ -1746,7 +1746,7 @@
   {
    "id": "stm-edouard-montpetit-4a3c1dc5",
    "first": "2026-09-15T05:15:02.401Z",
-   "last": "2026-09-29T07:30:05.643Z",
+   "last": "2026-09-29T08:00:06.624Z",
    "end": "2026-09-15T09:25:05.325Z",
    "feedStart": null,
    "station": "Édouard-Montpetit",
@@ -2718,7 +2718,7 @@
   {
    "id": "stm-henri-bourassa-05870966",
    "first": "2026-09-29T05:55:06.118Z",
-   "last": "2026-09-29T07:30:05.643Z",
+   "last": "2026-09-29T08:00:06.624Z",
    "end": null,
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -2730,7 +2730,7 @@
    "unplanned": false,
    "header": "Henri-Bourassa: The elevator shuttled between the STM ticket booth level and the intermediate level of this station is presently out of service. Indefinite period. The elevator shuttled between the intermediate level of this station and the platform heading towards Montmorency is presently out of service. Indefinite period. The elevator shuttled between the intermediate level of this station and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 1.58,
+   "observedHours": 2.08,
    "sinceFeedStartHours": null
   },
   {
@@ -2772,7 +2772,7 @@
   {
    "id": "stm-montmorency-zone-b-95659080",
    "first": "2026-09-29T07:30:05.643Z",
-   "last": "2026-09-29T07:30:05.643Z",
+   "last": "2026-09-29T08:00:06.624Z",
    "end": null,
    "feedStart": null,
    "station": "Montmorency (zone B)",
@@ -2783,6 +2783,24 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Montmorency (zone B): The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0.5,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-5-jean-talon-35589c30",
+   "first": "2026-09-29T08:00:06.624Z",
+   "last": "2026-09-29T08:00:06.624Z",
+   "end": null,
+   "feedStart": null,
+   "station": "5 Jean-Talon",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "5 Jean-Talon: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": true,
    "observedHours": 0,
    "sinceFeedStartHours": null
