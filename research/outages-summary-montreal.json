@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-29T13:25:04.508Z",
-   "hoursCovered": 548.74,
-   "snapshotsWithChange": 687
+   "last": "2026-09-29T13:50:06.988Z",
+   "hoursCovered": 549.15,
+   "snapshotsWithChange": 688
   },
   "distinctAlerts": 153,
   "elevatorAlerts": 153,
@@ -162,7 +162,7 @@
   {
    "id": "stm-2-lionel-groulx-25850da5",
    "first": "2026-09-07T05:10:05.209Z",
-   "last": "2026-09-28T15:05:03.195Z",
+   "last": "2026-09-29T13:50:06.988Z",
    "end": "2026-09-07T05:20:05.155Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -774,7 +774,7 @@
   {
    "id": "stm-jolicoeur-214feef9",
    "first": "2026-09-09T21:05:03.864Z",
-   "last": "2026-09-29T13:25:04.508Z",
+   "last": "2026-09-29T13:50:06.988Z",
    "end": "2026-09-09T21:20:03.542Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -2124,7 +2124,7 @@
   {
    "id": "stm-honore-beaugrand-25850da5",
    "first": "2026-09-17T09:20:05.339Z",
-   "last": "2026-09-29T13:25:04.508Z",
+   "last": "2026-09-29T13:50:06.988Z",
    "end": "2026-09-17T10:30:05.355Z",
    "feedStart": null,
    "station": "Honoré-Beaugrand",
