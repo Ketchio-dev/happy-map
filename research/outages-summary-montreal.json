@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-30T11:55:04.350Z",
-   "hoursCovered": 571.24,
-   "snapshotsWithChange": 725
+   "last": "2026-09-30T12:00:04.659Z",
+   "hoursCovered": 571.32,
+   "snapshotsWithChange": 726
   },
   "distinctAlerts": 160,
   "elevatorAlerts": 160,
@@ -144,7 +144,7 @@
   {
    "id": "stm-prefontaine-25850da5",
    "first": "2026-09-07T05:05:04.538Z",
-   "last": "2026-09-28T09:20:05.959Z",
+   "last": "2026-09-30T12:00:04.659Z",
    "end": "2026-09-07T09:20:05.522Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -2160,7 +2160,7 @@
   {
    "id": "stm-5-snowdon-3653ef75",
    "first": "2026-09-17T13:45:06.175Z",
-   "last": "2026-09-30T11:55:04.350Z",
+   "last": "2026-09-30T12:00:04.659Z",
    "end": "2026-09-17T13:50:05.715Z",
    "feedStart": null,
    "station": "5 Snowdon",
@@ -2826,7 +2826,7 @@
   {
    "id": "stm-2-4-berri-uqam-95659080",
    "first": "2026-09-30T04:00:05.566Z",
-   "last": "2026-09-30T11:55:04.350Z",
+   "last": "2026-09-30T12:00:04.659Z",
    "end": "2026-09-30T04:35:05.697Z",
    "feedStart": null,
    "station": "2 4 Berri-UQAM",
