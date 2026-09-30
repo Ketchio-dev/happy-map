@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-29T16:15:06.513Z",
-   "hoursCovered": 551.57,
-   "snapshotsWithChange": 697
+   "last": "2026-09-30T01:15:05.542Z",
+   "hoursCovered": 560.57,
+   "snapshotsWithChange": 698
   },
   "distinctAlerts": 154,
   "elevatorAlerts": 154,
@@ -1026,7 +1026,7 @@
   {
    "id": "stm-mont-royal-15637ddb",
    "first": "2026-09-10T15:40:05.189Z",
-   "last": "2026-09-28T09:30:06.071Z",
+   "last": "2026-09-30T01:15:05.542Z",
    "end": "2026-09-10T15:50:05.403Z",
    "feedStart": null,
    "station": "Mont-Royal",
