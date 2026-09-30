@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-30T11:00:05.587Z",
-   "hoursCovered": 570.32,
-   "snapshotsWithChange": 724
+   "last": "2026-09-30T11:55:04.350Z",
+   "hoursCovered": 571.24,
+   "snapshotsWithChange": 725
   },
   "distinctAlerts": 160,
   "elevatorAlerts": 160,
@@ -2160,7 +2160,7 @@
   {
    "id": "stm-5-snowdon-3653ef75",
    "first": "2026-09-17T13:45:06.175Z",
-   "last": "2026-09-17T14:25:05.352Z",
+   "last": "2026-09-30T11:55:04.350Z",
    "end": "2026-09-17T13:50:05.715Z",
    "feedStart": null,
    "station": "5 Snowdon",
@@ -2826,7 +2826,7 @@
   {
    "id": "stm-2-4-berri-uqam-95659080",
    "first": "2026-09-30T04:00:05.566Z",
-   "last": "2026-09-30T11:00:05.587Z",
+   "last": "2026-09-30T11:55:04.350Z",
    "end": "2026-09-30T04:35:05.697Z",
    "feedStart": null,
    "station": "2 4 Berri-UQAM",
