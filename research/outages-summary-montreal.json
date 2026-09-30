@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-30T02:05:03.221Z",
-   "hoursCovered": 561.4,
-   "snapshotsWithChange": 699
+   "last": "2026-09-30T04:00:05.566Z",
+   "hoursCovered": 563.32,
+   "snapshotsWithChange": 700
   },
-  "distinctAlerts": 154,
-  "elevatorAlerts": 154,
+  "distinctAlerts": 155,
+  "elevatorAlerts": 155,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 0,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 33,
   "byStation": {
    "Place-des-Arts": 6,
@@ -27,7 +27,7 @@
    "Villa-Maria": 9,
    "Vendôme": 4,
    "Rosemont": 3,
-   "2 4 Berri-UQAM": 7,
+   "2 4 Berri-UQAM": 8,
    "Atwater": 3,
    "Côte-Vertu": 8,
    "D'Iberville": 2,
@@ -2821,6 +2821,24 @@
    "header": "Lionel-Groulx: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 0.17,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-2-4-berri-uqam-95659080",
+   "first": "2026-09-30T04:00:05.566Z",
+   "last": "2026-09-30T04:00:05.566Z",
+   "end": null,
+   "feedStart": null,
+   "station": "2 4 Berri-UQAM",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "2 4 Berri-UQAM: The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
