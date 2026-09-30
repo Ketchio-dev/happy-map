@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-30T19:40:04.518Z",
-   "hoursCovered": 578.99,
-   "snapshotsWithChange": 739
+   "last": "2026-09-30T20:10:05.181Z",
+   "hoursCovered": 579.49,
+   "snapshotsWithChange": 740
   },
-  "distinctAlerts": 162,
-  "elevatorAlerts": 162,
+  "distinctAlerts": 163,
+  "elevatorAlerts": 163,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 0,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 33,
   "byStation": {
    "Place-des-Arts": 6,
@@ -42,7 +42,7 @@
    "Édouard-Montpetit": 3,
    "De la Concorde (zone B)": 1,
    "McGill": 2,
-   "Berri-UQAM": 2,
+   "Berri-UQAM": 3,
    "Outremont": 6,
    "Champ-de-Mars": 3,
    "Montmorency (zone B)": 3
@@ -774,7 +774,7 @@
   {
    "id": "stm-jolicoeur-214feef9",
    "first": "2026-09-09T21:05:03.864Z",
-   "last": "2026-09-29T14:15:06.013Z",
+   "last": "2026-09-30T20:10:05.181Z",
    "end": "2026-09-09T21:20:03.542Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -954,7 +954,7 @@
   {
    "id": "stm-lionel-groulx-467444fc",
    "first": "2026-09-10T07:15:05.235Z",
-   "last": "2026-09-10T07:15:05.235Z",
+   "last": "2026-09-30T20:10:05.181Z",
    "end": "2026-09-10T07:20:05.738Z",
    "feedStart": null,
    "station": "Lionel-Groulx",
@@ -2965,6 +2965,24 @@
    "header": "Préfontaine: The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 0.08,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-berri-uqam-95659080",
+   "first": "2026-09-30T20:10:05.181Z",
+   "last": "2026-09-30T20:10:05.181Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Berri-UQAM",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Berri-UQAM: The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
