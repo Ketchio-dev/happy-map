@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-30T13:25:06.234Z",
-   "hoursCovered": 572.74,
-   "snapshotsWithChange": 728
+   "last": "2026-09-30T14:10:06.311Z",
+   "hoursCovered": 573.49,
+   "snapshotsWithChange": 729
   },
   "distinctAlerts": 161,
   "elevatorAlerts": 161,
@@ -2574,7 +2574,7 @@
   {
    "id": "stm-prefontaine-47d97100",
    "first": "2026-09-26T07:15:05.602Z",
-   "last": "2026-09-30T13:25:06.234Z",
+   "last": "2026-09-30T14:10:06.311Z",
    "end": "2026-09-26T07:20:05.381Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -2826,7 +2826,7 @@
   {
    "id": "stm-2-4-berri-uqam-95659080",
    "first": "2026-09-30T04:00:05.566Z",
-   "last": "2026-09-30T13:25:06.234Z",
+   "last": "2026-09-30T14:10:06.311Z",
    "end": "2026-09-30T04:35:05.697Z",
    "feedStart": null,
    "station": "2 4 Berri-UQAM",
