@@ -2,22 +2,22 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-09-30T12:00:04.659Z",
-   "hoursCovered": 571.32,
-   "snapshotsWithChange": 726
+   "last": "2026-09-30T13:10:06.322Z",
+   "hoursCovered": 572.49,
+   "snapshotsWithChange": 727
   },
-  "distinctAlerts": 160,
-  "elevatorAlerts": 160,
+  "distinctAlerts": 161,
+  "elevatorAlerts": 161,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 0,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 33,
   "byStation": {
    "Place-des-Arts": 6,
    "Viau": 3,
    "5 Snowdon": 7,
    "Place-d'Armes": 4,
-   "Préfontaine": 8,
+   "Préfontaine": 9,
    "2 Lionel-Groulx": 7,
    "Jolicoeur": 4,
    "Angrignon": 4,
@@ -2160,7 +2160,7 @@
   {
    "id": "stm-5-snowdon-3653ef75",
    "first": "2026-09-17T13:45:06.175Z",
-   "last": "2026-09-30T12:00:04.659Z",
+   "last": "2026-09-30T13:10:06.322Z",
    "end": "2026-09-17T13:50:05.715Z",
    "feedStart": null,
    "station": "5 Snowdon",
@@ -2826,7 +2826,7 @@
   {
    "id": "stm-2-4-berri-uqam-95659080",
    "first": "2026-09-30T04:00:05.566Z",
-   "last": "2026-09-30T12:00:04.659Z",
+   "last": "2026-09-30T13:10:06.322Z",
    "end": "2026-09-30T04:35:05.697Z",
    "feedStart": null,
    "station": "2 4 Berri-UQAM",
@@ -2929,6 +2929,24 @@
    "header": "2 4 Berri-UQAM: The elevator shuttled between the platform heading towards Côte-Vertu level of the Orange line and the platform heading towards Honoré-Beaugrand of the Green line is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 0.17,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-prefontaine-9731145a",
+   "first": "2026-09-30T13:10:06.322Z",
+   "last": "2026-09-30T13:10:06.322Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Préfontaine",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Préfontaine: The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
