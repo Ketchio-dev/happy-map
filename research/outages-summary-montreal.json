@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-01T05:35:05.460Z",
-   "hoursCovered": 588.9,
-   "snapshotsWithChange": 751
+   "last": "2026-10-01T06:05:05.513Z",
+   "hoursCovered": 589.4,
+   "snapshotsWithChange": 752
   },
   "distinctAlerts": 163,
   "elevatorAlerts": 163,
@@ -900,7 +900,7 @@
   {
    "id": "stm-du-college-5ba3275c",
    "first": "2026-09-10T05:45:05.241Z",
-   "last": "2026-09-11T08:45:05.197Z",
+   "last": "2026-10-01T06:05:05.513Z",
    "end": "2026-09-10T09:05:03.491Z",
    "feedStart": null,
    "station": "Du Collège",
@@ -1170,7 +1170,7 @@
   {
    "id": "stm-cote-vertu-63d6deb9",
    "first": "2026-09-11T05:25:05.525Z",
-   "last": "2026-10-01T05:35:05.460Z",
+   "last": "2026-10-01T06:05:05.513Z",
    "end": "2026-09-11T05:35:05.780Z",
    "feedStart": null,
    "station": "Côte-Vertu",
@@ -1602,7 +1602,7 @@
   {
    "id": "stm-mcgill-37a2628e",
    "first": "2026-09-14T05:50:05.295Z",
-   "last": "2026-10-01T05:35:05.460Z",
+   "last": "2026-10-01T06:05:05.513Z",
    "end": "2026-09-14T07:00:05.180Z",
    "feedStart": null,
    "station": "McGill",
@@ -1764,7 +1764,7 @@
   {
    "id": "stm-place-saint-henri-20b32172",
    "first": "2026-09-15T05:15:02.401Z",
-   "last": "2026-10-01T05:35:05.460Z",
+   "last": "2026-10-01T06:05:05.513Z",
    "end": "2026-09-15T09:45:05.305Z",
    "feedStart": null,
    "station": "Place-Saint-Henri",
@@ -2484,7 +2484,7 @@
   {
    "id": "stm-pie-ix-c8816c68",
    "first": "2026-09-25T12:00:05.574Z",
-   "last": "2026-10-01T05:35:05.460Z",
+   "last": "2026-10-01T06:05:05.513Z",
    "end": "2026-09-25T14:00:02.980Z",
    "feedStart": null,
    "station": "Pie-IX",
@@ -2556,7 +2556,7 @@
   {
    "id": "stm-prefontaine-df5cffe1",
    "first": "2026-09-26T05:55:06.072Z",
-   "last": "2026-10-01T05:35:05.460Z",
+   "last": "2026-10-01T06:05:05.513Z",
    "end": "2026-09-26T07:15:05.602Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -2826,7 +2826,7 @@
   {
    "id": "stm-2-4-berri-uqam-95659080",
    "first": "2026-09-30T04:00:05.566Z",
-   "last": "2026-10-01T05:35:05.460Z",
+   "last": "2026-10-01T06:05:05.513Z",
    "end": "2026-09-30T04:35:05.697Z",
    "feedStart": null,
    "station": "2 4 Berri-UQAM",
