@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-01T16:00:05.575Z",
-   "hoursCovered": 599.32,
-   "snapshotsWithChange": 769
+   "last": "2026-10-01T17:05:06.122Z",
+   "hoursCovered": 600.4,
+   "snapshotsWithChange": 770
   },
   "distinctAlerts": 164,
   "elevatorAlerts": 164,
@@ -1548,7 +1548,7 @@
   {
    "id": "stm-vendome-708c435b",
    "first": "2026-09-13T09:15:05.122Z",
-   "last": "2026-10-01T16:00:05.575Z",
+   "last": "2026-10-01T17:05:06.122Z",
    "end": "2026-09-13T09:20:05.138Z",
    "feedStart": null,
    "station": "Vendôme",
@@ -2826,7 +2826,7 @@
   {
    "id": "stm-2-4-berri-uqam-95659080",
    "first": "2026-09-30T04:00:05.566Z",
-   "last": "2026-10-01T16:00:05.575Z",
+   "last": "2026-10-01T17:05:06.122Z",
    "end": "2026-09-30T04:35:05.697Z",
    "feedStart": null,
    "station": "2 4 Berri-UQAM",
