@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-02T11:05:05.505Z",
-   "hoursCovered": 618.4,
-   "snapshotsWithChange": 806
+   "last": "2026-10-02T11:10:05.501Z",
+   "hoursCovered": 618.49,
+   "snapshotsWithChange": 807
   },
   "distinctAlerts": 164,
   "elevatorAlerts": 164,
@@ -1152,7 +1152,7 @@
   {
    "id": "stm-pie-ix-487f28bc",
    "first": "2026-09-11T05:20:05.274Z",
-   "last": "2026-10-02T11:05:05.505Z",
+   "last": "2026-10-02T11:10:05.501Z",
    "end": "2026-09-11T05:25:05.525Z",
    "feedStart": null,
    "station": "Pie-IX",
@@ -2826,7 +2826,7 @@
   {
    "id": "stm-2-4-berri-uqam-95659080",
    "first": "2026-09-30T04:00:05.566Z",
-   "last": "2026-10-02T09:35:05.677Z",
+   "last": "2026-10-02T11:10:05.501Z",
    "end": "2026-09-30T04:35:05.697Z",
    "feedStart": null,
    "station": "2 4 Berri-UQAM",
