@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-02T06:15:05.704Z",
-   "hoursCovered": 613.57,
-   "snapshotsWithChange": 797
+   "last": "2026-10-02T06:20:05.564Z",
+   "hoursCovered": 613.65,
+   "snapshotsWithChange": 798
   },
   "distinctAlerts": 164,
   "elevatorAlerts": 164,
@@ -450,7 +450,7 @@
   {
    "id": "stm-rosemont-1b51c479",
    "first": "2026-09-08T14:45:05.606Z",
-   "last": "2026-10-02T06:15:05.704Z",
+   "last": "2026-10-02T06:20:05.564Z",
    "end": "2026-09-08T14:55:05.125Z",
    "feedStart": null,
    "station": "Rosemont",
@@ -522,7 +522,7 @@
   {
    "id": "stm-prefontaine-f95d10df",
    "first": "2026-09-09T05:20:05.121Z",
-   "last": "2026-10-02T06:15:05.704Z",
+   "last": "2026-10-02T06:20:05.564Z",
    "end": "2026-09-09T09:35:03.229Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -558,7 +558,7 @@
   {
    "id": "stm-angrignon-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-10-02T06:15:05.704Z",
+   "last": "2026-10-02T06:20:05.564Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -576,7 +576,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-10-02T06:15:05.704Z",
+   "last": "2026-10-02T06:20:05.564Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -594,7 +594,7 @@
   {
    "id": "stm-2-lionel-groulx-467444fc",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-10-02T06:15:05.704Z",
+   "last": "2026-10-02T06:20:05.564Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -684,7 +684,7 @@
   {
    "id": "stm-atwater-47d97100",
    "first": "2026-09-09T14:10:05.181Z",
-   "last": "2026-10-02T06:15:05.704Z",
+   "last": "2026-10-02T06:20:05.564Z",
    "end": "2026-09-09T15:55:05.269Z",
    "feedStart": null,
    "station": "Atwater",
@@ -810,7 +810,7 @@
   {
    "id": "stm-mont-royal-cccaaf1e",
    "first": "2026-09-10T03:00:05.269Z",
-   "last": "2026-10-02T06:15:05.704Z",
+   "last": "2026-10-02T06:20:05.564Z",
    "end": "2026-09-10T03:40:05.144Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -1062,7 +1062,7 @@
   {
    "id": "stm-bonaventure-95659080",
    "first": "2026-09-11T05:00:05.240Z",
-   "last": "2026-10-02T06:15:05.704Z",
+   "last": "2026-10-02T06:20:05.564Z",
    "end": "2026-09-11T09:25:05.245Z",
    "feedStart": null,
    "station": "Bonaventure",
@@ -1152,7 +1152,7 @@
   {
    "id": "stm-pie-ix-487f28bc",
    "first": "2026-09-11T05:20:05.274Z",
-   "last": "2026-10-02T06:15:05.704Z",
+   "last": "2026-10-02T06:20:05.564Z",
    "end": "2026-09-11T05:25:05.525Z",
    "feedStart": null,
    "station": "Pie-IX",
@@ -1170,7 +1170,7 @@
   {
    "id": "stm-cote-vertu-63d6deb9",
    "first": "2026-09-11T05:25:05.525Z",
-   "last": "2026-10-02T06:15:05.704Z",
+   "last": "2026-10-02T06:20:05.564Z",
    "end": "2026-09-11T05:35:05.780Z",
    "feedStart": null,
    "station": "Côte-Vertu",
@@ -2088,7 +2088,7 @@
   {
    "id": "stm-5-jean-talon-1b51c479",
    "first": "2026-09-17T06:25:03.414Z",
-   "last": "2026-09-30T05:50:05.429Z",
+   "last": "2026-10-02T06:20:05.564Z",
    "end": "2026-09-17T07:40:05.384Z",
    "feedStart": null,
    "station": "5 Jean-Talon",
@@ -2718,7 +2718,7 @@
   {
    "id": "stm-henri-bourassa-05870966",
    "first": "2026-09-29T05:55:06.118Z",
-   "last": "2026-10-02T06:15:05.704Z",
+   "last": "2026-10-02T06:20:05.564Z",
    "end": "2026-09-29T08:05:05.553Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -2826,7 +2826,7 @@
   {
    "id": "stm-2-4-berri-uqam-95659080",
    "first": "2026-09-30T04:00:05.566Z",
-   "last": "2026-10-02T06:15:05.704Z",
+   "last": "2026-10-02T06:20:05.564Z",
    "end": "2026-09-30T04:35:05.697Z",
    "feedStart": null,
    "station": "2 4 Berri-UQAM",
