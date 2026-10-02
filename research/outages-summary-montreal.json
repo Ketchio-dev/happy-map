@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-02T16:40:06.203Z",
-   "hoursCovered": 623.99,
-   "snapshotsWithChange": 811
+   "last": "2026-10-02T17:45:03.094Z",
+   "hoursCovered": 625.07,
+   "snapshotsWithChange": 812
   },
   "distinctAlerts": 165,
   "elevatorAlerts": 165,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 33,
   "byStation": {
    "Place-des-Arts": 6,
@@ -3007,7 +3007,7 @@
    "id": "stm-de-la-concorde-zone-b-25850da5",
    "first": "2026-10-02T16:40:06.203Z",
    "last": "2026-10-02T16:40:06.203Z",
-   "end": null,
+   "end": "2026-10-02T17:45:03.094Z",
    "feedStart": null,
    "station": "De la Concorde (zone B)",
    "type": "Elevator",
@@ -3017,8 +3017,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "De la Concorde (zone B): The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 1.08,
    "sinceFeedStartHours": null
   }
  ]
