@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-02T05:10:05.642Z",
-   "hoursCovered": 612.49,
-   "snapshotsWithChange": 791
+   "last": "2026-10-02T05:15:06.294Z",
+   "hoursCovered": 612.57,
+   "snapshotsWithChange": 792
   },
   "distinctAlerts": 164,
   "elevatorAlerts": 164,
@@ -504,7 +504,7 @@
   {
    "id": "stm-prefontaine-374d8fac",
    "first": "2026-09-09T05:15:05.152Z",
-   "last": "2026-09-30T05:15:06.254Z",
+   "last": "2026-10-02T05:15:06.294Z",
    "end": "2026-09-09T05:20:05.121Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -684,7 +684,7 @@
   {
    "id": "stm-atwater-47d97100",
    "first": "2026-09-09T14:10:05.181Z",
-   "last": "2026-10-02T05:10:05.642Z",
+   "last": "2026-10-02T05:15:06.294Z",
    "end": "2026-09-09T15:55:05.269Z",
    "feedStart": null,
    "station": "Atwater",
@@ -1062,7 +1062,7 @@
   {
    "id": "stm-bonaventure-95659080",
    "first": "2026-09-11T05:00:05.240Z",
-   "last": "2026-10-02T05:10:05.642Z",
+   "last": "2026-10-02T05:15:06.294Z",
    "end": "2026-09-11T09:25:05.245Z",
    "feedStart": null,
    "station": "Bonaventure",
@@ -1080,7 +1080,7 @@
   {
    "id": "stm-pie-ix-74f7ad9a",
    "first": "2026-09-11T05:10:05.521Z",
-   "last": "2026-10-02T05:10:05.642Z",
+   "last": "2026-10-02T05:15:06.294Z",
    "end": "2026-09-11T05:15:05.431Z",
    "feedStart": null,
    "station": "Pie-IX",
@@ -2826,7 +2826,7 @@
   {
    "id": "stm-2-4-berri-uqam-95659080",
    "first": "2026-09-30T04:00:05.566Z",
-   "last": "2026-10-02T05:10:05.642Z",
+   "last": "2026-10-02T05:15:06.294Z",
    "end": "2026-09-30T04:35:05.697Z",
    "feedStart": null,
    "station": "2 4 Berri-UQAM",
