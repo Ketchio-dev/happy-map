@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-03T09:15:06.367Z",
-   "hoursCovered": 640.57,
-   "snapshotsWithChange": 833
+   "last": "2026-10-03T09:20:05.570Z",
+   "hoursCovered": 640.65,
+   "snapshotsWithChange": 834
   },
   "distinctAlerts": 165,
   "elevatorAlerts": 165,
@@ -522,7 +522,7 @@
   {
    "id": "stm-prefontaine-f95d10df",
    "first": "2026-09-09T05:20:05.121Z",
-   "last": "2026-10-03T09:15:06.367Z",
+   "last": "2026-10-03T09:20:05.570Z",
    "end": "2026-09-09T09:35:03.229Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -1134,7 +1134,7 @@
   {
    "id": "stm-atwater-78d99afb",
    "first": "2026-09-11T05:20:05.274Z",
-   "last": "2026-10-03T09:15:06.367Z",
+   "last": "2026-10-03T09:20:05.570Z",
    "end": "2026-09-11T09:20:05.220Z",
    "feedStart": null,
    "station": "Atwater",
