@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-04T05:30:05.539Z",
-   "hoursCovered": 660.82,
-   "snapshotsWithChange": 844
+   "last": "2026-10-04T05:35:06.330Z",
+   "hoursCovered": 660.9,
+   "snapshotsWithChange": 845
   },
-  "distinctAlerts": 166,
-  "elevatorAlerts": 166,
+  "distinctAlerts": 167,
+  "elevatorAlerts": 167,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 2,
   "stationsWithElevatorOutage": 33,
   "byStation": {
    "Place-des-Arts": 7,
@@ -43,7 +43,7 @@
    "De la Concorde (zone B)": 2,
    "McGill": 3,
    "Berri-UQAM": 3,
-   "Outremont": 6,
+   "Outremont": 7,
    "Champ-de-Mars": 3,
    "Montmorency (zone B)": 3
   },
@@ -108,7 +108,7 @@
   {
    "id": "stm-place-d-armes-95659080",
    "first": "2026-09-06T23:25:05.174Z",
-   "last": "2026-09-29T15:40:05.703Z",
+   "last": "2026-10-04T05:35:06.330Z",
    "end": "2026-09-07T00:50:05.393Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -594,7 +594,7 @@
   {
    "id": "stm-2-lionel-groulx-467444fc",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-10-04T05:30:05.539Z",
+   "last": "2026-10-04T05:35:06.330Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -3024,7 +3024,7 @@
   {
    "id": "stm-place-des-arts-657d3c9f",
    "first": "2026-10-04T05:25:03.910Z",
-   "last": "2026-10-04T05:30:05.539Z",
+   "last": "2026-10-04T05:35:06.330Z",
    "end": null,
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -3036,7 +3036,25 @@
    "unplanned": false,
    "header": "Place-des-Arts: The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.08,
+   "observedHours": 0.17,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-outremont-5079b5d5",
+   "first": "2026-10-04T05:35:06.330Z",
+   "last": "2026-10-04T05:35:06.330Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Outremont",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Outremont: The elevator shuttled between the STM ticket booth level and the platform heading towards Snowdon is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Saint-Michel is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
