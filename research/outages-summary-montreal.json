@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-04T02:10:05.652Z",
-   "hoursCovered": 657.49,
-   "snapshotsWithChange": 839
+   "last": "2026-10-04T03:20:06.153Z",
+   "hoursCovered": 658.65,
+   "snapshotsWithChange": 840
   },
   "distinctAlerts": 165,
   "elevatorAlerts": 165,
@@ -360,7 +360,7 @@
   {
    "id": "stm-place-saint-henri-3082f303",
    "first": "2026-09-08T11:15:05.203Z",
-   "last": "2026-09-30T09:40:05.659Z",
+   "last": "2026-10-04T03:20:06.153Z",
    "end": "2026-09-08T11:20:05.133Z",
    "feedStart": null,
    "station": "Place-Saint-Henri",
