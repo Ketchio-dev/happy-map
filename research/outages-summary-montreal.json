@@ -2,18 +2,18 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-04T04:35:05.592Z",
-   "hoursCovered": 659.9,
-   "snapshotsWithChange": 842
+   "last": "2026-10-04T05:25:03.910Z",
+   "hoursCovered": 660.74,
+   "snapshotsWithChange": 843
   },
-  "distinctAlerts": 165,
-  "elevatorAlerts": 165,
+  "distinctAlerts": 166,
+  "elevatorAlerts": 166,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 0,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 33,
   "byStation": {
-   "Place-des-Arts": 6,
+   "Place-des-Arts": 7,
    "Viau": 3,
    "5 Snowdon": 7,
    "Place-d'Armes": 4,
@@ -3019,6 +3019,24 @@
    "header": "De la Concorde (zone B): The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 1.08,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-place-des-arts-657d3c9f",
+   "first": "2026-10-04T05:25:03.910Z",
+   "last": "2026-10-04T05:25:03.910Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Place-des-Arts",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Place-des-Arts: The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
