@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-04T07:40:06.012Z",
-   "hoursCovered": 662.99,
-   "snapshotsWithChange": 849
+   "last": "2026-10-04T09:15:05.542Z",
+   "hoursCovered": 664.57,
+   "snapshotsWithChange": 850
   },
   "distinctAlerts": 168,
   "elevatorAlerts": 168,
@@ -108,7 +108,7 @@
   {
    "id": "stm-place-d-armes-95659080",
    "first": "2026-09-06T23:25:05.174Z",
-   "last": "2026-10-04T07:40:06.012Z",
+   "last": "2026-10-04T09:15:05.542Z",
    "end": "2026-09-07T00:50:05.393Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -360,7 +360,7 @@
   {
    "id": "stm-place-saint-henri-3082f303",
    "first": "2026-09-08T11:15:05.203Z",
-   "last": "2026-10-04T07:40:06.012Z",
+   "last": "2026-10-04T09:15:05.542Z",
    "end": "2026-09-08T11:20:05.133Z",
    "feedStart": null,
    "station": "Place-Saint-Henri",
@@ -810,7 +810,7 @@
   {
    "id": "stm-mont-royal-cccaaf1e",
    "first": "2026-09-10T03:00:05.269Z",
-   "last": "2026-10-04T07:40:06.012Z",
+   "last": "2026-10-04T09:15:05.542Z",
    "end": "2026-09-10T03:40:05.144Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -1134,7 +1134,7 @@
   {
    "id": "stm-atwater-78d99afb",
    "first": "2026-09-11T05:20:05.274Z",
-   "last": "2026-10-04T07:40:06.012Z",
+   "last": "2026-10-04T09:15:05.542Z",
    "end": "2026-09-11T09:20:05.220Z",
    "feedStart": null,
    "station": "Atwater",
@@ -1548,7 +1548,7 @@
   {
    "id": "stm-vendome-708c435b",
    "first": "2026-09-13T09:15:05.122Z",
-   "last": "2026-10-01T17:05:06.122Z",
+   "last": "2026-10-04T09:15:05.542Z",
    "end": "2026-09-13T09:20:05.138Z",
    "feedStart": null,
    "station": "Vendôme",
@@ -3024,7 +3024,7 @@
   {
    "id": "stm-place-des-arts-657d3c9f",
    "first": "2026-10-04T05:25:03.910Z",
-   "last": "2026-10-04T07:40:06.012Z",
+   "last": "2026-10-04T09:15:05.542Z",
    "end": null,
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -3036,7 +3036,7 @@
    "unplanned": false,
    "header": "Place-des-Arts: The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 2.25,
+   "observedHours": 3.83,
    "sinceFeedStartHours": null
   },
   {
@@ -3060,7 +3060,7 @@
   {
    "id": "stm-outremont-97727863",
    "first": "2026-10-04T05:40:04.523Z",
-   "last": "2026-10-04T07:40:06.012Z",
+   "last": "2026-10-04T09:15:05.542Z",
    "end": null,
    "feedStart": null,
    "station": "Outremont",
@@ -3072,7 +3072,7 @@
    "unplanned": false,
    "header": "Outremont: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Snowdon is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Saint-Michel is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 2,
+   "observedHours": 3.58,
    "sinceFeedStartHours": null
   }
  ]
