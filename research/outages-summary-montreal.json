@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-05T12:15:05.648Z",
-   "hoursCovered": 691.57,
-   "snapshotsWithChange": 870
+   "last": "2026-10-05T12:50:05.543Z",
+   "hoursCovered": 692.15,
+   "snapshotsWithChange": 871
   },
   "distinctAlerts": 170,
   "elevatorAlerts": 170,
@@ -1098,7 +1098,7 @@
   {
    "id": "stm-place-d-armes-58f0c5f9",
    "first": "2026-09-11T05:10:05.521Z",
-   "last": "2026-09-18T11:45:05.436Z",
+   "last": "2026-10-05T12:50:05.543Z",
    "end": "2026-09-11T11:35:03.661Z",
    "feedStart": null,
    "station": "Place-d'Armes",
