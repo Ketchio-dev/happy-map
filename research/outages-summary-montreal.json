@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-05T14:50:04.553Z",
-   "hoursCovered": 694.15,
-   "snapshotsWithChange": 878
+   "last": "2026-10-05T14:55:05.785Z",
+   "hoursCovered": 694.24,
+   "snapshotsWithChange": 879
   },
   "distinctAlerts": 171,
   "elevatorAlerts": 171,
@@ -108,7 +108,7 @@
   {
    "id": "stm-place-d-armes-95659080",
    "first": "2026-09-06T23:25:05.174Z",
-   "last": "2026-10-05T14:50:04.553Z",
+   "last": "2026-10-05T14:55:05.785Z",
    "end": "2026-09-07T00:50:05.393Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -684,7 +684,7 @@
   {
    "id": "stm-atwater-47d97100",
    "first": "2026-09-09T14:10:05.181Z",
-   "last": "2026-10-05T14:50:04.553Z",
+   "last": "2026-10-05T14:55:05.785Z",
    "end": "2026-09-09T15:55:05.269Z",
    "feedStart": null,
    "station": "Atwater",
@@ -1926,7 +1926,7 @@
   {
    "id": "stm-outremont-d26a28b1",
    "first": "2026-09-16T14:05:04.249Z",
-   "last": "2026-10-05T14:50:04.553Z",
+   "last": "2026-10-05T14:55:05.785Z",
    "end": "2026-09-16T15:15:05.332Z",
    "feedStart": null,
    "station": "Outremont",
