@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-05T14:35:06.336Z",
-   "hoursCovered": 693.9,
-   "snapshotsWithChange": 876
+   "last": "2026-10-05T14:45:04.571Z",
+   "hoursCovered": 694.07,
+   "snapshotsWithChange": 877
   },
-  "distinctAlerts": 170,
-  "elevatorAlerts": 170,
+  "distinctAlerts": 171,
+  "elevatorAlerts": 171,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 0,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 33,
   "byStation": {
    "Place-des-Arts": 7,
@@ -33,7 +33,7 @@
    "D'Iberville": 4,
    "Mont-Royal": 3,
    "Du Collège": 4,
-   "Henri-Bourassa": 10,
+   "Henri-Bourassa": 11,
    "Honoré-Beaugrand": 6,
    "Lionel-Groulx": 3,
    "Jean-Talon": 1,
@@ -108,7 +108,7 @@
   {
    "id": "stm-place-d-armes-95659080",
    "first": "2026-09-06T23:25:05.174Z",
-   "last": "2026-10-05T14:35:06.336Z",
+   "last": "2026-10-05T14:45:04.571Z",
    "end": "2026-09-07T00:50:05.393Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -684,7 +684,7 @@
   {
    "id": "stm-atwater-47d97100",
    "first": "2026-09-09T14:10:05.181Z",
-   "last": "2026-10-04T05:40:04.523Z",
+   "last": "2026-10-05T14:45:04.571Z",
    "end": "2026-09-09T15:55:05.269Z",
    "feedStart": null,
    "station": "Atwater",
@@ -1926,7 +1926,7 @@
   {
    "id": "stm-outremont-d26a28b1",
    "first": "2026-09-16T14:05:04.249Z",
-   "last": "2026-10-05T14:35:06.336Z",
+   "last": "2026-10-05T14:45:04.571Z",
    "end": "2026-09-16T15:15:05.332Z",
    "feedStart": null,
    "station": "Outremont",
@@ -3109,6 +3109,24 @@
    "header": "D'Iberville: The elevator shuttled between the STM ticket booth level and the platform heading towards Snowdon is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Saint-Michel is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 2.08,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-henri-bourassa-d8f96e87",
+   "first": "2026-10-05T14:45:04.571Z",
+   "last": "2026-10-05T14:45:04.571Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Henri-Bourassa",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Henri-Bourassa: The elevator shuttled between the STM ticket booth level and the intermediate level of this station is presently out of service. Indefinite period. The elevator shuttled between the intermediate level of this station and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
