@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-05T14:15:06.609Z",
-   "hoursCovered": 693.57,
-   "snapshotsWithChange": 875
+   "last": "2026-10-05T14:35:06.336Z",
+   "hoursCovered": 693.9,
+   "snapshotsWithChange": 876
   },
   "distinctAlerts": 170,
   "elevatorAlerts": 170,
@@ -108,7 +108,7 @@
   {
    "id": "stm-place-d-armes-95659080",
    "first": "2026-09-06T23:25:05.174Z",
-   "last": "2026-10-05T14:15:06.609Z",
+   "last": "2026-10-05T14:35:06.336Z",
    "end": "2026-09-07T00:50:05.393Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -1926,7 +1926,7 @@
   {
    "id": "stm-outremont-d26a28b1",
    "first": "2026-09-16T14:05:04.249Z",
-   "last": "2026-10-04T05:30:05.539Z",
+   "last": "2026-10-05T14:35:06.336Z",
    "end": "2026-09-16T15:15:05.332Z",
    "feedStart": null,
    "station": "Outremont",
@@ -2718,7 +2718,7 @@
   {
    "id": "stm-henri-bourassa-05870966",
    "first": "2026-09-29T05:55:06.118Z",
-   "last": "2026-10-05T14:15:06.609Z",
+   "last": "2026-10-05T14:35:06.336Z",
    "end": "2026-09-29T08:05:05.553Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
