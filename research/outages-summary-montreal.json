@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-04T22:40:05.695Z",
-   "hoursCovered": 677.99,
-   "snapshotsWithChange": 859
+   "last": "2026-10-05T00:30:04.490Z",
+   "hoursCovered": 679.82,
+   "snapshotsWithChange": 860
   },
   "distinctAlerts": 169,
   "elevatorAlerts": 169,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 33,
   "byStation": {
    "Place-des-Arts": 7,
@@ -1458,7 +1458,7 @@
   {
    "id": "stm-de-la-concorde-zone-b-92ee7ec6",
    "first": "2026-09-12T10:30:05.231Z",
-   "last": "2026-09-22T13:20:06.761Z",
+   "last": "2026-10-05T00:30:04.490Z",
    "end": "2026-09-12T12:20:05.881Z",
    "feedStart": null,
    "station": "De la Concorde (zone B)",
@@ -3079,7 +3079,7 @@
    "id": "stm-de-la-concorde-zone-b-95659080",
    "first": "2026-10-04T22:40:05.695Z",
    "last": "2026-10-04T22:40:05.695Z",
-   "end": null,
+   "end": "2026-10-05T00:30:04.490Z",
    "feedStart": null,
    "station": "De la Concorde (zone B)",
    "type": "Elevator",
@@ -3089,8 +3089,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "De la Concorde (zone B): The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 1.83,
    "sinceFeedStartHours": null
   }
  ]
