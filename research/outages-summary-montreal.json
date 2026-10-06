@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-06T14:00:06.491Z",
-   "hoursCovered": 717.32,
-   "snapshotsWithChange": 910
+   "last": "2026-10-06T14:10:06.494Z",
+   "hoursCovered": 717.49,
+   "snapshotsWithChange": 911
   },
   "distinctAlerts": 174,
   "elevatorAlerts": 174,
@@ -1998,7 +1998,7 @@
   {
    "id": "stm-outremont-25850da5",
    "first": "2026-09-16T15:15:05.332Z",
-   "last": "2026-10-05T05:30:06.277Z",
+   "last": "2026-10-06T14:10:06.494Z",
    "end": "2026-09-16T16:35:05.485Z",
    "feedStart": null,
    "station": "Outremont",
@@ -2412,7 +2412,7 @@
   {
    "id": "stm-rosemont-25850da5",
    "first": "2026-09-23T02:30:05.697Z",
-   "last": "2026-10-06T14:00:06.491Z",
+   "last": "2026-10-06T14:10:06.494Z",
    "end": "2026-09-23T02:50:05.360Z",
    "feedStart": null,
    "station": "Rosemont",
