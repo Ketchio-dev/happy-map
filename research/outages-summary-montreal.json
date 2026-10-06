@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-06T11:55:06.423Z",
-   "hoursCovered": 715.24,
-   "snapshotsWithChange": 900
+   "last": "2026-10-06T12:05:04.575Z",
+   "hoursCovered": 715.4,
+   "snapshotsWithChange": 901
   },
   "distinctAlerts": 174,
   "elevatorAlerts": 174,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 33,
   "byStation": {
    "Place-des-Arts": 7,
@@ -3169,7 +3169,7 @@
    "id": "stm-2-4-berri-uqam-7b6dad41",
    "first": "2026-10-06T11:55:06.423Z",
    "last": "2026-10-06T11:55:06.423Z",
-   "end": null,
+   "end": "2026-10-06T12:05:04.575Z",
    "feedStart": null,
    "station": "2 4 Berri-UQAM",
    "type": "Elevator",
@@ -3179,8 +3179,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "2 4 Berri-UQAM: The elevator shuttled between the platform heading towards Montmorency level of the Orange line and the platform heading towards Angrignon of the Green line is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 0.17,
    "sinceFeedStartHours": null
   }
  ]
