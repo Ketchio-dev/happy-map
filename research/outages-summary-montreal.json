@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-06T12:45:05.628Z",
-   "hoursCovered": 716.07,
-   "snapshotsWithChange": 905
+   "last": "2026-10-06T13:25:05.737Z",
+   "hoursCovered": 716.74,
+   "snapshotsWithChange": 906
   },
   "distinctAlerts": 174,
   "elevatorAlerts": 174,
@@ -2412,7 +2412,7 @@
   {
    "id": "stm-rosemont-25850da5",
    "first": "2026-09-23T02:30:05.697Z",
-   "last": "2026-10-06T12:45:05.628Z",
+   "last": "2026-10-06T13:25:05.737Z",
    "end": "2026-09-23T02:50:05.360Z",
    "feedStart": null,
    "station": "Rosemont",
