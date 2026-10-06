@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-06T12:05:04.575Z",
-   "hoursCovered": 715.4,
-   "snapshotsWithChange": 901
+   "last": "2026-10-06T12:10:06.308Z",
+   "hoursCovered": 715.49,
+   "snapshotsWithChange": 902
   },
   "distinctAlerts": 174,
   "elevatorAlerts": 174,
@@ -1926,7 +1926,7 @@
   {
    "id": "stm-outremont-d26a28b1",
    "first": "2026-09-16T14:05:04.249Z",
-   "last": "2026-10-05T14:55:05.785Z",
+   "last": "2026-10-06T12:10:06.308Z",
    "end": "2026-09-16T15:15:05.332Z",
    "feedStart": null,
    "station": "Outremont",
