@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-06T13:35:05.205Z",
-   "hoursCovered": 716.9,
-   "snapshotsWithChange": 907
+   "last": "2026-10-06T13:45:06.510Z",
+   "hoursCovered": 717.07,
+   "snapshotsWithChange": 908
   },
   "distinctAlerts": 174,
   "elevatorAlerts": 174,
@@ -126,7 +126,7 @@
   {
    "id": "stm-5-snowdon-79bea365",
    "first": "2026-09-07T00:20:05.182Z",
-   "last": "2026-10-01T14:50:05.583Z",
+   "last": "2026-10-06T13:45:06.510Z",
    "end": "2026-09-07T00:30:05.264Z",
    "feedStart": null,
    "station": "5 Snowdon",
@@ -2412,7 +2412,7 @@
   {
    "id": "stm-rosemont-25850da5",
    "first": "2026-09-23T02:30:05.697Z",
-   "last": "2026-10-06T13:35:05.205Z",
+   "last": "2026-10-06T13:45:06.510Z",
    "end": "2026-09-23T02:50:05.360Z",
    "feedStart": null,
    "station": "Rosemont",
