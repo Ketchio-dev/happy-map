@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-06T08:20:05.626Z",
-   "hoursCovered": 711.65,
-   "snapshotsWithChange": 897
+   "last": "2026-10-06T09:25:06.320Z",
+   "hoursCovered": 712.74,
+   "snapshotsWithChange": 898
   },
   "distinctAlerts": 173,
   "elevatorAlerts": 173,
@@ -522,7 +522,7 @@
   {
    "id": "stm-prefontaine-f95d10df",
    "first": "2026-09-09T05:20:05.121Z",
-   "last": "2026-10-06T08:20:05.626Z",
+   "last": "2026-10-06T09:25:06.320Z",
    "end": "2026-09-09T09:35:03.229Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -1260,7 +1260,7 @@
   {
    "id": "stm-edouard-montpetit-2653c2f7",
    "first": "2026-09-11T12:10:05.197Z",
-   "last": "2026-10-03T09:15:06.367Z",
+   "last": "2026-10-06T09:25:06.320Z",
    "end": "2026-09-11T14:20:05.251Z",
    "feedStart": null,
    "station": "Édouard-Montpetit",
