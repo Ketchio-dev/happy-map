@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-07T14:45:05.851Z",
-   "hoursCovered": 742.07,
-   "snapshotsWithChange": 947
+   "last": "2026-10-07T14:50:05.801Z",
+   "hoursCovered": 742.15,
+   "snapshotsWithChange": 948
   },
   "distinctAlerts": 176,
   "elevatorAlerts": 176,
@@ -288,7 +288,7 @@
   {
    "id": "stm-5-jean-talon-25850da5",
    "first": "2026-09-07T15:35:05.101Z",
-   "last": "2026-10-07T14:45:05.851Z",
+   "last": "2026-10-07T14:50:05.801Z",
    "end": "2026-09-07T15:45:05.297Z",
    "feedStart": null,
    "station": "5 Jean-Talon",
@@ -1332,7 +1332,7 @@
   {
    "id": "stm-honore-beaugrand-47d97100",
    "first": "2026-09-11T17:35:04.427Z",
-   "last": "2026-09-23T17:05:07.413Z",
+   "last": "2026-10-07T14:50:05.801Z",
    "end": "2026-09-11T19:25:06.066Z",
    "feedStart": null,
    "station": "Honoré-Beaugrand",
