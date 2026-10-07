@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-07T14:25:06.029Z",
-   "hoursCovered": 741.74,
-   "snapshotsWithChange": 946
+   "last": "2026-10-07T14:45:05.851Z",
+   "hoursCovered": 742.07,
+   "snapshotsWithChange": 947
   },
   "distinctAlerts": 176,
   "elevatorAlerts": 176,
@@ -288,7 +288,7 @@
   {
    "id": "stm-5-jean-talon-25850da5",
    "first": "2026-09-07T15:35:05.101Z",
-   "last": "2026-10-07T14:25:06.029Z",
+   "last": "2026-10-07T14:45:05.851Z",
    "end": "2026-09-07T15:45:05.297Z",
    "feedStart": null,
    "station": "5 Jean-Talon",
