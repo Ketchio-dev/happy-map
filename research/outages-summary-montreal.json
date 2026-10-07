@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-07T02:30:06.418Z",
-   "hoursCovered": 729.82,
-   "snapshotsWithChange": 931
+   "last": "2026-10-07T05:10:05.674Z",
+   "hoursCovered": 732.49,
+   "snapshotsWithChange": 932
   },
   "distinctAlerts": 175,
   "elevatorAlerts": 175,
@@ -306,7 +306,7 @@
   {
    "id": "stm-prefontaine-74f7ad9a",
    "first": "2026-09-08T05:05:05.206Z",
-   "last": "2026-10-03T05:10:03.664Z",
+   "last": "2026-10-07T05:10:05.674Z",
    "end": "2026-09-08T05:15:05.023Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -1296,7 +1296,7 @@
   {
    "id": "stm-edouard-montpetit-16a655d5",
    "first": "2026-09-11T14:20:05.251Z",
-   "last": "2026-10-06T04:55:05.743Z",
+   "last": "2026-10-07T05:10:05.674Z",
    "end": "2026-09-11T16:50:05.202Z",
    "feedStart": null,
    "station": "Édouard-Montpetit",
@@ -1782,7 +1782,7 @@
   {
    "id": "stm-cartier-zone-b-25850da5",
    "first": "2026-09-15T12:25:05.262Z",
-   "last": "2026-10-07T02:30:06.418Z",
+   "last": "2026-10-07T05:10:05.674Z",
    "end": "2026-09-15T14:10:05.899Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
