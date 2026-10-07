@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-07T00:15:05.779Z",
-   "hoursCovered": 727.57,
-   "snapshotsWithChange": 927
+   "last": "2026-10-07T00:25:06.319Z",
+   "hoursCovered": 727.74,
+   "snapshotsWithChange": 928
   },
   "distinctAlerts": 175,
   "elevatorAlerts": 175,
@@ -234,7 +234,7 @@
   {
    "id": "stm-cartier-zone-b-92ee7ec6",
    "first": "2026-09-07T07:45:05.181Z",
-   "last": "2026-09-24T20:05:06.671Z",
+   "last": "2026-10-07T00:25:06.319Z",
    "end": "2026-09-07T09:10:05.157Z",
    "feedStart": null,
    "station": "Cartier (zone B)",
@@ -1836,7 +1836,7 @@
   {
    "id": "stm-place-des-arts-25850da5",
    "first": "2026-09-16T00:10:05.411Z",
-   "last": "2026-10-07T00:15:05.779Z",
+   "last": "2026-10-07T00:25:06.319Z",
    "end": "2026-09-16T01:25:04.651Z",
    "feedStart": null,
    "station": "Place-des-Arts",
