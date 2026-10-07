@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-07T06:10:05.805Z",
-   "hoursCovered": 733.49,
-   "snapshotsWithChange": 936
+   "last": "2026-10-07T07:00:05.816Z",
+   "hoursCovered": 734.32,
+   "snapshotsWithChange": 937
   },
   "distinctAlerts": 175,
   "elevatorAlerts": 175,
@@ -450,7 +450,7 @@
   {
    "id": "stm-rosemont-1b51c479",
    "first": "2026-09-08T14:45:05.606Z",
-   "last": "2026-10-07T06:10:05.805Z",
+   "last": "2026-10-07T07:00:05.816Z",
    "end": "2026-09-08T14:55:05.125Z",
    "feedStart": null,
    "station": "Rosemont",
@@ -522,7 +522,7 @@
   {
    "id": "stm-prefontaine-f95d10df",
    "first": "2026-09-09T05:20:05.121Z",
-   "last": "2026-10-07T06:10:05.805Z",
+   "last": "2026-10-07T07:00:05.816Z",
    "end": "2026-09-09T09:35:03.229Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -810,7 +810,7 @@
   {
    "id": "stm-mont-royal-cccaaf1e",
    "first": "2026-09-10T03:00:05.269Z",
-   "last": "2026-10-07T06:10:05.805Z",
+   "last": "2026-10-07T07:00:05.816Z",
    "end": "2026-09-10T03:40:05.144Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -1746,7 +1746,7 @@
   {
    "id": "stm-edouard-montpetit-4a3c1dc5",
    "first": "2026-09-15T05:15:02.401Z",
-   "last": "2026-10-07T06:10:05.805Z",
+   "last": "2026-10-07T07:00:05.816Z",
    "end": "2026-09-15T09:25:05.325Z",
    "feedStart": null,
    "station": "Édouard-Montpetit",
@@ -2718,7 +2718,7 @@
   {
    "id": "stm-henri-bourassa-05870966",
    "first": "2026-09-29T05:55:06.118Z",
-   "last": "2026-10-07T06:10:05.805Z",
+   "last": "2026-10-07T07:00:05.816Z",
    "end": "2026-09-29T08:05:05.553Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -2790,7 +2790,7 @@
   {
    "id": "stm-5-jean-talon-35589c30",
    "first": "2026-09-29T08:00:06.624Z",
-   "last": "2026-10-07T06:10:05.805Z",
+   "last": "2026-10-07T07:00:05.816Z",
    "end": "2026-09-29T08:05:05.553Z",
    "feedStart": null,
    "station": "5 Jean-Talon",
