@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-07T12:35:05.776Z",
-   "hoursCovered": 739.9,
-   "snapshotsWithChange": 944
+   "last": "2026-10-07T13:00:05.922Z",
+   "hoursCovered": 740.32,
+   "snapshotsWithChange": 945
   },
   "distinctAlerts": 176,
   "elevatorAlerts": 176,
@@ -2124,7 +2124,7 @@
   {
    "id": "stm-honore-beaugrand-25850da5",
    "first": "2026-09-17T09:20:05.339Z",
-   "last": "2026-10-07T12:35:05.776Z",
+   "last": "2026-10-07T13:00:05.922Z",
    "end": "2026-09-17T10:30:05.355Z",
    "feedStart": null,
    "station": "Honoré-Beaugrand",
