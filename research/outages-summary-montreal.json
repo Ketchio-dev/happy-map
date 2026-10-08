@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-08T05:20:06.463Z",
-   "hoursCovered": 756.65,
-   "snapshotsWithChange": 971
+   "last": "2026-10-08T06:00:03.958Z",
+   "hoursCovered": 757.32,
+   "snapshotsWithChange": 972
   },
   "distinctAlerts": 178,
   "elevatorAlerts": 178,
@@ -864,7 +864,7 @@
   {
    "id": "stm-henri-bourassa-25850da5",
    "first": "2026-09-10T05:15:05.083Z",
-   "last": "2026-10-08T05:20:06.463Z",
+   "last": "2026-10-08T06:00:03.958Z",
    "end": "2026-09-10T08:40:05.125Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -1170,7 +1170,7 @@
   {
    "id": "stm-cote-vertu-63d6deb9",
    "first": "2026-09-11T05:25:05.525Z",
-   "last": "2026-10-07T19:20:07.786Z",
+   "last": "2026-10-08T06:00:03.958Z",
    "end": "2026-09-11T05:35:05.780Z",
    "feedStart": null,
    "station": "Côte-Vertu",
@@ -3240,7 +3240,7 @@
   {
    "id": "stm-prefontaine-657d3c9f",
    "first": "2026-10-08T05:20:06.463Z",
-   "last": "2026-10-08T05:20:06.463Z",
+   "last": "2026-10-08T06:00:03.958Z",
    "end": null,
    "feedStart": null,
    "station": "Préfontaine",
@@ -3252,7 +3252,7 @@
    "unplanned": false,
    "header": "Préfontaine: The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0,
+   "observedHours": 0.67,
    "sinceFeedStartHours": null
   }
  ]
