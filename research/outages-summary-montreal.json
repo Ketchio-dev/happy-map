@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-08T07:50:06.449Z",
-   "hoursCovered": 759.15,
-   "snapshotsWithChange": 974
+   "last": "2026-10-08T08:35:06.411Z",
+   "hoursCovered": 759.9,
+   "snapshotsWithChange": 975
   },
   "distinctAlerts": 178,
   "elevatorAlerts": 178,
@@ -3240,7 +3240,7 @@
   {
    "id": "stm-prefontaine-657d3c9f",
    "first": "2026-10-08T05:20:06.463Z",
-   "last": "2026-10-08T07:50:06.449Z",
+   "last": "2026-10-08T08:35:06.411Z",
    "end": null,
    "feedStart": null,
    "station": "Préfontaine",
@@ -3252,7 +3252,7 @@
    "unplanned": false,
    "header": "Préfontaine: The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 2.5,
+   "observedHours": 3.25,
    "sinceFeedStartHours": null
   }
  ]
