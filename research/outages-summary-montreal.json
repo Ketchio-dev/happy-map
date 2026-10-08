@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-08T18:45:06.392Z",
-   "hoursCovered": 770.07,
-   "snapshotsWithChange": 990
+   "last": "2026-10-08T19:40:02.973Z",
+   "hoursCovered": 770.99,
+   "snapshotsWithChange": 991
   },
   "distinctAlerts": 180,
   "elevatorAlerts": 180,
@@ -108,7 +108,7 @@
   {
    "id": "stm-place-d-armes-95659080",
    "first": "2026-09-06T23:25:05.174Z",
-   "last": "2026-10-05T15:05:05.628Z",
+   "last": "2026-10-08T19:40:02.973Z",
    "end": "2026-09-07T00:50:05.393Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -486,7 +486,7 @@
   {
    "id": "stm-atwater-74f7ad9a",
    "first": "2026-09-09T05:15:05.152Z",
-   "last": "2026-10-08T18:45:06.392Z",
+   "last": "2026-10-08T19:40:02.973Z",
    "end": "2026-09-09T09:45:05.154Z",
    "feedStart": null,
    "station": "Atwater",
