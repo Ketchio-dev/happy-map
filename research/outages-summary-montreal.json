@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-08T14:55:05.727Z",
-   "hoursCovered": 766.24,
-   "snapshotsWithChange": 986
+   "last": "2026-10-08T15:45:06.457Z",
+   "hoursCovered": 767.07,
+   "snapshotsWithChange": 987
   },
   "distinctAlerts": 180,
   "elevatorAlerts": 180,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 33,
   "byStation": {
    "Place-des-Arts": 7,
@@ -3204,7 +3204,7 @@
   {
    "id": "stm-rosemont-95659080",
    "first": "2026-10-07T08:00:05.698Z",
-   "last": "2026-10-08T14:55:05.727Z",
+   "last": "2026-10-08T15:45:06.457Z",
    "end": "2026-10-07T08:05:05.692Z",
    "feedStart": null,
    "station": "Rosemont",
@@ -3277,7 +3277,7 @@
    "id": "stm-d-iberville-1d52eebb",
    "first": "2026-10-08T14:55:05.727Z",
    "last": "2026-10-08T14:55:05.727Z",
-   "end": null,
+   "end": "2026-10-08T15:45:06.457Z",
    "feedStart": null,
    "station": "D'Iberville",
    "type": "Elevator",
@@ -3287,8 +3287,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "D'Iberville: The elevator shuttled between the STM ticket booth level and the platform heading towards Snowdon is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 0.83,
    "sinceFeedStartHours": null
   }
  ]
