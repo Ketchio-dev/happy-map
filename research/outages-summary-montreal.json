@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-08T12:25:03.592Z",
-   "hoursCovered": 763.74,
-   "snapshotsWithChange": 979
+   "last": "2026-10-08T12:45:06.489Z",
+   "hoursCovered": 764.07,
+   "snapshotsWithChange": 980
   },
   "distinctAlerts": 178,
   "elevatorAlerts": 178,
@@ -1836,7 +1836,7 @@
   {
    "id": "stm-place-des-arts-25850da5",
    "first": "2026-09-16T00:10:05.411Z",
-   "last": "2026-10-08T12:25:03.592Z",
+   "last": "2026-10-08T12:45:06.489Z",
    "end": "2026-09-16T01:25:04.651Z",
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -2844,7 +2844,7 @@
   {
    "id": "stm-d-iberville-25850da5",
    "first": "2026-09-30T05:50:05.429Z",
-   "last": "2026-10-08T12:25:03.592Z",
+   "last": "2026-10-08T12:45:06.489Z",
    "end": "2026-09-30T09:15:06.209Z",
    "feedStart": null,
    "station": "D'Iberville",
@@ -3204,7 +3204,7 @@
   {
    "id": "stm-rosemont-95659080",
    "first": "2026-10-07T08:00:05.698Z",
-   "last": "2026-10-08T12:25:03.592Z",
+   "last": "2026-10-08T12:45:06.489Z",
    "end": "2026-10-07T08:05:05.692Z",
    "feedStart": null,
    "station": "Rosemont",
