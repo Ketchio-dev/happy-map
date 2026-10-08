@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-08T12:45:06.489Z",
-   "hoursCovered": 764.07,
-   "snapshotsWithChange": 980
+   "last": "2026-10-08T13:05:06.432Z",
+   "hoursCovered": 764.4,
+   "snapshotsWithChange": 981
   },
-  "distinctAlerts": 178,
-  "elevatorAlerts": 178,
+  "distinctAlerts": 179,
+  "elevatorAlerts": 179,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 0,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 33,
   "byStation": {
    "Place-des-Arts": 7,
@@ -27,7 +27,7 @@
    "Villa-Maria": 9,
    "Vendôme": 4,
    "Rosemont": 4,
-   "2 4 Berri-UQAM": 12,
+   "2 4 Berri-UQAM": 13,
    "Atwater": 3,
    "Côte-Vertu": 8,
    "D'Iberville": 4,
@@ -1836,7 +1836,7 @@
   {
    "id": "stm-place-des-arts-25850da5",
    "first": "2026-09-16T00:10:05.411Z",
-   "last": "2026-10-08T12:45:06.489Z",
+   "last": "2026-10-08T13:05:06.432Z",
    "end": "2026-09-16T01:25:04.651Z",
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -2844,7 +2844,7 @@
   {
    "id": "stm-d-iberville-25850da5",
    "first": "2026-09-30T05:50:05.429Z",
-   "last": "2026-10-08T12:45:06.489Z",
+   "last": "2026-10-08T13:05:06.432Z",
    "end": "2026-09-30T09:15:06.209Z",
    "feedStart": null,
    "station": "D'Iberville",
@@ -3204,7 +3204,7 @@
   {
    "id": "stm-rosemont-95659080",
    "first": "2026-10-07T08:00:05.698Z",
-   "last": "2026-10-08T12:45:06.489Z",
+   "last": "2026-10-08T13:05:06.432Z",
    "end": "2026-10-07T08:05:05.692Z",
    "feedStart": null,
    "station": "Rosemont",
@@ -3253,6 +3253,24 @@
    "header": "Préfontaine: The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 4.25,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-2-4-berri-uqam-22053ed4",
+   "first": "2026-10-08T13:05:06.432Z",
+   "last": "2026-10-08T13:05:06.432Z",
+   "end": null,
+   "feedStart": null,
+   "station": "2 4 Berri-UQAM",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "2 4 Berri-UQAM: The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period. The elevator shuttled between the platform heading towards Montmorency level of the Orange line and the platform heading towards Angrignon of the Green line is presently out of service. Indefinite period. The elevator shuttled between the platform heading towards Côte-Vertu level of the Orange line and the platform heading towards Honoré-Beaugrand of the Green line is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
