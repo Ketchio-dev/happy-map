@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-09T05:10:06.805Z",
-   "hoursCovered": 780.49,
-   "snapshotsWithChange": 996
+   "last": "2026-10-09T05:15:06.386Z",
+   "hoursCovered": 780.57,
+   "snapshotsWithChange": 997
   },
   "distinctAlerts": 180,
   "elevatorAlerts": 180,
@@ -522,7 +522,7 @@
   {
    "id": "stm-prefontaine-f95d10df",
    "first": "2026-09-09T05:20:05.121Z",
-   "last": "2026-10-07T08:10:05.704Z",
+   "last": "2026-10-09T05:15:06.386Z",
    "end": "2026-09-09T09:35:03.229Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -864,7 +864,7 @@
   {
    "id": "stm-henri-bourassa-25850da5",
    "first": "2026-09-10T05:15:05.083Z",
-   "last": "2026-10-09T05:10:06.805Z",
+   "last": "2026-10-09T05:15:06.386Z",
    "end": "2026-09-10T08:40:05.125Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -1116,7 +1116,7 @@
   {
    "id": "stm-pie-ix-9ad2f5b9",
    "first": "2026-09-11T05:15:05.431Z",
-   "last": "2026-09-18T09:00:05.512Z",
+   "last": "2026-10-09T05:15:06.386Z",
    "end": "2026-09-11T05:20:05.274Z",
    "feedStart": null,
    "station": "Pie-IX",
@@ -1134,7 +1134,7 @@
   {
    "id": "stm-atwater-78d99afb",
    "first": "2026-09-11T05:20:05.274Z",
-   "last": "2026-10-06T23:30:05.631Z",
+   "last": "2026-10-09T05:15:06.386Z",
    "end": "2026-09-11T09:20:05.220Z",
    "feedStart": null,
    "station": "Atwater",
@@ -1602,7 +1602,7 @@
   {
    "id": "stm-mcgill-37a2628e",
    "first": "2026-09-14T05:50:05.295Z",
-   "last": "2026-10-01T09:15:03.508Z",
+   "last": "2026-10-09T05:15:06.386Z",
    "end": "2026-09-14T07:00:05.180Z",
    "feedStart": null,
    "station": "McGill",
@@ -1872,7 +1872,7 @@
   {
    "id": "stm-outremont-1d52eebb",
    "first": "2026-09-16T12:10:05.310Z",
-   "last": "2026-10-09T05:10:06.805Z",
+   "last": "2026-10-09T05:15:06.386Z",
    "end": "2026-09-16T14:05:04.249Z",
    "feedStart": null,
    "station": "Outremont",
