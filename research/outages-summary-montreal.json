@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-10T05:20:05.894Z",
-   "hoursCovered": 804.65,
-   "snapshotsWithChange": 1019
+   "last": "2026-10-10T05:35:06.403Z",
+   "hoursCovered": 804.9,
+   "snapshotsWithChange": 1020
   },
   "distinctAlerts": 181,
   "elevatorAlerts": 181,
@@ -198,7 +198,7 @@
   {
    "id": "stm-jolicoeur-3b96de2d",
    "first": "2026-09-07T05:25:05.009Z",
-   "last": "2026-10-10T05:20:05.894Z",
+   "last": "2026-10-10T05:35:06.403Z",
    "end": "2026-09-07T10:15:05.065Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -990,7 +990,7 @@
   {
    "id": "stm-5-jean-talon-84c5ffb6",
    "first": "2026-09-10T12:05:03.722Z",
-   "last": "2026-10-10T05:20:05.894Z",
+   "last": "2026-10-10T05:35:06.403Z",
    "end": "2026-09-10T13:20:05.232Z",
    "feedStart": null,
    "station": "5 Jean-Talon",
@@ -1170,7 +1170,7 @@
   {
    "id": "stm-cote-vertu-63d6deb9",
    "first": "2026-09-11T05:25:05.525Z",
-   "last": "2026-10-09T06:05:05.624Z",
+   "last": "2026-10-10T05:35:06.403Z",
    "end": "2026-09-11T05:35:05.780Z",
    "feedStart": null,
    "station": "Côte-Vertu",
@@ -1746,7 +1746,7 @@
   {
    "id": "stm-edouard-montpetit-4a3c1dc5",
    "first": "2026-09-15T05:15:02.401Z",
-   "last": "2026-10-10T05:20:05.894Z",
+   "last": "2026-10-10T05:35:06.403Z",
    "end": "2026-09-15T09:25:05.325Z",
    "feedStart": null,
    "station": "Édouard-Montpetit",
@@ -3096,7 +3096,7 @@
   {
    "id": "stm-d-iberville-eeb00753",
    "first": "2026-10-05T05:40:05.611Z",
-   "last": "2026-10-10T05:20:05.894Z",
+   "last": "2026-10-10T05:35:06.403Z",
    "end": "2026-10-05T07:45:05.523Z",
    "feedStart": null,
    "station": "D'Iberville",
@@ -3240,7 +3240,7 @@
   {
    "id": "stm-prefontaine-657d3c9f",
    "first": "2026-10-08T05:20:06.463Z",
-   "last": "2026-10-10T05:20:05.894Z",
+   "last": "2026-10-10T05:35:06.403Z",
    "end": "2026-10-08T09:35:05.745Z",
    "feedStart": null,
    "station": "Préfontaine",
