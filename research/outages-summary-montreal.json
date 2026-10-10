@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-10T08:40:05.933Z",
-   "hoursCovered": 807.99,
-   "snapshotsWithChange": 1025
+   "last": "2026-10-10T09:25:05.973Z",
+   "hoursCovered": 808.74,
+   "snapshotsWithChange": 1026
   },
   "distinctAlerts": 181,
   "elevatorAlerts": 181,
@@ -198,7 +198,7 @@
   {
    "id": "stm-jolicoeur-3b96de2d",
    "first": "2026-09-07T05:25:05.009Z",
-   "last": "2026-10-10T08:40:05.933Z",
+   "last": "2026-10-10T09:25:05.973Z",
    "end": "2026-09-07T10:15:05.065Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -324,7 +324,7 @@
   {
    "id": "stm-prefontaine-9ad2f5b9",
    "first": "2026-09-08T05:15:05.023Z",
-   "last": "2026-10-03T09:30:05.581Z",
+   "last": "2026-10-10T09:25:05.973Z",
    "end": "2026-09-08T05:20:05.205Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -1260,7 +1260,7 @@
   {
    "id": "stm-edouard-montpetit-2653c2f7",
    "first": "2026-09-11T12:10:05.197Z",
-   "last": "2026-10-07T09:25:05.726Z",
+   "last": "2026-10-10T09:25:05.973Z",
    "end": "2026-09-11T14:20:05.251Z",
    "feedStart": null,
    "station": "Édouard-Montpetit",
