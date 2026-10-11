@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-11T17:35:06.189Z",
-   "hoursCovered": 840.9,
-   "snapshotsWithChange": 1050
+   "last": "2026-10-11T18:05:06.567Z",
+   "hoursCovered": 841.4,
+   "snapshotsWithChange": 1051
   },
-  "distinctAlerts": 183,
-  "elevatorAlerts": 183,
+  "distinctAlerts": 184,
+  "elevatorAlerts": 184,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 0,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 33,
   "byStation": {
    "Place-des-Arts": 7,
@@ -40,7 +40,7 @@
    "Bonaventure": 4,
    "Pie-IX": 11,
    "Édouard-Montpetit": 3,
-   "De la Concorde (zone B)": 3,
+   "De la Concorde (zone B)": 4,
    "McGill": 3,
    "Berri-UQAM": 4,
    "Outremont": 9,
@@ -1296,7 +1296,7 @@
   {
    "id": "stm-edouard-montpetit-16a655d5",
    "first": "2026-09-11T14:20:05.251Z",
-   "last": "2026-10-11T17:35:06.189Z",
+   "last": "2026-10-11T18:05:06.567Z",
    "end": "2026-09-11T16:50:05.202Z",
    "feedStart": null,
    "station": "Édouard-Montpetit",
@@ -3343,6 +3343,24 @@
    "header": "Outremont: The elevator shuttled between the STM ticket booth level and the platform heading towards Snowdon is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Saint-Michel is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 3.25,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-de-la-concorde-zone-b-1b51c479",
+   "first": "2026-10-11T18:05:06.567Z",
+   "last": "2026-10-11T18:05:06.567Z",
+   "end": null,
+   "feedStart": null,
+   "station": "De la Concorde (zone B)",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "De la Concorde (zone B): The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
