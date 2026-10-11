@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-11T00:05:06.483Z",
-   "hoursCovered": 823.4,
-   "snapshotsWithChange": 1038
+   "last": "2026-10-11T06:00:04.525Z",
+   "hoursCovered": 829.32,
+   "snapshotsWithChange": 1039
   },
-  "distinctAlerts": 182,
-  "elevatorAlerts": 182,
+  "distinctAlerts": 183,
+  "elevatorAlerts": 183,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 0,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 33,
   "byStation": {
    "Place-des-Arts": 7,
@@ -43,7 +43,7 @@
    "De la Concorde (zone B)": 3,
    "McGill": 3,
    "Berri-UQAM": 4,
-   "Outremont": 8,
+   "Outremont": 9,
    "Champ-de-Mars": 3,
    "Montmorency (zone B)": 3
   },
@@ -108,7 +108,7 @@
   {
    "id": "stm-place-d-armes-95659080",
    "first": "2026-09-06T23:25:05.174Z",
-   "last": "2026-10-08T20:05:06.346Z",
+   "last": "2026-10-11T06:00:04.525Z",
    "end": "2026-09-07T00:50:05.393Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -360,7 +360,7 @@
   {
    "id": "stm-place-saint-henri-3082f303",
    "first": "2026-09-08T11:15:05.203Z",
-   "last": "2026-10-04T09:40:05.661Z",
+   "last": "2026-10-11T06:00:04.525Z",
    "end": "2026-09-08T11:20:05.133Z",
    "feedStart": null,
    "station": "Place-Saint-Henri",
@@ -810,7 +810,7 @@
   {
    "id": "stm-mont-royal-cccaaf1e",
    "first": "2026-09-10T03:00:05.269Z",
-   "last": "2026-10-07T08:05:05.692Z",
+   "last": "2026-10-11T06:00:04.525Z",
    "end": "2026-09-10T03:40:05.144Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -1044,7 +1044,7 @@
   {
    "id": "stm-vendome-d577cf57",
    "first": "2026-09-10T17:50:05.332Z",
-   "last": "2026-10-03T06:05:05.468Z",
+   "last": "2026-10-11T06:00:04.525Z",
    "end": "2026-09-10T18:20:05.333Z",
    "feedStart": null,
    "station": "Vendôme",
@@ -1134,7 +1134,7 @@
   {
    "id": "stm-atwater-78d99afb",
    "first": "2026-09-11T05:20:05.274Z",
-   "last": "2026-10-09T09:15:05.691Z",
+   "last": "2026-10-11T06:00:04.525Z",
    "end": "2026-09-11T09:20:05.220Z",
    "feedStart": null,
    "station": "Atwater",
@@ -2610,7 +2610,7 @@
   {
    "id": "stm-villa-maria-a42adb8b",
    "first": "2026-09-27T05:50:05.622Z",
-   "last": "2026-09-27T09:35:05.468Z",
+   "last": "2026-10-11T06:00:04.525Z",
    "end": "2026-09-27T09:50:05.516Z",
    "feedStart": null,
    "station": "Villa-Maria",
@@ -3325,6 +3325,24 @@
    "header": "2 4 Berri-UQAM: The elevator shuttled between the platform heading towards Côte-Vertu level of the Orange line and the platform heading towards Honoré-Beaugrand of the Green line is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 1.58,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-outremont-eeb00753",
+   "first": "2026-10-11T06:00:04.525Z",
+   "last": "2026-10-11T06:00:04.525Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Outremont",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Outremont: The elevator shuttled between the STM ticket booth level and the platform heading towards Snowdon is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Saint-Michel is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
