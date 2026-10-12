@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-12T09:20:06.505Z",
-   "hoursCovered": 856.65,
-   "snapshotsWithChange": 1063
+   "last": "2026-10-12T09:25:06.429Z",
+   "hoursCovered": 856.74,
+   "snapshotsWithChange": 1064
   },
   "distinctAlerts": 186,
   "elevatorAlerts": 186,
@@ -1998,7 +1998,7 @@
   {
    "id": "stm-outremont-25850da5",
    "first": "2026-09-16T15:15:05.332Z",
-   "last": "2026-10-12T09:20:06.505Z",
+   "last": "2026-10-12T09:25:06.429Z",
    "end": "2026-09-16T16:35:05.485Z",
    "feedStart": null,
    "station": "Outremont",
@@ -2286,7 +2286,7 @@
   {
    "id": "stm-bonaventure-58f0c5f9",
    "first": "2026-09-21T05:05:05.352Z",
-   "last": "2026-10-12T09:20:06.505Z",
+   "last": "2026-10-12T09:25:06.429Z",
    "end": "2026-09-21T09:15:05.527Z",
    "feedStart": null,
    "station": "Bonaventure",
