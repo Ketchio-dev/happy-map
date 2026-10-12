@@ -2,18 +2,18 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-12T05:00:06.538Z",
-   "hoursCovered": 852.32,
-   "snapshotsWithChange": 1056
+   "last": "2026-10-12T05:05:06.442Z",
+   "hoursCovered": 852.4,
+   "snapshotsWithChange": 1057
   },
-  "distinctAlerts": 184,
-  "elevatorAlerts": 184,
+  "distinctAlerts": 185,
+  "elevatorAlerts": 185,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 0,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 33,
   "byStation": {
-   "Place-des-Arts": 7,
+   "Place-des-Arts": 8,
    "Viau": 3,
    "5 Snowdon": 7,
    "Place-d'Armes": 4,
@@ -396,7 +396,7 @@
   {
    "id": "stm-villa-maria-29a6675c",
    "first": "2026-09-08T11:45:05.230Z",
-   "last": "2026-10-12T05:00:06.538Z",
+   "last": "2026-10-12T05:05:06.442Z",
    "end": "2026-09-08T11:50:05.842Z",
    "feedStart": null,
    "station": "Villa-Maria",
@@ -1998,7 +1998,7 @@
   {
    "id": "stm-outremont-25850da5",
    "first": "2026-09-16T15:15:05.332Z",
-   "last": "2026-10-12T05:00:06.538Z",
+   "last": "2026-10-12T05:05:06.442Z",
    "end": "2026-09-16T16:35:05.485Z",
    "feedStart": null,
    "station": "Outremont",
@@ -3361,6 +3361,24 @@
    "header": "De la Concorde (zone B): The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 0.5,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-place-des-arts-eefbf441",
+   "first": "2026-10-12T05:05:06.442Z",
+   "last": "2026-10-12T05:05:06.442Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Place-des-Arts",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Place-des-Arts: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
