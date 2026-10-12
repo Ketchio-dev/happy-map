@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-12T05:25:02.911Z",
-   "hoursCovered": 852.73,
-   "snapshotsWithChange": 1060
+   "last": "2026-10-12T05:30:01.825Z",
+   "hoursCovered": 852.82,
+   "snapshotsWithChange": 1061
   },
-  "distinctAlerts": 185,
-  "elevatorAlerts": 185,
+  "distinctAlerts": 186,
+  "elevatorAlerts": 186,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 2,
   "stationsWithElevatorOutage": 33,
   "byStation": {
    "Place-des-Arts": 8,
@@ -24,7 +24,7 @@
    "Cartier (zone B)": 6,
    "5 Jean-Talon": 7,
    "Place-Saint-Henri": 4,
-   "Villa-Maria": 9,
+   "Villa-Maria": 10,
    "Vendôme": 4,
    "Rosemont": 4,
    "2 4 Berri-UQAM": 14,
@@ -1998,7 +1998,7 @@
   {
    "id": "stm-outremont-25850da5",
    "first": "2026-09-16T15:15:05.332Z",
-   "last": "2026-10-12T05:25:02.911Z",
+   "last": "2026-10-12T05:30:01.825Z",
    "end": "2026-09-16T16:35:05.485Z",
    "feedStart": null,
    "station": "Outremont",
@@ -2286,7 +2286,7 @@
   {
    "id": "stm-bonaventure-58f0c5f9",
    "first": "2026-09-21T05:05:05.352Z",
-   "last": "2026-10-12T05:25:02.911Z",
+   "last": "2026-10-12T05:30:01.825Z",
    "end": "2026-09-21T09:15:05.527Z",
    "feedStart": null,
    "station": "Bonaventure",
@@ -2592,7 +2592,7 @@
   {
    "id": "stm-vendome-e83fa94f",
    "first": "2026-09-27T05:50:05.622Z",
-   "last": "2026-10-12T05:25:02.911Z",
+   "last": "2026-10-12T05:30:01.825Z",
    "end": "2026-09-27T09:15:05.512Z",
    "feedStart": null,
    "station": "Vendôme",
@@ -3366,7 +3366,7 @@
   {
    "id": "stm-place-des-arts-eefbf441",
    "first": "2026-10-12T05:05:06.442Z",
-   "last": "2026-10-12T05:25:02.911Z",
+   "last": "2026-10-12T05:30:01.825Z",
    "end": null,
    "feedStart": null,
    "station": "Place-des-Arts",
@@ -3378,7 +3378,25 @@
    "unplanned": false,
    "header": "Place-des-Arts: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.33,
+   "observedHours": 0.42,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-villa-maria-1695dd0f",
+   "first": "2026-10-12T05:30:01.825Z",
+   "last": "2026-10-12T05:30:01.825Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Villa-Maria",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Villa-Maria: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level, intermediate level of this station and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the intermediate level of this station and the platform heading towards Montmorency is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
