@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-13T06:25:05.732Z",
-   "hoursCovered": 877.74,
-   "snapshotsWithChange": 1088
+   "last": "2026-10-13T07:05:05.778Z",
+   "hoursCovered": 878.4,
+   "snapshotsWithChange": 1089
   },
   "distinctAlerts": 188,
   "elevatorAlerts": 188,
@@ -144,7 +144,7 @@
   {
    "id": "stm-prefontaine-25850da5",
    "first": "2026-09-07T05:05:04.538Z",
-   "last": "2026-10-13T06:25:05.732Z",
+   "last": "2026-10-13T07:05:05.778Z",
    "end": "2026-09-07T09:20:05.522Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -558,7 +558,7 @@
   {
    "id": "stm-angrignon-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-10-13T06:25:05.732Z",
+   "last": "2026-10-13T07:05:05.778Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -576,7 +576,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-10-13T06:25:05.732Z",
+   "last": "2026-10-13T07:05:05.778Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -954,7 +954,7 @@
   {
    "id": "stm-lionel-groulx-467444fc",
    "first": "2026-09-10T07:15:05.235Z",
-   "last": "2026-09-30T20:10:05.181Z",
+   "last": "2026-10-13T07:05:05.778Z",
    "end": "2026-09-10T07:20:05.738Z",
    "feedStart": null,
    "station": "Lionel-Groulx",
@@ -1134,7 +1134,7 @@
   {
    "id": "stm-atwater-78d99afb",
    "first": "2026-09-11T05:20:05.274Z",
-   "last": "2026-10-13T06:10:05.914Z",
+   "last": "2026-10-13T07:05:05.778Z",
    "end": "2026-09-11T09:20:05.220Z",
    "feedStart": null,
    "station": "Atwater",
@@ -2268,7 +2268,7 @@
   {
    "id": "stm-outremont-b17d66a1",
    "first": "2026-09-21T05:00:05.450Z",
-   "last": "2026-10-13T06:25:05.732Z",
+   "last": "2026-10-13T07:05:05.778Z",
    "end": "2026-09-21T05:55:05.479Z",
    "feedStart": null,
    "station": "Outremont",
@@ -3402,7 +3402,7 @@
   {
    "id": "stm-d-iberville-c547576b",
    "first": "2026-10-13T05:15:05.759Z",
-   "last": "2026-10-13T06:25:05.732Z",
+   "last": "2026-10-13T07:05:05.778Z",
    "end": null,
    "feedStart": null,
    "station": "D'Iberville",
@@ -3414,13 +3414,13 @@
    "unplanned": false,
    "header": "D'Iberville: The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Saint-Michel is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Snowdon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 1.17,
+   "observedHours": 1.83,
    "sinceFeedStartHours": null
   },
   {
    "id": "stm-viau-e9d57dbb",
    "first": "2026-10-13T05:20:06.536Z",
-   "last": "2026-10-13T06:25:05.732Z",
+   "last": "2026-10-13T07:05:05.778Z",
    "end": null,
    "feedStart": null,
    "station": "Viau",
@@ -3432,7 +3432,7 @@
    "unplanned": false,
    "header": "Viau: The elevator shuttled between the street level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period. The elevator shuttled between the street level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 1.08,
+   "observedHours": 1.75,
    "sinceFeedStartHours": null
   }
  ]
