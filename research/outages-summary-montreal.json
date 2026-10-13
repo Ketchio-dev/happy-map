@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-13T15:20:06.255Z",
-   "hoursCovered": 886.65,
-   "snapshotsWithChange": 1105
+   "last": "2026-10-13T16:20:06.629Z",
+   "hoursCovered": 887.65,
+   "snapshotsWithChange": 1106
   },
   "distinctAlerts": 192,
   "elevatorAlerts": 192,
@@ -2772,7 +2772,7 @@
   {
    "id": "stm-montmorency-zone-b-95659080",
    "first": "2026-09-29T07:30:05.643Z",
-   "last": "2026-10-13T15:20:06.255Z",
+   "last": "2026-10-13T16:20:06.629Z",
    "end": "2026-09-29T10:40:05.427Z",
    "feedStart": null,
    "station": "Montmorency (zone B)",
