@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-13T04:55:03.868Z",
-   "hoursCovered": 876.24,
-   "snapshotsWithChange": 1081
+   "last": "2026-10-13T05:00:05.714Z",
+   "hoursCovered": 876.32,
+   "snapshotsWithChange": 1082
   },
   "distinctAlerts": 186,
   "elevatorAlerts": 186,
@@ -144,7 +144,7 @@
   {
    "id": "stm-prefontaine-25850da5",
    "first": "2026-09-07T05:05:04.538Z",
-   "last": "2026-10-05T09:15:06.295Z",
+   "last": "2026-10-13T05:00:05.714Z",
    "end": "2026-09-07T09:20:05.522Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -2268,7 +2268,7 @@
   {
    "id": "stm-outremont-b17d66a1",
    "first": "2026-09-21T05:00:05.450Z",
-   "last": "2026-10-05T09:15:06.295Z",
+   "last": "2026-10-13T05:00:05.714Z",
    "end": "2026-09-21T05:55:05.479Z",
    "feedStart": null,
    "station": "Outremont",
@@ -3276,7 +3276,7 @@
   {
    "id": "stm-d-iberville-1d52eebb",
    "first": "2026-10-08T14:55:05.727Z",
-   "last": "2026-10-08T14:55:05.727Z",
+   "last": "2026-10-13T05:00:05.714Z",
    "end": "2026-10-08T15:45:06.457Z",
    "feedStart": null,
    "station": "D'Iberville",
