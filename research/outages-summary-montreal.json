@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-13T09:00:05.885Z",
-   "hoursCovered": 880.32,
-   "snapshotsWithChange": 1094
+   "last": "2026-10-13T09:15:06.258Z",
+   "hoursCovered": 880.57,
+   "snapshotsWithChange": 1095
   },
   "distinctAlerts": 188,
   "elevatorAlerts": 188,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 33,
   "byStation": {
    "Place-des-Arts": 8,
@@ -144,7 +144,7 @@
   {
    "id": "stm-prefontaine-25850da5",
    "first": "2026-09-07T05:05:04.538Z",
-   "last": "2026-10-13T09:00:05.885Z",
+   "last": "2026-10-13T09:15:06.258Z",
    "end": "2026-09-07T09:20:05.522Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -2268,7 +2268,7 @@
   {
    "id": "stm-outremont-b17d66a1",
    "first": "2026-09-21T05:00:05.450Z",
-   "last": "2026-10-13T09:00:05.885Z",
+   "last": "2026-10-13T09:15:06.258Z",
    "end": "2026-09-21T05:55:05.479Z",
    "feedStart": null,
    "station": "Outremont",
@@ -3421,7 +3421,7 @@
    "id": "stm-viau-e9d57dbb",
    "first": "2026-10-13T05:20:06.536Z",
    "last": "2026-10-13T09:00:05.885Z",
-   "end": null,
+   "end": "2026-10-13T09:15:06.258Z",
    "feedStart": null,
    "station": "Viau",
    "type": "Elevator",
@@ -3431,8 +3431,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Viau: The elevator shuttled between the street level and the platform heading towards Honoré-Beaugrand is presently out of service. Indefinite period. The elevator shuttled between the street level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 3.67,
+   "ongoing": false,
+   "observedHours": 3.92,
    "sinceFeedStartHours": null
   }
  ]
