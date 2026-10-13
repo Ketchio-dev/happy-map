@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-13T01:05:06.469Z",
-   "hoursCovered": 872.4,
-   "snapshotsWithChange": 1078
+   "last": "2026-10-13T01:30:05.984Z",
+   "hoursCovered": 872.82,
+   "snapshotsWithChange": 1079
   },
   "distinctAlerts": 186,
   "elevatorAlerts": 186,
@@ -3006,7 +3006,7 @@
   {
    "id": "stm-de-la-concorde-zone-b-25850da5",
    "first": "2026-10-02T16:40:06.203Z",
-   "last": "2026-10-12T09:20:06.505Z",
+   "last": "2026-10-13T01:30:05.984Z",
    "end": "2026-10-02T17:45:03.094Z",
    "feedStart": null,
    "station": "De la Concorde (zone B)",
