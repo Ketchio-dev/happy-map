@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-14T05:10:06.606Z",
-   "hoursCovered": 900.49,
-   "snapshotsWithChange": 1117
+   "last": "2026-10-14T05:15:06.572Z",
+   "hoursCovered": 900.57,
+   "snapshotsWithChange": 1118
   },
   "distinctAlerts": 192,
   "elevatorAlerts": 192,
@@ -108,7 +108,7 @@
   {
    "id": "stm-place-d-armes-95659080",
    "first": "2026-09-06T23:25:05.174Z",
-   "last": "2026-10-14T05:10:06.606Z",
+   "last": "2026-10-14T05:15:06.572Z",
    "end": "2026-09-07T00:50:05.393Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -504,7 +504,7 @@
   {
    "id": "stm-prefontaine-374d8fac",
    "first": "2026-09-09T05:15:05.152Z",
-   "last": "2026-10-07T09:25:05.726Z",
+   "last": "2026-10-14T05:15:06.572Z",
    "end": "2026-09-09T05:20:05.121Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -1746,7 +1746,7 @@
   {
    "id": "stm-edouard-montpetit-4a3c1dc5",
    "first": "2026-09-15T05:15:02.401Z",
-   "last": "2026-10-10T08:40:05.933Z",
+   "last": "2026-10-14T05:15:06.572Z",
    "end": "2026-09-15T09:25:05.325Z",
    "feedStart": null,
    "station": "Édouard-Montpetit",
