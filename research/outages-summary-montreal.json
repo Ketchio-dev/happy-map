@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-14T14:05:04.759Z",
-   "hoursCovered": 909.4,
-   "snapshotsWithChange": 1131
+   "last": "2026-10-14T14:55:05.577Z",
+   "hoursCovered": 910.24,
+   "snapshotsWithChange": 1132
   },
   "distinctAlerts": 192,
   "elevatorAlerts": 192,
@@ -360,7 +360,7 @@
   {
    "id": "stm-place-saint-henri-3082f303",
    "first": "2026-09-08T11:15:05.203Z",
-   "last": "2026-10-14T14:05:04.759Z",
+   "last": "2026-10-14T14:55:05.577Z",
    "end": "2026-09-08T11:20:05.133Z",
    "feedStart": null,
    "station": "Place-Saint-Henri",
@@ -2250,7 +2250,7 @@
   {
    "id": "stm-champ-de-mars-d577cf57",
    "first": "2026-09-18T11:10:05.417Z",
-   "last": "2026-10-14T08:05:05.892Z",
+   "last": "2026-10-14T14:55:05.577Z",
    "end": "2026-09-18T11:35:05.521Z",
    "feedStart": null,
    "station": "Champ-de-Mars",
