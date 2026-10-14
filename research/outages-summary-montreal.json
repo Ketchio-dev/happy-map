@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-14T07:25:05.717Z",
-   "hoursCovered": 902.74,
-   "snapshotsWithChange": 1122
+   "last": "2026-10-14T08:05:05.892Z",
+   "hoursCovered": 903.4,
+   "snapshotsWithChange": 1123
   },
   "distinctAlerts": 192,
   "elevatorAlerts": 192,
@@ -108,7 +108,7 @@
   {
    "id": "stm-place-d-armes-95659080",
    "first": "2026-09-06T23:25:05.174Z",
-   "last": "2026-10-14T07:25:05.717Z",
+   "last": "2026-10-14T08:05:05.892Z",
    "end": "2026-09-07T00:50:05.393Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -144,7 +144,7 @@
   {
    "id": "stm-prefontaine-25850da5",
    "first": "2026-09-07T05:05:04.538Z",
-   "last": "2026-10-14T07:25:05.717Z",
+   "last": "2026-10-14T08:05:05.892Z",
    "end": "2026-09-07T09:20:05.522Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -558,7 +558,7 @@
   {
    "id": "stm-angrignon-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-10-14T07:25:05.717Z",
+   "last": "2026-10-14T08:05:05.892Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -576,7 +576,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-10-14T07:25:05.717Z",
+   "last": "2026-10-14T08:05:05.892Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -594,7 +594,7 @@
   {
    "id": "stm-2-lionel-groulx-467444fc",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-10-14T07:25:05.717Z",
+   "last": "2026-10-14T08:05:05.892Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -810,7 +810,7 @@
   {
    "id": "stm-mont-royal-cccaaf1e",
    "first": "2026-09-10T03:00:05.269Z",
-   "last": "2026-10-14T07:25:05.717Z",
+   "last": "2026-10-14T08:05:05.892Z",
    "end": "2026-09-10T03:40:05.144Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -2250,7 +2250,7 @@
   {
    "id": "stm-champ-de-mars-d577cf57",
    "first": "2026-09-18T11:10:05.417Z",
-   "last": "2026-10-14T07:25:05.717Z",
+   "last": "2026-10-14T08:05:05.892Z",
    "end": "2026-09-18T11:35:05.521Z",
    "feedStart": null,
    "station": "Champ-de-Mars",
