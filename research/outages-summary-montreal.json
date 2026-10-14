@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-14T18:25:06.614Z",
-   "hoursCovered": 913.74,
-   "snapshotsWithChange": 1139
+   "last": "2026-10-14T22:05:06.417Z",
+   "hoursCovered": 917.4,
+   "snapshotsWithChange": 1140
   },
   "distinctAlerts": 192,
   "elevatorAlerts": 192,
@@ -612,7 +612,7 @@
   {
    "id": "stm-cote-vertu-d53a4d8a",
    "first": "2026-09-09T09:10:05.155Z",
-   "last": "2026-10-11T12:50:05.657Z",
+   "last": "2026-10-14T22:05:06.417Z",
    "end": "2026-09-09T09:15:05.204Z",
    "feedStart": null,
    "station": "Côte-Vertu",
