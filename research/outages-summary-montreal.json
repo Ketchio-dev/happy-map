@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-14T06:00:04.196Z",
-   "hoursCovered": 901.32,
-   "snapshotsWithChange": 1120
+   "last": "2026-10-14T07:20:06.370Z",
+   "hoursCovered": 902.65,
+   "snapshotsWithChange": 1121
   },
   "distinctAlerts": 192,
   "elevatorAlerts": 192,
@@ -108,7 +108,7 @@
   {
    "id": "stm-place-d-armes-95659080",
    "first": "2026-09-06T23:25:05.174Z",
-   "last": "2026-10-14T06:00:04.196Z",
+   "last": "2026-10-14T07:20:06.370Z",
    "end": "2026-09-07T00:50:05.393Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -144,7 +144,7 @@
   {
    "id": "stm-prefontaine-25850da5",
    "first": "2026-09-07T05:05:04.538Z",
-   "last": "2026-10-14T06:00:04.196Z",
+   "last": "2026-10-14T07:20:06.370Z",
    "end": "2026-09-07T09:20:05.522Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -450,7 +450,7 @@
   {
    "id": "stm-rosemont-1b51c479",
    "first": "2026-09-08T14:45:05.606Z",
-   "last": "2026-10-14T06:00:04.196Z",
+   "last": "2026-10-14T07:20:06.370Z",
    "end": "2026-09-08T14:55:05.125Z",
    "feedStart": null,
    "station": "Rosemont",
@@ -558,7 +558,7 @@
   {
    "id": "stm-angrignon-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-10-14T06:00:04.196Z",
+   "last": "2026-10-14T07:20:06.370Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -576,7 +576,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-10-14T06:00:04.196Z",
+   "last": "2026-10-14T07:20:06.370Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -594,7 +594,7 @@
   {
    "id": "stm-2-lionel-groulx-467444fc",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-10-14T06:00:04.196Z",
+   "last": "2026-10-14T07:20:06.370Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -810,7 +810,7 @@
   {
    "id": "stm-mont-royal-cccaaf1e",
    "first": "2026-09-10T03:00:05.269Z",
-   "last": "2026-10-14T06:00:04.196Z",
+   "last": "2026-10-14T07:20:06.370Z",
    "end": "2026-09-10T03:40:05.144Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -1296,7 +1296,7 @@
   {
    "id": "stm-edouard-montpetit-16a655d5",
    "first": "2026-09-11T14:20:05.251Z",
-   "last": "2026-10-14T05:10:06.606Z",
+   "last": "2026-10-14T07:20:06.370Z",
    "end": "2026-09-11T16:50:05.202Z",
    "feedStart": null,
    "station": "Édouard-Montpetit",
@@ -2250,7 +2250,7 @@
   {
    "id": "stm-champ-de-mars-d577cf57",
    "first": "2026-09-18T11:10:05.417Z",
-   "last": "2026-10-14T06:00:04.196Z",
+   "last": "2026-10-14T07:20:06.370Z",
    "end": "2026-09-18T11:35:05.521Z",
    "feedStart": null,
    "station": "Champ-de-Mars",
@@ -2718,7 +2718,7 @@
   {
    "id": "stm-henri-bourassa-05870966",
    "first": "2026-09-29T05:55:06.118Z",
-   "last": "2026-10-14T06:00:04.196Z",
+   "last": "2026-10-14T07:20:06.370Z",
    "end": "2026-09-29T08:05:05.553Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -2790,7 +2790,7 @@
   {
    "id": "stm-5-jean-talon-35589c30",
    "first": "2026-09-29T08:00:06.624Z",
-   "last": "2026-10-14T06:00:04.196Z",
+   "last": "2026-10-14T07:20:06.370Z",
    "end": "2026-09-29T08:05:05.553Z",
    "feedStart": null,
    "station": "5 Jean-Talon",
