@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-13T21:50:06.686Z",
-   "hoursCovered": 893.15,
-   "snapshotsWithChange": 1114
+   "last": "2026-10-14T00:10:04.667Z",
+   "hoursCovered": 895.49,
+   "snapshotsWithChange": 1115
   },
   "distinctAlerts": 192,
   "elevatorAlerts": 192,
@@ -108,7 +108,7 @@
   {
    "id": "stm-place-d-armes-95659080",
    "first": "2026-09-06T23:25:05.174Z",
-   "last": "2026-10-13T21:50:06.686Z",
+   "last": "2026-10-14T00:10:04.667Z",
    "end": "2026-09-07T00:50:05.393Z",
    "feedStart": null,
    "station": "Place-d'Armes",
@@ -1854,7 +1854,7 @@
   {
    "id": "stm-du-college-15637ddb",
    "first": "2026-09-16T12:00:03.785Z",
-   "last": "2026-10-11T10:40:06.445Z",
+   "last": "2026-10-14T00:10:04.667Z",
    "end": "2026-09-16T12:05:05.364Z",
    "feedStart": null,
    "station": "Du Collège",
