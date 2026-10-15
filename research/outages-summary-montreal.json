@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-15T15:20:06.632Z",
-   "hoursCovered": 934.65,
-   "snapshotsWithChange": 1172
+   "last": "2026-10-15T15:45:05.908Z",
+   "hoursCovered": 935.07,
+   "snapshotsWithChange": 1173
   },
   "distinctAlerts": 192,
   "elevatorAlerts": 192,
@@ -252,7 +252,7 @@
   {
    "id": "stm-angrignon-3b96de2d",
    "first": "2026-09-07T08:55:05.116Z",
-   "last": "2026-10-13T21:45:04.838Z",
+   "last": "2026-10-15T15:45:05.908Z",
    "end": "2026-09-07T09:10:05.157Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -828,7 +828,7 @@
   {
    "id": "stm-mont-royal-95659080",
    "first": "2026-09-10T03:40:05.144Z",
-   "last": "2026-09-14T15:55:05.382Z",
+   "last": "2026-10-15T15:45:05.908Z",
    "end": "2026-09-10T03:45:05.086Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -2394,7 +2394,7 @@
   {
    "id": "stm-henri-bourassa-29a6675c",
    "first": "2026-09-22T12:45:05.483Z",
-   "last": "2026-10-15T15:20:06.632Z",
+   "last": "2026-10-15T15:45:05.908Z",
    "end": "2026-09-22T16:35:07.096Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
