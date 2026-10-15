@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-15T04:25:05.986Z",
-   "hoursCovered": 923.74,
-   "snapshotsWithChange": 1149
+   "last": "2026-10-15T04:55:03.384Z",
+   "hoursCovered": 924.24,
+   "snapshotsWithChange": 1150
   },
   "distinctAlerts": 192,
   "elevatorAlerts": 192,
@@ -162,7 +162,7 @@
   {
    "id": "stm-2-lionel-groulx-25850da5",
    "first": "2026-09-07T05:10:05.209Z",
-   "last": "2026-10-15T04:25:05.986Z",
+   "last": "2026-10-15T04:55:03.384Z",
    "end": "2026-09-07T05:20:05.155Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -1044,7 +1044,7 @@
   {
    "id": "stm-vendome-d577cf57",
    "first": "2026-09-10T17:50:05.332Z",
-   "last": "2026-10-12T15:10:05.818Z",
+   "last": "2026-10-15T04:55:03.384Z",
    "end": "2026-09-10T18:20:05.333Z",
    "feedStart": null,
    "station": "Vendôme",
