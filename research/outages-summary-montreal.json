@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-15T16:00:06.159Z",
-   "hoursCovered": 935.32,
-   "snapshotsWithChange": 1175
+   "last": "2026-10-15T16:40:05.883Z",
+   "hoursCovered": 935.99,
+   "snapshotsWithChange": 1176
   },
   "distinctAlerts": 192,
   "elevatorAlerts": 192,
@@ -2394,7 +2394,7 @@
   {
    "id": "stm-henri-bourassa-29a6675c",
    "first": "2026-09-22T12:45:05.483Z",
-   "last": "2026-10-15T16:00:06.159Z",
+   "last": "2026-10-15T16:40:05.883Z",
    "end": "2026-09-22T16:35:07.096Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
