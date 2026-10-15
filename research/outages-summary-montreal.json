@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-15T02:35:06.587Z",
-   "hoursCovered": 921.9,
-   "snapshotsWithChange": 1144
+   "last": "2026-10-15T02:55:05.940Z",
+   "hoursCovered": 922.24,
+   "snapshotsWithChange": 1145
   },
   "distinctAlerts": 192,
   "elevatorAlerts": 192,
@@ -162,7 +162,7 @@
   {
    "id": "stm-2-lionel-groulx-25850da5",
    "first": "2026-09-07T05:10:05.209Z",
-   "last": "2026-10-15T02:35:06.587Z",
+   "last": "2026-10-15T02:55:05.940Z",
    "end": "2026-09-07T05:20:05.155Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -396,7 +396,7 @@
   {
    "id": "stm-villa-maria-29a6675c",
    "first": "2026-09-08T11:45:05.230Z",
-   "last": "2026-10-12T05:20:06.351Z",
+   "last": "2026-10-15T02:55:05.940Z",
    "end": "2026-09-08T11:50:05.842Z",
    "feedStart": null,
    "station": "Villa-Maria",
