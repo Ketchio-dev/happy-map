@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-15T14:45:05.406Z",
-   "hoursCovered": 934.07,
-   "snapshotsWithChange": 1170
+   "last": "2026-10-15T15:05:05.833Z",
+   "hoursCovered": 934.4,
+   "snapshotsWithChange": 1171
   },
   "distinctAlerts": 192,
   "elevatorAlerts": 192,
@@ -810,7 +810,7 @@
   {
    "id": "stm-mont-royal-cccaaf1e",
    "first": "2026-09-10T03:00:05.269Z",
-   "last": "2026-10-15T07:35:05.907Z",
+   "last": "2026-10-15T15:05:05.833Z",
    "end": "2026-09-10T03:40:05.144Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -1800,7 +1800,7 @@
   {
    "id": "stm-henri-bourassa-cd3c267a",
    "first": "2026-09-15T14:10:05.899Z",
-   "last": "2026-10-15T14:45:05.406Z",
+   "last": "2026-10-15T15:05:05.833Z",
    "end": "2026-09-15T15:20:05.304Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
