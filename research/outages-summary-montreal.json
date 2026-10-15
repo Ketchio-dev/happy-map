@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-15T18:30:06.580Z",
-   "hoursCovered": 937.82,
-   "snapshotsWithChange": 1180
+   "last": "2026-10-15T18:50:06.028Z",
+   "hoursCovered": 938.15,
+   "snapshotsWithChange": 1181
   },
   "distinctAlerts": 192,
   "elevatorAlerts": 192,
@@ -1062,7 +1062,7 @@
   {
    "id": "stm-bonaventure-95659080",
    "first": "2026-09-11T05:00:05.240Z",
-   "last": "2026-10-02T09:20:05.533Z",
+   "last": "2026-10-15T18:50:06.028Z",
    "end": "2026-09-11T09:25:05.245Z",
    "feedStart": null,
    "station": "Bonaventure",
