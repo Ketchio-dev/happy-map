@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-16T09:25:04.795Z",
-   "hoursCovered": 952.74,
-   "snapshotsWithChange": 1201
+   "last": "2026-10-16T09:30:05.961Z",
+   "hoursCovered": 952.82,
+   "snapshotsWithChange": 1202
   },
   "distinctAlerts": 192,
   "elevatorAlerts": 192,
@@ -1116,7 +1116,7 @@
   {
    "id": "stm-pie-ix-9ad2f5b9",
    "first": "2026-09-11T05:15:05.431Z",
-   "last": "2026-10-16T09:25:04.795Z",
+   "last": "2026-10-16T09:30:05.961Z",
    "end": "2026-09-11T05:20:05.274Z",
    "feedStart": null,
    "station": "Pie-IX",
