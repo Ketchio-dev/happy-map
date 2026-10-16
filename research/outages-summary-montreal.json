@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-16T09:10:06.076Z",
-   "hoursCovered": 952.49,
-   "snapshotsWithChange": 1198
+   "last": "2026-10-16T09:15:04.686Z",
+   "hoursCovered": 952.57,
+   "snapshotsWithChange": 1199
   },
   "distinctAlerts": 192,
   "elevatorAlerts": 192,
@@ -558,7 +558,7 @@
   {
    "id": "stm-angrignon-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-10-16T09:10:06.076Z",
+   "last": "2026-10-16T09:15:04.686Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -576,7 +576,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-10-16T09:10:06.076Z",
+   "last": "2026-10-16T09:15:04.686Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -594,7 +594,7 @@
   {
    "id": "stm-2-lionel-groulx-467444fc",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-10-16T09:10:06.076Z",
+   "last": "2026-10-16T09:15:04.686Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -1116,7 +1116,7 @@
   {
    "id": "stm-pie-ix-9ad2f5b9",
    "first": "2026-09-11T05:15:05.431Z",
-   "last": "2026-10-16T05:15:05.814Z",
+   "last": "2026-10-16T09:15:04.686Z",
    "end": "2026-09-11T05:20:05.274Z",
    "feedStart": null,
    "station": "Pie-IX",
