@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-16T14:05:05.887Z",
-   "hoursCovered": 957.4,
-   "snapshotsWithChange": 1208
+   "last": "2026-10-16T14:25:04.141Z",
+   "hoursCovered": 957.74,
+   "snapshotsWithChange": 1209
   },
   "distinctAlerts": 192,
   "elevatorAlerts": 192,
@@ -198,7 +198,7 @@
   {
    "id": "stm-jolicoeur-3b96de2d",
    "first": "2026-09-07T05:25:05.009Z",
-   "last": "2026-10-16T14:05:05.887Z",
+   "last": "2026-10-16T14:25:04.141Z",
    "end": "2026-09-07T10:15:05.065Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -1548,7 +1548,7 @@
   {
    "id": "stm-vendome-708c435b",
    "first": "2026-09-13T09:15:05.122Z",
-   "last": "2026-10-15T05:50:05.918Z",
+   "last": "2026-10-16T14:25:04.141Z",
    "end": "2026-09-13T09:20:05.138Z",
    "feedStart": null,
    "station": "Vendôme",
