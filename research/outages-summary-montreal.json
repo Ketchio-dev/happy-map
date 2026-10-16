@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-16T08:45:05.846Z",
-   "hoursCovered": 952.07,
-   "snapshotsWithChange": 1196
+   "last": "2026-10-16T08:50:05.719Z",
+   "hoursCovered": 952.15,
+   "snapshotsWithChange": 1197
   },
   "distinctAlerts": 192,
   "elevatorAlerts": 192,
@@ -522,7 +522,7 @@
   {
    "id": "stm-prefontaine-f95d10df",
    "first": "2026-09-09T05:20:05.121Z",
-   "last": "2026-10-16T08:45:05.846Z",
+   "last": "2026-10-16T08:50:05.719Z",
    "end": "2026-09-09T09:35:03.229Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -558,7 +558,7 @@
   {
    "id": "stm-angrignon-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-10-16T08:45:05.846Z",
+   "last": "2026-10-16T08:50:05.719Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -576,7 +576,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-10-16T08:45:05.846Z",
+   "last": "2026-10-16T08:50:05.719Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -594,7 +594,7 @@
   {
    "id": "stm-2-lionel-groulx-467444fc",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-10-16T08:45:05.846Z",
+   "last": "2026-10-16T08:50:05.719Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -1188,7 +1188,7 @@
   {
    "id": "stm-pie-ix-a46ca45d",
    "first": "2026-09-11T05:25:05.525Z",
-   "last": "2026-10-16T08:45:05.846Z",
+   "last": "2026-10-16T08:50:05.719Z",
    "end": "2026-09-11T09:05:03.738Z",
    "feedStart": null,
    "station": "Pie-IX",
