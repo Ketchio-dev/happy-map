@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-16T05:05:05.989Z",
-   "hoursCovered": 948.4,
-   "snapshotsWithChange": 1188
+   "last": "2026-10-16T05:15:05.814Z",
+   "hoursCovered": 948.57,
+   "snapshotsWithChange": 1189
   },
   "distinctAlerts": 192,
   "elevatorAlerts": 192,
@@ -504,7 +504,7 @@
   {
    "id": "stm-prefontaine-374d8fac",
    "first": "2026-09-09T05:15:05.152Z",
-   "last": "2026-10-14T05:15:06.572Z",
+   "last": "2026-10-16T05:15:05.814Z",
    "end": "2026-09-09T05:20:05.121Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -1062,7 +1062,7 @@
   {
    "id": "stm-bonaventure-95659080",
    "first": "2026-09-11T05:00:05.240Z",
-   "last": "2026-10-16T05:05:05.989Z",
+   "last": "2026-10-16T05:15:05.814Z",
    "end": "2026-09-11T09:25:05.245Z",
    "feedStart": null,
    "station": "Bonaventure",
@@ -1116,7 +1116,7 @@
   {
    "id": "stm-pie-ix-9ad2f5b9",
    "first": "2026-09-11T05:15:05.431Z",
-   "last": "2026-10-09T05:15:06.386Z",
+   "last": "2026-10-16T05:15:05.814Z",
    "end": "2026-09-11T05:20:05.274Z",
    "feedStart": null,
    "station": "Pie-IX",
@@ -1602,7 +1602,7 @@
   {
    "id": "stm-mcgill-37a2628e",
    "first": "2026-09-14T05:50:05.295Z",
-   "last": "2026-10-13T17:25:06.686Z",
+   "last": "2026-10-16T05:15:05.814Z",
    "end": "2026-09-14T07:00:05.180Z",
    "feedStart": null,
    "station": "McGill",
