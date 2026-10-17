@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-17T17:25:03.999Z",
-   "hoursCovered": 984.74,
-   "snapshotsWithChange": 1248
+   "last": "2026-10-17T20:00:06.588Z",
+   "hoursCovered": 987.32,
+   "snapshotsWithChange": 1249
   },
   "distinctAlerts": 193,
   "elevatorAlerts": 193,
@@ -414,7 +414,7 @@
   {
    "id": "stm-villa-maria-25850da5",
    "first": "2026-09-08T12:05:04.168Z",
-   "last": "2026-10-16T15:10:04.470Z",
+   "last": "2026-10-17T20:00:06.588Z",
    "end": "2026-09-08T12:15:06.698Z",
    "feedStart": null,
    "station": "Villa-Maria",
