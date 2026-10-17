@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-17T10:10:06.660Z",
-   "hoursCovered": 977.49,
-   "snapshotsWithChange": 1242
+   "last": "2026-10-17T11:05:06.313Z",
+   "hoursCovered": 978.4,
+   "snapshotsWithChange": 1243
   },
   "distinctAlerts": 193,
   "elevatorAlerts": 193,
@@ -2826,7 +2826,7 @@
   {
    "id": "stm-2-4-berri-uqam-95659080",
    "first": "2026-09-30T04:00:05.566Z",
-   "last": "2026-10-17T10:10:06.660Z",
+   "last": "2026-10-17T11:05:06.313Z",
    "end": "2026-09-30T04:35:05.697Z",
    "feedStart": null,
    "station": "2 4 Berri-UQAM",
