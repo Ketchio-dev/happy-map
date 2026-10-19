@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-19T07:05:05.972Z",
-   "hoursCovered": 1022.4,
-   "snapshotsWithChange": 1269
+   "last": "2026-10-19T09:20:05.975Z",
+   "hoursCovered": 1024.65,
+   "snapshotsWithChange": 1270
   },
   "distinctAlerts": 194,
   "elevatorAlerts": 194,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 33,
   "byStation": {
    "Place-des-Arts": 8,
@@ -144,7 +144,7 @@
   {
    "id": "stm-prefontaine-25850da5",
    "first": "2026-09-07T05:05:04.538Z",
-   "last": "2026-10-19T07:05:05.972Z",
+   "last": "2026-10-19T09:20:05.975Z",
    "end": "2026-09-07T09:20:05.522Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -2268,7 +2268,7 @@
   {
    "id": "stm-outremont-b17d66a1",
    "first": "2026-09-21T05:00:05.450Z",
-   "last": "2026-10-19T07:05:05.972Z",
+   "last": "2026-10-19T09:20:05.975Z",
    "end": "2026-09-21T05:55:05.479Z",
    "feedStart": null,
    "station": "Outremont",
@@ -3529,7 +3529,7 @@
    "id": "stm-mont-royal-5ba3275c",
    "first": "2026-10-19T05:05:06.562Z",
    "last": "2026-10-19T07:05:05.972Z",
-   "end": null,
+   "end": "2026-10-19T09:20:05.975Z",
    "feedStart": null,
    "station": "Mont-Royal",
    "type": "Elevator",
@@ -3539,8 +3539,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Mont-Royal: The elevator shuttled between the street level, STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 2,
+   "ongoing": false,
+   "observedHours": 4.25,
    "sinceFeedStartHours": null
   }
  ]
