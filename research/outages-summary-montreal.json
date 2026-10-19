@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-19T05:00:06.675Z",
-   "hoursCovered": 1020.32,
-   "snapshotsWithChange": 1264
+   "last": "2026-10-19T05:05:06.562Z",
+   "hoursCovered": 1020.4,
+   "snapshotsWithChange": 1265
   },
-  "distinctAlerts": 193,
-  "elevatorAlerts": 193,
+  "distinctAlerts": 194,
+  "elevatorAlerts": 194,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 0,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 33,
   "byStation": {
    "Place-des-Arts": 8,
@@ -31,7 +31,7 @@
    "Atwater": 3,
    "Côte-Vertu": 8,
    "D'Iberville": 6,
-   "Mont-Royal": 3,
+   "Mont-Royal": 4,
    "Du Collège": 4,
    "Henri-Bourassa": 11,
    "Honoré-Beaugrand": 6,
@@ -144,7 +144,7 @@
   {
    "id": "stm-prefontaine-25850da5",
    "first": "2026-09-07T05:05:04.538Z",
-   "last": "2026-10-14T09:30:05.941Z",
+   "last": "2026-10-19T05:05:06.562Z",
    "end": "2026-09-07T09:20:05.522Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -2268,7 +2268,7 @@
   {
    "id": "stm-outremont-b17d66a1",
    "first": "2026-09-21T05:00:05.450Z",
-   "last": "2026-10-19T05:00:06.675Z",
+   "last": "2026-10-19T05:05:06.562Z",
    "end": "2026-09-21T05:55:05.479Z",
    "feedStart": null,
    "station": "Outremont",
@@ -3523,6 +3523,24 @@
    "header": "Villa-Maria: The elevator shuttled between the STM ticket booth level, intermediate level of this station and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the street level and the STM ticket booth level is presently out of service. Indefinite period.",
    "ongoing": false,
    "observedHours": 0.08,
+   "sinceFeedStartHours": null
+  },
+  {
+   "id": "stm-mont-royal-5ba3275c",
+   "first": "2026-10-19T05:05:06.562Z",
+   "last": "2026-10-19T05:05:06.562Z",
+   "end": null,
+   "feedStart": null,
+   "station": "Mont-Royal",
+   "type": "Elevator",
+   "code": null,
+   "planned": "Elevator out of service",
+   "cause": null,
+   "causeDesc": "Indefinite period",
+   "unplanned": false,
+   "header": "Mont-Royal: The elevator shuttled between the street level, STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
+   "ongoing": true,
+   "observedHours": 0,
    "sinceFeedStartHours": null
   }
  ]
