@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-19T03:05:04.579Z",
-   "hoursCovered": 1132.81,
-   "snapshotsWithChange": 2026
+   "last": "2026-10-19T03:20:05.177Z",
+   "hoursCovered": 1133.06,
+   "snapshotsWithChange": 2027
   },
   "distinctAlerts": 1228,
   "elevatorAlerts": 302,
@@ -394,7 +394,7 @@
   {
    "id": "74136",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-19T03:05:04.579Z",
+   "last": "2026-10-19T03:20:05.177Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-12T01:59:00Z",
    "station": "Spadina",
@@ -502,7 +502,7 @@
   {
    "id": "73474",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-19T03:05:04.579Z",
+   "last": "2026-10-19T03:20:05.177Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-07-05T05:00:00Z",
    "station": "Kipling",
@@ -538,7 +538,7 @@
   {
    "id": "71416",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-19T03:05:04.579Z",
+   "last": "2026-10-19T03:20:05.177Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-12T05:00:00Z",
    "station": "Broadview",
@@ -556,7 +556,7 @@
   {
    "id": "71415",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-19T03:05:04.579Z",
+   "last": "2026-10-19T03:20:05.177Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-25T05:00:00Z",
    "station": "Museum",
@@ -9142,7 +9142,7 @@
   {
    "id": "76445",
    "first": "2026-09-18T19:25:02.864Z",
-   "last": "2026-10-19T03:05:04.579Z",
+   "last": "2026-10-19T03:20:05.177Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-09-18T15:23:00Z",
    "station": "Coxwell",
@@ -14236,7 +14236,7 @@
   {
    "id": "77197",
    "first": "2026-09-30T12:55:04.833Z",
-   "last": "2026-10-19T03:05:04.579Z",
+   "last": "2026-10-19T03:20:05.177Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-10T07:30:00Z",
    "station": "Kennedy",
@@ -16720,7 +16720,7 @@
   {
    "id": "77551",
    "first": "2026-10-05T19:30:04.360Z",
-   "last": "2026-10-19T03:05:04.579Z",
+   "last": "2026-10-19T03:20:05.177Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-10-05T15:25:00Z",
    "station": "Dundas West",
@@ -21148,7 +21148,7 @@
   {
    "id": "78237",
    "first": "2026-10-15T11:25:04.440Z",
-   "last": "2026-10-19T03:05:04.579Z",
+   "last": "2026-10-19T03:20:05.177Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-10-15T07:22:33.27Z",
    "station": "Don Valley",
@@ -22157,7 +22157,7 @@
    "id": "78432",
    "first": "2026-10-19T00:10:04.484Z",
    "last": "2026-10-19T03:05:04.579Z",
-   "end": null,
+   "end": "2026-10-19T03:20:05.177Z",
    "feedStart": "2026-10-18T20:08:47.053Z",
    "station": "King",
    "type": "Escalator",
@@ -22167,14 +22167,14 @@
    "causeDesc": "Maintenance",
    "unplanned": false,
    "header": "King: Escalator 8Y3E out of service from Line 1 Finch platform to north concourse while we perform maintenance.",
-   "ongoing": true,
-   "observedHours": 2.92,
-   "sinceFeedStartHours": 6.9
+   "ongoing": false,
+   "observedHours": 3.17,
+   "sinceFeedStartHours": 7.2
   },
   {
    "id": "78433",
    "first": "2026-10-19T01:20:04.498Z",
-   "last": "2026-10-19T03:05:04.579Z",
+   "last": "2026-10-19T03:20:05.177Z",
    "end": null,
    "feedStart": "2026-10-18T21:16:03.123Z",
    "station": "Sherbourne",
@@ -22186,8 +22186,8 @@
    "unplanned": true,
    "header": "Sherbourne: Escalator 4D2E out of service from Line 2 Kipling platform to concourse due to a technical problem.",
    "ongoing": true,
-   "observedHours": 1.75,
-   "sinceFeedStartHours": 5.8
+   "observedHours": 2,
+   "sinceFeedStartHours": 6.1
   }
  ]
 }
