@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-19T10:45:04.582Z",
-   "hoursCovered": 1140.48,
-   "snapshotsWithChange": 2034
+   "last": "2026-10-19T11:00:04.606Z",
+   "hoursCovered": 1140.73,
+   "snapshotsWithChange": 2035
   },
   "distinctAlerts": 1235,
   "elevatorAlerts": 306,
   "escalatorAlerts": 929,
   "elevatorUnplanned": 64,
-  "elevatorOngoingNow": 4,
+  "elevatorOngoingNow": 2,
   "stationsWithElevatorOutage": 68,
   "byStation": {
    "Bayview": 12,
@@ -395,7 +395,7 @@
   {
    "id": "74136",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-19T10:45:04.582Z",
+   "last": "2026-10-19T11:00:04.606Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-12T01:59:00Z",
    "station": "Spadina",
@@ -503,7 +503,7 @@
   {
    "id": "73474",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-19T10:45:04.582Z",
+   "last": "2026-10-19T11:00:04.606Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-07-05T05:00:00Z",
    "station": "Kipling",
@@ -539,7 +539,7 @@
   {
    "id": "71416",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-19T10:45:04.582Z",
+   "last": "2026-10-19T11:00:04.606Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-12T05:00:00Z",
    "station": "Broadview",
@@ -557,7 +557,7 @@
   {
    "id": "71415",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-19T10:45:04.582Z",
+   "last": "2026-10-19T11:00:04.606Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-25T05:00:00Z",
    "station": "Museum",
@@ -9143,7 +9143,7 @@
   {
    "id": "76445",
    "first": "2026-09-18T19:25:02.864Z",
-   "last": "2026-10-19T10:45:04.582Z",
+   "last": "2026-10-19T11:00:04.606Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-09-18T15:23:00Z",
    "station": "Coxwell",
@@ -14237,7 +14237,7 @@
   {
    "id": "77197",
    "first": "2026-09-30T12:55:04.833Z",
-   "last": "2026-10-19T10:45:04.582Z",
+   "last": "2026-10-19T11:00:04.606Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-10T07:30:00Z",
    "station": "Kennedy",
@@ -16721,7 +16721,7 @@
   {
    "id": "77551",
    "first": "2026-10-05T19:30:04.360Z",
-   "last": "2026-10-19T10:45:04.582Z",
+   "last": "2026-10-19T11:00:04.606Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-10-05T15:25:00Z",
    "station": "Dundas West",
@@ -21149,7 +21149,7 @@
   {
    "id": "78237",
    "first": "2026-10-15T11:25:04.440Z",
-   "last": "2026-10-19T10:45:04.582Z",
+   "last": "2026-10-19T11:00:04.606Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-10-15T07:22:33.27Z",
    "station": "Don Valley",
@@ -22175,7 +22175,7 @@
   {
    "id": "78433",
    "first": "2026-10-19T01:20:04.498Z",
-   "last": "2026-10-19T10:45:04.582Z",
+   "last": "2026-10-19T11:00:04.606Z",
    "end": null,
    "feedStart": "2026-10-18T21:16:03.123Z",
    "station": "Sherbourne",
@@ -22187,13 +22187,13 @@
    "unplanned": true,
    "header": "Sherbourne: Escalator 4D2E out of service from Line 2 Kipling platform to concourse due to a technical problem.",
    "ongoing": true,
-   "observedHours": 9.42,
-   "sinceFeedStartHours": 13.5
+   "observedHours": 9.67,
+   "sinceFeedStartHours": 13.7
   },
   {
    "id": "78440",
    "first": "2026-10-19T09:40:04.536Z",
-   "last": "2026-10-19T10:45:04.582Z",
+   "last": "2026-10-19T11:00:04.606Z",
    "end": null,
    "feedStart": "2026-10-19T05:38:31.12Z",
    "station": "Leaside",
@@ -22205,14 +22205,14 @@
    "unplanned": true,
    "header": "Leaside: Escalator 2 out of service between platform and concourse due to a technical problem.",
    "ongoing": true,
-   "observedHours": 1.08,
-   "sinceFeedStartHours": 5.1
+   "observedHours": 1.33,
+   "sinceFeedStartHours": 5.4
   },
   {
    "id": "78442",
    "first": "2026-10-19T09:55:03.011Z",
    "last": "2026-10-19T10:45:04.582Z",
-   "end": null,
+   "end": "2026-10-19T11:00:04.606Z",
    "feedStart": "2026-10-19T05:50:07.477Z",
    "station": "York Mills",
    "type": "Elevator",
@@ -22222,15 +22222,15 @@
    "causeDesc": "PAI Out of Service",
    "unplanned": true,
    "header": "York Mills: Elevator 20Y2L out of service between concourse and bus platform due to a technical problem.",
-   "ongoing": true,
-   "observedHours": 0.83,
-   "sinceFeedStartHours": 4.9
+   "ongoing": false,
+   "observedHours": 1.08,
+   "sinceFeedStartHours": 5.2
   },
   {
    "id": "78441",
    "first": "2026-10-19T09:55:03.011Z",
    "last": "2026-10-19T10:45:04.582Z",
-   "end": null,
+   "end": "2026-10-19T11:00:04.606Z",
    "feedStart": "2026-10-19T05:49:53.837Z",
    "station": "York Mills",
    "type": "Elevator",
@@ -22240,14 +22240,14 @@
    "causeDesc": "PAI Out of Service",
    "unplanned": true,
    "header": "York Mills: Elevator 20Y1L out of service between concourse and Line 1 centre platform due to a technical problem.",
-   "ongoing": true,
-   "observedHours": 0.83,
-   "sinceFeedStartHours": 4.9
+   "ongoing": false,
+   "observedHours": 1.08,
+   "sinceFeedStartHours": 5.2
   },
   {
    "id": "78443",
    "first": "2026-10-19T10:00:04.517Z",
-   "last": "2026-10-19T10:45:04.582Z",
+   "last": "2026-10-19T11:00:04.606Z",
    "end": null,
    "feedStart": "2026-10-19T05:59:10.68Z",
    "station": "Spadina",
@@ -22259,13 +22259,13 @@
    "unplanned": false,
    "header": "Spadina: Elevator 1S5L out of service between concourse and Line 1 Finch via Union (Southbound) platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 0.75,
-   "sinceFeedStartHours": 4.8
+   "observedHours": 1,
+   "sinceFeedStartHours": 5
   },
   {
    "id": "78444",
    "first": "2026-10-19T10:05:04.581Z",
-   "last": "2026-10-19T10:45:04.582Z",
+   "last": "2026-10-19T11:00:04.606Z",
    "end": null,
    "feedStart": "2026-10-19T06:02:15.137Z",
    "station": "Avenue",
@@ -22277,13 +22277,13 @@
    "unplanned": false,
    "header": "Avenue: Escalator 9 out of service between mezzanine level and grade (main entrance) while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 0.67,
-   "sinceFeedStartHours": 4.7
+   "observedHours": 0.92,
+   "sinceFeedStartHours": 5
   },
   {
    "id": "78445",
    "first": "2026-10-19T10:10:03.556Z",
-   "last": "2026-10-19T10:45:04.582Z",
+   "last": "2026-10-19T11:00:04.606Z",
    "end": null,
    "feedStart": "2026-10-19T06:06:07.02Z",
    "station": "Sheppard West",
@@ -22295,13 +22295,13 @@
    "unplanned": true,
    "header": "Sheppard West: Escalator 9S2E out of service from concourse to Line 1 platform due to a technical problem.",
    "ongoing": true,
-   "observedHours": 0.58,
-   "sinceFeedStartHours": 4.6
+   "observedHours": 0.83,
+   "sinceFeedStartHours": 4.9
   },
   {
    "id": "78446",
    "first": "2026-10-19T10:15:04.526Z",
-   "last": "2026-10-19T10:45:04.582Z",
+   "last": "2026-10-19T11:00:04.606Z",
    "end": null,
    "feedStart": "2026-10-19T06:11:41.603Z",
    "station": "Davisville",
@@ -22313,8 +22313,8 @@
    "unplanned": false,
    "header": "Davisville: Elevator 17Y1L out of service between Davisville Ave south side entrance and concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 0.5,
-   "sinceFeedStartHours": 4.6
+   "observedHours": 0.75,
+   "sinceFeedStartHours": 4.8
   }
  ]
 }
