@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-19T06:00:04.016Z",
-   "hoursCovered": 1021.32,
-   "snapshotsWithChange": 1266
+   "last": "2026-10-19T06:55:03.904Z",
+   "hoursCovered": 1022.24,
+   "snapshotsWithChange": 1267
   },
   "distinctAlerts": 194,
   "elevatorAlerts": 194,
@@ -144,7 +144,7 @@
   {
    "id": "stm-prefontaine-25850da5",
    "first": "2026-09-07T05:05:04.538Z",
-   "last": "2026-10-19T06:00:04.016Z",
+   "last": "2026-10-19T06:55:03.904Z",
    "end": "2026-09-07T09:20:05.522Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -1224,7 +1224,7 @@
   {
    "id": "stm-5-snowdon-babd2159",
    "first": "2026-09-11T06:35:03.541Z",
-   "last": "2026-10-19T06:00:04.016Z",
+   "last": "2026-10-19T06:55:03.904Z",
    "end": "2026-09-11T07:05:05.975Z",
    "feedStart": null,
    "station": "5 Snowdon",
@@ -2268,7 +2268,7 @@
   {
    "id": "stm-outremont-b17d66a1",
    "first": "2026-09-21T05:00:05.450Z",
-   "last": "2026-10-19T05:05:06.562Z",
+   "last": "2026-10-19T06:55:03.904Z",
    "end": "2026-09-21T05:55:05.479Z",
    "feedStart": null,
    "station": "Outremont",
@@ -2304,7 +2304,7 @@
   {
    "id": "stm-cote-vertu-444f5595",
    "first": "2026-09-21T05:55:05.479Z",
-   "last": "2026-10-19T06:00:04.016Z",
+   "last": "2026-10-19T06:55:03.904Z",
    "end": "2026-09-21T07:00:05.375Z",
    "feedStart": null,
    "station": "Côte-Vertu",
@@ -3528,7 +3528,7 @@
   {
    "id": "stm-mont-royal-5ba3275c",
    "first": "2026-10-19T05:05:06.562Z",
-   "last": "2026-10-19T06:00:04.016Z",
+   "last": "2026-10-19T06:55:03.904Z",
    "end": null,
    "feedStart": null,
    "station": "Mont-Royal",
@@ -3540,7 +3540,7 @@
    "unplanned": false,
    "header": "Mont-Royal: The elevator shuttled between the street level, STM ticket booth level and the platform heading towards Côte-Vertu is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Montmorency is presently out of service. Indefinite period.",
    "ongoing": true,
-   "observedHours": 0.92,
+   "observedHours": 1.83,
    "sinceFeedStartHours": null
   }
  ]
