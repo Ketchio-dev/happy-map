@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-19T15:05:04.530Z",
-   "hoursCovered": 1144.81,
-   "snapshotsWithChange": 2052
+   "last": "2026-10-19T15:20:04.586Z",
+   "hoursCovered": 1145.06,
+   "snapshotsWithChange": 2053
   },
   "distinctAlerts": 1247,
   "elevatorAlerts": 309,
@@ -395,7 +395,7 @@
   {
    "id": "74136",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-19T15:05:04.530Z",
+   "last": "2026-10-19T15:20:04.586Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-12T01:59:00Z",
    "station": "Spadina",
@@ -503,7 +503,7 @@
   {
    "id": "73474",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-19T15:05:04.530Z",
+   "last": "2026-10-19T15:20:04.586Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-07-05T05:00:00Z",
    "station": "Kipling",
@@ -539,7 +539,7 @@
   {
    "id": "71416",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-19T15:05:04.530Z",
+   "last": "2026-10-19T15:20:04.586Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-12T05:00:00Z",
    "station": "Broadview",
@@ -557,7 +557,7 @@
   {
    "id": "71415",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-19T15:05:04.530Z",
+   "last": "2026-10-19T15:20:04.586Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-25T05:00:00Z",
    "station": "Museum",
@@ -9143,7 +9143,7 @@
   {
    "id": "76445",
    "first": "2026-09-18T19:25:02.864Z",
-   "last": "2026-10-19T15:05:04.530Z",
+   "last": "2026-10-19T15:20:04.586Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-09-18T15:23:00Z",
    "station": "Coxwell",
@@ -14237,7 +14237,7 @@
   {
    "id": "77197",
    "first": "2026-09-30T12:55:04.833Z",
-   "last": "2026-10-19T15:05:04.530Z",
+   "last": "2026-10-19T15:20:04.586Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-10T07:30:00Z",
    "station": "Kennedy",
@@ -16721,7 +16721,7 @@
   {
    "id": "77551",
    "first": "2026-10-05T19:30:04.360Z",
-   "last": "2026-10-19T15:05:04.530Z",
+   "last": "2026-10-19T15:20:04.586Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-10-05T15:25:00Z",
    "station": "Dundas West",
@@ -21149,7 +21149,7 @@
   {
    "id": "78237",
    "first": "2026-10-15T11:25:04.440Z",
-   "last": "2026-10-19T15:05:04.530Z",
+   "last": "2026-10-19T15:20:04.586Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-10-15T07:22:33.27Z",
    "station": "Don Valley",
@@ -22175,7 +22175,7 @@
   {
    "id": "78433",
    "first": "2026-10-19T01:20:04.498Z",
-   "last": "2026-10-19T15:05:04.530Z",
+   "last": "2026-10-19T15:20:04.586Z",
    "end": null,
    "feedStart": "2026-10-18T21:16:03.123Z",
    "station": "Sherbourne",
@@ -22187,8 +22187,8 @@
    "unplanned": true,
    "header": "Sherbourne: Escalator 4D2E out of service from Line 2 Kipling platform to concourse due to a technical problem.",
    "ongoing": true,
-   "observedHours": 13.75,
-   "sinceFeedStartHours": 17.8
+   "observedHours": 14,
+   "sinceFeedStartHours": 18.1
   },
   {
    "id": "78440",
@@ -22283,7 +22283,7 @@
   {
    "id": "78445",
    "first": "2026-10-19T10:10:03.556Z",
-   "last": "2026-10-19T15:05:04.530Z",
+   "last": "2026-10-19T15:20:04.586Z",
    "end": null,
    "feedStart": "2026-10-19T06:06:07.02Z",
    "station": "Sheppard West",
@@ -22295,8 +22295,8 @@
    "unplanned": true,
    "header": "Sheppard West: Escalator 9S2E out of service from concourse to Line 1 platform due to a technical problem.",
    "ongoing": true,
-   "observedHours": 4.92,
-   "sinceFeedStartHours": 9
+   "observedHours": 5.17,
+   "sinceFeedStartHours": 9.2
   },
   {
    "id": "78446",
@@ -22320,7 +22320,7 @@
    "id": "78380",
    "first": "2026-10-19T11:05:05.187Z",
    "last": "2026-10-19T15:05:04.530Z",
-   "end": null,
+   "end": "2026-10-19T15:20:04.586Z",
    "feedStart": "2026-10-19T07:00:00Z",
    "station": "York University",
    "type": "Escalator",
@@ -22330,14 +22330,14 @@
    "causeDesc": "Preventative Maintenance",
    "unplanned": false,
    "header": "York University: Escalator 12S2E out of service from concourse to Line 1 platform while we perform maintenance. Escalator is expected to be back in service October 19, 2026.",
-   "ongoing": true,
-   "observedHours": 4,
-   "sinceFeedStartHours": 8.1
+   "ongoing": false,
+   "observedHours": 4.25,
+   "sinceFeedStartHours": 8.3
   },
   {
    "id": "78378",
    "first": "2026-10-19T11:05:05.187Z",
-   "last": "2026-10-19T15:05:04.530Z",
+   "last": "2026-10-19T15:20:04.586Z",
    "end": null,
    "feedStart": "2026-10-19T07:00:00Z",
    "station": "Yorkdale",
@@ -22349,13 +22349,13 @@
    "unplanned": false,
    "header": "Yorkdale: Escalator 7S2E out of service from south concourse to Line 1 platform while we perform maintenance. Escalator is expected to be back in service October 23, 2026.",
    "ongoing": true,
-   "observedHours": 4,
-   "sinceFeedStartHours": 8.1
+   "observedHours": 4.25,
+   "sinceFeedStartHours": 8.3
   },
   {
    "id": "78377",
    "first": "2026-10-19T11:05:05.187Z",
-   "last": "2026-10-19T15:05:04.530Z",
+   "last": "2026-10-19T15:20:04.586Z",
    "end": null,
    "feedStart": "2026-10-19T07:00:00Z",
    "station": "Lawrence West",
@@ -22367,13 +22367,13 @@
    "unplanned": false,
    "header": "Lawrence West: Escalator 6S2E out of service from Line 1 platform to Lawrence Ave W south side entrance while we perform maintenance. Escalator is expected to be back in service October 23, 2026.",
    "ongoing": true,
-   "observedHours": 4,
-   "sinceFeedStartHours": 8.1
+   "observedHours": 4.25,
+   "sinceFeedStartHours": 8.3
   },
   {
    "id": "78453",
    "first": "2026-10-19T12:25:03.243Z",
-   "last": "2026-10-19T15:05:04.530Z",
+   "last": "2026-10-19T15:20:04.586Z",
    "end": null,
    "feedStart": "2026-10-19T08:20:19.743Z",
    "station": "Kipling",
@@ -22385,13 +22385,13 @@
    "unplanned": true,
    "header": "Kipling: Escalator 16B2E out of service from bus platform to Line 2 platform due to a technical problem.",
    "ongoing": true,
-   "observedHours": 2.67,
-   "sinceFeedStartHours": 6.7
+   "observedHours": 2.92,
+   "sinceFeedStartHours": 7
   },
   {
    "id": "78454",
    "first": "2026-10-19T12:40:04.592Z",
-   "last": "2026-10-19T15:05:04.530Z",
+   "last": "2026-10-19T15:20:04.586Z",
    "end": null,
    "feedStart": "2026-10-19T08:37:36.72Z",
    "station": "Finch West",
@@ -22403,13 +22403,13 @@
    "unplanned": true,
    "header": "Finch West: Escalator 11S6E out of service from concourse to Keele St west side entrance due to a technical problem.",
    "ongoing": true,
-   "observedHours": 2.42,
-   "sinceFeedStartHours": 6.5
+   "observedHours": 2.67,
+   "sinceFeedStartHours": 6.7
   },
   {
    "id": "78455",
    "first": "2026-10-19T13:00:04.650Z",
-   "last": "2026-10-19T15:05:04.530Z",
+   "last": "2026-10-19T15:20:04.586Z",
    "end": null,
    "feedStart": "2026-10-19T08:56:11.297Z",
    "station": "Sheppard West",
@@ -22421,8 +22421,8 @@
    "unplanned": false,
    "header": "Sheppard West: Elevator 9S2L out of service between bus platform, concourse and Line 1 platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 2.08,
-   "sinceFeedStartHours": 6.1
+   "observedHours": 2.33,
+   "sinceFeedStartHours": 6.4
   },
   {
    "id": "78459",
@@ -22445,7 +22445,7 @@
   {
    "id": "78460",
    "first": "2026-10-19T14:25:02.759Z",
-   "last": "2026-10-19T15:05:04.530Z",
+   "last": "2026-10-19T15:20:04.586Z",
    "end": null,
    "feedStart": "2026-10-19T10:22:05.133Z",
    "station": "Bayview",
@@ -22457,13 +22457,13 @@
    "unplanned": false,
    "header": "Bayview: Elevator 55P3L out of service between east concourse and Line 4 centre platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 0.67,
-   "sinceFeedStartHours": 4.7
+   "observedHours": 0.92,
+   "sinceFeedStartHours": 5
   },
   {
    "id": "78381",
    "first": "2026-10-19T14:35:03.070Z",
-   "last": "2026-10-19T15:05:04.530Z",
+   "last": "2026-10-19T15:20:04.586Z",
    "end": null,
    "feedStart": "2026-10-19T10:30:00Z",
    "station": "York University",
@@ -22475,13 +22475,13 @@
    "unplanned": false,
    "header": "York University: Escalator 12S3E out of service from Line 1 platform to concourse while we perform maintenance. Escalator is expected to be back in service October 19, 2026.",
    "ongoing": true,
-   "observedHours": 0.5,
-   "sinceFeedStartHours": 4.6
+   "observedHours": 0.75,
+   "sinceFeedStartHours": 4.8
   },
   {
    "id": "78379",
    "first": "2026-10-19T14:35:03.070Z",
-   "last": "2026-10-19T15:05:04.530Z",
+   "last": "2026-10-19T15:20:04.586Z",
    "end": null,
    "feedStart": "2026-10-19T10:30:00Z",
    "station": "Downsview Park",
@@ -22493,13 +22493,13 @@
    "unplanned": false,
    "header": "Downsview Park: Escalator 10S5E out of service from GO entrance to concourse while we perform maintenance. Escalator is expected to be back in service October 19, 2026.",
    "ongoing": true,
-   "observedHours": 0.5,
-   "sinceFeedStartHours": 4.6
+   "observedHours": 0.75,
+   "sinceFeedStartHours": 4.8
   },
   {
    "id": "78464",
    "first": "2026-10-19T14:55:02.502Z",
-   "last": "2026-10-19T15:05:04.530Z",
+   "last": "2026-10-19T15:20:04.586Z",
    "end": null,
    "feedStart": "2026-10-19T10:51:06.71Z",
    "station": "Greenwood",
@@ -22511,13 +22511,13 @@
    "unplanned": true,
    "header": "Greenwood: Escalator 10D3E out of service from Line 2 Kipling platform to concourse due to a technical problem.",
    "ongoing": true,
-   "observedHours": 0.17,
-   "sinceFeedStartHours": 4.2
+   "observedHours": 0.42,
+   "sinceFeedStartHours": 4.5
   },
   {
    "id": "78466",
    "first": "2026-10-19T15:05:04.530Z",
-   "last": "2026-10-19T15:05:04.530Z",
+   "last": "2026-10-19T15:20:04.586Z",
    "end": null,
    "feedStart": "2026-10-19T11:00:57.577Z",
    "station": "Jane",
@@ -22529,8 +22529,8 @@
    "unplanned": false,
    "header": "Jane: Elevator 12B2L out of service between concourse and Line 2 eastbound platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 0,
-   "sinceFeedStartHours": 4.1
+   "observedHours": 0.25,
+   "sinceFeedStartHours": 4.3
   }
  ]
 }
