@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-20T12:35:05.986Z",
-   "hoursCovered": 1051.9,
-   "snapshotsWithChange": 1291
+   "last": "2026-10-20T12:45:06.685Z",
+   "hoursCovered": 1052.07,
+   "snapshotsWithChange": 1292
   },
   "distinctAlerts": 194,
   "elevatorAlerts": 194,
@@ -774,7 +774,7 @@
   {
    "id": "stm-jolicoeur-214feef9",
    "first": "2026-09-09T21:05:03.864Z",
-   "last": "2026-10-20T12:35:05.986Z",
+   "last": "2026-10-20T12:45:06.685Z",
    "end": "2026-09-09T21:20:03.542Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -1278,7 +1278,7 @@
   {
    "id": "stm-angrignon-214feef9",
    "first": "2026-09-11T13:20:06.217Z",
-   "last": "2026-10-20T12:35:05.986Z",
+   "last": "2026-10-20T12:45:06.685Z",
    "end": "2026-09-11T14:30:06.142Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -2502,7 +2502,7 @@
   {
    "id": "stm-champ-de-mars-e2a70183",
    "first": "2026-09-25T16:15:04.857Z",
-   "last": "2026-10-20T12:35:05.986Z",
+   "last": "2026-10-20T12:45:06.685Z",
    "end": "2026-09-25T16:35:06.281Z",
    "feedStart": null,
    "station": "Champ-de-Mars",
