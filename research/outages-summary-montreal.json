@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-20T15:05:06.054Z",
-   "hoursCovered": 1054.4,
-   "snapshotsWithChange": 1295
+   "last": "2026-10-20T15:50:06.209Z",
+   "hoursCovered": 1055.15,
+   "snapshotsWithChange": 1296
   },
   "distinctAlerts": 194,
   "elevatorAlerts": 194,
@@ -252,7 +252,7 @@
   {
    "id": "stm-angrignon-3b96de2d",
    "first": "2026-09-07T08:55:05.116Z",
-   "last": "2026-10-20T15:05:06.054Z",
+   "last": "2026-10-20T15:50:06.209Z",
    "end": "2026-09-07T09:10:05.157Z",
    "feedStart": null,
    "station": "Angrignon",
