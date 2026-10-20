@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-20T18:50:06.742Z",
-   "hoursCovered": 1058.15,
-   "snapshotsWithChange": 1299
+   "last": "2026-10-20T19:25:04.553Z",
+   "hoursCovered": 1058.74,
+   "snapshotsWithChange": 1300
   },
   "distinctAlerts": 194,
   "elevatorAlerts": 194,
@@ -2502,7 +2502,7 @@
   {
    "id": "stm-champ-de-mars-e2a70183",
    "first": "2026-09-25T16:15:04.857Z",
-   "last": "2026-10-20T14:10:05.966Z",
+   "last": "2026-10-20T19:25:04.553Z",
    "end": "2026-09-25T16:35:06.281Z",
    "feedStart": null,
    "station": "Champ-de-Mars",
