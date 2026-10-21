@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-21T15:25:06.188Z",
-   "hoursCovered": 1078.74,
-   "snapshotsWithChange": 1326
+   "last": "2026-10-21T15:45:05.985Z",
+   "hoursCovered": 1079.07,
+   "snapshotsWithChange": 1327
   },
   "distinctAlerts": 195,
   "elevatorAlerts": 195,
   "escalatorAlerts": 0,
   "elevatorUnplanned": 0,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 33,
   "byStation": {
    "Place-des-Arts": 8,
@@ -1818,7 +1818,7 @@
   {
    "id": "stm-pie-ix-da0da4a0",
    "first": "2026-09-15T15:25:05.444Z",
-   "last": "2026-09-23T16:00:05.596Z",
+   "last": "2026-10-21T15:45:05.985Z",
    "end": "2026-09-15T15:50:05.454Z",
    "feedStart": null,
    "station": "Pie-IX",
@@ -3547,7 +3547,7 @@
    "id": "stm-pie-ix-5cae7559",
    "first": "2026-10-21T15:25:06.188Z",
    "last": "2026-10-21T15:25:06.188Z",
-   "end": null,
+   "end": "2026-10-21T15:45:05.985Z",
    "feedStart": null,
    "station": "Pie-IX",
    "type": "Elevator",
@@ -3557,8 +3557,8 @@
    "causeDesc": "Indefinite period",
    "unplanned": false,
    "header": "Pie-IX: The elevator shuttled between the street level (East access) and the STM ticket booth level (West access elevator available, please check its status) is presently out of service. Indefinite period. The elevator shuttled between the STM ticket booth level and the platform heading towards Angrignon is presently out of service. Indefinite period.",
-   "ongoing": true,
-   "observedHours": 0,
+   "ongoing": false,
+   "observedHours": 0.33,
    "sinceFeedStartHours": null
   }
  ]
