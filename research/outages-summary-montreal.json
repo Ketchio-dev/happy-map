@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-21T09:15:03.268Z",
-   "hoursCovered": 1072.57,
-   "snapshotsWithChange": 1317
+   "last": "2026-10-21T09:30:05.835Z",
+   "hoursCovered": 1072.82,
+   "snapshotsWithChange": 1318
   },
   "distinctAlerts": 194,
   "elevatorAlerts": 194,
@@ -576,7 +576,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-10-21T09:15:03.268Z",
+   "last": "2026-10-21T09:30:05.835Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
