@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-21T05:50:05.838Z",
-   "hoursCovered": 1069.15,
-   "snapshotsWithChange": 1308
+   "last": "2026-10-21T05:55:04.737Z",
+   "hoursCovered": 1069.24,
+   "snapshotsWithChange": 1309
   },
   "distinctAlerts": 194,
   "elevatorAlerts": 194,
@@ -450,7 +450,7 @@
   {
    "id": "stm-rosemont-1b51c479",
    "first": "2026-09-08T14:45:05.606Z",
-   "last": "2026-10-16T06:20:05.928Z",
+   "last": "2026-10-21T05:55:04.737Z",
    "end": "2026-09-08T14:55:05.125Z",
    "feedStart": null,
    "station": "Rosemont",
@@ -522,7 +522,7 @@
   {
    "id": "stm-prefontaine-f95d10df",
    "first": "2026-09-09T05:20:05.121Z",
-   "last": "2026-10-21T05:50:05.838Z",
+   "last": "2026-10-21T05:55:04.737Z",
    "end": "2026-09-09T09:35:03.229Z",
    "feedStart": null,
    "station": "Préfontaine",
@@ -558,7 +558,7 @@
   {
    "id": "stm-angrignon-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-10-21T05:50:05.838Z",
+   "last": "2026-10-21T05:55:04.737Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "Angrignon",
@@ -576,7 +576,7 @@
   {
    "id": "stm-jolicoeur-bf3e641b",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-10-21T05:50:05.838Z",
+   "last": "2026-10-21T05:55:04.737Z",
    "end": "2026-09-09T08:50:05.317Z",
    "feedStart": null,
    "station": "Jolicoeur",
@@ -594,7 +594,7 @@
   {
    "id": "stm-2-lionel-groulx-467444fc",
    "first": "2026-09-09T05:50:05.336Z",
-   "last": "2026-10-21T05:50:05.838Z",
+   "last": "2026-10-21T05:55:04.737Z",
    "end": "2026-09-09T08:40:05.250Z",
    "feedStart": null,
    "station": "2 Lionel-Groulx",
@@ -810,7 +810,7 @@
   {
    "id": "stm-mont-royal-cccaaf1e",
    "first": "2026-09-10T03:00:05.269Z",
-   "last": "2026-10-18T09:25:04.234Z",
+   "last": "2026-10-21T05:55:04.737Z",
    "end": "2026-09-10T03:40:05.144Z",
    "feedStart": null,
    "station": "Mont-Royal",
@@ -846,7 +846,7 @@
   {
    "id": "stm-du-college-95659080",
    "first": "2026-09-10T05:15:05.083Z",
-   "last": "2026-10-21T05:50:05.838Z",
+   "last": "2026-10-21T05:55:04.737Z",
    "end": "2026-09-10T05:45:05.241Z",
    "feedStart": null,
    "station": "Du Collège",
@@ -1044,7 +1044,7 @@
   {
    "id": "stm-vendome-d577cf57",
    "first": "2026-09-10T17:50:05.332Z",
-   "last": "2026-10-20T05:45:06.704Z",
+   "last": "2026-10-21T05:55:04.737Z",
    "end": "2026-09-10T18:20:05.333Z",
    "feedStart": null,
    "station": "Vendôme",
@@ -1170,7 +1170,7 @@
   {
    "id": "stm-cote-vertu-63d6deb9",
    "first": "2026-09-11T05:25:05.525Z",
-   "last": "2026-10-21T05:50:05.838Z",
+   "last": "2026-10-21T05:55:04.737Z",
    "end": "2026-09-11T05:35:05.780Z",
    "feedStart": null,
    "station": "Côte-Vertu",
@@ -1746,7 +1746,7 @@
   {
    "id": "stm-edouard-montpetit-4a3c1dc5",
    "first": "2026-09-15T05:15:02.401Z",
-   "last": "2026-10-21T05:50:05.838Z",
+   "last": "2026-10-21T05:55:04.737Z",
    "end": "2026-09-15T09:25:05.325Z",
    "feedStart": null,
    "station": "Édouard-Montpetit",
@@ -1764,7 +1764,7 @@
   {
    "id": "stm-place-saint-henri-20b32172",
    "first": "2026-09-15T05:15:02.401Z",
-   "last": "2026-10-20T08:40:05.984Z",
+   "last": "2026-10-21T05:55:04.737Z",
    "end": "2026-09-15T09:45:05.305Z",
    "feedStart": null,
    "station": "Place-Saint-Henri",
@@ -2376,7 +2376,7 @@
   {
    "id": "stm-villa-maria-64c83851",
    "first": "2026-09-22T05:50:05.341Z",
-   "last": "2026-10-20T05:45:06.704Z",
+   "last": "2026-10-21T05:55:04.737Z",
    "end": "2026-09-22T08:20:05.486Z",
    "feedStart": null,
    "station": "Villa-Maria",
@@ -2718,7 +2718,7 @@
   {
    "id": "stm-henri-bourassa-05870966",
    "first": "2026-09-29T05:55:06.118Z",
-   "last": "2026-10-16T06:20:05.928Z",
+   "last": "2026-10-21T05:55:04.737Z",
    "end": "2026-09-29T08:05:05.553Z",
    "feedStart": null,
    "station": "Henri-Bourassa",
@@ -2790,7 +2790,7 @@
   {
    "id": "stm-5-jean-talon-35589c30",
    "first": "2026-09-29T08:00:06.624Z",
-   "last": "2026-10-16T06:20:05.928Z",
+   "last": "2026-10-21T05:55:04.737Z",
    "end": "2026-09-29T08:05:05.553Z",
    "feedStart": null,
    "station": "5 Jean-Talon",
