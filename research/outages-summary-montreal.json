@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-21T11:50:05.918Z",
-   "hoursCovered": 1075.15,
-   "snapshotsWithChange": 1320
+   "last": "2026-10-21T13:50:04.815Z",
+   "hoursCovered": 1077.15,
+   "snapshotsWithChange": 1321
   },
   "distinctAlerts": 194,
   "elevatorAlerts": 194,
@@ -2160,7 +2160,7 @@
   {
    "id": "stm-5-snowdon-3653ef75",
    "first": "2026-09-17T13:45:06.175Z",
-   "last": "2026-10-19T14:35:04.416Z",
+   "last": "2026-10-21T13:50:04.815Z",
    "end": "2026-09-17T13:50:05.715Z",
    "feedStart": null,
    "station": "5 Snowdon",
@@ -2520,7 +2520,7 @@
   {
    "id": "stm-viau-3b96de2d",
    "first": "2026-09-25T18:10:05.425Z",
-   "last": "2026-10-21T11:50:05.918Z",
+   "last": "2026-10-21T13:50:04.815Z",
    "end": "2026-09-25T21:45:05.694Z",
    "feedStart": null,
    "station": "Viau",
