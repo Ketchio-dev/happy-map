@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-06T16:40:56.938Z",
-   "last": "2026-10-21T13:50:04.815Z",
-   "hoursCovered": 1077.15,
-   "snapshotsWithChange": 1321
+   "last": "2026-10-21T14:30:06.050Z",
+   "hoursCovered": 1077.82,
+   "snapshotsWithChange": 1322
   },
   "distinctAlerts": 194,
   "elevatorAlerts": 194,
@@ -1350,7 +1350,7 @@
   {
    "id": "stm-viau-bf3e641b",
    "first": "2026-09-11T18:30:05.518Z",
-   "last": "2026-09-26T07:25:06.191Z",
+   "last": "2026-10-21T14:30:06.050Z",
    "end": "2026-09-11T19:05:04.425Z",
    "feedStart": null,
    "station": "Viau",
