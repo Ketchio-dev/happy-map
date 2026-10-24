@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-24T07:30:04.686Z",
-   "hoursCovered": 1257.23,
-   "snapshotsWithChange": 2309
+   "last": "2026-10-24T09:25:04.762Z",
+   "hoursCovered": 1259.15,
+   "snapshotsWithChange": 2310
   },
-  "distinctAlerts": 1385,
-  "elevatorAlerts": 341,
+  "distinctAlerts": 1386,
+  "elevatorAlerts": 342,
   "escalatorAlerts": 1044,
-  "elevatorUnplanned": 68,
-  "elevatorOngoingNow": 0,
+  "elevatorUnplanned": 69,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 69,
   "byStation": {
    "Bayview": 14,
@@ -59,7 +59,7 @@
    "Downsview Park": 6,
    "TMU": 1,
    "North York Centre": 6,
-   "Cedarvale": 5,
+   "Cedarvale": 6,
    "Sheppard-Yonge": 6,
    "Greenwood": 2,
    "Main Street": 7,
@@ -84,7 +84,7 @@
    "Glencairn": 2
   },
   "medianElevatorOutageAgeHours": 7,
-  "medianUnplannedElevatorOutageHours": 6.8
+  "medianUnplannedElevatorOutageHours": 6.7
  },
  "alerts": [
   {
@@ -396,7 +396,7 @@
   {
    "id": "74136",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-24T07:30:04.686Z",
+   "last": "2026-10-24T09:25:04.762Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-12T01:59:00Z",
    "station": "Spadina",
@@ -504,7 +504,7 @@
   {
    "id": "73474",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-24T07:30:04.686Z",
+   "last": "2026-10-24T09:25:04.762Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-07-05T05:00:00Z",
    "station": "Kipling",
@@ -540,7 +540,7 @@
   {
    "id": "71416",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-24T07:30:04.686Z",
+   "last": "2026-10-24T09:25:04.762Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-12T05:00:00Z",
    "station": "Broadview",
@@ -558,7 +558,7 @@
   {
    "id": "71415",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-24T07:30:04.686Z",
+   "last": "2026-10-24T09:25:04.762Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-25T05:00:00Z",
    "station": "Museum",
@@ -9144,7 +9144,7 @@
   {
    "id": "76445",
    "first": "2026-09-18T19:25:02.864Z",
-   "last": "2026-10-24T07:30:04.686Z",
+   "last": "2026-10-24T09:25:04.762Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-09-18T15:23:00Z",
    "station": "Coxwell",
@@ -14238,7 +14238,7 @@
   {
    "id": "77197",
    "first": "2026-09-30T12:55:04.833Z",
-   "last": "2026-10-24T07:30:04.686Z",
+   "last": "2026-10-24T09:25:04.762Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-10T07:30:00Z",
    "station": "Kennedy",
@@ -16722,7 +16722,7 @@
   {
    "id": "77551",
    "first": "2026-10-05T19:30:04.360Z",
-   "last": "2026-10-24T07:30:04.686Z",
+   "last": "2026-10-24T09:25:04.762Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-10-05T15:25:00Z",
    "station": "Dundas West",
@@ -22878,7 +22878,7 @@
   {
    "id": "78518",
    "first": "2026-10-20T10:15:04.895Z",
-   "last": "2026-10-24T07:30:04.686Z",
+   "last": "2026-10-24T09:25:04.762Z",
    "end": null,
    "feedStart": "2026-10-20T06:12:56.873Z",
    "station": "Sherbourne",
@@ -22890,8 +22890,8 @@
    "unplanned": false,
    "header": "Sherbourne: Escalator 4D2E out of service from Line 2 Kipling platform to concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 93.25,
-   "sinceFeedStartHours": 97.3
+   "observedHours": 95.17,
+   "sinceFeedStartHours": 99.2
   },
   {
    "id": "78519",
@@ -24822,7 +24822,7 @@
   {
    "id": "78788",
    "first": "2026-10-23T19:35:05.458Z",
-   "last": "2026-10-24T07:30:04.686Z",
+   "last": "2026-10-24T09:25:04.762Z",
    "end": null,
    "feedStart": "2026-10-23T15:30:00Z",
    "station": "Union",
@@ -24834,8 +24834,8 @@
    "unplanned": false,
    "header": "Union: Escalator 7Y4E out of service from Line 1 Finch platform to concourse while we perform maintenance. Escalator is expected to be back in service October 25, 2026.",
    "ongoing": true,
-   "observedHours": 11.92,
-   "sinceFeedStartHours": 16
+   "observedHours": 13.83,
+   "sinceFeedStartHours": 17.9
   },
   {
    "id": "78795",
@@ -24912,7 +24912,7 @@
   {
    "id": "78810",
    "first": "2026-10-24T02:55:05.366Z",
-   "last": "2026-10-24T07:30:04.686Z",
+   "last": "2026-10-24T09:25:04.762Z",
    "end": null,
    "feedStart": "2026-10-23T22:52:34.44Z",
    "station": "Lansdowne",
@@ -24924,13 +24924,13 @@
    "unplanned": true,
    "header": "Lansdowne: Escalator 7B2E out of service from concourse to Lansdowne Ave east side entrance due to a technical problem.",
    "ongoing": true,
-   "observedHours": 4.58,
-   "sinceFeedStartHours": 8.6
+   "observedHours": 6.5,
+   "sinceFeedStartHours": 10.5
   },
   {
    "id": "78811",
    "first": "2026-10-24T03:25:04.770Z",
-   "last": "2026-10-24T07:30:04.686Z",
+   "last": "2026-10-24T09:25:04.762Z",
    "end": null,
    "feedStart": "2026-10-23T23:24:25.373Z",
    "station": "Eglinton",
@@ -24942,13 +24942,13 @@
    "unplanned": true,
    "header": "Eglinton: Escalator 5 out of service between LRT lower concourse and LRT upper concourse due to a technical problem.",
    "ongoing": true,
-   "observedHours": 4.08,
-   "sinceFeedStartHours": 8.1
+   "observedHours": 6,
+   "sinceFeedStartHours": 10
   },
   {
    "id": "78816",
    "first": "2026-10-24T04:35:04.714Z",
-   "last": "2026-10-24T07:30:04.686Z",
+   "last": "2026-10-24T09:25:04.762Z",
    "end": null,
    "feedStart": "2026-10-24T00:31:47.167Z",
    "station": "Bloor-Yonge",
@@ -24960,13 +24960,13 @@
    "unplanned": false,
    "header": "Bloor-Yonge: Escalator 3D9E out of service from Line 1 Finch platform to south concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 2.92,
-   "sinceFeedStartHours": 7
+   "observedHours": 4.83,
+   "sinceFeedStartHours": 8.9
   },
   {
    "id": "78817",
    "first": "2026-10-24T04:40:05.376Z",
-   "last": "2026-10-24T07:30:04.686Z",
+   "last": "2026-10-24T09:25:04.762Z",
    "end": null,
    "feedStart": "2026-10-24T00:35:03.167Z",
    "station": "Bloor-Yonge",
@@ -24978,13 +24978,13 @@
    "unplanned": false,
    "header": "Bloor-Yonge: Escalator 3D10E out of service from Line 1 Vaughan via Union platform to south concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 2.83,
-   "sinceFeedStartHours": 6.9
+   "observedHours": 4.75,
+   "sinceFeedStartHours": 8.8
   },
   {
    "id": "78819",
    "first": "2026-10-24T05:00:04.655Z",
-   "last": "2026-10-24T07:30:04.686Z",
+   "last": "2026-10-24T09:25:04.762Z",
    "end": null,
    "feedStart": "2026-10-24T00:57:09.373Z",
    "station": "Bloor-Yonge",
@@ -24996,13 +24996,13 @@
    "unplanned": false,
    "header": "Bloor-Yonge: Escalator 3D4E out of service from Line 2 platform to Line 1 Vaughan via Union platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 2.5,
-   "sinceFeedStartHours": 6.5
+   "observedHours": 4.42,
+   "sinceFeedStartHours": 8.5
   },
   {
    "id": "78823",
    "first": "2026-10-24T06:50:04.713Z",
-   "last": "2026-10-24T07:30:04.686Z",
+   "last": "2026-10-24T09:25:04.762Z",
    "end": null,
    "feedStart": "2026-10-24T02:47:16.26Z",
    "station": "Highway 407",
@@ -25014,8 +25014,26 @@
    "unplanned": true,
    "header": "Highway 407: Escalator 14S3E out of service from Line 1 platform to concourse due to a technical problem.",
    "ongoing": true,
-   "observedHours": 0.67,
-   "sinceFeedStartHours": 4.7
+   "observedHours": 2.58,
+   "sinceFeedStartHours": 6.6
+  },
+  {
+   "id": "78826",
+   "first": "2026-10-24T09:25:04.762Z",
+   "last": "2026-10-24T09:25:04.762Z",
+   "end": null,
+   "feedStart": "2026-10-24T05:21:58.773Z",
+   "station": "Cedarvale",
+   "type": "Elevator",
+   "code": "ELV01-A",
+   "planned": "Planned",
+   "cause": "TECHNICAL_PROBLEM",
+   "causeDesc": "Door Issue",
+   "unplanned": true,
+   "header": "Cedarvale: Elevator ELV01-A out of service between Line 5 platform, Line 1 southbound platform/west concourse, and upper concourse due to a technical problem.",
+   "ongoing": true,
+   "observedHours": 0,
+   "sinceFeedStartHours": 4.1
   }
  ]
 }
