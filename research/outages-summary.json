@@ -2,13 +2,13 @@
  "summary": {
   "logging": {
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-25T12:00:02.743Z",
-   "hoursCovered": 1285.73,
-   "snapshotsWithChange": 2348
+   "last": "2026-10-25T12:05:08.955Z",
+   "hoursCovered": 1285.82,
+   "snapshotsWithChange": 2349
   },
-  "distinctAlerts": 1407,
+  "distinctAlerts": 1408,
   "elevatorAlerts": 345,
-  "escalatorAlerts": 1062,
+  "escalatorAlerts": 1063,
   "elevatorUnplanned": 69,
   "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 69,
@@ -396,7 +396,7 @@
   {
    "id": "74136",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-25T12:00:02.743Z",
+   "last": "2026-10-25T12:05:08.955Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-12T01:59:00Z",
    "station": "Spadina",
@@ -504,7 +504,7 @@
   {
    "id": "73474",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-25T12:00:02.743Z",
+   "last": "2026-10-25T12:05:08.955Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-07-05T05:00:00Z",
    "station": "Kipling",
@@ -540,7 +540,7 @@
   {
    "id": "71416",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-25T12:00:02.743Z",
+   "last": "2026-10-25T12:05:08.955Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-12T05:00:00Z",
    "station": "Broadview",
@@ -558,7 +558,7 @@
   {
    "id": "71415",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-25T12:00:02.743Z",
+   "last": "2026-10-25T12:05:08.955Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-25T05:00:00Z",
    "station": "Museum",
@@ -9144,7 +9144,7 @@
   {
    "id": "76445",
    "first": "2026-09-18T19:25:02.864Z",
-   "last": "2026-10-25T12:00:02.743Z",
+   "last": "2026-10-25T12:05:08.955Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-09-18T15:23:00Z",
    "station": "Coxwell",
@@ -14238,7 +14238,7 @@
   {
    "id": "77197",
    "first": "2026-09-30T12:55:04.833Z",
-   "last": "2026-10-25T12:00:02.743Z",
+   "last": "2026-10-25T12:05:08.955Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-10T07:30:00Z",
    "station": "Kennedy",
@@ -16722,7 +16722,7 @@
   {
    "id": "77551",
    "first": "2026-10-05T19:30:04.360Z",
-   "last": "2026-10-25T12:00:02.743Z",
+   "last": "2026-10-25T12:05:08.955Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-10-05T15:25:00Z",
    "station": "Dundas West",
@@ -22878,7 +22878,7 @@
   {
    "id": "78518",
    "first": "2026-10-20T10:15:04.895Z",
-   "last": "2026-10-25T12:00:02.743Z",
+   "last": "2026-10-25T12:05:08.955Z",
    "end": null,
    "feedStart": "2026-10-20T06:12:56.873Z",
    "station": "Sherbourne",
@@ -22890,8 +22890,8 @@
    "unplanned": false,
    "header": "Sherbourne: Escalator 4D2E out of service from Line 2 Kipling platform to concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 121.75,
-   "sinceFeedStartHours": 125.8
+   "observedHours": 121.83,
+   "sinceFeedStartHours": 125.9
   },
   {
    "id": "78519",
@@ -24822,7 +24822,7 @@
   {
    "id": "78788",
    "first": "2026-10-23T19:35:05.458Z",
-   "last": "2026-10-25T12:00:02.743Z",
+   "last": "2026-10-25T12:05:08.955Z",
    "end": null,
    "feedStart": "2026-10-23T15:30:00Z",
    "station": "Union",
@@ -24834,8 +24834,8 @@
    "unplanned": false,
    "header": "Union: Escalator 7Y4E out of service from Line 1 Finch platform to concourse while we perform maintenance. Escalator is expected to be back in service October 25, 2026.",
    "ongoing": true,
-   "observedHours": 40.42,
-   "sinceFeedStartHours": 44.5
+   "observedHours": 40.5,
+   "sinceFeedStartHours": 44.6
   },
   {
    "id": "78795",
@@ -25092,7 +25092,7 @@
   {
    "id": "78832",
    "first": "2026-10-24T10:30:02.378Z",
-   "last": "2026-10-25T12:00:02.743Z",
+   "last": "2026-10-25T12:05:08.955Z",
    "end": null,
    "feedStart": "2026-10-24T06:29:23.933Z",
    "station": "Old Mill",
@@ -25104,8 +25104,8 @@
    "unplanned": false,
    "header": "Old Mill: Escalator 13B2E out of service from Line 2 Kennedy platform to Old Mill Trail entrance while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 25.5,
-   "sinceFeedStartHours": 29.5
+   "observedHours": 25.59,
+   "sinceFeedStartHours": 29.6
   },
   {
    "id": "78837",
@@ -25236,7 +25236,7 @@
   {
    "id": "78859",
    "first": "2026-10-24T20:40:05.468Z",
-   "last": "2026-10-25T12:00:02.743Z",
+   "last": "2026-10-25T12:05:08.955Z",
    "end": null,
    "feedStart": "2026-10-24T16:37:26.753Z",
    "station": "Osgoode",
@@ -25248,13 +25248,13 @@
    "unplanned": false,
    "header": "Osgoode: Escalator 5Y1E out of service from Line 1 platform to concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 15.33,
-   "sinceFeedStartHours": 19.4
+   "observedHours": 15.42,
+   "sinceFeedStartHours": 19.5
   },
   {
    "id": "78862",
    "first": "2026-10-24T21:55:10.372Z",
-   "last": "2026-10-25T12:00:02.743Z",
+   "last": "2026-10-25T12:05:08.955Z",
    "end": null,
    "feedStart": "2026-10-24T17:49:42.073Z",
    "station": "Downsview Park",
@@ -25266,8 +25266,8 @@
    "unplanned": false,
    "header": "Downsview Park: Escalator 10S6E out of service from concourse to GO entrance while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 14.08,
-   "sinceFeedStartHours": 18.2
+   "observedHours": 14.17,
+   "sinceFeedStartHours": 18.3
   },
   {
    "id": "78865",
@@ -25344,7 +25344,7 @@
   {
    "id": "78877",
    "first": "2026-10-25T03:50:07.566Z",
-   "last": "2026-10-25T12:00:02.743Z",
+   "last": "2026-10-25T12:05:08.955Z",
    "end": null,
    "feedStart": "2026-10-24T23:45:35.08Z",
    "station": "Christie",
@@ -25356,13 +25356,13 @@
    "unplanned": true,
    "header": "Christie: Escalator 4B3E out of service from concourse to Christie Ave entrance due to a technical problem.",
    "ongoing": true,
-   "observedHours": 8.17,
-   "sinceFeedStartHours": 12.2
+   "observedHours": 8.25,
+   "sinceFeedStartHours": 12.3
   },
   {
    "id": "78883",
    "first": "2026-10-25T11:10:10.422Z",
-   "last": "2026-10-25T12:00:02.743Z",
+   "last": "2026-10-25T12:05:08.955Z",
    "end": null,
    "feedStart": "2026-10-25T07:05:09.633Z",
    "station": "Eglinton",
@@ -25374,13 +25374,13 @@
    "unplanned": true,
    "header": "Eglinton: Escalator 7 out of service between LRT lower concourse and LRT upper concourse due to a technical problem.",
    "ongoing": true,
-   "observedHours": 0.83,
-   "sinceFeedStartHours": 4.9
+   "observedHours": 0.92,
+   "sinceFeedStartHours": 5
   },
   {
    "id": "78887",
    "first": "2026-10-25T11:55:10.423Z",
-   "last": "2026-10-25T12:00:02.743Z",
+   "last": "2026-10-25T12:05:08.955Z",
    "end": null,
    "feedStart": "2026-10-25T07:52:23.577Z",
    "station": "Eglinton",
@@ -25392,13 +25392,13 @@
    "unplanned": false,
    "header": "Eglinton: Escalator 18Y5E out of service from concourse to Line 1 Centre platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 0.08,
-   "sinceFeedStartHours": 4.1
+   "observedHours": 0.17,
+   "sinceFeedStartHours": 4.2
   },
   {
    "id": "78888",
    "first": "2026-10-25T12:00:02.743Z",
-   "last": "2026-10-25T12:00:02.743Z",
+   "last": "2026-10-25T12:05:08.955Z",
    "end": null,
    "feedStart": "2026-10-25T07:56:22.19Z",
    "station": "Cedarvale",
@@ -25409,6 +25409,24 @@
    "causeDesc": "No Start",
    "unplanned": true,
    "header": "Cedarvale: Escalator 3 out of service between platform and lower concourse due to a technical problem.",
+   "ongoing": true,
+   "observedHours": 0.09,
+   "sinceFeedStartHours": 4.1
+  },
+  {
+   "id": "78889",
+   "first": "2026-10-25T12:05:08.955Z",
+   "last": "2026-10-25T12:05:08.955Z",
+   "end": null,
+   "feedStart": "2026-10-25T07:59:49.253Z",
+   "station": "Bessarion",
+   "type": "Escalator",
+   "code": "57P4E",
+   "planned": "Planned",
+   "cause": "TECHNICAL_PROBLEM",
+   "causeDesc": "No Start",
+   "unplanned": true,
+   "header": "Bessarion: Escalator 57P4E out of service from Line 4 platform to concourse due to a technical problem.",
    "ongoing": true,
    "observedHours": 0,
    "sinceFeedStartHours": 4.1
