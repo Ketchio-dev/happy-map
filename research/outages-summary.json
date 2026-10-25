@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-25T19:25:05.269Z",
-   "hoursCovered": 1293.15,
-   "snapshotsWithChange": 2360
+   "last": "2026-10-25T19:30:10.423Z",
+   "hoursCovered": 1293.23,
+   "snapshotsWithChange": 2361
   },
   "distinctAlerts": 1413,
   "elevatorAlerts": 348,
@@ -396,7 +396,7 @@
   {
    "id": "74136",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-25T19:25:05.269Z",
+   "last": "2026-10-25T19:30:10.423Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-12T01:59:00Z",
    "station": "Spadina",
@@ -504,7 +504,7 @@
   {
    "id": "73474",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-25T19:25:05.269Z",
+   "last": "2026-10-25T19:30:10.423Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-07-05T05:00:00Z",
    "station": "Kipling",
@@ -540,7 +540,7 @@
   {
    "id": "71416",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-25T19:25:05.269Z",
+   "last": "2026-10-25T19:30:10.423Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-12T05:00:00Z",
    "station": "Broadview",
@@ -558,7 +558,7 @@
   {
    "id": "71415",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-25T19:25:05.269Z",
+   "last": "2026-10-25T19:30:10.423Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-25T05:00:00Z",
    "station": "Museum",
@@ -9144,7 +9144,7 @@
   {
    "id": "76445",
    "first": "2026-09-18T19:25:02.864Z",
-   "last": "2026-10-25T19:25:05.269Z",
+   "last": "2026-10-25T19:30:10.423Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-09-18T15:23:00Z",
    "station": "Coxwell",
@@ -14238,7 +14238,7 @@
   {
    "id": "77197",
    "first": "2026-09-30T12:55:04.833Z",
-   "last": "2026-10-25T19:25:05.269Z",
+   "last": "2026-10-25T19:30:10.423Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-10T07:30:00Z",
    "station": "Kennedy",
@@ -16722,7 +16722,7 @@
   {
    "id": "77551",
    "first": "2026-10-05T19:30:04.360Z",
-   "last": "2026-10-25T19:25:05.269Z",
+   "last": "2026-10-25T19:30:10.423Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-10-05T15:25:00Z",
    "station": "Dundas West",
@@ -22878,7 +22878,7 @@
   {
    "id": "78518",
    "first": "2026-10-20T10:15:04.895Z",
-   "last": "2026-10-25T19:25:05.269Z",
+   "last": "2026-10-25T19:30:10.423Z",
    "end": null,
    "feedStart": "2026-10-20T06:12:56.873Z",
    "station": "Sherbourne",
@@ -22890,8 +22890,8 @@
    "unplanned": false,
    "header": "Sherbourne: Escalator 4D2E out of service from Line 2 Kipling platform to concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 129.17,
-   "sinceFeedStartHours": 133.2
+   "observedHours": 129.25,
+   "sinceFeedStartHours": 133.3
   },
   {
    "id": "78519",
@@ -24822,7 +24822,7 @@
   {
    "id": "78788",
    "first": "2026-10-23T19:35:05.458Z",
-   "last": "2026-10-25T19:25:05.269Z",
+   "last": "2026-10-25T19:30:10.423Z",
    "end": null,
    "feedStart": "2026-10-23T15:30:00Z",
    "station": "Union",
@@ -24834,8 +24834,8 @@
    "unplanned": false,
    "header": "Union: Escalator 7Y4E out of service from Line 1 Finch platform to concourse while we perform maintenance. Escalator is expected to be back in service October 25, 2026.",
    "ongoing": true,
-   "observedHours": 47.83,
-   "sinceFeedStartHours": 51.9
+   "observedHours": 47.92,
+   "sinceFeedStartHours": 52
   },
   {
    "id": "78795",
@@ -25092,7 +25092,7 @@
   {
    "id": "78832",
    "first": "2026-10-24T10:30:02.378Z",
-   "last": "2026-10-25T19:25:05.269Z",
+   "last": "2026-10-25T19:30:10.423Z",
    "end": null,
    "feedStart": "2026-10-24T06:29:23.933Z",
    "station": "Old Mill",
@@ -25104,8 +25104,8 @@
    "unplanned": false,
    "header": "Old Mill: Escalator 13B2E out of service from Line 2 Kennedy platform to Old Mill Trail entrance while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 32.92,
-   "sinceFeedStartHours": 36.9
+   "observedHours": 33,
+   "sinceFeedStartHours": 37
   },
   {
    "id": "78837",
@@ -25254,7 +25254,7 @@
   {
    "id": "78862",
    "first": "2026-10-24T21:55:10.372Z",
-   "last": "2026-10-25T19:25:05.269Z",
+   "last": "2026-10-25T19:30:10.423Z",
    "end": null,
    "feedStart": "2026-10-24T17:49:42.073Z",
    "station": "Downsview Park",
@@ -25266,8 +25266,8 @@
    "unplanned": false,
    "header": "Downsview Park: Escalator 10S6E out of service from concourse to GO entrance while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 21.5,
-   "sinceFeedStartHours": 25.6
+   "observedHours": 21.58,
+   "sinceFeedStartHours": 25.7
   },
   {
    "id": "78865",
@@ -25345,7 +25345,7 @@
    "id": "78877",
    "first": "2026-10-25T03:50:07.566Z",
    "last": "2026-10-25T19:25:05.269Z",
-   "end": null,
+   "end": "2026-10-25T19:30:10.423Z",
    "feedStart": "2026-10-24T23:45:35.08Z",
    "station": "Christie",
    "type": "Escalator",
@@ -25355,14 +25355,14 @@
    "causeDesc": "Loud noise",
    "unplanned": true,
    "header": "Christie: Escalator 4B3E out of service from concourse to Christie Ave entrance due to a technical problem.",
-   "ongoing": true,
-   "observedHours": 15.58,
+   "ongoing": false,
+   "observedHours": 15.67,
    "sinceFeedStartHours": 19.7
   },
   {
    "id": "78883",
    "first": "2026-10-25T11:10:10.422Z",
-   "last": "2026-10-25T19:25:05.269Z",
+   "last": "2026-10-25T19:30:10.423Z",
    "end": null,
    "feedStart": "2026-10-25T07:05:09.633Z",
    "station": "Eglinton",
@@ -25374,13 +25374,13 @@
    "unplanned": true,
    "header": "Eglinton: Escalator 7 out of service between LRT lower concourse and LRT upper concourse due to a technical problem.",
    "ongoing": true,
-   "observedHours": 8.25,
-   "sinceFeedStartHours": 12.3
+   "observedHours": 8.33,
+   "sinceFeedStartHours": 12.4
   },
   {
    "id": "78887",
    "first": "2026-10-25T11:55:10.423Z",
-   "last": "2026-10-25T19:25:05.269Z",
+   "last": "2026-10-25T19:30:10.423Z",
    "end": null,
    "feedStart": "2026-10-25T07:52:23.577Z",
    "station": "Eglinton",
@@ -25392,13 +25392,13 @@
    "unplanned": false,
    "header": "Eglinton: Escalator 18Y5E out of service from concourse to Line 1 Centre platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 7.5,
-   "sinceFeedStartHours": 11.5
+   "observedHours": 7.58,
+   "sinceFeedStartHours": 11.6
   },
   {
    "id": "78888",
    "first": "2026-10-25T12:00:02.743Z",
-   "last": "2026-10-25T19:25:05.269Z",
+   "last": "2026-10-25T19:30:10.423Z",
    "end": null,
    "feedStart": "2026-10-25T07:56:22.19Z",
    "station": "Cedarvale",
@@ -25410,13 +25410,13 @@
    "unplanned": true,
    "header": "Cedarvale: Escalator 3 out of service between platform and lower concourse due to a technical problem.",
    "ongoing": true,
-   "observedHours": 7.42,
-   "sinceFeedStartHours": 11.5
+   "observedHours": 7.5,
+   "sinceFeedStartHours": 11.6
   },
   {
    "id": "78889",
    "first": "2026-10-25T12:05:08.955Z",
-   "last": "2026-10-25T19:25:05.269Z",
+   "last": "2026-10-25T19:30:10.423Z",
    "end": null,
    "feedStart": "2026-10-25T07:59:49.253Z",
    "station": "Bessarion",
@@ -25428,13 +25428,13 @@
    "unplanned": true,
    "header": "Bessarion: Escalator 57P4E out of service from Line 4 platform to concourse due to a technical problem.",
    "ongoing": true,
-   "observedHours": 7.33,
-   "sinceFeedStartHours": 11.4
+   "observedHours": 7.42,
+   "sinceFeedStartHours": 11.5
   },
   {
    "id": "78890",
    "first": "2026-10-25T12:10:07.537Z",
-   "last": "2026-10-25T19:25:05.269Z",
+   "last": "2026-10-25T19:30:10.423Z",
    "end": null,
    "feedStart": "2026-10-25T08:08:40.567Z",
    "station": "Queen",
@@ -25446,8 +25446,8 @@
    "unplanned": false,
    "header": "Queen: Escalator 9Y4E out of service from south concourse to Line 1 Vaughan via Union platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 7.25,
-   "sinceFeedStartHours": 11.3
+   "observedHours": 7.33,
+   "sinceFeedStartHours": 11.4
   },
   {
    "id": "78891",
@@ -25471,7 +25471,7 @@
    "id": "78892",
    "first": "2026-10-25T12:20:05.733Z",
    "last": "2026-10-25T19:25:05.269Z",
-   "end": null,
+   "end": "2026-10-25T19:30:10.423Z",
    "feedStart": "2026-10-25T08:15:02.797Z",
    "station": "King",
    "type": "Escalator",
@@ -25481,14 +25481,14 @@
    "causeDesc": "No Start",
    "unplanned": true,
    "header": "King: Escalator 8Y7E out of service from Scotia Plaza entrance to north concourse due to a technical problem.",
-   "ongoing": true,
-   "observedHours": 7.08,
-   "sinceFeedStartHours": 11.2
+   "ongoing": false,
+   "observedHours": 7.17,
+   "sinceFeedStartHours": 11.3
   },
   {
    "id": "78901",
    "first": "2026-10-25T17:40:04.838Z",
-   "last": "2026-10-25T19:25:05.269Z",
+   "last": "2026-10-25T19:30:10.423Z",
    "end": null,
    "feedStart": "2026-10-25T13:39:26.683Z",
    "station": "Keele",
@@ -25500,13 +25500,13 @@
    "unplanned": false,
    "header": "Keele: Elevator 9B2L out of service between Keele St entrance and bus platform to Line 2 Kipling (Eastbound) while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 1.75,
+   "observedHours": 1.83,
    "sinceFeedStartHours": 5.8
   },
   {
    "id": "78902",
    "first": "2026-10-25T17:55:10.379Z",
-   "last": "2026-10-25T19:25:05.269Z",
+   "last": "2026-10-25T19:30:10.423Z",
    "end": null,
    "feedStart": "2026-10-25T13:53:04.14Z",
    "station": "St Clair West",
@@ -25518,8 +25518,8 @@
    "unplanned": false,
    "header": "St Clair West: Elevator 3S1L out of service between Heath St W north side entrance and north concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 1.5,
-   "sinceFeedStartHours": 5.5
+   "observedHours": 1.58,
+   "sinceFeedStartHours": 5.6
   }
  ]
 }
