@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-29T23:15:10.381Z",
-   "hoursCovered": 1392.98,
-   "snapshotsWithChange": 2579
+   "last": "2026-10-30T00:05:07.103Z",
+   "hoursCovered": 1393.81,
+   "snapshotsWithChange": 2580
   },
   "distinctAlerts": 1543,
   "elevatorAlerts": 380,
@@ -398,7 +398,7 @@
   {
    "id": "74136",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-29T23:15:10.381Z",
+   "last": "2026-10-30T00:05:07.103Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-12T01:59:00Z",
    "station": "Spadina",
@@ -542,7 +542,7 @@
   {
    "id": "71416",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-29T23:15:10.381Z",
+   "last": "2026-10-30T00:05:07.103Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-12T05:00:00Z",
    "station": "Broadview",
@@ -560,7 +560,7 @@
   {
    "id": "71415",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-29T23:15:10.381Z",
+   "last": "2026-10-30T00:05:07.103Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-25T05:00:00Z",
    "station": "Museum",
@@ -9146,7 +9146,7 @@
   {
    "id": "76445",
    "first": "2026-09-18T19:25:02.864Z",
-   "last": "2026-10-29T23:15:10.381Z",
+   "last": "2026-10-30T00:05:07.103Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-09-18T15:23:00Z",
    "station": "Coxwell",
@@ -14240,7 +14240,7 @@
   {
    "id": "77197",
    "first": "2026-09-30T12:55:04.833Z",
-   "last": "2026-10-29T23:15:10.381Z",
+   "last": "2026-10-30T00:05:07.103Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-10T07:30:00Z",
    "station": "Kennedy",
@@ -16724,7 +16724,7 @@
   {
    "id": "77551",
    "first": "2026-10-05T19:30:04.360Z",
-   "last": "2026-10-29T23:15:10.381Z",
+   "last": "2026-10-30T00:05:07.103Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-10-05T15:25:00Z",
    "station": "Dundas West",
@@ -22880,7 +22880,7 @@
   {
    "id": "78518",
    "first": "2026-10-20T10:15:04.895Z",
-   "last": "2026-10-29T23:15:10.381Z",
+   "last": "2026-10-30T00:05:07.103Z",
    "end": null,
    "feedStart": "2026-10-20T06:12:56.873Z",
    "station": "Sherbourne",
@@ -22892,8 +22892,8 @@
    "unplanned": false,
    "header": "Sherbourne: Escalator 4D2E out of service from Line 2 Kipling platform to concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 229,
-   "sinceFeedStartHours": 233
+   "observedHours": 229.83,
+   "sinceFeedStartHours": 233.9
   },
   {
    "id": "78519",
@@ -25850,7 +25850,7 @@
   {
    "id": "78926",
    "first": "2026-10-26T11:35:10.342Z",
-   "last": "2026-10-29T23:15:10.381Z",
+   "last": "2026-10-30T00:05:07.103Z",
    "end": null,
    "feedStart": "2026-10-26T07:30:00Z",
    "station": "Lawrence West",
@@ -25862,8 +25862,8 @@
    "unplanned": false,
    "header": "Lawrence West: Escalator 6S1E out of service from Lawrence Ave W south side entrance to Line 1 platform while we perform maintenance. Escalator is expected to be back in service October 30, 2026.",
    "ongoing": true,
-   "observedHours": 83.67,
-   "sinceFeedStartHours": 87.8
+   "observedHours": 84.5,
+   "sinceFeedStartHours": 88.6
   },
   {
    "id": "78925",
@@ -26606,7 +26606,7 @@
   {
    "id": "79053",
    "first": "2026-10-27T19:45:07.504Z",
-   "last": "2026-10-29T23:15:10.381Z",
+   "last": "2026-10-30T00:05:07.103Z",
    "end": null,
    "feedStart": "2026-10-27T00:00:00Z",
    "station": "Kipling",
@@ -26618,8 +26618,8 @@
    "unplanned": false,
    "header": "Kipling: Escalator 16B3E out of service from Line 2 platform to bus platform while we perform maintenance. Escalator is expected to be back in service February 19, 2027.",
    "ongoing": true,
-   "observedHours": 51.5,
-   "sinceFeedStartHours": 71.3
+   "observedHours": 52.33,
+   "sinceFeedStartHours": 72.1
   },
   {
    "id": "79055",
@@ -26786,7 +26786,7 @@
   {
    "id": "79073",
    "first": "2026-10-28T02:20:10.369Z",
-   "last": "2026-10-29T23:15:10.381Z",
+   "last": "2026-10-30T00:05:07.103Z",
    "end": null,
    "feedStart": "2026-10-27T22:15:19.493Z",
    "station": "Eglinton",
@@ -26798,8 +26798,8 @@
    "unplanned": false,
    "header": "Eglinton: Elevator ELV06-F out of service between Line 5 upper concourse east side and ePlace while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 44.92,
-   "sinceFeedStartHours": 49
+   "observedHours": 45.75,
+   "sinceFeedStartHours": 49.8
   },
   {
    "id": "79081",
@@ -27668,7 +27668,7 @@
   {
    "id": "79210",
    "first": "2026-10-29T17:55:10.392Z",
-   "last": "2026-10-29T23:15:10.381Z",
+   "last": "2026-10-30T00:05:07.103Z",
    "end": null,
    "feedStart": "2026-10-29T13:49:54.72Z",
    "station": "Runnymede",
@@ -27680,13 +27680,13 @@
    "unplanned": false,
    "header": "Runnymede: Escalator 11B1E out of service from Runnymede Rd entrance to concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 5.33,
-   "sinceFeedStartHours": 9.4
+   "observedHours": 6.17,
+   "sinceFeedStartHours": 10.3
   },
   {
    "id": "79211",
    "first": "2026-10-29T18:30:10.491Z",
-   "last": "2026-10-29T23:15:10.381Z",
+   "last": "2026-10-30T00:05:07.103Z",
    "end": null,
    "feedStart": "2026-10-29T14:25:08.67Z",
    "station": "Pioneer Village",
@@ -27698,13 +27698,13 @@
    "unplanned": false,
    "header": "Pioneer Village: Escalator 13S1E out of service from north concourse to Steeles Ave W north side entrance while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 4.75,
-   "sinceFeedStartHours": 8.8
+   "observedHours": 5.58,
+   "sinceFeedStartHours": 9.7
   },
   {
    "id": "79213",
    "first": "2026-10-29T18:45:10.396Z",
-   "last": "2026-10-29T23:15:10.381Z",
+   "last": "2026-10-30T00:05:07.103Z",
    "end": null,
    "feedStart": "2026-10-29T14:39:57.987Z",
    "station": "Finch West",
@@ -27716,8 +27716,8 @@
    "unplanned": false,
    "header": "Finch West: Escalator 4 out of service between concourse and line 6 platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 4.5,
-   "sinceFeedStartHours": 8.6
+   "observedHours": 5.33,
+   "sinceFeedStartHours": 9.4
   },
   {
    "id": "79214",
@@ -27740,7 +27740,7 @@
   {
    "id": "79215",
    "first": "2026-10-29T19:15:10.449Z",
-   "last": "2026-10-29T23:15:10.381Z",
+   "last": "2026-10-30T00:05:07.103Z",
    "end": null,
    "feedStart": "2026-10-29T15:10:37.187Z",
    "station": "Pape",
@@ -27752,13 +27752,13 @@
    "unplanned": false,
    "header": "Pape: Escalator 8D2E out of service from Line 2 Kennedy platform to concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 4,
-   "sinceFeedStartHours": 8.1
+   "observedHours": 4.83,
+   "sinceFeedStartHours": 8.9
   },
   {
    "id": "79216",
    "first": "2026-10-29T19:25:10.447Z",
-   "last": "2026-10-29T23:15:10.381Z",
+   "last": "2026-10-30T00:05:07.103Z",
    "end": null,
    "feedStart": "2026-10-29T15:20:01.427Z",
    "station": "Union",
@@ -27770,13 +27770,13 @@
    "unplanned": false,
    "header": "Union: Elevator 7Y1L out of service between concourse and Line 1 Vaughan platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 3.83,
-   "sinceFeedStartHours": 7.9
+   "observedHours": 4.67,
+   "sinceFeedStartHours": 8.8
   },
   {
    "id": "79219",
    "first": "2026-10-29T20:45:10.407Z",
-   "last": "2026-10-29T23:15:10.381Z",
+   "last": "2026-10-30T00:05:07.103Z",
    "end": null,
    "feedStart": "2026-10-29T16:40:38.863Z",
    "station": "St George",
@@ -27788,13 +27788,13 @@
    "unplanned": false,
    "header": "St George: Escalator 1B1E out of service from Line 1 platform to concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 2.5,
-   "sinceFeedStartHours": 6.6
+   "observedHours": 3.33,
+   "sinceFeedStartHours": 7.4
   },
   {
    "id": "79223",
    "first": "2026-10-29T21:35:10.472Z",
-   "last": "2026-10-29T23:15:10.381Z",
+   "last": "2026-10-30T00:05:07.103Z",
    "end": null,
    "feedStart": "2026-10-29T17:32:24.907Z",
    "station": "Keele",
@@ -27806,13 +27806,13 @@
    "unplanned": false,
    "header": "Keele: Escalator 9B2E out of service from Keele St entrance to Line 2 Kennedy platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 1.67,
-   "sinceFeedStartHours": 5.7
+   "observedHours": 2.5,
+   "sinceFeedStartHours": 6.5
   },
   {
    "id": "79224",
    "first": "2026-10-29T21:45:10.403Z",
-   "last": "2026-10-29T23:15:10.381Z",
+   "last": "2026-10-30T00:05:07.103Z",
    "end": null,
    "feedStart": "2026-10-29T17:41:06.153Z",
    "station": "Castle Frank",
@@ -27824,13 +27824,13 @@
    "unplanned": false,
    "header": "Castle Frank: Escalator 5D1E out of service from Line 2 Kennedy platform to concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 1.5,
-   "sinceFeedStartHours": 5.6
+   "observedHours": 2.33,
+   "sinceFeedStartHours": 6.4
   },
   {
    "id": "79229",
    "first": "2026-10-29T22:15:07.632Z",
-   "last": "2026-10-29T23:15:10.381Z",
+   "last": "2026-10-30T00:05:07.103Z",
    "end": null,
    "feedStart": "2026-10-29T18:12:00Z",
    "station": "Castle Frank",
@@ -27842,13 +27842,13 @@
    "unplanned": false,
    "header": "Castle Frank: Escalator 5D2E out of service from Line 2 Kipling platform to concourse while we perform maintenance. Escalator is expected to be back in service October 29, 2026.",
    "ongoing": true,
-   "observedHours": 1,
-   "sinceFeedStartHours": 5.1
+   "observedHours": 1.83,
+   "sinceFeedStartHours": 5.9
   },
   {
    "id": "79231",
    "first": "2026-10-29T23:15:10.381Z",
-   "last": "2026-10-29T23:15:10.381Z",
+   "last": "2026-10-30T00:05:07.103Z",
    "end": null,
    "feedStart": "2026-10-29T19:10:08.703Z",
    "station": "Lawrence",
@@ -27860,8 +27860,8 @@
    "unplanned": false,
    "header": "Lawrence: Escalator 19Y4E out of service from bus platform to south concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 0,
-   "sinceFeedStartHours": 4.1
+   "observedHours": 0.83,
+   "sinceFeedStartHours": 4.9
   }
  ]
 }
