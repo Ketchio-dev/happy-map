@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-30T19:15:10.434Z",
-   "hoursCovered": 1412.98,
-   "snapshotsWithChange": 2619
+   "last": "2026-10-30T19:20:09.822Z",
+   "hoursCovered": 1413.07,
+   "snapshotsWithChange": 2620
   },
   "distinctAlerts": 1561,
   "elevatorAlerts": 385,
@@ -399,7 +399,7 @@
   {
    "id": "74136",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-30T19:15:10.434Z",
+   "last": "2026-10-30T19:20:09.822Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-12T01:59:00Z",
    "station": "Spadina",
@@ -543,7 +543,7 @@
   {
    "id": "71416",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-30T19:15:10.434Z",
+   "last": "2026-10-30T19:20:09.822Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-12T05:00:00Z",
    "station": "Broadview",
@@ -561,7 +561,7 @@
   {
    "id": "71415",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-10-30T19:15:10.434Z",
+   "last": "2026-10-30T19:20:09.822Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-25T05:00:00Z",
    "station": "Museum",
@@ -9147,7 +9147,7 @@
   {
    "id": "76445",
    "first": "2026-09-18T19:25:02.864Z",
-   "last": "2026-10-30T19:15:10.434Z",
+   "last": "2026-10-30T19:20:09.822Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-09-18T15:23:00Z",
    "station": "Coxwell",
@@ -14241,7 +14241,7 @@
   {
    "id": "77197",
    "first": "2026-09-30T12:55:04.833Z",
-   "last": "2026-10-30T19:15:10.434Z",
+   "last": "2026-10-30T19:20:09.822Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-10T07:30:00Z",
    "station": "Kennedy",
@@ -16725,7 +16725,7 @@
   {
    "id": "77551",
    "first": "2026-10-05T19:30:04.360Z",
-   "last": "2026-10-30T19:15:10.434Z",
+   "last": "2026-10-30T19:20:09.822Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-10-05T15:25:00Z",
    "station": "Dundas West",
@@ -25851,7 +25851,7 @@
   {
    "id": "78926",
    "first": "2026-10-26T11:35:10.342Z",
-   "last": "2026-10-30T19:15:10.434Z",
+   "last": "2026-10-30T19:20:09.822Z",
    "end": null,
    "feedStart": "2026-10-26T07:30:00Z",
    "station": "Lawrence West",
@@ -25863,7 +25863,7 @@
    "unplanned": false,
    "header": "Lawrence West: Escalator 6S1E out of service from Lawrence Ave W south side entrance to Line 1 platform while we perform maintenance. Escalator is expected to be back in service October 30, 2026.",
    "ongoing": true,
-   "observedHours": 103.67,
+   "observedHours": 103.75,
    "sinceFeedStartHours": 107.8
   },
   {
@@ -26607,7 +26607,7 @@
   {
    "id": "79053",
    "first": "2026-10-27T19:45:07.504Z",
-   "last": "2026-10-30T19:15:10.434Z",
+   "last": "2026-10-30T19:20:09.822Z",
    "end": null,
    "feedStart": "2026-10-27T00:00:00Z",
    "station": "Kipling",
@@ -26619,7 +26619,7 @@
    "unplanned": false,
    "header": "Kipling: Escalator 16B3E out of service from Line 2 platform to bus platform while we perform maintenance. Escalator is expected to be back in service February 19, 2027.",
    "ongoing": true,
-   "observedHours": 71.5,
+   "observedHours": 71.58,
    "sinceFeedStartHours": 91.3
   },
   {
@@ -27975,7 +27975,7 @@
   {
    "id": "79256",
    "first": "2026-10-30T09:45:10.482Z",
-   "last": "2026-10-30T19:15:10.434Z",
+   "last": "2026-10-30T19:20:09.822Z",
    "end": null,
    "feedStart": "2026-10-30T05:41:52.783Z",
    "station": "Keelesdale",
@@ -27987,7 +27987,7 @@
    "unplanned": true,
    "header": "Keelesdale: Escalator 1 out of service between platform and concourse due to a technical problem.",
    "ongoing": true,
-   "observedHours": 9.5,
+   "observedHours": 9.58,
    "sinceFeedStartHours": 13.6
   },
   {
@@ -28065,7 +28065,7 @@
   {
    "id": "79270",
    "first": "2026-10-30T14:35:10.418Z",
-   "last": "2026-10-30T19:15:10.434Z",
+   "last": "2026-10-30T19:20:09.822Z",
    "end": null,
    "feedStart": "2026-10-30T10:30:00Z",
    "station": "Highway 407",
@@ -28077,7 +28077,7 @@
    "unplanned": false,
    "header": "Highway 407: Escalator 14S8E out of service from concourse to Parking Lot entrance while we perform maintenance. Escalator is expected to be back in service October 30, 2026.",
    "ongoing": true,
-   "observedHours": 4.67,
+   "observedHours": 4.75,
    "sinceFeedStartHours": 8.8
   },
   {
@@ -28102,7 +28102,7 @@
    "id": "79275",
    "first": "2026-10-30T14:40:07.637Z",
    "last": "2026-10-30T19:15:10.434Z",
-   "end": null,
+   "end": "2026-10-30T19:20:09.822Z",
    "feedStart": "2026-10-30T06:00:00Z",
    "station": "Keelesdale",
    "type": "Escalator",
@@ -28112,14 +28112,14 @@
    "causeDesc": "Preventative Maintenance",
    "unplanned": false,
    "header": "Keelesdale: Escalator 6 out of service between mid-level and grade (main entrance) while we perform maintenance. Escalator is expected to be back in service October 30, 2026.",
-   "ongoing": true,
-   "observedHours": 4.58,
+   "ongoing": false,
+   "observedHours": 4.67,
    "sinceFeedStartHours": 13.3
   },
   {
    "id": "79277",
    "first": "2026-10-30T14:45:07.549Z",
-   "last": "2026-10-30T19:15:10.434Z",
+   "last": "2026-10-30T19:20:09.822Z",
    "end": null,
    "feedStart": "2026-10-30T10:41:23.97Z",
    "station": "Rosedale",
@@ -28131,13 +28131,13 @@
    "unplanned": false,
    "header": "Rosedale: Elevator 14Y1L out of service between Cresent Road entrance and Line 1 sourthbound platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 4.5,
+   "observedHours": 4.58,
    "sinceFeedStartHours": 8.6
   },
   {
    "id": "79279",
    "first": "2026-10-30T16:55:10.500Z",
-   "last": "2026-10-30T19:15:10.434Z",
+   "last": "2026-10-30T19:20:09.822Z",
    "end": null,
    "feedStart": "2026-10-30T12:50:13.28Z",
    "station": "Broadview",
@@ -28149,13 +28149,13 @@
    "unplanned": true,
    "header": "Broadview: Elevator 6D2L out of service between concourse and Line 2 eastbound platform due to a technical problem.",
    "ongoing": true,
-   "observedHours": 2.33,
-   "sinceFeedStartHours": 6.4
+   "observedHours": 2.42,
+   "sinceFeedStartHours": 6.5
   },
   {
    "id": "79292",
    "first": "2026-10-30T19:00:10.443Z",
-   "last": "2026-10-30T19:15:10.434Z",
+   "last": "2026-10-30T19:20:09.822Z",
    "end": null,
    "feedStart": "2026-10-30T14:58:05.947Z",
    "station": "Pioneer Village",
@@ -28167,13 +28167,13 @@
    "unplanned": false,
    "header": "Pioneer Village: Escalator 13S1E out of service from north concourse to Steeles Ave W north side entrance while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 0.25,
-   "sinceFeedStartHours": 4.3
+   "observedHours": 0.33,
+   "sinceFeedStartHours": 4.4
   },
   {
    "id": "79293",
    "first": "2026-10-30T19:05:07.553Z",
-   "last": "2026-10-30T19:15:10.434Z",
+   "last": "2026-10-30T19:20:09.822Z",
    "end": null,
    "feedStart": "2026-10-30T14:59:44.763Z",
    "station": "Coxwell",
@@ -28185,7 +28185,7 @@
    "unplanned": true,
    "header": "Coxwell: Escalator 11D1E out of service from concourse to Strathmore Blvd entrance due to an investigation.",
    "ongoing": true,
-   "observedHours": 0.17,
+   "observedHours": 0.25,
    "sinceFeedStartHours": 4.3
   }
  ]
