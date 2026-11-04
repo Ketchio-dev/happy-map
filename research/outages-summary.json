@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-04T21:20:10.509Z",
-   "hoursCovered": 1535.07,
-   "snapshotsWithChange": 2887
+   "last": "2026-11-04T21:35:10.518Z",
+   "hoursCovered": 1535.32,
+   "snapshotsWithChange": 2888
   },
   "distinctAlerts": 1706,
   "elevatorAlerts": 422,
   "escalatorAlerts": 1284,
   "elevatorUnplanned": 83,
-  "elevatorOngoingNow": 1,
+  "elevatorOngoingNow": 0,
   "stationsWithElevatorOutage": 75,
   "byStation": {
    "Bayview": 14,
@@ -402,7 +402,7 @@
   {
    "id": "74136",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-04T21:20:10.509Z",
+   "last": "2026-11-04T21:35:10.518Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-12T01:59:00Z",
    "station": "Spadina",
@@ -546,7 +546,7 @@
   {
    "id": "71416",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-04T21:20:10.509Z",
+   "last": "2026-11-04T21:35:10.518Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-12T05:00:00Z",
    "station": "Broadview",
@@ -564,7 +564,7 @@
   {
    "id": "71415",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-04T21:20:10.509Z",
+   "last": "2026-11-04T21:35:10.518Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-25T05:00:00Z",
    "station": "Museum",
@@ -9150,7 +9150,7 @@
   {
    "id": "76445",
    "first": "2026-09-18T19:25:02.864Z",
-   "last": "2026-11-04T21:20:10.509Z",
+   "last": "2026-11-04T21:35:10.518Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-09-18T15:23:00Z",
    "station": "Coxwell",
@@ -14244,7 +14244,7 @@
   {
    "id": "77197",
    "first": "2026-09-30T12:55:04.833Z",
-   "last": "2026-11-04T21:20:10.509Z",
+   "last": "2026-11-04T21:35:10.518Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-10T07:30:00Z",
    "station": "Kennedy",
@@ -26610,7 +26610,7 @@
   {
    "id": "79053",
    "first": "2026-10-27T19:45:07.504Z",
-   "last": "2026-11-04T21:20:10.509Z",
+   "last": "2026-11-04T21:35:10.518Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-10-27T00:00:00Z",
    "station": "Kipling",
@@ -28752,7 +28752,7 @@
   {
    "id": "79368",
    "first": "2026-10-31T20:00:07.547Z",
-   "last": "2026-11-04T21:20:10.509Z",
+   "last": "2026-11-04T21:35:10.518Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-10-31T15:57:39.523Z",
    "station": "Sheppard-Yonge",
@@ -28770,7 +28770,7 @@
   {
    "id": "79367",
    "first": "2026-10-31T20:00:07.547Z",
-   "last": "2026-11-04T21:20:10.509Z",
+   "last": "2026-11-04T21:35:10.518Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-10-31T15:57:24.393Z",
    "station": "Sheppard-Yonge",
@@ -29364,7 +29364,7 @@
   {
    "id": "79456",
    "first": "2026-11-02T12:35:10.480Z",
-   "last": "2026-11-04T21:20:10.509Z",
+   "last": "2026-11-04T21:35:10.518Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-11-02T07:30:00Z",
    "station": "Osgoode",
@@ -29382,7 +29382,7 @@
   {
    "id": "79455",
    "first": "2026-11-02T12:35:10.480Z",
-   "last": "2026-11-04T21:20:10.509Z",
+   "last": "2026-11-04T21:35:10.518Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-11-02T07:30:00Z",
    "station": "High Park",
@@ -30012,7 +30012,7 @@
   {
    "id": "79543",
    "first": "2026-11-03T14:40:07.621Z",
-   "last": "2026-11-04T21:20:10.509Z",
+   "last": "2026-11-04T21:35:10.518Z",
    "end": null,
    "feedStart": "2026-11-03T09:37:24.4Z",
    "station": "Highway 407",
@@ -30024,8 +30024,8 @@
    "unplanned": true,
    "header": "Highway 407: Escalator 14S2E out of service from concourse to Line 1 platform due to a technical problem.",
    "ongoing": true,
-   "observedHours": 30.67,
-   "sinceFeedStartHours": 35.7
+   "observedHours": 30.92,
+   "sinceFeedStartHours": 36
   },
   {
    "id": "79546",
@@ -30444,7 +30444,7 @@
   {
    "id": "79602",
    "first": "2026-11-04T10:00:12.739Z",
-   "last": "2026-11-04T21:20:10.509Z",
+   "last": "2026-11-04T21:35:10.518Z",
    "end": null,
    "feedStart": "2026-11-04T05:00:06.523Z",
    "station": "Queen",
@@ -30456,8 +30456,8 @@
    "unplanned": false,
    "header": "Queen: Escalator 9Y1E out of service from north underpass to Line 1 Vaughan via Union platform due to construction. Escalator is expected to be back in service November 5, 2026.",
    "ongoing": true,
-   "observedHours": 11.33,
-   "sinceFeedStartHours": 16.3
+   "observedHours": 11.58,
+   "sinceFeedStartHours": 16.6
   },
   {
    "id": "79603",
@@ -30624,7 +30624,7 @@
   {
    "id": "79617",
    "first": "2026-11-04T15:55:10.515Z",
-   "last": "2026-11-04T21:20:10.509Z",
+   "last": "2026-11-04T21:35:10.518Z",
    "end": null,
    "feedStart": "2026-11-04T10:53:34.203Z",
    "station": "Fairbank",
@@ -30636,8 +30636,8 @@
    "unplanned": true,
    "header": "Fairbank: Escalator 3 out of service between concourse and below grade level due to a technical problem.",
    "ongoing": true,
-   "observedHours": 5.42,
-   "sinceFeedStartHours": 10.4
+   "observedHours": 5.67,
+   "sinceFeedStartHours": 10.7
   },
   {
    "id": "79619",
@@ -30769,7 +30769,7 @@
    "id": "79634",
    "first": "2026-11-04T19:00:10.530Z",
    "last": "2026-11-04T21:20:10.509Z",
-   "end": null,
+   "end": "2026-11-04T21:35:10.518Z",
    "feedStart": "2026-11-04T13:58:08.647Z",
    "station": "Kennedy",
    "type": "Elevator",
@@ -30779,14 +30779,14 @@
    "causeDesc": "Maintenance",
    "unplanned": false,
    "header": "Kennedy: Elevator 16D2L out of service between concourse and Line 2 centre platform while we perform maintenance.",
-   "ongoing": true,
-   "observedHours": 2.33,
-   "sinceFeedStartHours": 7.4
+   "ongoing": false,
+   "observedHours": 2.58,
+   "sinceFeedStartHours": 7.6
   },
   {
    "id": "79642",
    "first": "2026-11-04T20:15:10.474Z",
-   "last": "2026-11-04T21:20:10.509Z",
+   "last": "2026-11-04T21:35:10.518Z",
    "end": null,
    "feedStart": "2026-11-04T15:14:35.967Z",
    "station": "Dupont",
@@ -30798,8 +30798,8 @@
    "unplanned": true,
    "header": "Dupont: Escalator 2S6E out of service from Dupont St south side entrance to concourse due to a technical problem.",
    "ongoing": true,
-   "observedHours": 1.08,
-   "sinceFeedStartHours": 6.1
+   "observedHours": 1.33,
+   "sinceFeedStartHours": 6.3
   }
  ]
 }
