@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-04T06:05:10.588Z",
-   "hoursCovered": 1519.82,
-   "snapshotsWithChange": 2846
+   "last": "2026-11-04T06:20:10.505Z",
+   "hoursCovered": 1520.07,
+   "snapshotsWithChange": 2847
   },
   "distinctAlerts": 1686,
   "elevatorAlerts": 416,
@@ -401,7 +401,7 @@
   {
    "id": "74136",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-04T06:05:10.588Z",
+   "last": "2026-11-04T06:20:10.505Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-12T01:59:00Z",
    "station": "Spadina",
@@ -545,7 +545,7 @@
   {
    "id": "71416",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-04T06:05:10.588Z",
+   "last": "2026-11-04T06:20:10.505Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-12T05:00:00Z",
    "station": "Broadview",
@@ -563,7 +563,7 @@
   {
    "id": "71415",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-04T06:05:10.588Z",
+   "last": "2026-11-04T06:20:10.505Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-25T05:00:00Z",
    "station": "Museum",
@@ -9149,7 +9149,7 @@
   {
    "id": "76445",
    "first": "2026-09-18T19:25:02.864Z",
-   "last": "2026-11-04T06:05:10.588Z",
+   "last": "2026-11-04T06:20:10.505Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-09-18T15:23:00Z",
    "station": "Coxwell",
@@ -14243,7 +14243,7 @@
   {
    "id": "77197",
    "first": "2026-09-30T12:55:04.833Z",
-   "last": "2026-11-04T06:05:10.588Z",
+   "last": "2026-11-04T06:20:10.505Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-10T07:30:00Z",
    "station": "Kennedy",
@@ -26609,7 +26609,7 @@
   {
    "id": "79053",
    "first": "2026-10-27T19:45:07.504Z",
-   "last": "2026-11-04T06:05:10.588Z",
+   "last": "2026-11-04T06:20:10.505Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-10-27T00:00:00Z",
    "station": "Kipling",
@@ -28751,7 +28751,7 @@
   {
    "id": "79368",
    "first": "2026-10-31T20:00:07.547Z",
-   "last": "2026-11-04T06:05:10.588Z",
+   "last": "2026-11-04T06:20:10.505Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-10-31T15:57:39.523Z",
    "station": "Sheppard-Yonge",
@@ -28769,7 +28769,7 @@
   {
    "id": "79367",
    "first": "2026-10-31T20:00:07.547Z",
-   "last": "2026-11-04T06:05:10.588Z",
+   "last": "2026-11-04T06:20:10.505Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-10-31T15:57:24.393Z",
    "station": "Sheppard-Yonge",
@@ -29309,7 +29309,7 @@
   {
    "id": "79459",
    "first": "2026-11-02T12:35:10.480Z",
-   "last": "2026-11-04T06:05:10.588Z",
+   "last": "2026-11-04T06:20:10.505Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-11-02T07:30:00Z",
    "station": "Main Street",
@@ -29327,7 +29327,7 @@
   {
    "id": "79458",
    "first": "2026-11-02T12:35:10.480Z",
-   "last": "2026-11-04T06:05:10.588Z",
+   "last": "2026-11-04T06:20:10.505Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-11-02T07:30:00Z",
    "station": "Highway 407",
@@ -29345,7 +29345,7 @@
   {
    "id": "79457",
    "first": "2026-11-02T12:35:10.480Z",
-   "last": "2026-11-04T06:05:10.588Z",
+   "last": "2026-11-04T06:20:10.505Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-11-02T07:30:00Z",
    "station": "King",
@@ -29363,7 +29363,7 @@
   {
    "id": "79456",
    "first": "2026-11-02T12:35:10.480Z",
-   "last": "2026-11-04T06:05:10.588Z",
+   "last": "2026-11-04T06:20:10.505Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-11-02T07:30:00Z",
    "station": "Osgoode",
@@ -29381,7 +29381,7 @@
   {
    "id": "79455",
    "first": "2026-11-02T12:35:10.480Z",
-   "last": "2026-11-04T06:05:10.588Z",
+   "last": "2026-11-04T06:20:10.505Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-11-02T07:30:00Z",
    "station": "High Park",
@@ -30011,7 +30011,7 @@
   {
    "id": "79543",
    "first": "2026-11-03T14:40:07.621Z",
-   "last": "2026-11-04T06:05:10.588Z",
+   "last": "2026-11-04T06:20:10.505Z",
    "end": null,
    "feedStart": "2026-11-03T09:37:24.4Z",
    "station": "Highway 407",
@@ -30023,8 +30023,8 @@
    "unplanned": true,
    "header": "Highway 407: Escalator 14S2E out of service from concourse to Line 1 platform due to a technical problem.",
    "ongoing": true,
-   "observedHours": 15.42,
-   "sinceFeedStartHours": 20.5
+   "observedHours": 15.67,
+   "sinceFeedStartHours": 20.7
   },
   {
    "id": "79546",
@@ -30191,7 +30191,7 @@
   {
    "id": "79567",
    "first": "2026-11-03T20:50:10.555Z",
-   "last": "2026-11-04T06:05:10.588Z",
+   "last": "2026-11-04T06:20:10.505Z",
    "end": null,
    "feedStart": "2026-11-03T15:47:21.023Z",
    "station": "Spadina",
@@ -30203,13 +30203,13 @@
    "unplanned": false,
    "header": "Spadina: Escalator 2B1E out of service from south concourse to Spadina Rd west side entrance while we perform maintenance. Escalator is expected to be back in service November 4, 2026.",
    "ongoing": true,
-   "observedHours": 9.25,
-   "sinceFeedStartHours": 14.3
+   "observedHours": 9.5,
+   "sinceFeedStartHours": 14.5
   },
   {
    "id": "79578",
    "first": "2026-11-03T21:55:10.519Z",
-   "last": "2026-11-04T06:05:10.588Z",
+   "last": "2026-11-04T06:20:10.505Z",
    "end": null,
    "feedStart": "2026-11-03T16:50:13.903Z",
    "station": "Queen's Park",
@@ -30221,8 +30221,8 @@
    "unplanned": false,
    "header": "Queen's Park: Escalator 3Y2E out of service from Line 1 platform to concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 8.17,
-   "sinceFeedStartHours": 13.2
+   "observedHours": 8.42,
+   "sinceFeedStartHours": 13.5
   },
   {
    "id": "79580",
@@ -30299,7 +30299,7 @@
   {
    "id": "79587",
    "first": "2026-11-04T00:00:03.027Z",
-   "last": "2026-11-04T06:05:10.588Z",
+   "last": "2026-11-04T06:20:10.505Z",
    "end": null,
    "feedStart": "2026-11-03T18:54:44.83Z",
    "station": "Davisville",
@@ -30311,8 +30311,8 @@
    "unplanned": false,
    "header": "Davisville: Escalator 17Y4E out of service from concourse to Davisville Ave entrance while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 6.09,
-   "sinceFeedStartHours": 11.2
+   "observedHours": 6.34,
+   "sinceFeedStartHours": 11.4
   },
   {
    "id": "79588",
@@ -30336,7 +30336,7 @@
    "id": "79575",
    "first": "2026-11-04T02:05:07.632Z",
    "last": "2026-11-04T06:05:10.588Z",
-   "end": null,
+   "end": "2026-11-04T06:20:10.505Z",
    "feedStart": "2026-11-03T21:00:00Z",
    "station": "Avenue",
    "type": "Escalator",
@@ -30346,14 +30346,14 @@
    "causeDesc": "Preventative Maintenance",
    "unplanned": false,
    "header": "Avenue: Escalator 1 out of service between platform and lower concourse while we perform maintenance. Escalator is expected to be back in service November 4, 2026.",
-   "ongoing": true,
-   "observedHours": 4,
-   "sinceFeedStartHours": 9.1
+   "ongoing": false,
+   "observedHours": 4.25,
+   "sinceFeedStartHours": 9.3
   },
   {
    "id": "79574",
    "first": "2026-11-04T02:05:07.632Z",
-   "last": "2026-11-04T06:05:10.588Z",
+   "last": "2026-11-04T06:20:10.505Z",
    "end": null,
    "feedStart": "2026-11-03T21:00:00Z",
    "station": "Chaplin",
@@ -30365,13 +30365,13 @@
    "unplanned": false,
    "header": "Chaplin: Elevator ELV02-B out of service between Eglinton Avenue north side entrance and concourse while we perform maintenance. Elevator is expected to be back in service November 4, 2026.",
    "ongoing": true,
-   "observedHours": 4,
-   "sinceFeedStartHours": 9.1
+   "observedHours": 4.25,
+   "sinceFeedStartHours": 9.3
   },
   {
    "id": "79592",
    "first": "2026-11-04T03:30:04.059Z",
-   "last": "2026-11-04T06:05:10.588Z",
+   "last": "2026-11-04T06:20:10.505Z",
    "end": null,
    "feedStart": "2026-11-03T22:26:43.28Z",
    "station": "Main Street",
@@ -30383,13 +30383,13 @@
    "unplanned": true,
    "header": "Main Street: Elevator 13D2L out of service between concourse and Line 2 westbound platform due to a technical problem.",
    "ongoing": true,
-   "observedHours": 2.59,
-   "sinceFeedStartHours": 7.6
+   "observedHours": 2.84,
+   "sinceFeedStartHours": 7.9
   },
   {
    "id": "79594",
    "first": "2026-11-04T04:00:10.501Z",
-   "last": "2026-11-04T06:05:10.588Z",
+   "last": "2026-11-04T06:20:10.505Z",
    "end": null,
    "feedStart": "2026-11-03T22:55:40.067Z",
    "station": "King",
@@ -30401,8 +30401,8 @@
    "unplanned": false,
    "header": "King: Escalator 8Y5E out of service from Line 1 Vaughan via Union platform to Yonge St at Melinda St (exit only) while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 2.08,
-   "sinceFeedStartHours": 7.2
+   "observedHours": 2.33,
+   "sinceFeedStartHours": 7.4
   },
   {
    "id": "79595",
@@ -30425,7 +30425,7 @@
   {
    "id": "79576",
    "first": "2026-11-04T06:05:10.588Z",
-   "last": "2026-11-04T06:05:10.588Z",
+   "last": "2026-11-04T06:20:10.505Z",
    "end": null,
    "feedStart": "2026-11-04T01:00:00Z",
    "station": "Avenue",
@@ -30437,8 +30437,8 @@
    "unplanned": false,
    "header": "Avenue: Escalator 2 out of service between platform and lower concourse while we perform maintenance. Escalator is expected to be back in service November 4, 2026.",
    "ongoing": true,
-   "observedHours": 0,
-   "sinceFeedStartHours": 5.1
+   "observedHours": 0.25,
+   "sinceFeedStartHours": 5.3
   }
  ]
 }
