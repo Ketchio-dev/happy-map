@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-06T23:15:10.559Z",
-   "hoursCovered": 1584.98,
-   "snapshotsWithChange": 3005
+   "last": "2026-11-06T23:35:07.737Z",
+   "hoursCovered": 1585.32,
+   "snapshotsWithChange": 3006
   },
   "distinctAlerts": 1776,
   "elevatorAlerts": 439,
@@ -404,7 +404,7 @@
   {
    "id": "74136",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-06T23:15:10.559Z",
+   "last": "2026-11-06T23:35:07.737Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-12T01:59:00Z",
    "station": "Spadina",
@@ -548,7 +548,7 @@
   {
    "id": "71416",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-06T23:15:10.559Z",
+   "last": "2026-11-06T23:35:07.737Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-12T05:00:00Z",
    "station": "Broadview",
@@ -566,7 +566,7 @@
   {
    "id": "71415",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-06T23:15:10.559Z",
+   "last": "2026-11-06T23:35:07.737Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-25T05:00:00Z",
    "station": "Museum",
@@ -9152,7 +9152,7 @@
   {
    "id": "76445",
    "first": "2026-09-18T19:25:02.864Z",
-   "last": "2026-11-06T23:15:10.559Z",
+   "last": "2026-11-06T23:35:07.737Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-09-18T15:23:00Z",
    "station": "Coxwell",
@@ -14246,7 +14246,7 @@
   {
    "id": "77197",
    "first": "2026-09-30T12:55:04.833Z",
-   "last": "2026-11-06T23:15:10.559Z",
+   "last": "2026-11-06T23:35:07.737Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-10T07:30:00Z",
    "station": "Kennedy",
@@ -26612,7 +26612,7 @@
   {
    "id": "79053",
    "first": "2026-10-27T19:45:07.504Z",
-   "last": "2026-11-06T23:15:10.559Z",
+   "last": "2026-11-06T23:35:07.737Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-10-27T00:00:00Z",
    "station": "Kipling",
@@ -28754,7 +28754,7 @@
   {
    "id": "79368",
    "first": "2026-10-31T20:00:07.547Z",
-   "last": "2026-11-06T23:15:10.559Z",
+   "last": "2026-11-06T23:35:07.737Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-10-31T15:57:39.523Z",
    "station": "Sheppard-Yonge",
@@ -28772,7 +28772,7 @@
   {
    "id": "79367",
    "first": "2026-10-31T20:00:07.547Z",
-   "last": "2026-11-06T23:15:10.559Z",
+   "last": "2026-11-06T23:35:07.737Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-10-31T15:57:24.393Z",
    "station": "Sheppard-Yonge",
@@ -31364,7 +31364,7 @@
   {
    "id": "79729",
    "first": "2026-11-06T00:00:03.793Z",
-   "last": "2026-11-06T23:15:10.559Z",
+   "last": "2026-11-06T23:35:07.737Z",
    "end": null,
    "feedStart": "2026-11-05T18:58:36.763Z",
    "station": "Finch",
@@ -31376,8 +31376,8 @@
    "unplanned": false,
    "header": "Finch: Elevator out of service between GO and YRT bus platform and fares concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 23.25,
-   "sinceFeedStartHours": 28.3
+   "observedHours": 23.58,
+   "sinceFeedStartHours": 28.6
   },
   {
    "id": "79735",
@@ -31724,7 +31724,7 @@
   {
    "id": "79767",
    "first": "2026-11-06T13:15:10.568Z",
-   "last": "2026-11-06T23:15:10.559Z",
+   "last": "2026-11-06T23:35:07.737Z",
    "end": null,
    "feedStart": "2026-11-06T08:12:05.303Z",
    "station": "Caledonia",
@@ -31736,8 +31736,8 @@
    "unplanned": false,
    "header": "Caledonia: Escalator 1 out of service between platform and lower concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 10,
-   "sinceFeedStartHours": 15.1
+   "observedHours": 10.33,
+   "sinceFeedStartHours": 15.4
   },
   {
    "id": "79768",
@@ -31958,7 +31958,7 @@
   {
    "id": "79797",
    "first": "2026-11-06T20:35:07.462Z",
-   "last": "2026-11-06T23:15:10.559Z",
+   "last": "2026-11-06T23:35:07.737Z",
    "end": null,
    "feedStart": "2026-11-06T15:30:00Z",
    "station": "Chester",
@@ -31970,8 +31970,8 @@
    "unplanned": false,
    "header": "Chester: Escalator 7D1E out of service from Line 2 Kennedy platform to Chester Ave west side entrance while we perform maintenance. Escalator is expected to be back in service November 8, 2026.",
    "ongoing": true,
-   "observedHours": 2.67,
-   "sinceFeedStartHours": 7.8
+   "observedHours": 3,
+   "sinceFeedStartHours": 8.1
   },
   {
    "id": "79798",
@@ -31994,7 +31994,7 @@
   {
    "id": "79799",
    "first": "2026-11-06T21:20:10.626Z",
-   "last": "2026-11-06T23:15:10.559Z",
+   "last": "2026-11-06T23:35:07.737Z",
    "end": null,
    "feedStart": "2026-11-06T16:19:14.93Z",
    "station": "Queen's Park",
@@ -32006,13 +32006,13 @@
    "unplanned": false,
    "header": "Queen's Park: Escalator 3Y2E out of service from Line 1 platform to concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 1.92,
-   "sinceFeedStartHours": 6.9
+   "observedHours": 2.25,
+   "sinceFeedStartHours": 7.3
   },
   {
    "id": "79801",
    "first": "2026-11-06T21:50:10.540Z",
-   "last": "2026-11-06T23:15:10.559Z",
+   "last": "2026-11-06T23:35:07.737Z",
    "end": null,
    "feedStart": "2026-11-06T16:44:52.693Z",
    "station": "Caledonia",
@@ -32024,13 +32024,13 @@
    "unplanned": false,
    "header": "Caledonia: Escalator 4 out of service between lower concourse and upper concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 1.42,
-   "sinceFeedStartHours": 6.5
+   "observedHours": 1.75,
+   "sinceFeedStartHours": 6.8
   },
   {
    "id": "79806",
    "first": "2026-11-06T22:20:10.563Z",
-   "last": "2026-11-06T23:15:10.559Z",
+   "last": "2026-11-06T23:35:07.737Z",
    "end": null,
    "feedStart": "2026-11-06T17:17:24.473Z",
    "station": "Finch",
@@ -32042,13 +32042,13 @@
    "unplanned": false,
    "header": "Finch: Elevator 22Y1L out of service between fares concourse and Line 1 centre platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 0.92,
-   "sinceFeedStartHours": 6
+   "observedHours": 1.25,
+   "sinceFeedStartHours": 6.3
   },
   {
    "id": "79808",
    "first": "2026-11-06T22:45:09.915Z",
-   "last": "2026-11-06T23:15:10.559Z",
+   "last": "2026-11-06T23:35:07.737Z",
    "end": null,
    "feedStart": "2026-11-06T17:44:14.257Z",
    "station": "Cedarvale",
@@ -32060,8 +32060,8 @@
    "unplanned": false,
    "header": "Cedarvale: Escalator 3 out of service between platform and lower concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 0.5,
-   "sinceFeedStartHours": 5.5
+   "observedHours": 0.83,
+   "sinceFeedStartHours": 5.8
   }
  ]
 }
