@@ -2,13 +2,13 @@
  "summary": {
   "logging": {
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-07T01:15:07.772Z",
-   "hoursCovered": 1586.98,
-   "snapshotsWithChange": 3012
+   "last": "2026-11-07T02:05:10.568Z",
+   "hoursCovered": 1587.82,
+   "snapshotsWithChange": 3013
   },
-  "distinctAlerts": 1777,
+  "distinctAlerts": 1778,
   "elevatorAlerts": 439,
-  "escalatorAlerts": 1338,
+  "escalatorAlerts": 1339,
   "elevatorUnplanned": 83,
   "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 77,
@@ -404,7 +404,7 @@
   {
    "id": "74136",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-07T01:15:07.772Z",
+   "last": "2026-11-07T02:05:10.568Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-12T01:59:00Z",
    "station": "Spadina",
@@ -548,7 +548,7 @@
   {
    "id": "71416",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-07T01:15:07.772Z",
+   "last": "2026-11-07T02:05:10.568Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-12T05:00:00Z",
    "station": "Broadview",
@@ -566,7 +566,7 @@
   {
    "id": "71415",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-07T01:15:07.772Z",
+   "last": "2026-11-07T02:05:10.568Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-25T05:00:00Z",
    "station": "Museum",
@@ -9152,7 +9152,7 @@
   {
    "id": "76445",
    "first": "2026-09-18T19:25:02.864Z",
-   "last": "2026-11-07T01:15:07.772Z",
+   "last": "2026-11-07T02:05:10.568Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-09-18T15:23:00Z",
    "station": "Coxwell",
@@ -14246,7 +14246,7 @@
   {
    "id": "77197",
    "first": "2026-09-30T12:55:04.833Z",
-   "last": "2026-11-07T01:15:07.772Z",
+   "last": "2026-11-07T02:05:10.568Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-10T07:30:00Z",
    "station": "Kennedy",
@@ -26612,7 +26612,7 @@
   {
    "id": "79053",
    "first": "2026-10-27T19:45:07.504Z",
-   "last": "2026-11-07T01:15:07.772Z",
+   "last": "2026-11-07T02:05:10.568Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-10-27T00:00:00Z",
    "station": "Kipling",
@@ -28754,7 +28754,7 @@
   {
    "id": "79368",
    "first": "2026-10-31T20:00:07.547Z",
-   "last": "2026-11-07T01:15:07.772Z",
+   "last": "2026-11-07T02:05:10.568Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-10-31T15:57:39.523Z",
    "station": "Sheppard-Yonge",
@@ -28772,7 +28772,7 @@
   {
    "id": "79367",
    "first": "2026-10-31T20:00:07.547Z",
-   "last": "2026-11-07T01:15:07.772Z",
+   "last": "2026-11-07T02:05:10.568Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-10-31T15:57:24.393Z",
    "station": "Sheppard-Yonge",
@@ -31364,7 +31364,7 @@
   {
    "id": "79729",
    "first": "2026-11-06T00:00:03.793Z",
-   "last": "2026-11-07T01:15:07.772Z",
+   "last": "2026-11-07T02:05:10.568Z",
    "end": null,
    "feedStart": "2026-11-05T18:58:36.763Z",
    "station": "Finch",
@@ -31376,8 +31376,8 @@
    "unplanned": false,
    "header": "Finch: Elevator out of service between GO and YRT bus platform and fares concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 25.25,
-   "sinceFeedStartHours": 30.3
+   "observedHours": 26.09,
+   "sinceFeedStartHours": 31.1
   },
   {
    "id": "79735",
@@ -31724,7 +31724,7 @@
   {
    "id": "79767",
    "first": "2026-11-06T13:15:10.568Z",
-   "last": "2026-11-07T01:15:07.772Z",
+   "last": "2026-11-07T02:05:10.568Z",
    "end": null,
    "feedStart": "2026-11-06T08:12:05.303Z",
    "station": "Caledonia",
@@ -31736,8 +31736,8 @@
    "unplanned": false,
    "header": "Caledonia: Escalator 1 out of service between platform and lower concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 12,
-   "sinceFeedStartHours": 17.1
+   "observedHours": 12.83,
+   "sinceFeedStartHours": 17.9
   },
   {
    "id": "79768",
@@ -31958,7 +31958,7 @@
   {
    "id": "79797",
    "first": "2026-11-06T20:35:07.462Z",
-   "last": "2026-11-07T01:15:07.772Z",
+   "last": "2026-11-07T02:05:10.568Z",
    "end": null,
    "feedStart": "2026-11-06T15:30:00Z",
    "station": "Chester",
@@ -31970,8 +31970,8 @@
    "unplanned": false,
    "header": "Chester: Escalator 7D1E out of service from Line 2 Kennedy platform to Chester Ave west side entrance while we perform maintenance. Escalator is expected to be back in service November 8, 2026.",
    "ongoing": true,
-   "observedHours": 4.67,
-   "sinceFeedStartHours": 9.8
+   "observedHours": 5.5,
+   "sinceFeedStartHours": 10.6
   },
   {
    "id": "79798",
@@ -31994,7 +31994,7 @@
   {
    "id": "79799",
    "first": "2026-11-06T21:20:10.626Z",
-   "last": "2026-11-07T01:15:07.772Z",
+   "last": "2026-11-07T02:05:10.568Z",
    "end": null,
    "feedStart": "2026-11-06T16:19:14.93Z",
    "station": "Queen's Park",
@@ -32006,8 +32006,8 @@
    "unplanned": false,
    "header": "Queen's Park: Escalator 3Y2E out of service from Line 1 platform to concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 3.92,
-   "sinceFeedStartHours": 8.9
+   "observedHours": 4.75,
+   "sinceFeedStartHours": 9.8
   },
   {
    "id": "79801",
@@ -32066,7 +32066,7 @@
   {
    "id": "79812",
    "first": "2026-11-07T00:45:10.652Z",
-   "last": "2026-11-07T01:15:07.772Z",
+   "last": "2026-11-07T02:05:10.568Z",
    "end": null,
    "feedStart": "2026-11-06T19:40:29.427Z",
    "station": "Lawrence",
@@ -32078,8 +32078,26 @@
    "unplanned": true,
    "header": "Lawrence: Escalator 19Y4E out of service from bus platform to south concourse due to an investigation.",
    "ongoing": true,
-   "observedHours": 0.5,
-   "sinceFeedStartHours": 5.6
+   "observedHours": 1.33,
+   "sinceFeedStartHours": 6.4
+  },
+  {
+   "id": "79719",
+   "first": "2026-11-07T02:05:10.568Z",
+   "last": "2026-11-07T02:05:10.568Z",
+   "end": null,
+   "feedStart": "2026-11-06T21:00:01.947Z",
+   "station": "Islington",
+   "type": "Escalator",
+   "code": "15B5E",
+   "planned": "Planned",
+   "cause": "MAINTENANCE",
+   "causeDesc": "Preventative Maintenance",
+   "unplanned": false,
+   "header": "Islington: Escalator back in service from concourse to Islington Ave east side entrance.",
+   "ongoing": true,
+   "observedHours": 0,
+   "sinceFeedStartHours": 5.1
   }
  ]
 }
