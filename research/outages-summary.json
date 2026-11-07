@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-07T06:05:10.549Z",
-   "hoursCovered": 1591.82,
-   "snapshotsWithChange": 3020
+   "last": "2026-11-07T07:10:10.545Z",
+   "hoursCovered": 1592.9,
+   "snapshotsWithChange": 3021
   },
   "distinctAlerts": 1784,
   "elevatorAlerts": 440,
@@ -404,7 +404,7 @@
   {
    "id": "74136",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-07T06:05:10.549Z",
+   "last": "2026-11-07T07:10:10.545Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-12T01:59:00Z",
    "station": "Spadina",
@@ -548,7 +548,7 @@
   {
    "id": "71416",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-07T06:05:10.549Z",
+   "last": "2026-11-07T07:10:10.545Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-12T05:00:00Z",
    "station": "Broadview",
@@ -566,7 +566,7 @@
   {
    "id": "71415",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-07T06:05:10.549Z",
+   "last": "2026-11-07T07:10:10.545Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-25T05:00:00Z",
    "station": "Museum",
@@ -9152,7 +9152,7 @@
   {
    "id": "76445",
    "first": "2026-09-18T19:25:02.864Z",
-   "last": "2026-11-07T06:05:10.549Z",
+   "last": "2026-11-07T07:10:10.545Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-09-18T15:23:00Z",
    "station": "Coxwell",
@@ -14246,7 +14246,7 @@
   {
    "id": "77197",
    "first": "2026-09-30T12:55:04.833Z",
-   "last": "2026-11-07T06:05:10.549Z",
+   "last": "2026-11-07T07:10:10.545Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-10T07:30:00Z",
    "station": "Kennedy",
@@ -26612,7 +26612,7 @@
   {
    "id": "79053",
    "first": "2026-10-27T19:45:07.504Z",
-   "last": "2026-11-07T06:05:10.549Z",
+   "last": "2026-11-07T07:10:10.545Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-10-27T00:00:00Z",
    "station": "Kipling",
@@ -28754,7 +28754,7 @@
   {
    "id": "79368",
    "first": "2026-10-31T20:00:07.547Z",
-   "last": "2026-11-07T06:05:10.549Z",
+   "last": "2026-11-07T07:10:10.545Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-10-31T15:57:39.523Z",
    "station": "Sheppard-Yonge",
@@ -28772,7 +28772,7 @@
   {
    "id": "79367",
    "first": "2026-10-31T20:00:07.547Z",
-   "last": "2026-11-07T06:05:10.549Z",
+   "last": "2026-11-07T07:10:10.545Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-10-31T15:57:24.393Z",
    "station": "Sheppard-Yonge",
@@ -31364,7 +31364,7 @@
   {
    "id": "79729",
    "first": "2026-11-06T00:00:03.793Z",
-   "last": "2026-11-07T06:05:10.549Z",
+   "last": "2026-11-07T07:10:10.545Z",
    "end": null,
    "feedStart": "2026-11-05T18:58:36.763Z",
    "station": "Finch",
@@ -31376,8 +31376,8 @@
    "unplanned": false,
    "header": "Finch: Elevator out of service between GO and YRT bus platform and fares concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 30.09,
-   "sinceFeedStartHours": 35.1
+   "observedHours": 31.17,
+   "sinceFeedStartHours": 36.2
   },
   {
    "id": "79735",
@@ -31724,7 +31724,7 @@
   {
    "id": "79767",
    "first": "2026-11-06T13:15:10.568Z",
-   "last": "2026-11-07T06:05:10.549Z",
+   "last": "2026-11-07T07:10:10.545Z",
    "end": null,
    "feedStart": "2026-11-06T08:12:05.303Z",
    "station": "Caledonia",
@@ -31736,8 +31736,8 @@
    "unplanned": false,
    "header": "Caledonia: Escalator 1 out of service between platform and lower concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 16.83,
-   "sinceFeedStartHours": 21.9
+   "observedHours": 17.92,
+   "sinceFeedStartHours": 23
   },
   {
    "id": "79768",
@@ -31958,7 +31958,7 @@
   {
    "id": "79797",
    "first": "2026-11-06T20:35:07.462Z",
-   "last": "2026-11-07T06:05:10.549Z",
+   "last": "2026-11-07T07:10:10.545Z",
    "end": null,
    "feedStart": "2026-11-06T15:30:00Z",
    "station": "Chester",
@@ -31970,8 +31970,8 @@
    "unplanned": false,
    "header": "Chester: Escalator 7D1E out of service from Line 2 Kennedy platform to Chester Ave west side entrance while we perform maintenance. Escalator is expected to be back in service November 8, 2026.",
    "ongoing": true,
-   "observedHours": 9.5,
-   "sinceFeedStartHours": 14.6
+   "observedHours": 10.58,
+   "sinceFeedStartHours": 15.7
   },
   {
    "id": "79798",
@@ -32120,7 +32120,7 @@
   {
    "id": "79818",
    "first": "2026-11-07T02:45:10.636Z",
-   "last": "2026-11-07T06:05:10.549Z",
+   "last": "2026-11-07T07:10:10.545Z",
    "end": null,
    "feedStart": "2026-11-06T21:44:16.267Z",
    "station": "Spadina",
@@ -32132,13 +32132,13 @@
    "unplanned": true,
    "header": "Spadina: Escalator 2B2E out of service from Line 2 Kennedy platform to south concourse due to a technical problem.",
    "ongoing": true,
-   "observedHours": 3.33,
-   "sinceFeedStartHours": 8.3
+   "observedHours": 4.42,
+   "sinceFeedStartHours": 9.4
   },
   {
    "id": "79824",
    "first": "2026-11-07T04:25:10.658Z",
-   "last": "2026-11-07T06:05:10.549Z",
+   "last": "2026-11-07T07:10:10.545Z",
    "end": null,
    "feedStart": "2026-11-06T23:22:58.317Z",
    "station": "Sheppard West",
@@ -32150,13 +32150,13 @@
    "unplanned": false,
    "header": "Sheppard West: Escalator 9S5E out of service from bus platform to concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 1.67,
-   "sinceFeedStartHours": 6.7
+   "observedHours": 2.75,
+   "sinceFeedStartHours": 7.8
   },
   {
    "id": "79823",
    "first": "2026-11-07T04:25:10.658Z",
-   "last": "2026-11-07T06:05:10.549Z",
+   "last": "2026-11-07T07:10:10.545Z",
    "end": null,
    "feedStart": "2026-11-06T23:21:11.38Z",
    "station": "Runnymede",
@@ -32168,13 +32168,13 @@
    "unplanned": true,
    "header": "Runnymede: Escalator 11B3E out of service from Line 2 Kipling platform to concourse due to an investigation.",
    "ongoing": true,
-   "observedHours": 1.67,
-   "sinceFeedStartHours": 6.7
+   "observedHours": 2.75,
+   "sinceFeedStartHours": 7.8
   },
   {
    "id": "79825",
    "first": "2026-11-07T04:40:10.557Z",
-   "last": "2026-11-07T06:05:10.549Z",
+   "last": "2026-11-07T07:10:10.545Z",
    "end": null,
    "feedStart": "2026-11-06T23:36:46.707Z",
    "station": "Dundas West",
@@ -32186,13 +32186,13 @@
    "unplanned": false,
    "header": "Dundas West: Elevator 8B1L out of service between Dundas St W entrance and bus platform, concourse and Line 2 eastbound platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 1.42,
-   "sinceFeedStartHours": 6.5
+   "observedHours": 2.5,
+   "sinceFeedStartHours": 7.6
   },
   {
    "id": "79826",
    "first": "2026-11-07T06:05:10.549Z",
-   "last": "2026-11-07T06:05:10.549Z",
+   "last": "2026-11-07T07:10:10.545Z",
    "end": null,
    "feedStart": "2026-11-07T01:01:36.907Z",
    "station": "Davisville",
@@ -32204,8 +32204,8 @@
    "unplanned": false,
    "header": "Davisville: Escalator 17Y2E out of service from Line 1 Vaughan via Union platform to concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 0,
-   "sinceFeedStartHours": 5.1
+   "observedHours": 1.08,
+   "sinceFeedStartHours": 6.1
   }
  ]
 }
