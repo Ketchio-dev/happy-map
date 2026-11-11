@@ -2,9 +2,9 @@
  "summary": {
   "logging": {
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-11T14:15:02.104Z",
-   "hoursCovered": 1695.98,
-   "snapshotsWithChange": 3175
+   "last": "2026-11-11T14:30:06.053Z",
+   "hoursCovered": 1696.23,
+   "snapshotsWithChange": 3176
   },
   "distinctAlerts": 1873,
   "elevatorAlerts": 465,
@@ -404,7 +404,7 @@
   {
    "id": "74136",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-12T01:59:00Z",
    "station": "Spadina",
@@ -548,7 +548,7 @@
   {
    "id": "71416",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-12T05:00:00Z",
    "station": "Broadview",
@@ -566,7 +566,7 @@
   {
    "id": "71415",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-25T05:00:00Z",
    "station": "Museum",
@@ -9152,7 +9152,7 @@
   {
    "id": "76445",
    "first": "2026-09-18T19:25:02.864Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-09-18T15:23:00Z",
    "station": "Coxwell",
@@ -14246,7 +14246,7 @@
   {
    "id": "77197",
    "first": "2026-09-30T12:55:04.833Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-10T07:30:00Z",
    "station": "Kennedy",
@@ -26612,7 +26612,7 @@
   {
    "id": "79053",
    "first": "2026-10-27T19:45:07.504Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-10-27T00:00:00Z",
    "station": "Kipling",
@@ -31364,7 +31364,7 @@
   {
    "id": "79729",
    "first": "2026-11-06T00:00:03.793Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-05T18:58:36.763Z",
    "station": "Finch",
@@ -31376,8 +31376,8 @@
    "unplanned": false,
    "header": "Finch: Elevator out of service between GO and YRT bus platform and fares concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 134.25,
-   "sinceFeedStartHours": 139.3
+   "observedHours": 134.5,
+   "sinceFeedStartHours": 139.5
   },
   {
    "id": "79735",
@@ -32570,7 +32570,7 @@
   {
    "id": "79920",
    "first": "2026-11-09T10:45:05.760Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-09T05:42:39.317Z",
    "station": "Bay",
@@ -32582,8 +32582,8 @@
    "unplanned": false,
    "header": "Bay: Escalator 2D4E out of service from west concourse to Bay St west side entrance while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 51.5,
-   "sinceFeedStartHours": 56.5
+   "observedHours": 51.75,
+   "sinceFeedStartHours": 56.8
   },
   {
    "id": "79921",
@@ -32606,7 +32606,7 @@
   {
    "id": "79908",
    "first": "2026-11-09T12:35:02.060Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-09T07:30:00Z",
    "station": "Castle Frank",
@@ -32618,13 +32618,13 @@
    "unplanned": false,
    "header": "Castle Frank: Escalator 5D2E out of service from Line 2 Kipling platform to concourse while we perform maintenance. Escalator is expected to be back in service November 11, 2026.",
    "ongoing": true,
-   "observedHours": 49.67,
-   "sinceFeedStartHours": 54.8
+   "observedHours": 49.92,
+   "sinceFeedStartHours": 55
   },
   {
    "id": "79907",
    "first": "2026-11-09T12:35:02.060Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-09T07:30:00Z",
    "station": "Don Mills",
@@ -32636,13 +32636,13 @@
    "unplanned": false,
    "header": "Don Mills: Escalator 61P2E out of service from bus platform to concourse while we perform maintenance. Escalator is expected to be back in service November 12, 2026.",
    "ongoing": true,
-   "observedHours": 49.67,
-   "sinceFeedStartHours": 54.8
+   "observedHours": 49.92,
+   "sinceFeedStartHours": 55
   },
   {
    "id": "79906",
    "first": "2026-11-09T12:35:02.060Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-09T07:30:00Z",
    "station": "Vaughan Metropolitan Centre",
@@ -32654,13 +32654,13 @@
    "unplanned": false,
    "header": "Vaughan Metropolitan Centre: Escalator 15S3E out of service from concourse to Line 1 platform while we perform maintenance. Escalator is expected to be back in service November 12, 2026.",
    "ongoing": true,
-   "observedHours": 49.67,
-   "sinceFeedStartHours": 54.8
+   "observedHours": 49.92,
+   "sinceFeedStartHours": 55
   },
   {
    "id": "79905",
    "first": "2026-11-09T12:35:02.060Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-09T07:30:00Z",
    "station": "Glencairn",
@@ -32672,13 +32672,13 @@
    "unplanned": false,
    "header": "Glencairn: Escalator 5S4E out of service from Glencairn Ave north side entrance to concourse while we perform maintenance. Escalator is expected to be back in service November 11, 2026.",
    "ongoing": true,
-   "observedHours": 49.67,
-   "sinceFeedStartHours": 54.8
+   "observedHours": 49.92,
+   "sinceFeedStartHours": 55
   },
   {
    "id": "79904",
    "first": "2026-11-09T12:35:02.060Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-09T07:30:00Z",
    "station": "High Park",
@@ -32690,8 +32690,8 @@
    "unplanned": false,
    "header": "High Park: Escalator 10B4E out of service from Line 2 Kennedy platform to east concourse while we perform maintenance. Escalator is expected to be back in service November 11, 2026.",
    "ongoing": true,
-   "observedHours": 49.67,
-   "sinceFeedStartHours": 54.8
+   "observedHours": 49.92,
+   "sinceFeedStartHours": 55
   },
   {
    "id": "79924",
@@ -33398,7 +33398,7 @@
   {
    "id": "80014",
    "first": "2026-11-10T20:35:06.642Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-10T15:33:01.587Z",
    "station": "Dundas West",
@@ -33410,8 +33410,8 @@
    "unplanned": false,
    "header": "Dundas West: Elevator 8B1L out of service between Dundas St W entrance and bus platform, concourse and Line 2 eastbound platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 17.67,
-   "sinceFeedStartHours": 22.7
+   "observedHours": 17.92,
+   "sinceFeedStartHours": 23
   },
   {
    "id": "80022",
@@ -33434,7 +33434,7 @@
   {
    "id": "80034",
    "first": "2026-11-11T01:30:06.077Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-10T20:27:53.92Z",
    "station": "Dundas West",
@@ -33446,8 +33446,8 @@
    "unplanned": false,
    "header": "Dundas West: Escalator 8B1E out of service from Line 2 Kipling platform to concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 12.75,
-   "sinceFeedStartHours": 17.8
+   "observedHours": 13,
+   "sinceFeedStartHours": 18
   },
   {
    "id": "80024",
@@ -33506,7 +33506,7 @@
   {
    "id": "80041",
    "first": "2026-11-11T04:05:02.102Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-10T23:04:35.297Z",
    "station": "Finch",
@@ -33518,13 +33518,13 @@
    "unplanned": false,
    "header": "Finch: Elevator 22Y1L out of service between fares concourse and Line 1 centre platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 10.17,
-   "sinceFeedStartHours": 15.2
+   "observedHours": 10.42,
+   "sinceFeedStartHours": 15.4
   },
   {
    "id": "80042",
    "first": "2026-11-11T04:40:04.312Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-10T23:36:34.337Z",
    "station": "King",
@@ -33536,14 +33536,14 @@
    "unplanned": true,
    "header": "King: Escalator 8Y7E out of service from Scotia Plaza entrance to north concourse due to a technical problem.",
    "ongoing": true,
-   "observedHours": 9.58,
-   "sinceFeedStartHours": 14.6
+   "observedHours": 9.83,
+   "sinceFeedStartHours": 14.9
   },
   {
    "id": "80043",
    "first": "2026-11-11T05:20:06.051Z",
    "last": "2026-11-11T14:15:02.104Z",
-   "end": null,
+   "end": "2026-11-11T14:30:06.053Z",
    "feedStart": "2026-11-11T00:17:51.643Z",
    "station": "Pioneer Village",
    "type": "Escalator",
@@ -33553,9 +33553,9 @@
    "causeDesc": "No Start",
    "unplanned": true,
    "header": "Pioneer Village: Escalator 13S1E out of service from north concourse to Steeles Ave W north side entrance due to a technical problem.",
-   "ongoing": true,
-   "observedHours": 8.92,
-   "sinceFeedStartHours": 14
+   "ongoing": false,
+   "observedHours": 9.17,
+   "sinceFeedStartHours": 14.2
   },
   {
    "id": "80049",
@@ -33596,7 +33596,7 @@
   {
    "id": "80054",
    "first": "2026-11-11T10:00:10.634Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-11T04:58:32.823Z",
    "station": "Royal York",
@@ -33608,13 +33608,13 @@
    "unplanned": false,
    "header": "Royal York: Elevator 14B3L out of service between west concourse and Line 2 eastbound platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 4.25,
-   "sinceFeedStartHours": 9.3
+   "observedHours": 4.5,
+   "sinceFeedStartHours": 9.5
   },
   {
    "id": "80053",
    "first": "2026-11-11T10:00:10.634Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-11T04:58:19.12Z",
    "station": "Royal York",
@@ -33626,13 +33626,13 @@
    "unplanned": false,
    "header": "Royal York: Elevator 14B2L out of service between west concourse and Line 2 westbound platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 4.25,
-   "sinceFeedStartHours": 9.3
+   "observedHours": 4.5,
+   "sinceFeedStartHours": 9.5
   },
   {
    "id": "80052",
    "first": "2026-11-11T10:00:10.634Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-11T04:58:18.823Z",
    "station": "Royal York",
@@ -33644,13 +33644,13 @@
    "unplanned": false,
    "header": "Royal York: Elevator 14B2L out of service between west concourse and Line 2 westbound platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 4.25,
-   "sinceFeedStartHours": 9.3
+   "observedHours": 4.5,
+   "sinceFeedStartHours": 9.5
   },
   {
    "id": "80051",
    "first": "2026-11-11T10:00:10.634Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-11T04:58:02.027Z",
    "station": "Royal York",
@@ -33662,13 +33662,13 @@
    "unplanned": false,
    "header": "Royal York: Elevator 14B1L out of service between Royal York Rd entrance and west concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 4.25,
-   "sinceFeedStartHours": 9.3
+   "observedHours": 4.5,
+   "sinceFeedStartHours": 9.5
   },
   {
    "id": "80055",
    "first": "2026-11-11T10:35:10.626Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-11T05:31:44.403Z",
    "station": "Bessarion",
@@ -33680,13 +33680,13 @@
    "unplanned": true,
    "header": "Bessarion: Escalator 57P4E out of service from Line 4 platform to concourse due to a technical problem.",
    "ongoing": true,
-   "observedHours": 3.66,
-   "sinceFeedStartHours": 8.7
+   "observedHours": 3.92,
+   "sinceFeedStartHours": 9
   },
   {
    "id": "80057",
    "first": "2026-11-11T11:00:02.809Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-11T05:57:36.71Z",
    "station": "Sheppard West",
@@ -33698,13 +33698,13 @@
    "unplanned": false,
    "header": "Sheppard West: Escalator 9S4E out of service from concourse to bus platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 3.25,
-   "sinceFeedStartHours": 8.3
+   "observedHours": 3.5,
+   "sinceFeedStartHours": 8.5
   },
   {
    "id": "80058",
    "first": "2026-11-11T11:10:02.568Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-11T06:07:58.707Z",
    "station": "Queen's Park",
@@ -33716,13 +33716,13 @@
    "unplanned": false,
    "header": "Queen's Park: Elevator 3Y2L out of service between concourse and Line 1 centre platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 3.08,
-   "sinceFeedStartHours": 8.1
+   "observedHours": 3.33,
+   "sinceFeedStartHours": 8.4
   },
   {
    "id": "80059",
    "first": "2026-11-11T11:30:10.654Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-11T06:28:45.643Z",
    "station": "King",
@@ -33734,13 +33734,13 @@
    "unplanned": false,
    "header": "King: Escalator 8Y5E out of service from Line 1 Vaughan via Union platform to Yonge St at Melinda St (exit only) while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 2.75,
-   "sinceFeedStartHours": 7.8
+   "observedHours": 3,
+   "sinceFeedStartHours": 8
   },
   {
    "id": "80066",
    "first": "2026-11-11T13:00:04.643Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-11T07:54:57.05Z",
    "station": "Bloor-Yonge",
@@ -33752,13 +33752,13 @@
    "unplanned": false,
    "header": "Bloor-Yonge: Escalator 3D9E out of service from Line 1 Finch platform to south concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 1.25,
-   "sinceFeedStartHours": 6.3
+   "observedHours": 1.5,
+   "sinceFeedStartHours": 6.6
   },
   {
    "id": "80067",
    "first": "2026-11-11T13:05:10.042Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-11T08:00:25.703Z",
    "station": "Wellesley",
@@ -33770,13 +33770,13 @@
    "unplanned": true,
    "header": "Wellesley: Escalator 12Y1E out of service from Line 1 Vaughan via Union platform to Wellesley St entrance due to a technical problem.",
    "ongoing": true,
-   "observedHours": 1.16,
-   "sinceFeedStartHours": 6.2
+   "observedHours": 1.42,
+   "sinceFeedStartHours": 6.5
   },
   {
    "id": "80071",
    "first": "2026-11-11T14:15:02.104Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-11T09:14:19.567Z",
    "station": "Finch West",
@@ -33788,13 +33788,13 @@
    "unplanned": false,
    "header": "Finch West: Escalator 11S2E out of service from Line 1 platform to concourse while we perform maintenance. Escalator is expected to be back in service November 11, 2026.",
    "ongoing": true,
-   "observedHours": 0,
-   "sinceFeedStartHours": 5
+   "observedHours": 0.25,
+   "sinceFeedStartHours": 5.3
   },
   {
    "id": "80069",
    "first": "2026-11-11T14:15:02.104Z",
-   "last": "2026-11-11T14:15:02.104Z",
+   "last": "2026-11-11T14:30:06.053Z",
    "end": null,
    "feedStart": "2026-11-11T09:13:33.49Z",
    "station": "York University",
@@ -33806,8 +33806,8 @@
    "unplanned": false,
    "header": "York University: Escalator 12S5E out of service from concourse to York Boulevard entrance while we perform maintenance. Escalator is expected to be back in service November 11, 2026.",
    "ongoing": true,
-   "observedHours": 0,
-   "sinceFeedStartHours": 5
+   "observedHours": 0.25,
+   "sinceFeedStartHours": 5.3
   }
  ]
 }
