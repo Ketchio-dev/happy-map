@@ -2,15 +2,15 @@
  "summary": {
   "logging": {
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-17T20:50:05.321Z",
-   "hoursCovered": 1846.56,
-   "snapshotsWithChange": 3505
+   "last": "2026-11-17T22:15:02.836Z",
+   "hoursCovered": 1847.98,
+   "snapshotsWithChange": 3506
   },
-  "distinctAlerts": 2047,
-  "elevatorAlerts": 518,
-  "escalatorAlerts": 1529,
+  "distinctAlerts": 2049,
+  "elevatorAlerts": 519,
+  "escalatorAlerts": 1530,
   "elevatorUnplanned": 95,
-  "elevatorOngoingNow": 0,
+  "elevatorOngoingNow": 1,
   "stationsWithElevatorOutage": 78,
   "byStation": {
    "Bayview": 14,
@@ -20,7 +20,7 @@
    "Don Valley": 4,
    "Bloor-Yonge": 19,
    "Forest Hill": 5,
-   "Broadview": 13,
+   "Broadview": 14,
    "Rosedale": 12,
    "Kennedy": 19,
    "Osgoode": 5,
@@ -405,7 +405,7 @@
   {
    "id": "74136",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-17T20:50:05.321Z",
+   "last": "2026-11-17T22:15:02.836Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-12T01:59:00Z",
    "station": "Spadina",
@@ -549,7 +549,7 @@
   {
    "id": "71416",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-17T20:50:05.321Z",
+   "last": "2026-11-17T22:15:02.836Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-12T05:00:00Z",
    "station": "Broadview",
@@ -567,7 +567,7 @@
   {
    "id": "71415",
    "first": "2026-09-01T22:16:13.713Z",
-   "last": "2026-11-17T20:50:05.321Z",
+   "last": "2026-11-17T22:15:02.836Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-03-25T05:00:00Z",
    "station": "Museum",
@@ -9153,7 +9153,7 @@
   {
    "id": "76445",
    "first": "2026-09-18T19:25:02.864Z",
-   "last": "2026-11-17T20:50:05.321Z",
+   "last": "2026-11-17T22:15:02.836Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-09-18T15:23:00Z",
    "station": "Coxwell",
@@ -14247,7 +14247,7 @@
   {
    "id": "77197",
    "first": "2026-09-30T12:55:04.833Z",
-   "last": "2026-11-17T20:50:05.321Z",
+   "last": "2026-11-17T22:15:02.836Z",
    "end": "2026-10-18T13:50:05.200Z",
    "feedStart": "2026-08-10T07:30:00Z",
    "station": "Kennedy",
@@ -26613,7 +26613,7 @@
   {
    "id": "79053",
    "first": "2026-10-27T19:45:07.504Z",
-   "last": "2026-11-17T20:50:05.321Z",
+   "last": "2026-11-17T22:15:02.836Z",
    "end": "2026-11-03T08:20:09.758Z",
    "feedStart": "2026-10-27T00:00:00Z",
    "station": "Kipling",
@@ -35397,7 +35397,7 @@
   {
    "id": "80308",
    "first": "2026-11-14T14:45:07.597Z",
-   "last": "2026-11-17T20:50:05.321Z",
+   "last": "2026-11-17T22:15:02.836Z",
    "end": null,
    "feedStart": "2026-11-14T09:43:27.677Z",
    "station": "Bloor-Yonge",
@@ -35409,8 +35409,8 @@
    "unplanned": false,
    "header": "Bloor-Yonge: Escalator 3D9E out of service from Line 1 Finch platform to south concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 78.08,
-   "sinceFeedStartHours": 83.1
+   "observedHours": 79.5,
+   "sinceFeedStartHours": 84.5
   },
   {
    "id": "80315",
@@ -35523,7 +35523,7 @@
   {
    "id": "80325",
    "first": "2026-11-14T20:00:06.626Z",
-   "last": "2026-11-17T20:50:05.321Z",
+   "last": "2026-11-17T22:15:02.836Z",
    "end": null,
    "feedStart": "2026-11-14T14:59:21.007Z",
    "station": "Dundas West",
@@ -35535,8 +35535,8 @@
    "unplanned": false,
    "header": "Dundas West: Escalator 8B3E out of service from concourse to Dundas St W entrance and bus and Streetcar platform while we perform maintenance. Escalator is expected to be back in service March 30, 2027.",
    "ongoing": true,
-   "observedHours": 72.83,
-   "sinceFeedStartHours": 77.8
+   "observedHours": 74.25,
+   "sinceFeedStartHours": 79.3
   },
   {
    "id": "80330",
@@ -36135,7 +36135,7 @@
   {
    "id": "80248",
    "first": "2026-11-16T12:35:07.917Z",
-   "last": "2026-11-17T20:50:05.321Z",
+   "last": "2026-11-17T22:15:02.836Z",
    "end": null,
    "feedStart": "2026-11-16T07:30:00Z",
    "station": "Castle Frank",
@@ -36147,13 +36147,13 @@
    "unplanned": false,
    "header": "Castle Frank: Escalator 5D3E out of service from concourse to Castle Frank Rd entrance while we perform maintenance. Escalator is expected to be back in service November 18, 2026.",
    "ongoing": true,
-   "observedHours": 32.25,
-   "sinceFeedStartHours": 37.3
+   "observedHours": 33.67,
+   "sinceFeedStartHours": 38.8
   },
   {
    "id": "80247",
    "first": "2026-11-16T12:35:07.917Z",
-   "last": "2026-11-17T20:50:05.321Z",
+   "last": "2026-11-17T22:15:02.836Z",
    "end": null,
    "feedStart": "2026-11-16T07:30:00Z",
    "station": "Sheppard-Yonge",
@@ -36165,13 +36165,13 @@
    "unplanned": false,
    "header": "Sheppard-Yonge: Escalator 51P3E out of service from Line 1 platform to Line 4 Don Mills platform while we perform maintenance. Escalator is expected to be back in service November 19, 2026.",
    "ongoing": true,
-   "observedHours": 32.25,
-   "sinceFeedStartHours": 37.3
+   "observedHours": 33.67,
+   "sinceFeedStartHours": 38.8
   },
   {
    "id": "80246",
    "first": "2026-11-16T12:35:07.917Z",
-   "last": "2026-11-17T20:50:05.321Z",
+   "last": "2026-11-17T22:15:02.836Z",
    "end": null,
    "feedStart": "2026-11-16T07:30:00Z",
    "station": "Highway 407",
@@ -36183,13 +36183,13 @@
    "unplanned": false,
    "header": "Highway 407: Escalator 14S2E out of service from concourse to Line 1 platform while we perform maintenance. Escalator is expected to be back in service November 19, 2026.",
    "ongoing": true,
-   "observedHours": 32.25,
-   "sinceFeedStartHours": 37.3
+   "observedHours": 33.67,
+   "sinceFeedStartHours": 38.8
   },
   {
    "id": "80448",
    "first": "2026-11-16T12:45:07.073Z",
-   "last": "2026-11-17T20:50:05.321Z",
+   "last": "2026-11-17T22:15:02.836Z",
    "end": null,
    "feedStart": "2026-11-16T07:30:00Z",
    "station": "Sheppard West",
@@ -36201,8 +36201,8 @@
    "unplanned": false,
    "header": "Sheppard West: Escalator 9S1E out of service from Line 1 platform to concourse while we perform maintenance. Escalator is expected to be back in service November 20, 2026.",
    "ongoing": true,
-   "observedHours": 32.08,
-   "sinceFeedStartHours": 37.3
+   "observedHours": 33.5,
+   "sinceFeedStartHours": 38.8
   },
   {
    "id": "80447",
@@ -36711,7 +36711,7 @@
   {
    "id": "80504",
    "first": "2026-11-17T11:45:05.301Z",
-   "last": "2026-11-17T20:50:05.321Z",
+   "last": "2026-11-17T22:15:02.836Z",
    "end": null,
    "feedStart": "2026-11-17T06:44:37.42Z",
    "station": "Fairbank",
@@ -36723,8 +36723,8 @@
    "unplanned": true,
    "header": "Fairbank: Escalator 3 out of service between concourse and below grade level due to a technical problem.",
    "ongoing": true,
-   "observedHours": 9.08,
-   "sinceFeedStartHours": 14.1
+   "observedHours": 10.5,
+   "sinceFeedStartHours": 15.5
   },
   {
    "id": "80503",
@@ -36801,7 +36801,7 @@
   {
    "id": "80513",
    "first": "2026-11-17T13:45:02.855Z",
-   "last": "2026-11-17T20:50:05.321Z",
+   "last": "2026-11-17T22:15:02.836Z",
    "end": null,
    "feedStart": "2026-11-17T08:44:28.727Z",
    "station": "Osgoode",
@@ -36813,8 +36813,8 @@
    "unplanned": false,
    "header": "Osgoode: Escalator 5Y2E out of service from concourse to Line 1 platform while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 7.08,
-   "sinceFeedStartHours": 12.1
+   "observedHours": 8.5,
+   "sinceFeedStartHours": 13.5
   },
   {
    "id": "80506",
@@ -36927,7 +36927,7 @@
   {
    "id": "80529",
    "first": "2026-11-17T19:45:04.235Z",
-   "last": "2026-11-17T20:50:05.321Z",
+   "last": "2026-11-17T22:15:02.836Z",
    "end": null,
    "feedStart": "2026-11-17T14:41:53.3Z",
    "station": "Sheppard West",
@@ -36939,8 +36939,44 @@
    "unplanned": false,
    "header": "Sheppard West: Escalator 9S5E out of service from bus platform to concourse while we perform maintenance.",
    "ongoing": true,
-   "observedHours": 1.08,
-   "sinceFeedStartHours": 6.1
+   "observedHours": 2.5,
+   "sinceFeedStartHours": 7.6
+  },
+  {
+   "id": "80534",
+   "first": "2026-11-17T22:15:02.836Z",
+   "last": "2026-11-17T22:15:02.836Z",
+   "end": null,
+   "feedStart": "2026-11-17T17:13:33.983Z",
+   "station": "Broadview",
+   "type": "Elevator",
+   "code": "6D2L",
+   "planned": "Planned",
+   "cause": "MAINTENANCE",
+   "causeDesc": "Maintenance",
+   "unplanned": false,
+   "header": "Broadview: Elevator 6D2L out of service between concourse and Line 2 eastbound platform while we perform maintenance.",
+   "ongoing": true,
+   "observedHours": 0,
+   "sinceFeedStartHours": 5
+  },
+  {
+   "id": "80533",
+   "first": "2026-11-17T22:15:02.836Z",
+   "last": "2026-11-17T22:15:02.836Z",
+   "end": null,
+   "feedStart": "2026-11-17T17:12:58.367Z",
+   "station": "St Andrew",
+   "type": "Escalator",
+   "code": "6Y2E",
+   "planned": "Planned",
+   "cause": "MAINTENANCE",
+   "causeDesc": "Maintenance",
+   "unplanned": false,
+   "header": "St Andrew: Escalator 6Y2E out of service from concourse to Line 1 platform while we perform maintenance.",
+   "ongoing": true,
+   "observedHours": 0,
+   "sinceFeedStartHours": 5
   }
  ]
 }
